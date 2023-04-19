@@ -21,15 +21,19 @@
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+     <!--  <a class="underlineHover" href="/register">Registrarme</a> -->
+       <br>
+
+       <router-link to="/register"> <a class="underlineHover"></a>Registrarme</router-link> <hr>
+       <router-link to="/"> <a class="underlineHover"></a>Salir</router-link> <br>
     </div>
 
   </div>
 </div>
 
-<router-link to="/">Home</router-link>
+<!-- <router-link to="/">Home</router-link>
     <br>
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> -->
 </template>
 
 <style scoped>

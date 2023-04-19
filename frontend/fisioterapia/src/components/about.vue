@@ -3,10 +3,16 @@
 </script>
 
 <template>
-<h2>pagina de about</h2>
-<router-link to="/">Home</router-link>
-    <br>
-    <router-link to="/login">
-      Login
-    </router-link>
+  <div class="contanier">
+    <h2>Proyecto Desarrollado en Tecnoparque Nodo Socorro </h2>
+    <hr>
+    <div class="row">
+      <img src="../components/images/tecnoparquens.png" style="width: 500px;">
+
+    </div>
+
+    <hr>
+    <h3>Linea de Tecnologias Virtuales</h3>
+    <router-link to="/">Home</router-link>
+  </div>
 </template>
