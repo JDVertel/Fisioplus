@@ -9,7 +9,7 @@
 <br>
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="@/assets/logo.svg" id="icon" alt="User Icon" />
+      <img src="@/assets/logo.png" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
@@ -297,7 +297,7 @@ input[type=text]:placeholder {
 } 
 
 #icon {
-  width:40%;
+  width:80%;
 }
 
 
