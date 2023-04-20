@@ -6,8 +6,8 @@ import App from "./App.vue";
 import Home from "./components/home.vue";
 import About from "./components/about.vue";
 import Login from "./components/login.vue";
-import Register from "./components/register.vue"
-import Admin from "./components/admin.vue"
+import Register from "./components/Usuarios/register.vue"
+/* import Admin from "./components/admin.vue" */
 // agendas
 import A_parametros from "./components/Agendas/a_Params.vue"
 import A_programar from "./components/Agendas/a_Program.vue"
@@ -35,7 +35,7 @@ const routes = [
   { path: "/about", component: About },
   { path: "/login", component: Login },
   { path: "/register", component: Register },
-  { path: "/admin", component: Admin },
+  /* { path: "/admin", component: Admin }, */
   // agendas
   { path: "/A_parametros", component: A_parametros },
   { path: "/A_programar", component: A_programar },
