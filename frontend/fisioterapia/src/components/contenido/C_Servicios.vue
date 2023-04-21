@@ -1,5 +1,6 @@
 <template>
   <h1> contenido servicios</h1>
+  <router-link to="/">Home</router-link>
 </template>
 
 <script>

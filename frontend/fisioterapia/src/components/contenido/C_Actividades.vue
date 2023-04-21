@@ -1,5 +1,6 @@
 <template>
-  <h1>contenido -otros</h1>
+  <h1>contenido Actividades</h1>
+  <router-link to="/">Home</router-link>
 </template>
 
 <script>

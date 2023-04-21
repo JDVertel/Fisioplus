@@ -40,14 +40,14 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#"><router-link to="/A_parametros"> <a
                         class="nav-link">Parametros</a></router-link></a></li>
-                <li><a class="dropdown-item" href="#"><router-link to="/A_parametros"> <a class="nav-link">Programar
+                <li><a class="dropdown-item" href="#"><router-link to="/A_programar"> <a class="nav-link">Programar
                         Agenda</a></router-link></a></li>
 
 
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#"><router-link to="/A_parametros"> <a class="nav-link">Reservar
+                <li><a class="dropdown-item" href="#"><router-link to="/A_reservas"> <a class="nav-link">Reservar
                         Cita</a></router-link></a></li>
               </ul>
             </li>
@@ -57,14 +57,14 @@
                 Contenido
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"><router-link to="/A_parametros"> <a
+                <li><a class="dropdown-item" href="#"><router-link to="/Servicios"> <a
                         class="nav-link">Servicios</a></router-link></a></li>
-                <li><a class="dropdown-item" href="#"><router-link to="/A_parametros"> <a class="nav-link">Otras
+                <li><a class="dropdown-item" href="#"><router-link to="/Actividades"> <a class="nav-link">Otras
                         Actividades</a></router-link></a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#"><router-link to="/A_parametros"> <a
+                <li><a class="dropdown-item" href="#"><router-link to="/productos"> <a
                         class="nav-link">Productos</a></router-link></a></li>
               </ul>
             </li>
