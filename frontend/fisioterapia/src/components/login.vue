@@ -2,8 +2,10 @@
 
 </script>
 <template>
+<div class="container" style="background-image: linear-gradient(to bottom right, #82d877, #82d8c1)">
 
-<div class="wrapper fadeInDown">
+
+<div class="wrapper fadeInDown" >
   <div id="formContent">
     <!-- Tabs Titles -->
 <br>
@@ -30,7 +32,7 @@
 
   </div>
 </div>
-
+</div>
 <!-- <router-link to="/">Home</router-link>
     <br>
     <router-link to="/about">About</router-link> -->
@@ -85,7 +87,7 @@ h2 {
   border-radius: 10px 10px 10px 10px;
   background: #fff;
   padding: 30px;
-  width: 90%;
+  width: 95%;
   max-width: 450px;
   position: relative;
   padding: 0px;
@@ -297,7 +299,7 @@ input[type=text]:placeholder {
 } 
 
 #icon {
-  width:80%;
+  width:70%;
 }
 
 
