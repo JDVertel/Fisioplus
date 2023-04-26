@@ -52,84 +52,31 @@
               <a class="navbar-brand">Administracion</a>
             </li>
 
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+            <li class="nav-item">
+              <router-link to="/homeAgendas"
+                ><a class="nav-link" aria-current="page"
+                  >Agendas</a
+                ></router-link
               >
-                Agendas
-              </a>
-
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item"
-                    ><router-link to="/A_parametros">
-                      <a class="nav-link underlineHover"
-                        >Parametros</a
-                      ></router-link
-                    ></a
-                  >
-                </li>
-
-                <li>
-                  <a class="dropdown-item"
-                    ><router-link to="/A_programar">
-                      <a class="nav-link">Programar Agenda</a></router-link
-                    ></a
-                  >
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                    ><router-link to="/A_reservas">
-                      <a class="nav-link">Reservar Cita</a></router-link
-                    ></a
-                  >
-                </li>
-              </ul>
             </li>
-
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+            <li class="nav-item">
+              <router-link to="/Contenido"
+                ><a class="nav-link" aria-current="page"
+                  >Contenido</a
+                ></router-link
               >
-                Contenido
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item"
-                    ><router-link to="/Servicios">
-                      <a class="nav-link">Servicios</a></router-link
-                    ></a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                    ><router-link to="/Actividades">
-                      <a class="nav-link">Otras Actividades</a></router-link
-                    ></a
-                  >
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item"
-                    ><router-link to="/productos">
-                      <a class="nav-link">Productos</a></router-link
-                    ></a
-                  >
-                </li>
-              </ul>
             </li>
+       <!--      <li class="nav-item">
+              <router-link to="/about"
+                ><a class="nav-link" aria-current="page"
+                  >H Clinica</a
+                ></router-link
+              >
+            </li>
+             -->
 
+
+    
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
