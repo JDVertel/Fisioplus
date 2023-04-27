@@ -7,7 +7,7 @@ import Register from "./../components/register.vue";
 // agendas
 import HomeAgendas from "./../components/agendas/agendashome.vue";
 //contenido web
-import HomeContenido from "./../components/contenido/contenidohome.vue";
+import HomeConfiguracion from "./../components/configuracion/configuracionhome.vue";
 
 
 const routes = [
@@ -21,7 +21,7 @@ const routes = [
     { path: "/homeAgendas", component: HomeAgendas, name: "agendas" },
 
   //contenido web
-  { path: "/Contenido", component: HomeContenido, name: "contenido" },
+  { path: "/Configuracion", component: HomeConfiguracion, name: "configuracion" },
 
 ];
 

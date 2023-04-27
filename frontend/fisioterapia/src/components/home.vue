@@ -60,9 +60,9 @@
               >
             </li>
             <li class="nav-item">
-              <router-link to="/Contenido"
+              <router-link to="/Configuracion"
                 ><a class="nav-link" aria-current="page"
-                  >Contenido</a
+                  >Configuracion</a
                 ></router-link
               >
             </li>
@@ -114,9 +114,10 @@
     </div>
 
     <br />
-    <h1 class="display-6 subtitulos"><strong>Nuestros Servicios</strong></h1>
+  
 
     <!-- sesion servivios  -->
+    <h1 class="display-6 subtitulos"><strong>Nuestros Servicios</strong></h1>
     <div class="container-fluid">
       <div class="row">
         <div class="col-6 col-md-3">
