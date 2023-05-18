@@ -87,6 +87,11 @@
                 HC Fisioterapia
               </a>
               <ul class="dropdown-menu">
+                <li><a class="dropdown-item">    <router-link to="/hc"
+                  ><a class="nav-link" aria-current="page"
+                    >HC</a
+                  ></router-link
+                ></a></li>
                 <li><a class="dropdown-item">Consultar</a></li>
                 <li><a class="dropdown-item">Otras actividades</a></li>
                 <li>
