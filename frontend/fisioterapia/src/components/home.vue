@@ -13,7 +13,7 @@
             id="icon"
             alt="User Icon"
             style="width: 40px"
-          />Menu</a
+          /> Menu</a
         >
         <button
           class="navbar-toggler"
@@ -33,7 +33,7 @@
                           </li> -->
             <li class="nav-item">
               <router-link to="/login"
-                ><a class="nav-link" aria-current="page">Login</a></router-link
+                ><a class="nav-link" aria-current="page"> <v-icon name="gi-scarecrow"/> Login</a></router-link
               >
             </li>
             <li class="nav-item">

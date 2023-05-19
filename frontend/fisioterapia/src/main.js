@@ -12,4 +12,16 @@ import * as Vue from "vue"; // in Vue 3
 import axios from "axios";
 import VueAxios from "vue-axios";
 
-createApp(App).use(router).mount("#app");
+// iconos
+
+import { OhVueIcon, addIcons } from "oh-vue-icons";
+import { GiScarecrow } from "oh-vue-icons/icons";
+
+addIcons(GiScarecrow);
+
+
+const app = createApp(App)
+app.component("v-icon",OhVueIcon);
+app.use(router)
+
+app.mount('#app')
