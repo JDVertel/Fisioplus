@@ -304,10 +304,7 @@
 </template>
 
 <style scoped>
-/* .card {
-background: red;
-margin: 5px;
-} */
+
 
 .card-title {
   font-size: 0.8rem;
