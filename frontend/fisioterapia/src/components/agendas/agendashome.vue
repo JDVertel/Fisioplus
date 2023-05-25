@@ -3,11 +3,11 @@
     <br />
     <h3>--gestion de las agendas</h3>
 
-    <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion accordion-flush" id="accordionPanelAgendas">
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button
-            class="accordion-button"
+            class="accordion-button collapsed"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#panelsStayOpen-collapseOne"
@@ -19,7 +19,7 @@
         </h2>
         <div
           id="panelsStayOpen-collapseOne"
-          class="accordion-collapse collapse show"
+          class="accordion-collapse collapse"
         >
           <div class="accordion-body">
             <h6>Listado de Agendas disponibles</h6>
@@ -56,8 +56,11 @@
           class="accordion-collapse collapse"
         >
           <div class="accordion-body">
-           <p>informe de agendas 2 campos seleccion y un boton que llama a la funcion</p>
-           <p>|f inicial | f final | Boton</p>
+            <p>
+              informe de agendas 2 campos seleccion y un boton que llama a la
+              funcion
+            </p>
+            <p>|f inicial | f final | Boton</p>
           </div>
         </div>
       </div>
@@ -103,9 +106,12 @@
           class="accordion-collapse collapse"
         >
           <div class="accordion-body">
-       <p>parametrizacion </p>
-       <p>crear un tipo de cita  formulario con los siguientes inputs </p>
-       <p>|jornada|hora inicio|hora fin|tiempo consulta| nombre de la consulta</p>
+            <p>parametrizacion</p>
+            <p>crear un tipo de cita formulario con los siguientes inputs</p>
+            <p>
+              |jornada|hora inicio|hora fin|tiempo consulta| nombre de la
+              consulta
+            </p>
           </div>
         </div>
       </div>
@@ -116,35 +122,11 @@
 </template>
 
 <script>
-export default {};
+
 </script>
 
-<style></style>
-<!--   <div>
-    <h1>agenda parametros pagina nueva</h1>
-    <br />
-    <div class="container">
-      <ul class="nav nav-tabs">
-        <li class="nav-item active">
-          <router-link to="/A_activas"
-            ><a class="nav-link" href="#">Activas</a></router-link
-          >
-        </li>
-        <li class="nav-item">
-          <router-link to="/A_reservas"
-            ><a class="nav-link" href="#">Reservar</a></router-link
-          >
-        </li>
-        <li class="nav-item">
-          <router-link to="/A_programar"
-            ><a class="nav-link" href="#">Programar</a></router-link
-          >
-        </li>
-        <li class="nav-item">
-          <router-link to="/A_parametros"
-            ><a class="nav-link" href="#">Parametros</a></router-link
-          >
-        </li>
-      </ul>
-    </div>
-  </div> -->
+<style>
+
+
+</style>
+

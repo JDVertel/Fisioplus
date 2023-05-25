@@ -3,7 +3,7 @@
 <template>
   <div
     class="container-fluid"
-    style="background-image: linear-gradient(to bottom right, #82d877, #82d8c1)"
+
   >
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -13,7 +13,8 @@
             id="icon"
             alt="User Icon"
             style="width: 40px"
-          /> Menu</a
+          />
+          Menu</a
         >
         <button
           class="navbar-toggler"
@@ -33,7 +34,9 @@
                           </li> -->
             <li class="nav-item">
               <router-link to="/login"
-                ><a class="nav-link" aria-current="page"> <v-icon name="gi-scarecrow"/> Login</a></router-link
+                ><a class="nav-link" aria-current="page">
+                  <v-icon name="gi-scarecrow" /> Login</a
+                ></router-link
               >
             </li>
             <li class="nav-item">
@@ -66,7 +69,7 @@
                 ></router-link
               >
             </li>
-       <!--      <li class="nav-item">
+            <!--      <li class="nav-item">
               <router-link to="/about"
                 ><a class="nav-link" aria-current="page"
                   >H Clinica</a
@@ -75,8 +78,6 @@
             </li>
              -->
 
-
-    
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -87,11 +88,15 @@
                 HC Fisioterapia
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item">    <router-link to="/hc"
-                  ><a class="nav-link" aria-current="page"
-                    >HC</a
-                  ></router-link
-                ></a></li>
+                <li>
+                  <a class="dropdown-item">
+                    <router-link to="/hc"
+                      ><a class="nav-link" aria-current="page"
+                        >HC</a
+                      ></router-link
+                    ></a
+                  >
+                </li>
                 <li><a class="dropdown-item">Consultar</a></li>
                 <li><a class="dropdown-item">Otras actividades</a></li>
                 <li>
@@ -109,18 +114,18 @@
         </div>
       </div>
     </nav>
+
     <!-- sesion informacion -->
-    <div class="container">
+    <div class="container" align="center">
       <img
         src="./../components/images/inicio.jpg"
-        class="card-img-top"
+        class="card-img-top redondo1"
         alt="..."
       />
     </div>
 
     <br />
-  
-
+    <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
     <!-- sesion servivios  -->
     <h1 class="display-6 subtitulos"><strong>Nuestros Servicios</strong></h1>
     <div class="container-fluid">
@@ -209,21 +214,45 @@
       </div>
     </div>
     <br />
+        <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+        <!-- clases y rutinas -->
     <h6 class="display-6 subtitulos"><strong>Clases y Rutinas</strong></h6>
-    <div class="card text-bg-dark">
-      <img src="./../components/images/pole.png" class="card-img" alt="..." />
-      <div class="card-img-overlay">
-        <h5 class="card-title">pole Dance</h5>
-        <p class="card-text">
-          This is a wider card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
-        </p>
-        <p class="card-text"><small>Last updated 3 mins ago</small></p>
+    <div class="row">
+
+    
+    <div class="col-6">
+      <div class="card">
+        <img src="./../components/images/pole.png" class="card-img" alt="..." />
+        <div class="card-img-overlay">
+          <h5 class="card-title">pole Dance</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </p>
+        
+        </div>
       </div>
     </div>
+    <div class="col-6">
+      <div class="card">
+        <img src="./../components/images/pole.png" class="card-img" alt="..." />
+        <div class="card-img-overlay">
+          <h5 class="card-title">pole Dance</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </p>
+   
+        </div>
+      </div>
+    </div>
+  </div>
     <br />
+    <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <!-- productos -->
+
     <h6 class="display-6 subtitulos"><strong>Productos</strong></h6>
-    <div id="carouselExampleCaptions" class="carousel slide">
+    <div id="carouselExampleCaptions" class="carousel slide ">
       <div class="carousel-indicators">
         <button
           type="button"
@@ -304,8 +333,6 @@
 </template>
 
 <style scoped>
-
-
 .card-title {
   font-size: 0.8rem;
 }
@@ -338,5 +365,15 @@
 
   text-decoration: none;
   display: inline-block;
+}
+
+.redondo1 {
+  border-radius: 50% 50% 50% 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.card{
+  margin: 0.5rem;
 }
 </style>
