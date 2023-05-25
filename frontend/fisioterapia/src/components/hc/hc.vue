@@ -1,19 +1,16 @@
-<script>
-
-
-</script>
+<script></script>
 
 <template>
   <div id="AppHC">
     <div class="container-fluid fondo">
-      <h4>Datos personales</h4>
+      <h1 class="display-6">Datos personales</h1>
       <div class="container">
         <div class="row">
-          <div class="col-2">
+          <div class="col-2" style="margin: 10px">
             <img src="./../images/usuario.jpg" class="redondo" alt="..." />
           </div>
-          <div class="col-10">
-            <div class="container">
+          <div class="col-9">
+            <div class="container" style="margin: 10px">
               <div class="row">
                 <div class="col-6 col-md-3">NOMBRE1</div>
                 <div class="col-6 col-md-3">NOMBRE2</div>
@@ -159,7 +156,7 @@
                       rows="3"
                     ></textarea>
                   </div>
-                  <button type="button" class="btn btn-outline-primary">
+                  <button type="button" class="btn btn-outline-primary btn-sm">
                     Guardar
                   </button>
                 </div>
@@ -175,113 +172,74 @@
                     <div class="row">
                       <div class="col-5">
                         <p>Medidas Fisicas</p>
-
-                        <div class="input-group input-group-sm mb-3">
-                          <span
-                            class="input-group-text"
-                            id="inputGroup-sizing-sm"
-                            >Peso</span
-                          >
-                          <input
-                            type="number"
-                            class="form-control"
-                            aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm"
-                          />
-                        </div>
-                        <div class="input-group input-group-sm mb-3">
-                          <span
-                            class="input-group-text"
-                            id="inputGroup-sizing-sm"
-                            >Talla</span
-                          >
-                          <input
-                            type="number"
-                            class="form-control"
-                            aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm"
-                          />
-                        </div>
-                        <div class="input-group input-group-sm mb-3">
-                          <span
-                            class="input-group-text"
-                            id="inputGroup-sizing-sm"
-                            >Estatura</span
-                          >
-                          <input
-                            type="number"
-                            class="form-control"
-                            aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm"
-                          />
-                        </div>
-                        <div class="input-group input-group-sm mb-3">
-                          <span
-                            class="input-group-text"
-                            id="inputGroup-sizing-sm"
-                            >(IMC)</span
-                          >
-                          <input
-                            type="number"
-                            class="form-control"
-                            aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm"
-                          />
+                        <div class="container">
+                          <div class="input-group mb-1">
+                            <input
+                              type="number"
+                              class="form-control form-control-sm"
+                              id="exampleFormControlInput1"
+                              placeholder="Peso (kg)"
+                            />
+                          </div>
+                          <div class="input-group mb-1">
+                            <input
+                              type="number"
+                              class="form-control form-control-sm"
+                              id="exampleFormControlInput1"
+                              placeholder="talla (Cm)"
+                            />
+                          </div>
+                          <div class="input-group mb-1">
+                            <input
+                              type="number"
+                              class="form-control form-control-sm"
+                              id="exampleFormControlInput1"
+                              placeholder="Estatura (Cm)"
+                            />
+                          </div>
+                          <div class="input-group mb-1">
+                            <input
+                              type="number"
+                              class="form-control form-control-sm"
+                              id="exampleFormControlInput1"
+                              placeholder="IMC"
+                            />
+                          </div>
                         </div>
                       </div>
 
                       <div class="col-5">
                         <p>Signos Vitales</p>
-                        <div class="input-group input-group-sm mb-3">
-                          <span
-                            class="input-group-text"
-                            id="inputGroup-sizing-sm"
-                            >Temperatura</span
-                          >
+                        <div class="mb-1">
                           <input
-                            type="text"
-                            class="form-control"
-                            aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm"
+                            type="number"
+                            class="form-control form-control-sm"
+                            id="exampleFormControlInput1"
+                            placeholder="Temp (C)"
                           />
                         </div>
-                        <div class="input-group input-group-sm mb-3">
-                          <span
-                            class="input-group-text"
-                            id="inputGroup-sizing-sm"
-                            >F. Cardiaca</span
-                          >
+                        <div class="mb-1">
                           <input
-                            type="text"
-                            class="form-control"
-                            aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm"
+                            type="number"
+                            class="form-control form-control-sm"
+                            id="exampleFormControlInput1"
+                            placeholder="F.cardiaca"
                           />
                         </div>
-                        <div class="input-group input-group-sm mb-3">
-                          <span
-                            class="input-group-text"
-                            id="inputGroup-sizing-sm"
-                            >F.Respiratoria</span
-                          >
+                        <div class="mb-1">
                           <input
-                            type="text"
-                            class="form-control"
-                            aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm"
+                            type="number"
+                            class="form-control form-control-sm"
+                            id="exampleFormControlInput1"
+                            placeholder="F.respiraotria"
                           />
                         </div>
-                        <div class="input-group input-group-sm mb-3">
-                          <span
-                            class="input-group-text"
-                            id="inputGroup-sizing-sm"
-                            >T.Arterial</span
-                          >
+                        <div class="mb-1">
                           <input
-                            type="text"
-                            class="form-control"
-                            aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-sm"
+                            type="number"
+                            class="form-control form-control-sm"
+                            id="exampleFormControlInput1"
+                            placeholder="T.Arterial"
                           />
                         </div>
                       </div>
@@ -334,31 +292,33 @@
                     </div>
 
                     <div class="col-6">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Enfermedad</th>
-                            <th scope="col">Parentesco</th>
-                            <th scope="col">Detalle</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Enfermedad</th>
+                              <th scope="col">Parentesco</th>
+                              <th scope="col">Detalle</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                            <tr>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <td colspan="2">Larry the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -408,31 +368,33 @@
                     </div>
 
                     <div class="col-6">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Enfermedad</th>
-                            <th scope="col">Parentesco</th>
-                            <th scope="col">Detalle</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Enfermedad</th>
+                              <th scope="col">Parentesco</th>
+                              <th scope="col">Detalle</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                            <tr>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <td colspan="2">Larry the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -440,6 +402,142 @@
             </div>
           </div>
         </div>
+        <!--  -->
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapse11"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapse11"
+            >
+              IMAGENES O EXAMENES COMPLEMENTARIOS
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapse11"
+            class="accordion-collapse collapse"
+          >
+            <div class="accordion-body">
+              <!--  -->
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button
+                    class="nav-link active"
+                    id="nav-b-radiografia"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-radiografia"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-home"
+                    aria-selected="true"
+                  >
+                    Radiografia
+                  </button>
+                  <button
+                    class="nav-link"
+                    id="nav-b-ecografia"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-ecografia"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                  >
+                    Ecografia
+                  </button>
+                  <button
+                    class="nav-link"
+                    id="nav-b-resonancia"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-resonancia"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                  >
+                    Resonancia
+                  </button>
+                  <button
+                    class="nav-link"
+                    id="nav-b-tag"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-tag"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                  >
+                    TAG
+                  </button>
+                  <button
+                    class="nav-link"
+                    id="nav-b-otros"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-otros"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                  >
+                    Otros
+                  </button>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="nav-radiografia"
+                  role="tabpanel"
+                  aria-labelledby="nav-home-tab"
+                  tabindex="0"
+                >
+                  Radiografia
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="nav-ecografia"
+                  role="tabpanel"
+                  aria-labelledby="nav-profile-tab"
+                  tabindex="0"
+                >
+                  Ecografia
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="nav-resonancia"
+                  role="tabpanel"
+                  aria-labelledby="nav-profile-tab"
+                  tabindex="0"
+                >
+                  Resonancia
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="nav-tag"
+                  role="tabpanel"
+                  aria-labelledby="nav-profile-tab"
+                  tabindex="0"
+                >
+                  TAG
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="nav-otros"
+                  role="tabpanel"
+                  aria-labelledby="nav-profile-tab"
+                  tabindex="0"
+                >
+                  Otros
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+
         <div class="accordion-item">
           <h2 class="accordion-header">
             <button
@@ -982,13 +1080,11 @@
       </div>
     </div>
   </div>
-
 </template>
-
 
 <style>
 #AppHC {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   background: fixed;
 }
 
@@ -998,13 +1094,22 @@
   height: 70px;
 }
 
-button.accordion-button {
+button.accordion-button.collapsed {
   padding: 2px;
-  background-color: rgb(83, 159, 121);
+  background-color: rgb(120, 195, 157);
   color: aliceblue;
   font-size: 0.7rem;
+  text-shadow: 1px 1px 2px black;
 }
-
-
-
+button.accordion-button:not(.collapsed) {
+  padding: 2px;
+  background-color: rgb(75, 198, 242);
+  color: rgba(9, 210, 109, 0.68);
+  font-size: 0.7rem;
+  color: aliceblue;
+  text-shadow: 1px 1px 2px black;
+}
+.minitext {
+  font-size: 0.6rem;
+}
 </style>
