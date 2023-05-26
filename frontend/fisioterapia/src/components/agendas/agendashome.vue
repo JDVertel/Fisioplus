@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
+  <div class="container" id="agendas">
     <br />
-    <h3>--gestion de las agendas</h3>
+    <h3 >Gestion de las agendas</h3>
 
     <div class="accordion accordion-flush" id="accordionPanelAgendas">
       <div class="accordion-item">
@@ -35,6 +35,45 @@
               a futuro el campo tipoagenda podra mostrar hora inicio y hora fin
               parametrizados
             </p>
+            <div class="table-responsive">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Jornada</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Disponibles</th>
+                  <th scope="col">Ver/reservar</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>@mdo</td>
+                  <td> <div class="col-4 fechas"><button class="btn btn-primary btn-sm textarea" type="submit">ver</button></div></td>
+            
+                </tr>
+                <tr>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>@mdo</td>
+                  <td> <div class="col-4 fechas"><button class="btn btn-primary btn-sm textarea" type="submit">ver</button></div></td>
+            
+                </tr>
+                <tr>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>@mdo</td>
+                  <td> <div class="col-4 fechas"><button class="btn btn-primary btn-sm textarea" type="submit">ver</button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           </div>
         </div>
       </div>
@@ -56,12 +95,53 @@
           class="accordion-collapse collapse"
         >
           <div class="accordion-body">
-            <p>
-              informe de agendas 2 campos seleccion y un boton que llama a la
-              funcion
-            </p>
-            <p>|f inicial | f final | Boton</p>
+    
+
+<form>
+  <div class="row">
+    <div class="col-4 fechas">Fecha Inicial<input class="form-control form-control-sm textarea" type="date"  aria-label=".form-control-sm example"></div>
+    <div class="col-4 fechas">Fecha Final<input class="form-control form-control-sm textarea" type="date"  aria-label=".form-control-sm example"></div>
+    <div class="col-4 fechas"> <br><button class="btn btn-primary btn-sm textarea" type="submit">Consultar</button></div>
+  </div>
+<br>
+</form>
+<div class="table-responsive">
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Hora</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>@mdo</td>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@twitter</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+        </div>
         </div>
       </div>
       <div class="accordion-item">
@@ -74,7 +154,7 @@
             aria-expanded="false"
             aria-controls="panelsStayOpen-collapseThree"
           >
-            Programar
+           Agendar
           </button>
         </h2>
         <div
@@ -85,6 +165,36 @@
             <p>Opciones para agendar una nueva agenda</p>
             <p>campos</p>
             |fecha|jornada|tipo_agenda|
+
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td colspan="2">Larry the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -106,12 +216,43 @@
           class="accordion-collapse collapse"
         >
           <div class="accordion-body">
-            <p>parametrizacion</p>
-            <p>crear un tipo de cita formulario con los siguientes inputs</p>
-            <p>
-              |jornada|hora inicio|hora fin|tiempo consulta| nombre de la
-              consulta
-            </p>
+            <p>Plantillas de tipos de jornadas </p>
+        
+
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Jornada</th>
+                  <th scope="col">H inicio</th>
+                  <th scope="col">H fin</th>
+                  <th scope="col">Tiempo</th>
+                  <th scope="col">Nombre</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -126,7 +267,16 @@
 </script>
 
 <style>
+#agendas{
+  font-size: 0.6rem;
+  background: fixed;
+}
+.fechas{
+  padding: 1px !important;
 
-
+}
+.textarea{
+font-size: 0.6rem !important;
+}
 </style>
 

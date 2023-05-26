@@ -1140,9 +1140,9 @@ button.accordion-button:not(.collapsed) {
   justify-content: center;
   align-items: center;
 }
-
 .textarea {
   font-size: 0.6rem !important;
-  color: red;
+
 }
+
 </style>

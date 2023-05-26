@@ -3,7 +3,8 @@
 </script>
 
 <template>
-  <div class="contanier">
+  <div class="contanier about">
+   
     <h2>Proyecto Desarrollado en Tecnoparque Nodo Socorro </h2>
     <hr>
     <div class="row">
@@ -13,6 +14,14 @@
 
     <hr>
     <h3>Linea de Tecnologias Virtuales</h3>
+    <p>Juan David Vertel H</p>
+    <br>
     <router-link to="/">Home</router-link>
   </div>
 </template>
+<style>
+.about{
+padding: 30px;
+
+}
+</style>
