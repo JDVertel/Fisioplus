@@ -15,9 +15,9 @@ import VueAxios from "vue-axios";
 // iconos
 
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { GiScarecrow } from "oh-vue-icons/icons";
+import { GiScarecrow ,RiHealthBookLine,FaUserCheck,FaHandHoldingMedical,AiBiorxivSquare,IoConstructSharp} from "oh-vue-icons/icons";
 
-addIcons(GiScarecrow);
+addIcons(GiScarecrow ,RiHealthBookLine,FaUserCheck,FaHandHoldingMedical,AiBiorxivSquare,IoConstructSharp);
 
 
 const app = createApp(App)

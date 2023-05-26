@@ -3,14 +3,18 @@
 <template>
   <div id="AppHC">
     <div class="container-fluid fondo">
-      <h1 class="display-6">Datos personales</h1>
-      <div class="container">
+      <h1 class="display-6" style="text-align: center">Historia Clinica</h1>
+      <div
+        class="container"
+        style="border: 1px solid #000; border-radius: 15px"
+      >
         <div class="row">
-          <div class="col-2" style="margin: 10px">
+          <div class="col-2 retrato" style="margin: 10px">
             <img src="./../images/usuario.jpg" class="redondo" alt="..." />
           </div>
           <div class="col-9">
             <div class="container" style="margin: 10px">
+              <h5><strong> <v-icon name="ri-health-book-line"/> Datos Personales</strong></h5>
               <div class="row">
                 <div class="col-6 col-md-3">NOMBRE1</div>
                 <div class="col-6 col-md-3">NOMBRE2</div>
@@ -29,11 +33,8 @@
             </div>
           </div>
         </div>
-        <div class="container">
-          <br />
-        </div>
       </div>
-
+      <br />
       <div class="accordion custom-header" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
           <h2 class="accordion-header">
@@ -45,7 +46,7 @@
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapse1"
             >
-              DATOS DE CONSULTA
+            <v-icon name="fa-user-check" fill="blue"/>  Datos de Consulta
             </button>
           </h2>
           <div
@@ -115,10 +116,10 @@
                 >
                   <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label"
-                      >Example textarea</label
+                      >Motivo de Consulta</label
                     >
                     <textarea
-                      class="form-control"
+                      class="form-control textarea"
                       id="exampleFormControlTextarea1"
                       rows="3"
                     ></textarea>
@@ -129,7 +130,7 @@
                       >Diagnostico Medico</label
                     >
                     <textarea
-                      class="form-control"
+                      class="form-control textarea"
                       id="exampleFormControlTextarea1"
                       rows="3"
                     ></textarea>
@@ -140,7 +141,7 @@
                       >Tratamientos Previos</label
                     >
                     <textarea
-                      class="form-control"
+                      class="form-control textarea"
                       id="exampleFormControlTextarea1"
                       rows="3"
                     ></textarea>
@@ -151,14 +152,11 @@
                       >Medicamentos Preinscrios</label
                     >
                     <textarea
-                      class="form-control"
+                      class="form-control textarea"
                       id="exampleFormControlTextarea1"
                       rows="3"
                     ></textarea>
                   </div>
-                  <button type="button" class="btn btn-outline-primary btn-sm">
-                    Guardar
-                  </button>
                 </div>
                 <div
                   class="tab-pane fade"
@@ -176,7 +174,7 @@
                           <div class="input-group mb-1">
                             <input
                               type="number"
-                              class="form-control form-control-sm"
+                              class="form-control form-control-sm textarea"
                               id="exampleFormControlInput1"
                               placeholder="Peso (kg)"
                             />
@@ -184,7 +182,7 @@
                           <div class="input-group mb-1">
                             <input
                               type="number"
-                              class="form-control form-control-sm"
+                              class="form-control form-control-sm textarea"
                               id="exampleFormControlInput1"
                               placeholder="talla (Cm)"
                             />
@@ -192,7 +190,7 @@
                           <div class="input-group mb-1">
                             <input
                               type="number"
-                              class="form-control form-control-sm"
+                              class="form-control form-control-sm textarea"
                               id="exampleFormControlInput1"
                               placeholder="Estatura (Cm)"
                             />
@@ -200,7 +198,7 @@
                           <div class="input-group mb-1">
                             <input
                               type="number"
-                              class="form-control form-control-sm"
+                              class="form-control form-control-sm textarea"
                               id="exampleFormControlInput1"
                               placeholder="IMC"
                             />
@@ -213,7 +211,7 @@
                         <div class="mb-1">
                           <input
                             type="number"
-                            class="form-control form-control-sm"
+                            class="form-control form-control-sm textarea"
                             id="exampleFormControlInput1"
                             placeholder="Temp (C)"
                           />
@@ -221,7 +219,7 @@
                         <div class="mb-1">
                           <input
                             type="number"
-                            class="form-control form-control-sm"
+                            class="form-control form-control-sm textarea"
                             id="exampleFormControlInput1"
                             placeholder="F.cardiaca"
                           />
@@ -229,7 +227,7 @@
                         <div class="mb-1">
                           <input
                             type="number"
-                            class="form-control form-control-sm"
+                            class="form-control form-control-sm textarea"
                             id="exampleFormControlInput1"
                             placeholder="F.respiraotria"
                           />
@@ -237,7 +235,7 @@
                         <div class="mb-1">
                           <input
                             type="number"
-                            class="form-control form-control-sm"
+                            class="form-control form-control-sm textarea"
                             id="exampleFormControlInput1"
                             placeholder="T.Arterial"
                           />
@@ -246,6 +244,7 @@
                     </div>
                   </div>
                 </div>
+
                 <div
                   class="tab-pane fade"
                   id="nav-disabledA"
@@ -260,7 +259,7 @@
                       <div class="container">
                         <div class="mb-1">
                           <select
-                            class="form-select form-select-sm"
+                            class="form-select form-select-sm textarea"
                             aria-label="Default select example"
                           >
                             <option selected>Enfermedad</option>
@@ -272,20 +271,23 @@
                         <div class="mb-1">
                           <input
                             type="email"
-                            class="form-control form-control-sm"
+                            class="form-control form-control-sm textarea"
                             id="exampleFormControlInput1"
                             placeholder="Parentesco"
                           />
                         </div>
                         <div class="mb-1">
                           <textarea
-                            class="form-control form-control-sm"
+                            class="form-control form-control-sm textarea"
                             id="exampleFormControlTextarea1"
                             placeholder="Detalle"
                             rows="2"
                           ></textarea>
                         </div>
-                        <button class="btn btn-primary btn-sm" type="submit">
+                        <button
+                          class="btn btn-primary btn-sm textarea"
+                          type="submit"
+                        >
                           Adicionar
                         </button>
                       </div>
@@ -336,7 +338,7 @@
                       <div class="container">
                         <div class="mb-1">
                           <select
-                            class="form-select form-select-sm"
+                            class="form-select form-select-sm textarea"
                             aria-label="Default select example"
                           >
                             <option selected>Enfermedad</option>
@@ -348,20 +350,23 @@
                         <div class="mb-1">
                           <input
                             type="email"
-                            class="form-control form-control-sm"
+                            class="form-control form-control-sm textarea"
                             id="exampleFormControlInput1"
                             placeholder="Parentesco"
                           />
                         </div>
                         <div class="mb-1">
                           <textarea
-                            class="form-control form-control-sm"
+                            class="form-control form-control-sm textarea"
                             id="exampleFormControlTextarea1"
                             placeholder="Detalle"
                             rows="2"
                           ></textarea>
                         </div>
-                        <button class="btn btn-primary btn-sm" type="submit">
+                        <button
+                          class="btn btn-primary btn-sm textarea"
+                          type="submit"
+                        >
                           Adicionar
                         </button>
                       </div>
@@ -402,141 +407,6 @@
             </div>
           </div>
         </div>
-        <!--  -->
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapse11"
-              aria-expanded="false"
-              aria-controls="panelsStayOpen-collapse11"
-            >
-              IMAGENES O EXAMENES COMPLEMENTARIOS
-            </button>
-          </h2>
-          <div
-            id="panelsStayOpen-collapse11"
-            class="accordion-collapse collapse"
-          >
-            <div class="accordion-body">
-              <!--  -->
-              <nav>
-                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <button
-                    class="nav-link active"
-                    id="nav-b-radiografia"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-radiografia"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-home"
-                    aria-selected="true"
-                  >
-                    Radiografia
-                  </button>
-                  <button
-                    class="nav-link"
-                    id="nav-b-ecografia"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-ecografia"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-profile"
-                    aria-selected="false"
-                  >
-                    Ecografia
-                  </button>
-                  <button
-                    class="nav-link"
-                    id="nav-b-resonancia"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-resonancia"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-profile"
-                    aria-selected="false"
-                  >
-                    Resonancia
-                  </button>
-                  <button
-                    class="nav-link"
-                    id="nav-b-tag"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-tag"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-profile"
-                    aria-selected="false"
-                  >
-                    TAG
-                  </button>
-                  <button
-                    class="nav-link"
-                    id="nav-b-otros"
-                    data-bs-toggle="tab"
-                    data-bs-target="#nav-otros"
-                    type="button"
-                    role="tab"
-                    aria-controls="nav-profile"
-                    aria-selected="false"
-                  >
-                    Otros
-                  </button>
-                </div>
-              </nav>
-              <div class="tab-content" id="nav-tabContent">
-                <div
-                  class="tab-pane fade show active"
-                  id="nav-radiografia"
-                  role="tabpanel"
-                  aria-labelledby="nav-home-tab"
-                  tabindex="0"
-                >
-                  Radiografia
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="nav-ecografia"
-                  role="tabpanel"
-                  aria-labelledby="nav-profile-tab"
-                  tabindex="0"
-                >
-                  Ecografia
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="nav-resonancia"
-                  role="tabpanel"
-                  aria-labelledby="nav-profile-tab"
-                  tabindex="0"
-                >
-                  Resonancia
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="nav-tag"
-                  role="tabpanel"
-                  aria-labelledby="nav-profile-tab"
-                  tabindex="0"
-                >
-                  TAG
-                </div>
-                <div
-                  class="tab-pane fade"
-                  id="nav-otros"
-                  role="tabpanel"
-                  aria-labelledby="nav-profile-tab"
-                  tabindex="0"
-                >
-                  Otros
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--  -->
 
         <div class="accordion-item">
           <h2 class="accordion-header">
@@ -548,7 +418,9 @@
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapse2"
             >
-              EVALUACION POSTURAL
+            <v-icon name="io-construct-sharp" fill="red"  scale="0.7"/>
+            
+            Evaluacion Postural
             </button>
           </h2>
           <div
@@ -618,7 +490,7 @@
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapse3"
             >
-              INSPECCION DINAMICA
+            <v-icon name="io-construct-sharp" fill="red"  scale="0.7"/>  Inspeccion Dinamica
             </button>
           </h2>
           <div
@@ -641,7 +513,7 @@
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapse4"
             >
-              ESCALA VISUAL ANALOGICA DEL DOLOR (EVA)
+            <v-icon name="io-construct-sharp" fill="red"  scale="0.7"/> Escala Visual Analogica del dolor (EVA)
             </button>
           </h2>
           <div
@@ -670,7 +542,7 @@
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapse5"
             >
-              EXPLORACION FISICA
+            <v-icon name="io-construct-sharp" fill="red"  scale="0.7"/> Exploracion Fisica
             </button>
           </h2>
           <div
@@ -764,7 +636,7 @@
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapse6"
             >
-              SISTEMA MUSCULAR
+            <v-icon name="io-construct-sharp" fill="red"  scale="0.7"/>  Sistema muscular
             </button>
           </h2>
           <div
@@ -882,7 +754,7 @@
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapse7"
             >
-              MANIOBRAS, ESCALAS O TEST EXPLORATORIOS
+            <v-icon name="ai-biorxiv-square" fill="blue"/>  Pruebas de Imagen o Examenes Complementarios
             </button>
           </h2>
           <div
@@ -890,14 +762,162 @@
             class="accordion-collapse collapse"
           >
             <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button
+                    class="nav-link active"
+                    id="nav-b-radiografia"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-radiografia"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-home"
+                    aria-selected="true"
+                  >
+                    Radiografia
+                  </button>
+                  <button
+                    class="nav-link"
+                    id="nav-b-ecografia"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-ecografia"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                  >
+                    Ecografia
+                  </button>
+                  <button
+                    class="nav-link"
+                    id="nav-b-resonancia"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-resonancia"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                  >
+                    Resonancia
+                  </button>
+                  <button
+                    class="nav-link"
+                    id="nav-b-tag"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-tag"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                  >
+                    TAG
+                  </button>
+                  <button
+                    class="nav-link"
+                    id="nav-b-otros"
+                    data-bs-toggle="tab"
+                    data-bs-target="#nav-otros"
+                    type="button"
+                    role="tab"
+                    aria-controls="nav-profile"
+                    aria-selected="false"
+                  >
+                    Otros
+                  </button>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="nav-radiografia"
+                  role="tabpanel"
+                  aria-labelledby="nav-home-tab"
+                  tabindex="0"
+                >
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                      >Breve descripcion de la Radiografia</label
+                    >
+                    <textarea
+                      class="form-control textarea"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="nav-ecografia"
+                  role="tabpanel"
+                  aria-labelledby="nav-profile-tab"
+                  tabindex="0"
+                >
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                      >Breve descripcion de la Ecografia</label
+                    >
+                    <textarea
+                      class="form-control textarea"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="nav-resonancia"
+                  role="tabpanel"
+                  aria-labelledby="nav-profile-tab"
+                  tabindex="0"
+                >
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                      >Breve descripcion de la Resonancia</label
+                    >
+                    <textarea
+                      class="form-control textarea"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="nav-tag"
+                  role="tabpanel"
+                  aria-labelledby="nav-profile-tab"
+                  tabindex="0"
+                >
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                      >Breve descripcion del TAG</label
+                    >
+                    <textarea
+                      class="form-control textarea"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="nav-otros"
+                  role="tabpanel"
+                  aria-labelledby="nav-profile-tab"
+                  tabindex="0"
+                >
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                      >Breve descripcion de Otros</label
+                    >
+                    <textarea
+                      class="form-control textarea"
+                      id="exampleFormControlTextarea1"
+                      rows="3"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -911,7 +931,7 @@
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapse8"
             >
-              PRUEBAS DE IMAGEN O EXAMENES COMPLEMENTARIOS
+            <v-icon name="io-construct-sharp" fill="red"  scale="0.7"/> Maniobras, Escalas o Tests Exploratorios
             </button>
           </h2>
           <div
@@ -940,7 +960,7 @@
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapse9"
             >
-              PLAN ANALITICO DE ATENCION FISIOTERAPEUTICA
+            <v-icon name="io-construct-sharp" fill="red"  scale="0.7"/> Plan Analitico de Atencion Fisioterapeutica
             </button>
           </h2>
           <div
@@ -1058,7 +1078,7 @@
               aria-expanded="false"
               aria-controls="panelsStayOpen-collapse10"
             >
-              TRATAMIENTO
+            <v-icon name="fa-hand-holding-medical"  fill="blue"/>   Tratamiento
             </button>
           </h2>
           <div
@@ -1078,6 +1098,8 @@
           </div>
         </div>
       </div>
+      <br>
+      <button type="button" class="btn btn-primary btn-sm">Guardar Historia Clinica</button>
     </div>
   </div>
 </template>
@@ -1111,5 +1133,16 @@ button.accordion-button:not(.collapsed) {
 }
 .minitext {
   font-size: 0.6rem;
+}
+.retrato {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.textarea {
+  font-size: 0.6rem !important;
+  color: red;
 }
 </style>
