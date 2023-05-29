@@ -16,7 +16,7 @@
     <h3>Linea de Tecnologias Virtuales</h3>
     <p>Juan David Vertel H</p>
     <br>
-    <router-link to="/">Home</router-link>
+    <v-icon name="fa-home"  fill="blue"/><router-link to="/">Home</router-link>
   </div>
 </template>
 <style>

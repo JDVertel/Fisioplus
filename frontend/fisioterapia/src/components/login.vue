@@ -27,7 +27,7 @@
        <br>
 
        <router-link to="/register"> <a class="underlineHover"></a>Registrarme</router-link> <hr>
-       <router-link to="/"> <a class="underlineHover"></a>Salir</router-link> <br>
+       <v-icon name="fa-home"  fill="blue"/> <router-link to="/"> <a class="underlineHover"></a>Salir</router-link> <br>
     </div>
 
   </div>

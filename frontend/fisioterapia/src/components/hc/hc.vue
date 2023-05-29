@@ -106,54 +106,57 @@
                   </button>
                 </div>
               </nav>
+              <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
               <div class="tab-content" id="nav-tabContent">
                 <div
-                  class="tab-pane fade"
+                  class="tab-pane fade show active"
                   id="nav-profileA"
                   role="tabpanel"
                   aria-labelledby="nav-profile-tab"
                   tabindex="0"
                 >
                   <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label"
+                    <p>Breve descripcion</p>
+                    <label for="text_motivoconsulta" class="form-label"
                       >Motivo de Consulta</label
                     >
+             
                     <textarea
                       class="form-control textarea"
-                      id="exampleFormControlTextarea1"
+                      id="text_motivoconsulta"
                       rows="3"
                     ></textarea>
                   </div>
 
                   <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label"
+                    <label for="text_diagnosticomedico" class="form-label"
                       >Diagnostico Medico</label
                     >
                     <textarea
                       class="form-control textarea"
-                      id="exampleFormControlTextarea1"
+                      id="text_diagnosticomedico"
                       rows="3"
                     ></textarea>
                   </div>
 
                   <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label"
+                    <label for="text_tratamientosprevios" class="form-label"
                       >Tratamientos Previos</label
                     >
                     <textarea
                       class="form-control textarea"
-                      id="exampleFormControlTextarea1"
+                      id="text_tratamientosprevios"
                       rows="3"
                     ></textarea>
                   </div>
 
                   <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label"
+                    <label for="text_medicamentospreinscritos" class="form-label"
                       >Medicamentos Preinscrios</label
                     >
                     <textarea
                       class="form-control textarea"
-                      id="exampleFormControlTextarea1"
+                      id="text_medicamentospreinscritos"
                       rows="3"
                     ></textarea>
                   </div>
@@ -175,7 +178,7 @@
                             <input
                               type="number"
                               class="form-control form-control-sm textarea"
-                              id="exampleFormControlInput1"
+                              id="text_peso"
                               placeholder="Peso (kg)"
                             />
                           </div>
@@ -183,7 +186,7 @@
                             <input
                               type="number"
                               class="form-control form-control-sm textarea"
-                              id="exampleFormControlInput1"
+                              id="text_talla"
                               placeholder="talla (Cm)"
                             />
                           </div>
@@ -191,7 +194,7 @@
                             <input
                               type="number"
                               class="form-control form-control-sm textarea"
-                              id="exampleFormControlInput1"
+                              id="text_estatura"
                               placeholder="Estatura (Cm)"
                             />
                           </div>
@@ -199,7 +202,7 @@
                             <input
                               type="number"
                               class="form-control form-control-sm textarea"
-                              id="exampleFormControlInput1"
+                              id="text_imc"
                               placeholder="IMC"
                             />
                           </div>
@@ -212,7 +215,7 @@
                           <input
                             type="number"
                             class="form-control form-control-sm textarea"
-                            id="exampleFormControlInput1"
+                            id="text_temp"
                             placeholder="Temp (C)"
                           />
                         </div>
@@ -220,7 +223,7 @@
                           <input
                             type="number"
                             class="form-control form-control-sm textarea"
-                            id="exampleFormControlInput1"
+                            id="text_fcardiaca"
                             placeholder="F.cardiaca"
                           />
                         </div>
@@ -228,7 +231,7 @@
                           <input
                             type="number"
                             class="form-control form-control-sm textarea"
-                            id="exampleFormControlInput1"
+                            id="text_frespiratoria"
                             placeholder="F.respiraotria"
                           />
                         </div>
@@ -236,7 +239,7 @@
                           <input
                             type="number"
                             class="form-control form-control-sm textarea"
-                            id="exampleFormControlInput1"
+                            id="text_tarterial"
                             placeholder="T.Arterial"
                           />
                         </div>
@@ -1086,20 +1089,28 @@
             class="accordion-collapse collapse"
           >
             <div class="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"
+                  >Descripcion</label
+                >
+                <textarea
+                  class="form-control textarea"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
+              </div>
+
             </div>
           </div>
         </div>
       </div>
+
       <br>
-      <button type="button" class="btn btn-primary btn-sm">Guardar Historia Clinica</button>
+      <div class="row">
+        <div class="col-6"><v-icon name="fa-home"  fill="blue"/>     <router-link to="/">Home</router-link></div>
+        <div class="col-6">      <button type="button" class="btn btn-primary btn-sm">Guardar Historia Clinica</button></div>
+      </div>
+
     </div>
   </div>
 </template>

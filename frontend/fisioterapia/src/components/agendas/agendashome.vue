@@ -258,7 +258,7 @@
       </div>
       <br />
     </div>
-    <router-link to="/">Home</router-link>
+    <v-icon name="fa-home"  fill="blue"/><router-link to="/">Home</router-link>
   </div>
 </template>
 
