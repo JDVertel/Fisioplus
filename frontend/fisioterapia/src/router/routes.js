@@ -10,6 +10,8 @@ import HomeAgendas from "./../components/agendas/agendashome.vue";
 import HomeConfiguracion from "./../components/configuracion/configuracionhome.vue";
 //hc
 import hc from "./../components/hc/hc.vue";
+import uregister from "./../components/hc/uregister.vue";
+import SearchHC from "./../components/hc/search_history.vue";
 
 const routes = [
   //aplication
@@ -17,20 +19,18 @@ const routes = [
   { path: "/about", component: About, name: "about" },
   { path: "/login", component: Login, name: "login" },
   { path: "/register", component: Register, name: "register" },
-
   // agendas
   { path: "/homeAgendas", component: HomeAgendas, name: "agendas" },
-
   //contenido web
   {
     path: "/Configuracion",
     component: HomeConfiguracion,
     name: "configuracion",
   },
-
   //hc
-
+  { path: "/uregister", component: uregister, name: "uregister" },
   { path: "/hc", component: hc, name: "hc" },
+  { path: "/SearchHC", component: SearchHC, name: "SearchHC" },
 ];
 
 const router = createRouter({

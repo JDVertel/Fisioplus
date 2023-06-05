@@ -69,42 +69,15 @@
                 ></router-link
               >
             </li>
-            <!--      <li class="nav-item">
-              <router-link to="/about"
+                 <li class="nav-item">
+              <router-link to="/SearchHC"
                 ><a class="nav-link" aria-current="page"
                   >H Clinica</a
                 ></router-link
               >
             </li>
-             -->
+            
 
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                HC Fisioterapia
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item">
-                    <router-link to="/hc"
-                      ><a class="nav-link" aria-current="page"
-                        >HC</a
-                      ></router-link
-                    ></a
-                  >
-                </li>
-                <li><a class="dropdown-item">Consultar</a></li>
-                <li><a class="dropdown-item">Otras actividades</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item">Productos</a></li>
-              </ul>
-            </li>
             <li class="nav-item">
               <router-link to="/about">
                 <a class="nav-link">Informes</a></router-link
