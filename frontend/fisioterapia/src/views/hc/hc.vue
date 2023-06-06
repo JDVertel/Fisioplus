@@ -1,5 +1,3 @@
-
-
 <template>
   <div class="container-fluid mt-3">
     <div class="row">
@@ -18,6 +16,8 @@
   </div>
 
   <hr />
+<div class="container">
+
 
   <div id="register">
     <div class="row">
@@ -199,10 +199,7 @@
           </div>
           <br />
           <div class="row">
-            <div class="col-6 minitext">
-              <v-icon name="fa-home" fill="blue" />
-              <router-link to="/">Home</router-link>
-            </div>
+            <homeB />
             <div class="col-6">
               <button type="button" class="btn btn-success btn-sm">
                 Registrar paciente
@@ -213,7 +210,7 @@
       </div>
     </div>
   </div>
-
+</div>
   <hr />
 
   <div id="AppHC">
@@ -267,7 +264,7 @@
           <li class="nav-item" role="presentation">
             <button
               class="nav-link active"
-              id="pills-home-tab"
+              id="pills_historial"
               data-bs-toggle="pill"
               data-bs-target="#pills-home"
               type="button"
@@ -281,12 +278,12 @@
           <li class="nav-item" role="presentation">
             <button
               class="nav-link"
-              id="pills-profile-tab"
+              id="pills_HC-tab"
               data-bs-toggle="pill"
-              data-bs-target="#pills-profile"
+              data-bs-target="#pills_HC"
               type="button"
               role="tab"
-              aria-controls="pills-profile"
+              aria-controls="pills_HC"
               aria-selected="false"
             >
               Historia Clinica
@@ -299,7 +296,7 @@
             class="tab-pane fade show active"
             id="pills-home"
             role="tabpanel"
-            aria-labelledby="pills-home-tab"
+            aria-labelledby="pills_historial"
             tabindex="0"
           >
             <div class="table-responsive">
@@ -333,56 +330,30 @@
                   </tr>
                 </tbody>
               </table>
+              <homeB />
+            </div>
+          </div>
 
-              <div>
-                <v-icon name="fa-home" fill="blue" />
-                <router-link to="/">Home</router-link>
+          <div
+            class="tab-pane fade"
+            id="pills_HC"
+            role="tabpanel"
+            aria-labelledby="pills_HC-tab"
+            tabindex="0"
+          >
+            <HCFisio />
+            <br />
+            <div class="row">
+              <homeB />
+              <div class="col-6">
+                <button type="button" class="btn btn-primary btn-sm">
+                  Guardar Historia Clinica
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <div
-          class="tab-pane fade"
-          id="pills-profile"
-          role="tabpanel"
-          aria-labelledby="pills-profile-tab"
-          tabindex="0"
-        >
-     <HCFisio />
-
-        </div>
-        <br />
-        <div class="row">
-          <div class="col-6">
-            <v-icon name="fa-home" fill="blue" />
-            <router-link to="/">Home</router-link>
-          </div>
-          <div class="col-6">
-            <button type="button" class="btn btn-primary btn-sm">
-              Guardar Historia Clinica
-            </button>
-          </div>
-        </div>
       </div>
-      <!-- 
-        <div
-          class="tab-pane fade"
-          id="pills-contact"
-          role="tabpanel"
-          aria-labelledby="pills-contact-tab"
-          tabindex="0"
-        >
-          3
-        </div>
-        <div
-          class="tab-pane fade"
-          id="pills-disabled"
-          role="tabpanel"
-          aria-labelledby="pills-disabled-tab"
-          tabindex="0"
-        >
-          43
-        </div> -->
     </div>
 
     <!--************************************************************************************************************  -->
@@ -395,10 +366,9 @@
   </div>
 </template>
 
-
 <script setup>
-import HCFisio from '../../components/hclinica.vue'
-
+import HCFisio from "../../components/hclinica.vue";
+import homeB from "./../../components/homebutton.vue";
 </script>
 
 <style>
@@ -428,9 +398,7 @@ button.accordion-button:not(.collapsed) {
   color: aliceblue;
   text-shadow: 1px 1px 2px black;
 }
-.minitext {
-  font-size: 0.6rem;
-}
+
 .retrato {
   display: flex;
   align-content: center;

@@ -1095,7 +1095,7 @@
 </template>
 
 <script>
-
+import homeB from './../components/homebutton.vue'
 </script>
 
 <style>

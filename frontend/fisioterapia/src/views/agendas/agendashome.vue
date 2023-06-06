@@ -1,7 +1,8 @@
 <template>
   <div class="container" id="agendas">
-    <br />
-    <h3 >Gestion de las agendas</h3>
+  <h3 class="display-6" >Gestion de las agendas</h3>
+
+ <br>
 
     <div class="accordion accordion-flush" id="accordionPanelAgendas">
       <div class="accordion-item">
@@ -19,12 +20,12 @@
         </h2>
         <div
           id="panelsStayOpen-collapseOne"
-          class="accordion-collapse collapse"
+          class="accordion-collapse collapse show"
         >
           <div class="accordion-body">
             <h6>Listado de Agendas disponibles</h6>
             <p>
-              tabla con el listado de los dias de agendas disponibles y la
+              Tabla con el listado de los dias de agendas disponibles y la
               cantidad de horas disponibles dividida en jornadas, registros a
               partir de las fechas
             </p>
@@ -162,39 +163,31 @@
           class="accordion-collapse collapse"
         >
           <div class="accordion-body">
-            <p>Opciones para agendar una nueva agenda</p>
-            <p>campos</p>
-            |fecha|jornada|tipo_agenda|
-
-            <table class="table table-sm">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
+            <p>Opciones para realizar un nuevo agendamiento</p>
+      
+            <form>
+              <div class="row formulario">
+                <div class="col-4 fechas"><input class="form-control form-control-sm textarea" type="date"  aria-label=".form-control-sm example"></div>
+             
+                <div class="col-4"><select
+                  class="form-select form-select-sm textarea"
+                  aria-label="Default select example"
+                >
+                  <option selected>Plantilla</option>
+                  <option value="1">AM Normal</option>
+                  <option value="2">PM Normal</option>
+                  <option value="3">AM Sabado</option>
+                  <option value="4">PM Sabado</option>
+                </select></div>  
+                <div class="col-4">        <button class="btn btn-primary btn-sm textarea" >Agendar</button></div>
+        
+     
+              </div>
+              <br>
+            
+            <br>
+            </form>
+     
           </div>
         </div>
       </div>
@@ -270,13 +263,16 @@
 #agendas{
   font-size: 0.6rem;
   background: fixed;
+  margin-top: 50px!important;
 }
 .fechas{
   padding: 1px !important;
 
 }
-.textarea{
+textarea , select, input, button {
 font-size: 0.6rem !important;
 }
+
+
 </style>
 

@@ -10,8 +10,7 @@ import HomeAgendas from "./../views/agendas/agendashome.vue";
 import HomeConfiguracion from "./../views/configuracion/configuracionhome.vue";
 //hc
 import hc from "./../views/hc/hc.vue";
-import uregister from "./../views/hc/uregister.vue";
-import SearchHC from "./../views/hc/search_history.vue";
+
 
 const routes = [
   //aplication
@@ -28,9 +27,9 @@ const routes = [
     name: "configuracion",
   },
   //hc
-  { path: "/uregister", component: uregister, name: "uregister" },
+
   { path: "/hc", component: hc, name: "hc" },
-  { path: "/SearchHC", component: SearchHC, name: "SearchHC" },
+
 ];
 
 const router = createRouter({

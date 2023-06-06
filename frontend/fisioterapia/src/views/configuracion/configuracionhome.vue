@@ -1,106 +1,110 @@
 <template>
-  <div class="container">
-    <h3>Gestion de la Configuracion de la App</h3>
+  <div class="container config">
+    <h3 class="display-6 text-center">Gestion de la Configuracion de la App</h3>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <div>
+            <select
+              class="form-select form-select-sm"
+              aria-label="Default select example"
+            >
+              <option selected>Categoria</option>
+              <option value="1">Servicios</option>
+              <option value="2">Clases</option>
+              <option value="3">Productos</option>
+            </select>
+          </div>
+          <div>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Nombre"
+            />
+          </div>
+          <div>
+            <input
+              type="number"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="Precio"
+            />
+          </div>
+        </div>
 
-    <div class="accordion" id="accordionPanelsStayOpenExample">
-      <!--  -->
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#panelsStayOpen-collapseOne"
-            aria-expanded="true"
-            aria-controls="panelsStayOpen-collapseOne"
-          >
-        Contenidos
-          </button>
-        </h2>
-        <div
-          id="panelsStayOpen-collapseOne"
-          class="accordion-collapse collapse show"
-        >
-          <div class="accordion-body">
-    <p>componente de gestion de contenido </p>
-    modal llamado por un boton 
-    <p>modulo add con las diguientes estructura |tipo (servicios-clases y rutinas-productos)| titulo | contenido | fotgrafia| costo</p>
-
-    <hr>
-    <p>tabla de contenidos con opciones estructura : tipo|titulo|estado|opciones(editar-cambiar estado-eliminar)</p>
+        <div class="col-6">
+          <div>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="2"
+              placeholder="Detalle"
+            ></textarea>
+          </div>
+          <div>
+            <div class="mb-3">
+              <input class="form-control" type="file" id="formFile" />
+            </div>
           </div>
         </div>
       </div>
-      <!--  -->
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#panelsStayOpen-collapseTwo"
-            aria-expanded="false"
-            aria-controls="panelsStayOpen-collapseTwo"
-          >
-            Parametros
-          </button>
-        </h2>
-        <div
-          id="panelsStayOpen-collapseTwo"
-          class="accordion-collapse collapse"
-        >
-          <div class="accordion-body">
-            <strong>This is the second item's accordion body.</strong> It is
-            hidden by default, until the collapse plugin adds the appropriate
-            classes that we use to style each element. These classes control the
-            overall appearance, as well as the showing and hiding via CSS
-            transitions. You can modify any of this with custom CSS or
-            overriding our default variables. It's also worth noting that just
-            about any HTML can go within the <code>.accordion-body</code>,
-            though the transition does limit overflow.
-          </div>
-        </div>
-      </div>
-      <!--  -->
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#panelsStayOpen-collapseThree"
-            aria-expanded="false"
-            aria-controls="panelsStayOpen-collapseThree"
-          >
-            Servicios
-          </button>
-        </h2>
-        <div
-          id="panelsStayOpen-collapseThree"
-          class="accordion-collapse collapse"
-        >
-          <div class="accordion-body">
-            <strong>This is the third item's accordion body.</strong> It is
-            hidden by default, until the collapse plugin adds the appropriate
-            classes that we use to style each element. These classes control the
-            overall appearance, as well as the showing and hiding via CSS
-            transitions. You can modify any of this with custom CSS or
-            overriding our default variables. It's also worth noting that just
-            about any HTML can go within the <code>.accordion-body</code>,
-            though the transition does limit overflow.
-          </div>
-        </div>
+      <div>
+        <button type="button" class="btn btn-success btn-sm">Crear Articulo</button>
       </div>
 
+      <br />
+      <hr>
+<p>Articulos Publicados</p>
+      <div class="table-responsive">
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">categ</th>
+              <th scope="col">titulo</th>
+              <th scope="col">estado</th>
+              <th scope="col">opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <td>@mdo</td>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <td>@mdo</td>
+              <td>@mdo</td>
+              <td>@twitter</td>
+              <td>@mdo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-
-    <hr />
-    <v-icon name="fa-home"  fill="blue"/> <router-link to="/">Home</router-link>
+    <homebutton />
   </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import homebutton from "../../components/homebutton.vue";
 </script>
 
-<style></style>
+<style>
+
+.config {
+  font-size: 0.6rem;
+  background: fixed;
+}
+textarea , select, input, button {
+  font-size: 0.6rem !important;
+  }
+  
+</style>
