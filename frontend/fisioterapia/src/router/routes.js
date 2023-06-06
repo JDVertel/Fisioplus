@@ -1,17 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
 //aplicacion
-import Home from "./../components/home.vue";
-import About from "./../components/about.vue";
-import Login from "./../components/login.vue";
-import Register from "./../components/register.vue";
+import Home from "./../views/home.vue";
+import About from "./../views/about.vue";
+import Login from "./../views/login.vue";
+import Register from "./../views/register.vue";
 // agendas
-import HomeAgendas from "./../components/agendas/agendashome.vue";
+import HomeAgendas from "./../views/agendas/agendashome.vue";
 //contenido web
-import HomeConfiguracion from "./../components/configuracion/configuracionhome.vue";
+import HomeConfiguracion from "./../views/configuracion/configuracionhome.vue";
 //hc
-import hc from "./../components/hc/hc.vue";
-import uregister from "./../components/hc/uregister.vue";
-import SearchHC from "./../components/hc/search_history.vue";
+import hc from "./../views/hc/hc.vue";
+import uregister from "./../views/hc/uregister.vue";
+import SearchHC from "./../views/hc/search_history.vue";
 
 const routes = [
   //aplication

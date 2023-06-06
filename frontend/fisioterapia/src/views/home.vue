@@ -29,13 +29,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <!--  <li class="nav-item">
-                            <a class="nav-link active" aria-current="page">Home</a>
-                          </li> -->
+         
             <li class="nav-item">
               <router-link to="/login"
                 ><a class="nav-link" aria-current="page">
-                  <v-icon name="gi-scarecrow" /> Login</a
+                  Login</a
                 ></router-link
               >
             </li>
@@ -70,7 +68,7 @@
               >
             </li>
                  <li class="nav-item">
-              <router-link to="/SearchHC"
+              <router-link to="/HC"
                 ><a class="nav-link" aria-current="page"
                   >H Clinica</a
                 ></router-link
