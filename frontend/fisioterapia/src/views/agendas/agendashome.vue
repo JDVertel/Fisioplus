@@ -1,8 +1,8 @@
 <template>
   <div class="container" id="agendas">
-  <h3 class="display-6" >Gestion de las agendas</h3>
+    <h3 class="display-6">Gestion de las agendas</h3>
 
- <br>
+    <br />
 
     <div class="accordion accordion-flush" id="accordionPanelAgendas">
       <div class="accordion-item">
@@ -37,44 +37,68 @@
               parametrizados
             </p>
             <div class="table-responsive">
-            <table class="table table-sm">
-              <thead>
-                <tr>
-                  <th scope="col">Fecha</th>
-                  <th scope="col">Jornada</th>
-                  <th scope="col">Tipo</th>
-                  <th scope="col">Disponibles</th>
-                  <th scope="col">Ver/reservar</th>
-                  
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>@mdo</td>
-                  <td> <div class="col-4 fechas"><button class="btn btn-primary btn-sm textarea" type="submit">ver</button></div></td>
-            
-                </tr>
-                <tr>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>@mdo</td>
-                  <td> <div class="col-4 fechas"><button class="btn btn-primary btn-sm textarea" type="submit">ver</button></div></td>
-            
-                </tr>
-                <tr>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>@mdo</td>
-                  <td> <div class="col-4 fechas"><button class="btn btn-primary btn-sm textarea" type="submit">ver</button></div></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Jornada</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Disponibles</th>
+                    <th scope="col">Ver/reservar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>@mdo</td>
+                    <td>
+                      <div class="col-4 fechas">
+                        <button
+                          class="btn btn-primary btn-sm textarea"
+                          type="submit"
+                        >
+                          ver
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>@mdo</td>
+                    <td>
+                      <div class="col-4 fechas">
+                        <button
+                          class="btn btn-primary btn-sm textarea"
+                          type="submit"
+                        >
+                          ver
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>@mdo</td>
+                    <td>
+                      <div class="col-4 fechas">
+                        <button
+                          class="btn btn-primary btn-sm textarea"
+                          type="submit"
+                        >
+                          ver
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -96,53 +120,70 @@
           class="accordion-collapse collapse"
         >
           <div class="accordion-body">
-    
-
-<form>
-  <div class="row">
-    <div class="col-4 fechas">Fecha Inicial<input class="form-control form-control-sm textarea" type="date"  aria-label=".form-control-sm example"></div>
-    <div class="col-4 fechas">Fecha Final<input class="form-control form-control-sm textarea" type="date"  aria-label=".form-control-sm example"></div>
-    <div class="col-4 fechas"> <br><button class="btn btn-primary btn-sm textarea" type="submit">Consultar</button></div>
-  </div>
-<br>
-</form>
-<div class="table-responsive">
-            <table class="table table-sm">
-              <thead>
-                <tr>
-                  <th scope="col">Fecha</th>
-                  <th scope="col">Tipo</th>
-                  <th scope="col">Hora</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Estado</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>@mdo</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@twitter</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                </tr>
-              </tbody>
-            </table>
+            <form>
+              <div class="row">
+                <div class="col-4 fechas">
+                  Fecha Inicial<input
+                    class="form-control form-control-sm textarea"
+                    type="date"
+                    aria-label=".form-control-sm example"
+                  />
+                </div>
+                <div class="col-4 fechas">
+                  Fecha Final<input
+                    class="form-control form-control-sm textarea"
+                    type="date"
+                    aria-label=".form-control-sm example"
+                  />
+                </div>
+                <div class="col-4 fechas">
+                  <br /><button
+                    class="btn btn-primary btn-sm textarea"
+                    type="submit"
+                  >
+                    Consultar
+                  </button>
+                </div>
+              </div>
+              <br />
+            </form>
+            <div class="table-responsive">
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <td>@mdo</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                    <td>@twitter</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
         </div>
       </div>
       <div class="accordion-item">
@@ -155,7 +196,7 @@
             aria-expanded="false"
             aria-controls="panelsStayOpen-collapseThree"
           >
-           Agendar
+            Agendar
           </button>
         </h2>
         <div
@@ -164,30 +205,39 @@
         >
           <div class="accordion-body">
             <p>Opciones para realizar un nuevo agendamiento</p>
-      
+
             <form>
               <div class="row formulario">
-                <div class="col-4 fechas"><input class="form-control form-control-sm textarea" type="date"  aria-label=".form-control-sm example"></div>
-             
-                <div class="col-4"><select
-                  class="form-select form-select-sm textarea"
-                  aria-label="Default select example"
-                >
-                  <option selected>Plantilla</option>
-                  <option value="1">AM Normal</option>
-                  <option value="2">PM Normal</option>
-                  <option value="3">AM Sabado</option>
-                  <option value="4">PM Sabado</option>
-                </select></div>  
-                <div class="col-4">        <button class="btn btn-primary btn-sm textarea" >Agendar</button></div>
-        
-     
+                <div class="col-4 fechas">
+                  <input
+                    class="form-control form-control-sm textarea"
+                    type="date"
+                    aria-label=".form-control-sm example"
+                  />
+                </div>
+
+                <div class="col-4">
+                  <select
+                    class="form-select form-select-sm textarea"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Plantilla</option>
+                    <option value="1">AM Normal</option>
+                    <option value="2">PM Normal</option>
+                    <option value="3">AM Sabado</option>
+                    <option value="4">PM Sabado</option>
+                  </select>
+                </div>
+                <div class="col-4">
+                  <button class="btn btn-primary btn-sm textarea">
+                    Agendar
+                  </button>
+                </div>
               </div>
-              <br>
-            
-            <br>
+              <br />
+
+              <br />
             </form>
-     
           </div>
         </div>
       </div>
@@ -209,9 +259,55 @@
           class="accordion-collapse collapse"
         >
           <div class="accordion-body">
-            <p>Plantillas de tipos de jornadas </p>
-        
+   
 
+            <div class="container newplantilla">
+              <p><strong>Plantillas de tipos de jornadas</strong></p>
+              <p>+Crear una Nueva plantilla</p>
+              <div class="row">
+                <div class="col-6 ">
+                  <div>
+                    Hora inicial<input
+                      class="form-control form-control-sm textarea"
+                      type="time"
+                      aria-label=".form-control-sm example"
+                    />
+                  </div>
+                  <div>
+                    Hora final<input
+                      class="form-control form-control-sm textarea"
+                      type="time"
+                      aria-label=".form-control-sm example"
+                    />
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <input
+                      class="form-control form-control-sm"
+                      type="number"
+                      placeholder="Tiempo de consulta"
+                      aria-label=".form-control-sm example"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      class="form-control form-control-sm"
+                      type="text"
+                      placeholder="Nombre de Plantilla"
+                      aria-label=".form-control-sm example"
+                    />
+                  </div>
+                  <div>
+                    <button type="button" class="btn btn-primary btn-sm">
+                      Guardar Plantilla
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br />
+            <p>Listado de Plantillas del Sistema</p>
             <table class="table table-sm">
               <thead>
                 <tr>
@@ -251,28 +347,32 @@
       </div>
       <br />
     </div>
-    <v-icon name="fa-home"  fill="blue"/><router-link to="/">Home</router-link>
+    <v-icon name="fa-home" fill="blue" /><router-link to="/">Home</router-link>
   </div>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style>
-#agendas{
+#agendas {
   font-size: 0.6rem;
   background: fixed;
-  margin-top: 50px!important;
+  margin-top: 50px !important;
 }
-.fechas{
+.fechas {
   padding: 1px !important;
-
 }
-textarea , select, input, button {
-font-size: 0.6rem !important;
+textarea,
+select,
+input,
+button {
+  font-size: 0.6rem !important;
 }
 
+.newplantilla {
+padding: 5px;
+  background-color: rgb(207, 232, 224);
+  padding: 20px !important;
+}
 
 </style>
-

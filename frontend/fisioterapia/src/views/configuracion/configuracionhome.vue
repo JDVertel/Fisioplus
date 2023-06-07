@@ -1,4 +1,5 @@
 <template>
+  <br>
   <div class="container config">
     <h3 class="display-6 text-center">Gestion de la Configuracion de la App</h3>
     <div class="container">
@@ -105,6 +106,10 @@ import homebutton from "../../components/homebutton.vue";
 }
 textarea , select, input, button {
   font-size: 0.6rem !important;
+  }
+
+  .display-6{
+    font-size: 1.4rem !important;
   }
   
 </style>

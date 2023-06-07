@@ -14,7 +14,8 @@
             </p>
           </div>
           <div class="card-footer">
-            <small class="text-muted">45min</small>
+         <!--    <small class="text-muted">45min</small> -->
+         <button type="button" class="btn btn-primary btn-sm">Agendar</button>
           </div>
         </div>
       </div>

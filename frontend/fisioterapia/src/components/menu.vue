@@ -1,0 +1,93 @@
+<template>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+        <!--   <a class="navbar-brand"
+            ><img
+              src="@/assets/logo.png"
+              id="icon"
+              alt="User Icon"
+              style="width: 35px"
+            />
+            Menu</a
+          > -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>Menu
+          </button> 
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <router-link to="/login"
+                  ><a class="nav-link" aria-current="page"> Login</a></router-link
+                >
+              </li>
+              <li class="nav-item">
+                <router-link to="/about"
+                  ><a class="nav-link" aria-current="page"
+                    >Acerca de</a
+                  ></router-link
+                >
+              </li>
+  
+              <li class="nav-item">
+                <hr class="navbar-divider" />
+              </li>
+  
+              <li class="nav-item">
+                <a class="navbar-brand">Administracion</a>
+              </li>
+  
+              <li class="nav-item">
+                <router-link to="/homeAgendas"
+                  ><a class="nav-link" aria-current="page"
+                    >Agendas</a
+                  ></router-link
+                >
+              </li>
+              <li class="nav-item">
+                <router-link to="/Configuracion"
+                  ><a class="nav-link" aria-current="page"
+                    >Configuracion</a
+                  ></router-link
+                >
+              </li>
+              <li class="nav-item">
+                <router-link to="/HC"
+                  ><a class="nav-link" aria-current="page"
+                    >H Clinica</a
+                  ></router-link
+                >
+              </li>
+  
+             <!--  <li class="nav-item">
+                <router-link to="/about">
+                  <a class="nav-link">Informes</a></router-link
+                >
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+  
+</template>
+
+<script setup>
+
+</script>
+
+<style>
+.nav-link {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+  }
+</style>
