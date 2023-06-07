@@ -1,5 +1,7 @@
 <script>
+import { defineComponent } from 'vue';
 import Footer from "./views/footer.vue";
+
 export default {
   name: "App",
   components: {

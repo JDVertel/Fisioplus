@@ -16,338 +16,192 @@
   </div>
 
   <hr />
-<div class="container">
+  
+    <!-- **************************************************************************************************** -->
+    <div id="register" v-if="registrado==0">
+      <div class="row">
+        <h6 class="display-6 text-center">Paciente no Encontrado !!!</h6>
+        <p class="text-center">
+          Ingrese los datos solicitados para registrar un nuevo paciente
+        </p>
 
-
-  <div id="register">
-    <div class="row">
-      <h6 class="display-6 text-center">Paciente no Encontrado !!!</h6>
-      <p class="text-center">
-        Ingrese los datos solicitados para registrar un nuevo paciente
-      </p>
-
-      <div class="container-fluid">
-        <div class="container">
-          <div class="row">
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="text"
-                  class="form-control form-control-sm textarea"
-                  id="text_peso"
-                  placeholder="1 Nombre"
-                />
+        <div class="container-fluid">
+          <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm textarea"
+                    id="text_peso"
+                    placeholder="1 Nombre"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="text"
-                  class="form-control form-control-sm textarea"
-                  id="text_talla"
-                  placeholder="2 Nombre"
-                />
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm textarea"
+                    id="text_talla"
+                    placeholder="2 Nombre"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="text"
-                  class="form-control form-control-sm textarea"
-                  id="text_estatura"
-                  placeholder="1 Apellido"
-                />
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm textarea"
+                    id="text_estatura"
+                    placeholder="1 Apellido"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="text"
-                  class="form-control form-control-sm textarea"
-                  id="text_imc"
-                  placeholder="2 Apellido"
-                />
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm textarea"
+                    id="text_imc"
+                    placeholder="2 Apellido"
+                  />
+                </div>
               </div>
-            </div>
-            <div class="col-6">
-              <select
-                class="form-select form-select-sm textarea"
-                id="inputGroupSelect01"
-              >
-                <option selected>Tipo Documento</option>
-                <option value="1">CC</option>
-                <option value="2">TI</option>
-                <option value="3">CE</option>
-              </select>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="number"
-                  class="form-control form-control-sm textarea"
-                  id="text_imc"
-                  placeholder="Numero Documento"
-                />
-              </div>
-            </div>
-            <div class="col-6">
-              <select
-                class="form-select form-select-sm textarea"
-                aria-label="Default select example"
-              >
-                <option selected>Sexo</option>
-                <option value="1">M</option>
-                <option value="2">F</option>
-              </select>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="date"
-                  class="form-control form-control-sm textarea"
-                  id="text_imc"
-                  placeholder="Fecha de Nacimiento"
-                />
-              </div>
-            </div>
-            <div class="col-6">
-              <select
-                class="form-select form-select-sm textarea"
-                aria-label="Default select example"
-              >
-                <option selected>Tipo Sangre</option>
-                <option value="1">A+</option>
-                <option value="2">A-</option>
-                <option value="3">B+</option>
-                <option value="4">B-</option>
-                <option value="5">AB+</option>
-                <option value="6">AB-</option>
-                <option value="7">O+</option>
-                <option value="8">O-</option>
-              </select>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="text"
-                  class="form-control form-control-sm textarea"
-                  id="text_imc"
-                  placeholder="E Civil"
-                />
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="text"
-                  class="form-control form-control-sm textarea"
-                  id="text_imc"
-                  placeholder="Escolaridad"
-                />
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="text"
-                  class="form-control form-control-sm textarea"
-                  id="text_imc"
-                  placeholder="Ocupacion"
-                />
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="text"
-                  class="form-control form-control-sm textarea"
-                  id="text_imc"
-                  placeholder="Direccion"
-                />
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="text"
-                  class="form-control form-control-sm textarea"
-                  id="text_imc"
-                  placeholder="Telefono"
-                />
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="number"
-                  class="form-control form-control-sm textarea"
-                  id="text_imc"
-                  placeholder="Celular"
-                />
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="input-group mb-1">
-                <input
-                  type="mail"
-                  class="form-control form-control-sm textarea"
-                  id="text_imc"
-                  placeholder="Email"
-                />
-              </div>
-            </div>
-          </div>
-          <br />
-          <div class="row">
-            <homeB />
-            <div class="col-6">
-              <button type="button" class="btn btn-success btn-sm">
-                Registrar paciente
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  <hr />
-
-  <div id="AppHC">
-    <div class="container-fluid fondo">
-      <h1 class="display-6" style="text-align: center">Historia Clinica</h1>
-
-      <div
-        class="container"
-        style="border: 1px solid #000; border-radius: 15px"
-      >
-        <div class="row">
-          <div class="col-2 retrato" style="margin: 10px">
-            <img
-              src="./../../components/images/usuario.jpg"
-              class="redondo"
-              alt="..."
-            />
-          </div>
-          <div class="col-9">
-            <div class="container" style="margin: 10px">
-              <h5>
-                <strong>
-                  <v-icon name="ri-health-book-line" /> Datos Personales</strong
+              <div class="col-6">
+                <select
+                  class="form-select form-select-sm textarea"
+                  id="inputGroupSelect01"
                 >
-              </h5>
-              <div class="row">
-                <div class="col-6 col-md-3">NOMBRE1</div>
-                <div class="col-6 col-md-3">NOMBRE2</div>
-                <div class="col-6 col-md-3">APELLIDO1</div>
-                <div class="col-6 col-md-3">APELLIDO2</div>
-                <div class="col-6 col-md-3">SEXO</div>
-                <div class="col-6 col-md-3">EDAD</div>
-                <div class="col-6 col-md-3">TIPO SANGRE</div>
-                <div class="col-6 col-md-3">E CIVIL</div>
-                <div class="col-6 col-md-3">ESCOLARIDAD</div>
-                <div class="col-6 col-md-3">OCUPACION</div>
-                <div class="col-6 col-md-3">DOMICILIO</div>
-                <div class="col-6 col-md-3">TELEFONO</div>
-                <div class="col-6 col-md-3">EMAIL</div>
+                  <option selected>Tipo Documento</option>
+                  <option value="1">CC</option>
+                  <option value="2">TI</option>
+                  <option value="3">CE</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="number"
+                    class="form-control form-control-sm textarea"
+                    id="text_imc"
+                    placeholder="Numero Documento"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <select
+                  class="form-select form-select-sm textarea"
+                  aria-label="Default select example"
+                >
+                  <option selected>Sexo</option>
+                  <option value="1">M</option>
+                  <option value="2">F</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="date"
+                    class="form-control form-control-sm textarea"
+                    id="text_imc"
+                    placeholder="Fecha de Nacimiento"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <select
+                  class="form-select form-select-sm textarea"
+                  aria-label="Default select example"
+                >
+                  <option selected>Tipo Sangre</option>
+                  <option value="1">A+</option>
+                  <option value="2">A-</option>
+                  <option value="3">B+</option>
+                  <option value="4">B-</option>
+                  <option value="5">AB+</option>
+                  <option value="6">AB-</option>
+                  <option value="7">O+</option>
+                  <option value="8">O-</option>
+                </select>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm textarea"
+                    id="text_imc"
+                    placeholder="E Civil"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm textarea"
+                    id="text_imc"
+                    placeholder="Escolaridad"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm textarea"
+                    id="text_imc"
+                    placeholder="Ocupacion"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm textarea"
+                    id="text_imc"
+                    placeholder="Direccion"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm textarea"
+                    id="text_imc"
+                    placeholder="Telefono"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="number"
+                    class="form-control form-control-sm textarea"
+                    id="text_imc"
+                    placeholder="Celular"
+                  />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="input-group mb-1">
+                  <input
+                    type="mail"
+                    class="form-control form-control-sm textarea"
+                    id="text_imc"
+                    placeholder="Email"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <br />
-
-      <!--************************************************************************************************************  -->
-      <div class="container">
-        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link active"
-              id="pills_historial"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-home"
-              type="button"
-              role="tab"
-              aria-controls="pills-home"
-              aria-selected="true"
-            >
-              Historial
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              id="pills_HC-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills_HC"
-              type="button"
-              role="tab"
-              aria-controls="pills_HC"
-              aria-selected="false"
-            >
-              Historia Clinica
-            </button>
-          </li>
-        </ul>
-
-        <div class="tab-content" id="pills-tabContent">
-          <div
-            class="tab-pane fade show active"
-            id="pills-home"
-            role="tabpanel"
-            aria-labelledby="pills_historial"
-            tabindex="0"
-          >
-            <div class="table-responsive">
-              <table class="table table-sm">
-                <thead>
-                  <tr>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Hallazgos</th>
-                    <th scope="col">Tratamientos</th>
-                    <th scope="col">Observaciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Jacob</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                  </tr>
-                  <tr>
-                    <td>Jacob</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <td>Jacob</td>
-                    <td>Jacob</td>
-                    <td>Jacob</td>
-                    <td>@twitter</td>
-                  </tr>
-                </tbody>
-              </table>
-              <homeB />
-            </div>
-          </div>
-
-          <div
-            class="tab-pane fade"
-            id="pills_HC"
-            role="tabpanel"
-            aria-labelledby="pills_HC-tab"
-            tabindex="0"
-          >
-            <HCFisio />
             <br />
             <div class="row">
               <homeB />
               <div class="col-6">
-                <button type="button" class="btn btn-primary btn-sm">
-                  Guardar Historia Clinica
+                <button type="button" class="btn btn-success btn-sm">
+                  Registrar paciente
                 </button>
               </div>
             </div>
@@ -355,20 +209,164 @@
         </div>
       </div>
     </div>
+ 
 
-    <!--************************************************************************************************************  -->
+  <!-- **************************************************************************************************** -->
+  <div class="container" v-else>
+    <div id="AppHC">
+      <div class="container-fluid fondo">
+        <h1 class="display-6" style="text-align: center">Historia Clinica</h1>
 
-    <br />
+        <div
+          class="container"
+          style="border: 1px solid #000; border-radius: 15px"
+        >
+          <div class="row">
+            <div class="col-2 retrato" style="margin: 10px">
+              <img
+                src="./../../components/images/usuario.jpg"
+                class="redondo"
+                alt="..."
+              />
+            </div>
+            <div class="col-9">
+              <div class="container" style="margin: 10px">
+                <h5>
+                  <strong>
+                    <v-icon name="ri-health-book-line" /> Datos
+                    Personales</strong
+                  >
+                </h5>
+                <div class="row">
+                  <div class="col-6 col-md-3">NOMBRE1</div>
+                  <div class="col-6 col-md-3">NOMBRE2</div>
+                  <div class="col-6 col-md-3">APELLIDO1</div>
+                  <div class="col-6 col-md-3">APELLIDO2</div>
+                  <div class="col-6 col-md-3">SEXO</div>
+                  <div class="col-6 col-md-3">EDAD</div>
+                  <div class="col-6 col-md-3">TIPO SANGRE</div>
+                  <div class="col-6 col-md-3">E CIVIL</div>
+                  <div class="col-6 col-md-3">ESCOLARIDAD</div>
+                  <div class="col-6 col-md-3">OCUPACION</div>
+                  <div class="col-6 col-md-3">DOMICILIO</div>
+                  <div class="col-6 col-md-3">TELEFONO</div>
+                  <div class="col-6 col-md-3">EMAIL</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <br />
+        <br />
 
-    <br />
+        <div class="container">
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="pills_historial"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-home"
+                type="button"
+                role="tab"
+                aria-controls="pills-home"
+                aria-selected="true"
+              >
+                Historial
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="pills_HC-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills_HC"
+                type="button"
+                role="tab"
+                aria-controls="pills_HC"
+                aria-selected="false"
+              >
+                Historia Clinica
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="pills-home"
+              role="tabpanel"
+              aria-labelledby="pills_historial"
+              tabindex="0"
+            >
+              <div class="table-responsive">
+                <table class="table table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Fecha</th>
+                      <th scope="col">Hallazgos</th>
+                      <th scope="col">Tratamientos</th>
+                      <th scope="col">Observaciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Jacob</td>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                    </tr>
+                    <tr>
+                      <td>Jacob</td>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                      <td>@fat</td>
+                    </tr>
+                    <tr>
+                      <td>Jacob</td>
+                      <td>Jacob</td>
+                      <td>Jacob</td>
+                      <td>@twitter</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <homeB />
+              </div>
+            </div>
+
+            <div
+              class="tab-pane fade"
+              id="pills_HC"
+              role="tabpanel"
+              aria-labelledby="pills_HC-tab"
+              tabindex="0"
+            >
+              <HCFisio />
+              <br />
+              <div class="row">
+                <homeB />
+                <div class="col-6">
+                  <button type="button" class="btn btn-primary btn-sm">
+                    Guardar Historia Clinica
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+    </div>
   </div>
 </template>
 
 <script setup>
 import HCFisio from "../../components/hclinica.vue";
 import homeB from "./../../components/homebutton.vue";
+
+let registrado=0
 </script>
 
 <style>

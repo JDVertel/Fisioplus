@@ -1,30 +1,61 @@
 <template>
-    <div class="col-6 col-md-3">
-        <div class="card">
-          <img
-            src="./../components/images/terapia_fisica1.png"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Terapia Fisica</h5>
-            <p class="card-text">
-              This is a wider card with supporting text below as a natural
-         
-            </p>
-          </div>
-          <div class="card-footer">
-         <!--    <small class="text-muted">45min</small> -->
-         <button type="button" class="btn btn-primary btn-sm">Agendar</button>
-          </div>
+<div class="row" >
+
+
+    <div class="col-6 col-md-3" v-for="servicio in servicios" :key="servicio.nombre">
+
+   
+
+      <div class="card">
+        <img
+          src=""
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{servicio.nombre}}</h5>
+          <p class="card-text">
+           {{servicio.desc}}
+       
+          </p>
+        </div>
+        <div class="card-footer">
+       <!--    <small class="text-muted">45min</small> -->
+       <button type="button" class="btn btn-primary btn-sm">Agendar</button>
         </div>
       </div>
+    </div>
+
+  </div>
 </template>
 
-<script>
-export default {
+<script setup>
+import {ref} from 'vue'
+let servicios = ref([
+{
+  nombre:'Terapia Fisica',
+  desc:'ya tres clases y me gusta mucho el enfoque que le das y la forma que tienes de explicar las cosas.',
+  img:'@/components/images/terapia_fisica1.png',
+},
+{
+  nombre:'Terapia Recuperativa',
+  desc:'ermine dejando otros cursos de vue que estaba haciendo por este, explicas muy bien. Excelente curso. g',
+  img:'@/components/images/terapia_fisica2.png',
+},
+{
+  nombre:'terapia Descontracturacion',
+  desc:'Excelente explicación como siempre, muchas gracias',
+  img:'@/components/images/terapia_fisica3.png',
+},
+{
+  nombre:'Terapia Estiramiento',
+  desc:'de diseño y arquitectura. Me da la impresión que bindiar el atributo style puede hacer enojar a muchos en contra de',
+  img:'@/components/images/terapia_fisica4.png',
+},
 
-}
+
+
+])
 </script>
 
 <style>

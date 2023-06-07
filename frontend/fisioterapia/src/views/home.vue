@@ -22,13 +22,11 @@ import Menu from './../components/menu.vue'
     <!-- sesion servivios  -->
     <h1 class="display-6 subtitulos"><strong>Nuestros Servicios</strong></h1>
     <div class="container-fluid">
-      <div class="row">
+     
         <Servicios />
-        <Servicios />
-        <Servicios />
-        <Servicios />
+      
    
-      </div>
+      
     </div>
     <br />
     <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
