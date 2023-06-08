@@ -41,14 +41,10 @@ import Menu from './../components/menu.vue'
     <!-- productos -->
 
     <h6 class="display-6 subtitulos"><strong>Productos</strong></h6>
-    <div class="row">
+  
       <Productos />
-      <Productos />
-      <Productos />
-      <Productos />
-      <Productos />
-      <Productos />
-    </div>
+     
+    
 
   </div>
 </template>
