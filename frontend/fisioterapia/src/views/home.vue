@@ -11,7 +11,7 @@ import Menu from './../components/menu.vue'
     <!-- sesion informacion -->
     <div class="container" align="center">
       <img
-        src="./../components/images/inicio.jpg"
+        src="./../assets/images/inicio.jpg"
         class="card-img-top redondo1"
         alt="..."
       />

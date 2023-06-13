@@ -3,7 +3,7 @@
  <div class="col-4"   v-for="producto in productos"
       v-bind:key="producto.nombre">
         <div class="card">
-          <img src="./../components/images/productos1.jpg" class="imgproducto"  alt="..." />
+          <img src="./../assets/images/productos1.jpg" class="imgproducto"  alt="..." />
           <div class="card-img-overlay">
     
             <p class="card-text">
