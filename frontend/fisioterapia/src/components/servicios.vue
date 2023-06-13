@@ -7,8 +7,8 @@
     >
       <div class="card">
         <!--  -->
-        <img :src="'/src/assets/images/'+`${servicio.url}`"
-        class="card-img-top" />
+        <img :src="'/src/assets/images/servicios/'+`${servicio.url}`"
+        class="card-img-top imagenservicio" />
         <!--  -->
         <div class="card-body">
           <h5 class="card-title">{{ servicio.nombre }}</h5>
@@ -74,5 +74,13 @@ let servicios = ref([
 }
 div.col-6.col-md-3 {
   padding: 0.2px !important;
+}
+.imagenservicio{
+  height: 99px !important;
+  width: 100% !important;
+}
+div.card-body{
+  height: 100px !important;
+  width: 166px !important;
 }
 </style>

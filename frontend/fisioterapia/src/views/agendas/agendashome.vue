@@ -283,29 +283,34 @@
                 </div>
                 <div class="col-6">
                   <div>
+                    Tiempo de cita
                     <input
                       class="form-control form-control-sm"
                       type="number"
-                      placeholder="Tiempo de consulta"
+                      placeholder="Minutos"
                       aria-label=".form-control-sm example"
                     />
                   </div>
                   <div>
+                    Nombre de plantilla
                     <input
                       class="form-control form-control-sm"
                       type="text"
-                      placeholder="Nombre de Plantilla"
+                      placeholder="Ej: AM entre semana"
                       aria-label=".form-control-sm example"
                     />
                   </div>
                   <div>
-                    <button type="button" class="btn btn-primary btn-sm">
-                      Guardar Plantilla
-                    </button>
+                 
                   </div>
                 </div>
               </div>
+              <br>
+              <button type="button" class="btn btn-primary btn-sm">
+                Guardar Plantilla
+              </button>
             </div>
+         
             <br />
             <p>Listado de Plantillas del Sistema</p>
             <table class="table table-sm">
