@@ -65,8 +65,8 @@ import Menu from './../components/menu.vue'
 
 .redondo1 {
   border-radius: 50% 50% 50% 50%;
-  width: 60%;
-  height: 80%;
+  width: 300px;
+
 }
 
 

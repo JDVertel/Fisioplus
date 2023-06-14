@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div
-      class="col-6 col-md-3"
+      class="col-6 col-md-2"
       v-for="servicio in servicios"
       :key="servicio.nombre"
     >

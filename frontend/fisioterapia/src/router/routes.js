@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "./../views/home.vue";
 import About from "./../views/about.vue";
 import Login from "./../views/login.vue";
-import Register from "./../views/register.vue";
+import Register from "./../views/register_user.vue";
 // agendas
 import HomeAgendas from "./../views/agendas/agendashome.vue";
 //contenido web
