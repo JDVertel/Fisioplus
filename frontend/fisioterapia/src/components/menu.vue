@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-        <!--   <a class="navbar-brand"
+      <!--     <a class="navbar-brand"
             ><img
               src="@/assets/logo.png"
               id="icon"
@@ -82,12 +82,17 @@
 
 </script>
 
+
+
 <style>
+
 .nav-link {
-    color: white;
-    text-shadow: 1px 1px 2px black;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 0.9rem;
+    color: white !important;
+    text-shadow: 1px 1px 2px black !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-size: 0.9rem !important;
   }
+
+
 </style>

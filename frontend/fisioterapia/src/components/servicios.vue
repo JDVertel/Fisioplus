@@ -55,6 +55,8 @@ let servicios = ref([
 .card {
   margin: 0.5rem;
   font-size: 0.7rem;
+  border-style: none !important;
+  border-color:transparent !important;
 }
 .card-text {
   font-size: 0.6rem;
@@ -81,6 +83,14 @@ div.col-6.col-md-3 {
 }
 div.card-body{
   height: 100px !important;
-  width: 166px !important;
+  width: 100% !important;
+}
+div.card-footer{
+  background-color:#00913D;
+}
+.btn-primary{
+  background-color:#00913D !important;
+  border: 1px;
+  border-color:white!important ;
 }
 </style>

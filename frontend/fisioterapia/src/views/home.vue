@@ -8,6 +8,7 @@ import Menu from './../components/menu.vue'
 <template>
   <div class="container-fluid">
 <Menu />
+
     <!-- sesion informacion -->
     <div class="container" align="center">
       <img
@@ -50,9 +51,6 @@ import Menu from './../components/menu.vue'
 </template>
 
 <style scoped>
-.card-title {
-  font-size: 0.8rem;
-}
 
 .subtitulos {
   color: white;
@@ -60,29 +58,10 @@ import Menu from './../components/menu.vue'
   text-shadow: 1px 1px 2px black;
 }
 
-.card-text {
-  font-size: 0.6rem;
-  font-style: oblique;
-}
-.card-footer {
-  font-size: 0.7rem;
-}
-.card-body {
-  padding: 5px;
-}
-.col-6 {
-  padding: 2px;
-}
 .display-6 {
   font-size: 1.2rem;
 }
-.nav-link {
-  color: white;
-  text-shadow: 1px 1px 2px black;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 0.9rem;
-}
+
 
 .redondo1 {
   border-radius: 50% 50% 50% 50%;

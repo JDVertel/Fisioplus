@@ -10,7 +10,7 @@
         <br />
         <!-- Icon -->
         <div class="fadeIn first">
-          <img src="@/assets/logo.png" id="icon" alt="User Icon" />
+          <img src="@/assets/images/inicio.jpg" id="icon" alt="User Icon" />
         </div>
 
         <!-- Login Form -->
@@ -20,7 +20,7 @@
             id="login"
             class="fadeIn second"
             name="login"
-            placeholder="login"
+            placeholder="Usuario"
           />
           <input
             type="text"
@@ -29,7 +29,7 @@
             name="login"
             placeholder="password"
           />
-          <input type="submit" class="fadeIn fourth" value="Log In" />
+          <input type="submit" class="btn btn-sm btn-primary" value="Log In" />
         </form>
 
         <!-- Remind Passowrd -->
@@ -67,7 +67,7 @@ body {
 }
 
 a {
-  color: #92badd;
+  color: #ffffff;
   display: inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -112,11 +112,12 @@ h2 {
 }
 
 #formFooter {
-  background-color: #f6f6f6;
-  border-top: 1px solid #dce8f1;
-  padding: 15px;
+  background-color: #00913D;
+  border-top: 0px solid #dce8f1;
+  padding: 10px;
   text-align: center;
   font-size: 0.8rem;
+  color: white;
   -webkit-border-radius: 0 0 10px 10px;
   border-radius: 0 0 10px 10px;
   
@@ -146,7 +147,7 @@ input[type="reset"] {
   text-decoration: none;
   display: inline-block;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 60px;
   -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
   box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
   -webkit-border-radius: 5px 5px 5px 5px;
@@ -179,11 +180,11 @@ input[type="text"] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
-  padding: 15px 32px;
+  padding: 10px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
+  font-size: 25px;
   margin: 5px;
   width: 70%;
   border: 2px solid #f6f6f6;
@@ -198,7 +199,7 @@ input[type="text"] {
 
 input[type="text"]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid#00913D;
 }
 
 input[type="text"]:placeholder {
@@ -335,7 +336,7 @@ input[type="text"]:placeholder {
 }
 
 #icon {
-  width: 70%;
+  width: 50%;
 }
 
 .centrado{

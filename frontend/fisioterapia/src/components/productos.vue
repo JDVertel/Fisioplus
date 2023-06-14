@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-4" v-for="producto in productos" :key="producto.nombre">
-      <div class="card">
+      <div class="card cproductos">
         <div class="row">
           <div class="col-1"></div>
           <div class="col-4">
@@ -79,5 +79,9 @@ div.col-4 {
 }
 div.card-img-overlay {
   padding: 5px !important;
+}
+.cproductos{
+border: 1px solid #00913D !important; 
+
 }
 </style>
