@@ -38,7 +38,7 @@
           <div class="row">
             <div class="col-2 retrato" style="margin: 10px">
               <img
-                src="./../../components/images/usuario.jpg"
+                src="./../../assets/images/usuario.jpg"
                 class="redondo"
                 alt="..."
               />
@@ -204,7 +204,7 @@ let paciente= ref(
 )
 
 
-let registrado=0
+let registrado=1
 
 </script>
 

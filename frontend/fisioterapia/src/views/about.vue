@@ -8,7 +8,7 @@
     <h2>Proyecto Desarrollado en Tecnoparque Nodo Socorro </h2>
     <hr>
     <div class="row">
-      <img src="../components/images/tecnoparquens.png" style="width: 500px;">
+      <img src="../assets/images/tecnoparquens.png" style="width: 500px;">
 
     </div>
 
