@@ -15,7 +15,7 @@
             aria-expanded="true"
             aria-controls="panelsStayOpen-collapseOne"
           >
-            Activas
+            Agenda Diaria
           </button>
         </h2>
         <div
@@ -23,28 +23,20 @@
           class="accordion-collapse collapse show"
         >
           <div class="accordion-body">
-            <h6>Listado de Agendas disponibles</h6>
-            <p>
-              Tabla con el listado de los dias de agendas disponibles y la
-              cantidad de horas disponibles dividida en jornadas, registros a
-              partir de las fechas
-            </p>
-
-            |fecha | jornada | tipo_agenda | disponibles | (ver - reservar
-            (local-particular))
-            <p>
-              a futuro el campo tipoagenda podra mostrar hora inicio y hora fin
-              parametrizados
-            </p>
+            <h6>Listado de Citas del Dia</h6>
+    
+          
             <div class="table-responsive">
               <table class="table table-sm">
                 <thead>
                   <tr>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Jornada</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Disponibles</th>
-                    <th scope="col">Ver/reservar</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Tipo</th>
+                    <th>tiempo</th>
+                    <th>Nombre</th>
+                    <th>Telefono</th>
+                    <th>Opiones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -52,21 +44,7 @@
                     <td>Otto</td>
                     <td>@mdo</td>
                     <td>Mark</td>
-                    <td>@mdo</td>
-                    <td>
-                      <div class="col-4 fechas">
-                        <button
-                          class="btn btn-primary btn-sm textarea"
-                          type="submit"
-                        >
-                          ver
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <td>Mark</td>
                     <td>Mark</td>
                     <td>@mdo</td>
                     <td>
@@ -83,6 +61,26 @@
                   <tr>
                     <td>Otto</td>
                     <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Mark</td>
+                    <td>Mark</td>
+                    <td>@mdo</td>
+                    <td>
+                      <div class="col-4 fechas">
+                        <button
+                          class="btn btn-primary btn-sm textarea"
+                          type="submit"
+                        >
+                          ver
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Otto</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
                     <td>Mark</td>
                     <td>@mdo</td>
                     <td>
@@ -151,11 +149,12 @@
               <table class="table table-sm">
                 <thead>
                   <tr>
-                    <th scope="col">Fecha</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Hora</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Estado</th>
+                    <th>Fecha</th>
+                    <th>Tipo</th>
+               
+                    <th>Hora</th>
+                    <th>Nombre</th>
+                    <th>ingreso</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -182,6 +181,7 @@
                   </tr>
                 </tbody>
               </table>
+              <h6 class="display-6">Total Ingresos $ 1.500.000</h6>
             </div>
           </div>
         </div>
@@ -216,7 +216,7 @@
                   />
                 </div>
 
-                <div class="col-4">
+     <!--            <div class="col-4">
                   <select
                     class="form-select form-select-sm textarea"
                     aria-label="Default select example"
@@ -227,7 +227,7 @@
                     <option value="3">AM Sabado</option>
                     <option value="4">PM Sabado</option>
                   </select>
-                </div>
+                </div> -->
                 <div class="col-4">
                   <button class="btn btn-primary btn-sm textarea">
                     Agendar
@@ -251,7 +251,7 @@
             aria-expanded="false"
             aria-controls="panelsStayOpen-collapsefour"
           >
-            Parametros
+            Tipos de Citas
           </button>
         </h2>
         <div
@@ -260,7 +260,7 @@
         >
           <div class="accordion-body">
    
-
+<!-- 
             <div class="container newplantilla">
               <p><strong>Plantillas de tipos de jornadas</strong></p>
               <p>+Crear una Nueva plantilla</p>
@@ -309,18 +309,44 @@
               <button type="button" class="btn btn-primary btn-sm">
                 Guardar Plantilla
               </button>
-            </div>
+            </div> -->
          
             <br />
-            <p>Listado de Plantillas del Sistema</p>
+            <h6 class="display-6">Tipos de Citas del Sistema</h6>
+            <br>
+            <div class="container newplantilla">
+              <p>Agregar nuevo tipo de cita</p>
+              <div class="row">
+                <div class="col-6"><input class="form-control form-control-sm" type="text" placeholder="Nombre">
+                  <input class="form-control form-control-sm" type="number" placeholder="Duracion (minutos)">
+               
+            
+                </div>
+                
+                <div class="col-6"><div>
+                  <label for="formFileLg" class="form-label">Color</label>
+                  <input class="form-control form-control-sm" type="color" value="#225D03">
+                </div>  
+              </div>    
+            </div>       
+            <div class="row">
+              <div class="col-4"><input class="form-control form-control-sm" type="number" placeholder="$ costo individual"></div>
+              <div class="col-4"><input class="form-control form-control-sm" type="number" placeholder="$ costo Combo"></div>
+            <div class="col-4"><button class="btn btn-success btn-sm">+ Agregar Cita</button></div>
+            </div>
+          </div>
+            <br>
+            <div class="table-responsive">
             <table class="table table-sm">
               <thead>
                 <tr>
-                  <th scope="col">Jornada</th>
-                  <th scope="col">H inicio</th>
-                  <th scope="col">H fin</th>
-                  <th scope="col">Tiempo</th>
-                  <th scope="col">Nombre</th>
+                  <th>Id</th>
+                  <th>Nombre</th>
+                  <th>Duracion (min)</th>
+                  <th>Color Representativo</th>
+                  <th>costo Uni</th>
+                  <th>Costo Combo</th>
+            
                 </tr>
               </thead>
               <tbody>
@@ -329,25 +355,32 @@
                   <td>@mdo</td>
                   <td>Mark</td>
                   <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                
                 </tr>
                 <tr>
                   <td>Otto</td>
                   <td>@mdo</td>
                   <td>Mark</td>
                   <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                 
                 </tr>
                 <tr>
                   <td>Otto</td>
                   <td>@mdo</td>
                   <td>Mark</td>
                   <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>Mark</td>
+                  <td>Otto</td>
+      
                 </tr>
               </tbody>
             </table>
           </div>
+        </div>
         </div>
       </div>
       <br />

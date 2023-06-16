@@ -7,7 +7,7 @@ import Register from "./../views/register_user.vue";
 // agendas
 import HomeAgendas from "./../views/agendas/agendashome.vue";
 //contenido web
-import HomeConfiguracion from "./../views/configuracion/configuracionhome.vue";
+import HomeVitrina from "./../views/vitrina/vitrinahome.vue";
 //hc
 import hc from "./../views/hc/hc.vue";
 
@@ -22,9 +22,9 @@ const routes = [
   { path: "/homeAgendas", component: HomeAgendas, name: "agendas" },
   //contenido web
   {
-    path: "/Configuracion",
-    component: HomeConfiguracion,
-    name: "configuracion",
+    path: "/vitrina",
+    component: HomeVitrina,
+    name: "vitrina",
   },
   //hc
 

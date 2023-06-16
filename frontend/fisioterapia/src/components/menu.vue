@@ -1,15 +1,7 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-      <!--     <a class="navbar-brand"
-            ><img
-              src="@/assets/logo.png"
-              id="icon"
-              alt="User Icon"
-              style="width: 35px"
-            />
-            Menu</a
-          > -->
+
           <button
             class="navbar-toggler"
             type="button"
@@ -52,9 +44,9 @@
                 >
               </li>
               <li class="nav-item">
-                <router-link to="/Configuracion"
+                <router-link to="/vitrina"
                   ><a class="nav-link-menu" aria-current="page"
-                    >Configuracion</a
+                    >Vitrina</a
                   ></router-link
                 >
               </li>

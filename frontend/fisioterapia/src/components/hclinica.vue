@@ -1,6 +1,5 @@
 <template>
-
-  <div class="accordion custom-header" id="accordionPanelsStayOpenExample">  
+  <div class="accordion custom-header" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button
@@ -14,10 +13,7 @@
           <v-icon name="fa-user-check" fill="blue" /> Datos de Consulta
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapse1"
-        class="accordion-collapse collapse"
-      >
+      <div id="panelsStayOpen-collapse1" class="accordion-collapse collapse">
         <div class="accordion-body">
           <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -87,6 +83,7 @@
                 >
 
                 <textarea
+                  v-model="motivoConsulta"
                   class="form-control textarea"
                   id="text_motivoconsulta"
                   rows="3"
@@ -116,9 +113,7 @@
               </div>
 
               <div class="mb-3">
-                <label
-                  for="text_medicamentospreinscritos"
-                  class="form-label"
+                <label for="text_medicamentospreinscritos" class="form-label"
                   >Medicamentos Preinscrios</label
                 >
                 <textarea
@@ -393,10 +388,7 @@
           Evaluacion Postural
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapse2"
-        class="accordion-collapse collapse"
-      >
+      <div id="panelsStayOpen-collapse2" class="accordion-collapse collapse">
         <div class="accordion-body">
           <!--  -->
           <nav>
@@ -464,13 +456,10 @@
           Inspeccion Dinamica
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapse3"
-        class="accordion-collapse collapse"
-      >
+      <div id="panelsStayOpen-collapse3" class="accordion-collapse collapse">
         <div class="accordion-body">
-          fase de apoyo fase de balanceo adaptaci1s del cuerpo durante
-          la marcha análisis cuantitativo de la marcha
+          fase de apoyo fase de balanceo adaptaci1s del cuerpo durante la marcha
+          análisis cuantitativo de la marcha
         </div>
       </div>
     </div>
@@ -488,20 +477,16 @@
           Escala Visual Analogica del dolor (EVA)
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapse4"
-        class="accordion-collapse collapse"
-      >
+      <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse">
         <div class="accordion-body">
-          <strong>This is the first item's accordion body.</strong> It
-          is shown by default, until the collapse plugin adds the
-          appropriate classes that we use to style each element. These
-          classes control the overall appearance, as well as the showing
-          and hiding via CSS transitions. You can modify any of this
-          with custom CSS or overriding our default variables. It's also
-          worth noting that just about any HTML can go within the
-          <code>.accordion-body</code>, though the transition does limit
-          overflow.
+          <strong>This is the first item's accordion body.</strong> It is shown
+          by default, until the collapse plugin adds the appropriate classes
+          that we use to style each element. These classes control the overall
+          appearance, as well as the showing and hiding via CSS transitions. You
+          can modify any of this with custom CSS or overriding our default
+          variables. It's also worth noting that just about any HTML can go
+          within the <code>.accordion-body</code>, though the transition does
+          limit overflow.
         </div>
       </div>
     </div>
@@ -519,14 +504,11 @@
           Exploracion Fisica
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapse5"
-        class="accordion-collapse collapse"
-      >
+      <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse">
         <div class="accordion-body">
           inspección y palpación (sistema óseo) valoración de rangos de
-          movimiento (miembro superior) valoración de rangos de
-          movimiento (miembro inferior)
+          movimiento (miembro superior) valoración de rangos de movimiento
+          (miembro inferior)
           <!--  -->
           <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -614,14 +596,10 @@
           Sistema muscular
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapse6"
-        class="accordion-collapse collapse"
-      >
+      <div id="panelsStayOpen-collapse6" class="accordion-collapse collapse">
         <div class="accordion-body">
-          inspección y palpación fuerza muscular evaluación muscular
-          (escala Daniels)
-          (cuello-tronco-hombro-codo-muñeca-cadera-dedos de la
+          inspección y palpación fuerza muscular evaluación muscular (escala
+          Daniels) (cuello-tronco-hombro-codo-muñeca-cadera-dedos de la
           mano-rodilla, tobillos dedos de los pies)
 
           <!--  -->
@@ -730,14 +708,11 @@
           aria-expanded="false"
           aria-controls="panelsStayOpen-collapse7"
         >
-          <v-icon name="ai-biorxiv-square" fill="blue" /> Pruebas de
-          Imagen o Examenes Complementarios
+          <v-icon name="ai-biorxiv-square" fill="blue" /> Pruebas de Imagen o
+          Examenes Complementarios
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapse7"
-        class="accordion-collapse collapse"
-      >
+      <div id="panelsStayOpen-collapse7" class="accordion-collapse collapse">
         <div class="accordion-body">
           <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -812,9 +787,7 @@
               tabindex="0"
             >
               <div class="mb-3">
-                <label
-                  for="exampleFormControlTextarea1"
-                  class="form-label"
+                <label for="exampleFormControlTextarea1" class="form-label"
                   >Breve descripcion de la Radiografia</label
                 >
                 <textarea
@@ -832,9 +805,7 @@
               tabindex="0"
             >
               <div class="mb-3">
-                <label
-                  for="exampleFormControlTextarea1"
-                  class="form-label"
+                <label for="exampleFormControlTextarea1" class="form-label"
                   >Breve descripcion de la Ecografia</label
                 >
                 <textarea
@@ -852,9 +823,7 @@
               tabindex="0"
             >
               <div class="mb-3">
-                <label
-                  for="exampleFormControlTextarea1"
-                  class="form-label"
+                <label for="exampleFormControlTextarea1" class="form-label"
                   >Breve descripcion de la Resonancia</label
                 >
                 <textarea
@@ -872,9 +841,7 @@
               tabindex="0"
             >
               <div class="mb-3">
-                <label
-                  for="exampleFormControlTextarea1"
-                  class="form-label"
+                <label for="exampleFormControlTextarea1" class="form-label"
                   >Breve descripcion del TAG</label
                 >
                 <textarea
@@ -892,9 +859,7 @@
               tabindex="0"
             >
               <div class="mb-3">
-                <label
-                  for="exampleFormControlTextarea1"
-                  class="form-label"
+                <label for="exampleFormControlTextarea1" class="form-label"
                   >Breve descripcion de Otros</label
                 >
                 <textarea
@@ -922,20 +887,16 @@
           Maniobras, Escalas o Tests Exploratorios
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapse8"
-        class="accordion-collapse collapse"
-      >
+      <div id="panelsStayOpen-collapse8" class="accordion-collapse collapse">
         <div class="accordion-body">
-          <strong>This is the second item's accordion body.</strong> It
-          is hidden by default, until the collapse plugin adds the
-          appropriate classes that we use to style each element. These
-          classes control the overall appearance, as well as the showing
-          and hiding via CSS transitions. You can modify any of this
-          with custom CSS or overriding our default variables. It's also
-          worth noting that just about any HTML can go within the
-          <code>.accordion-body</code>, though the transition does limit
-          overflow.
+          <strong>This is the second item's accordion body.</strong> It is
+          hidden by default, until the collapse plugin adds the appropriate
+          classes that we use to style each element. These classes control the
+          overall appearance, as well as the showing and hiding via CSS
+          transitions. You can modify any of this with custom CSS or overriding
+          our default variables. It's also worth noting that just about any HTML
+          can go within the <code>.accordion-body</code>, though the transition
+          does limit overflow.
         </div>
       </div>
     </div>
@@ -953,14 +914,11 @@
           Plan Analitico de Atencion Fisioterapeutica
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapse9"
-        class="accordion-collapse collapse"
-      >
+      <div id="panelsStayOpen-collapse9" class="accordion-collapse collapse">
         <div class="accordion-body">
-          procedimiento actual diagnostico(funcional)fisioterapéutico
-          pronóstico de enfermedad objetivos del tratamiento (generales
-          y específicos) plan de atención y tratamientos observaciones
+          procedimiento actual diagnostico(funcional)fisioterapéutico pronóstico
+          de enfermedad objetivos del tratamiento (generales y específicos) plan
+          de atención y tratamientos observaciones
 
           <!--  -->
 
@@ -1072,10 +1030,7 @@
           Tratamiento
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapse10"
-        class="accordion-collapse collapse"
-      >
+      <div id="panelsStayOpen-collapse10" class="accordion-collapse collapse">
         <div class="accordion-body">
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label"
@@ -1089,15 +1044,21 @@
           </div>
         </div>
       </div>
-    </div> 
-             </div>
- 
+      <div>
+        {{ datosconsulta }}
+      </div>
+    </div>
+  </div>
 </template>
 
-<script>
-import homeB from './../components/homebutton.vue'
+<script setup>
+import { ref } from "vue";
+
+let datosconsulta = ref({
+  motivoConsulta: "",
+});
+let imgdiag = ref({});
+let tratamiento = ref({});
 </script>
 
-<style>
-
-</style>
+<style></style>

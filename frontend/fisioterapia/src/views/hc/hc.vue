@@ -52,19 +52,20 @@
                   >
                 </h5>
                 <div class="row">
-                  <div class="col-6 col-md-3">NOMBRE1</div>
-                  <div class="col-6 col-md-3">NOMBRE2</div>
-                  <div class="col-6 col-md-3">APELLIDO1</div>
-                  <div class="col-6 col-md-3">APELLIDO2</div>
-                  <div class="col-6 col-md-3">SEXO</div>
+                  <div class="col-6 col-md-3">{{paciente.nombre1}}</div>
+                  <div class="col-6 col-md-3">{{paciente.nombre2}}</div>
+                  <div class="col-6 col-md-3">{{paciente.apellido1}}</div>
+                  <div class="col-6 col-md-3">{{paciente.apellido2}}</div>
+                  <div class="col-6 col-md-3">{{paciente.sexo}}</div>
                   <div class="col-6 col-md-3">EDAD</div>
-                  <div class="col-6 col-md-3">TIPO SANGRE</div>
-                  <div class="col-6 col-md-3">E CIVIL</div>
-                  <div class="col-6 col-md-3">ESCOLARIDAD</div>
-                  <div class="col-6 col-md-3">OCUPACION</div>
-                  <div class="col-6 col-md-3">DOMICILIO</div>
-                  <div class="col-6 col-md-3">TELEFONO</div>
-                  <div class="col-6 col-md-3">EMAIL</div>
+                  <div class="col-6 col-md-3">{{paciente.s_tipodoc}}</div>
+                  <div class="col-6 col-md-3">{{paciente.numdoc}}</div>
+                  <div class="col-6 col-md-3">{{paciente.tiposangre}}</div>
+                  <div class="col-6 col-md-3">{{paciente.ecivil}}</div>
+                  <div class="col-6 col-md-3">{{paciente.escolaridad}}</div>
+                  <div class="col-6 col-md-3">{{paciente.ocupacion}}</div>
+                  <div class="col-6 col-md-3">{{paciente.direccion}}</div>
+                  <div class="col-6 col-md-3">{{paciente.cel}}</div>
                 </div>
               </div>
             </div>
@@ -164,6 +165,7 @@
                     Guardar Historia Clinica
                   </button>
                 </div>
+              
               </div>
             </div>
           </div>
@@ -184,22 +186,23 @@ import Registro from "./../hc/registroForm.vue"
 
 let paciente= ref(
   {
-    nombre1:'',
-    nombre2:'',
-    apellido1:'',
-    apellido2:'',
+    nombre1:'juan',
+    nombre2:'david',
+    apellido1:'vertel',
+    apellido2:'holguin',
     s_tipodoc:'Tipo Documento',
-    numdoc:'',
+    numdoc:'numdoc',
     sexo:'Sexo',
     fnacimiento:'',
     tiposangre:'Tipo Sangre',
-    ecivil:'',
-    escolaridad:'',
-    ocupacion:'',
-    direccion:'',
-    tel:'',
-    cel:'',
-    email:'',
+    ecivil:'e civil',
+    escolaridad:'escolaridad',
+    ocupacion:'ocupacion',
+    direccion:'direccion',
+    tel:'telefono',
+    cel:'celular',
+    email:'email',
+    img:'img',
   }
 )
 
