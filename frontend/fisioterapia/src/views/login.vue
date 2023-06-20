@@ -1,4 +1,12 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+let DatosUser = ref({
+  usuario:"",
+  passw:"",
+})
+
+</script>
 <template>
   <div
     class="container-sm"
@@ -21,6 +29,7 @@
             class="fadeIn second"
             name="login"
             placeholder="Usuario"
+            v-model="DatosUser.usuario"
           />
           <input
             type="text"
@@ -28,10 +37,12 @@
             class="fadeIn third"
             name="login"
             placeholder="password"
+            v-model="DatosUser.passw"
           />
           <input type="submit" class="btn btn-sm btn-primary" value="Log In" />
+     
         </form>
-
+        {{ DatosUser }}
         <!-- Remind Passowrd -->
         <div id="formFooter">
           <!--  <a class="underlineHover" href="/register">Registrarme</a> -->

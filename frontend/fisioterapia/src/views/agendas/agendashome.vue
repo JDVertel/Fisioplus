@@ -1,6 +1,6 @@
 <template>
   <div class="container" id="agendas">
-    <h3 class="display-6">Gestion de las agendas</h3>
+    <h3 class="display-6">Gestión de las agendas</h3>
 
     <br />
 
@@ -23,9 +23,8 @@
           class="accordion-collapse collapse show"
         >
           <div class="accordion-body">
-            <h6>Listado de Citas del Dia</h6>
-    
-          
+            <h6 class="display-6">Listado de Citas del Dia</h6>
+
             <div class="table-responsive">
               <table class="table table-sm">
                 <thead>
@@ -36,7 +35,7 @@
                     <th>tiempo</th>
                     <th>Nombre</th>
                     <th>Telefono</th>
-                    <th>Opiones</th>
+                    <th>Opciones</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -50,10 +49,10 @@
                     <td>
                       <div class="col-4 fechas">
                         <button
-                          class="btn btn-primary btn-sm textarea"
+                          class="btn btn-primary btn-sm textarea radius"
                           type="submit"
                         >
-                          ver
+                          <v-icon name="hi-check" />
                         </button>
                       </div>
                     </td>
@@ -68,10 +67,10 @@
                     <td>
                       <div class="col-4 fechas">
                         <button
-                          class="btn btn-primary btn-sm textarea"
+                          class="btn btn-primary btn-sm textarea radius"
                           type="submit"
                         >
-                          ver
+                          <v-icon name="hi-check" />
                         </button>
                       </div>
                     </td>
@@ -86,10 +85,10 @@
                     <td>
                       <div class="col-4 fechas">
                         <button
-                          class="btn btn-primary btn-sm textarea"
+                          class="btn btn-primary btn-sm textarea radius"
                           type="submit"
                         >
-                          ver
+                          <v-icon name="hi-check" />
                         </button>
                       </div>
                     </td>
@@ -120,21 +119,34 @@
           <div class="accordion-body">
             <form>
               <div class="row">
-                <div class="col-4 fechas">
+                <div class="col-3 fechas">
                   Fecha Inicial<input
                     class="form-control form-control-sm textarea"
                     type="date"
                     aria-label=".form-control-sm example"
+                    v-model="datosinf.f_inicial"
                   />
                 </div>
-                <div class="col-4 fechas">
+                <div class="col-3 fechas">
                   Fecha Final<input
                     class="form-control form-control-sm textarea"
                     type="date"
                     aria-label=".form-control-sm example"
+                    v-model="datosinf.f_final"
                   />
                 </div>
-                <div class="col-4 fechas">
+                <div class="col-3">
+                  <p>Seleccione tipo de Informe</p>
+                  <select
+                    class="form-select form-select-sm textarea"
+                    id="inputGroupSelect01"
+                    v-model="datosinf.tipoinf"
+                  >
+                    <option selected>Seleccione</option>
+                    <option value="Ingresos">Ingresos</option>
+                  </select>
+                </div>
+                <div class="col-3 fechas">
                   <br /><button
                     class="btn btn-primary btn-sm textarea"
                     type="submit"
@@ -151,7 +163,7 @@
                   <tr>
                     <th>Fecha</th>
                     <th>Tipo</th>
-               
+
                     <th>Hora</th>
                     <th>Nombre</th>
                     <th>ingreso</th>
@@ -181,6 +193,10 @@
                   </tr>
                 </tbody>
               </table>
+              <h6>
+                Informe de {{ datosinf.tipoinf }} realizado desde el {{ datosinf.f_inicial }} hasta el
+                {{ datosinf.f_final }}
+              </h6>
               <h6 class="display-6">Total Ingresos $ 1.500.000</h6>
             </div>
           </div>
@@ -204,19 +220,62 @@
           class="accordion-collapse collapse"
         >
           <div class="accordion-body">
-            <p>Opciones para realizar un nuevo agendamiento</p>
+            <div class="container">
+              <div class="row">
+                <p>Agendamiento nuevo</p>
+
+                <div class="col-6 col-md-3">
+                  <p>Seleccione el nuevo dia a agendar</p>
+                  <div class="fechas">
+                    <input
+                      class="form-control form-control-sm textarea"
+                      type="date"
+                      aria-label=".form-control-sm example"
+                      v-model="fechaAgemdamient.dia"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <p>Seleccione hora de inicio de jornada</p>
+                  <div class="fechas">
+                    <input
+                      class="form-control form-control-sm textarea"
+                      type="time"
+                      aria-label=".form-control-sm example"
+                      v-model="fechaAgemdamient.h_inicial"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <p>Seleccione hora final de jornada</p>
+                  <div class="fechas">
+                    <input
+                      class="form-control form-control-sm textarea"
+                      type="time"
+                      aria-label=".form-control-sm example"
+                      v-model="fechaAgemdamient.h_final"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="container" style="padding: 10px 10px 10px 10px">
+                    <p>
+                      Se agendara el dia {{ fechaAgemdamient.dia }} desde las
+                      {{ fechaAgemdamient.h_inicial }} hasta las
+                      {{ fechaAgemdamient.h_final }}
+                    </p>
+
+                    <button class="btn btn-primary btn-sm textarea">
+                      Agendar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <form>
               <div class="row formulario">
-                <div class="col-4 fechas">
-                  <input
-                    class="form-control form-control-sm textarea"
-                    type="date"
-                    aria-label=".form-control-sm example"
-                  />
-                </div>
-
-     <!--            <div class="col-4">
+                <!--            <div class="col-4">
                   <select
                     class="form-select form-select-sm textarea"
                     aria-label="Default select example"
@@ -228,11 +287,6 @@
                     <option value="4">PM Sabado</option>
                   </select>
                 </div> -->
-                <div class="col-4">
-                  <button class="btn btn-primary btn-sm textarea">
-                    Agendar
-                  </button>
-                </div>
               </div>
               <br />
 
@@ -259,8 +313,7 @@
           class="accordion-collapse collapse"
         >
           <div class="accordion-body">
-   
-<!-- 
+            <!-- 
             <div class="container newplantilla">
               <p><strong>Plantillas de tipos de jornadas</strong></p>
               <p>+Crear una Nueva plantilla</p>
@@ -310,77 +363,105 @@
                 Guardar Plantilla
               </button>
             </div> -->
-         
+
             <br />
             <h6 class="display-6">Tipos de Citas del Sistema</h6>
-            <br>
+            <br />
             <div class="container newplantilla">
               <p>Agregar nuevo tipo de cita</p>
               <div class="row">
-                <div class="col-6"><input class="form-control form-control-sm" type="text" placeholder="Nombre">
-                  <input class="form-control form-control-sm" type="number" placeholder="Duracion (minutos)">
-               
-            
+                <div class="col-6">
+                  <input
+                    class="form-control form-control-sm"
+                    type="text"
+                    placeholder="Nombre"
+                    v-model="newcita.nombre"
+                  />
+                  <input
+                    class="form-control form-control-sm"
+                    type="number"
+                    placeholder="Duracion (minutos)"
+                    v-model="newcita.duracion"
+                  />
                 </div>
-                
-                <div class="col-6"><div>
-                  <label for="formFileLg" class="form-label">Color</label>
-                  <input class="form-control form-control-sm" type="color" value="#225D03">
-                </div>  
-              </div>    
-            </div>       
-            <div class="row">
-              <div class="col-4"><input class="form-control form-control-sm" type="number" placeholder="$ costo individual"></div>
-              <div class="col-4"><input class="form-control form-control-sm" type="number" placeholder="$ costo Combo"></div>
-            <div class="col-4"><button class="btn btn-success btn-sm">+ Agregar Cita</button></div>
+
+                <div class="col-6">
+                  <div>
+                    <label for="formFileLg" class="form-label">Color</label>
+                    <input
+                      class="form-control form-control-sm"
+                      type="color"
+                      v-model="newcita.color"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-4">
+                  <input
+                    class="form-control form-control-sm"
+                    type="number"
+                    placeholder="$ costo individual"
+                    v-model="newcita.costo1"
+                  />
+                </div>
+                <div class="col-4">
+                  <input
+                    class="form-control form-control-sm"
+                    type="number"
+                    placeholder="$ costo Combo"
+                    v-model="newcita.costo2"
+                  />
+                </div>
+                <div class="col-4">
+                  <button class="btn btn-success btn-sm">+ Agregar Cita</button>
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="table-responsive">
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Duracion (min)</th>
+                    <th>Color Representativo</th>
+                    <th>costo Uni</th>
+                    <th>Costo Combo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr>
+                  <tr>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr>
+                  <tr>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>Datos de insercion {{ newcita }}</p>
+              }
             </div>
           </div>
-            <br>
-            <div class="table-responsive">
-            <table class="table table-sm">
-              <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Nombre</th>
-                  <th>Duracion (min)</th>
-                  <th>Color Representativo</th>
-                  <th>costo Uni</th>
-                  <th>Costo Combo</th>
-            
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                
-                </tr>
-                <tr>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                 
-                </tr>
-                <tr>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-      
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
         </div>
       </div>
       <br />
@@ -389,7 +470,29 @@
   </div>
 </template>
 
-<script></script>
+<script setup>
+import { ref } from "vue";
+
+let fechaAgemdamient = ref({
+  dia: "",
+  h_inicial: "",
+  h_final: "",
+});
+
+let newcita = ref({
+  nombre: "",
+  duracion: "",
+  costo1: "",
+  costo2: "",
+  color: "",
+});
+
+let datosinf = ref({
+  f_inical: "",
+  f_final: "",
+  tipoinf: "Seleccione",
+});
+</script>
 
 <style>
 #agendas {
@@ -408,9 +511,14 @@ button {
 }
 
 .newplantilla {
-padding: 5px;
+  padding: 5px;
   background-color: rgb(207, 232, 224);
   padding: 20px !important;
 }
-
+p {
+  margin: 1px 1px 1px !important;
+}
+.radius {
+  border-radius: 50px !important;
+}
 </style>

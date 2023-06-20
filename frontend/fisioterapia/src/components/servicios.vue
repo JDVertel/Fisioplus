@@ -1,7 +1,7 @@
 <template>
-  <div class="row">
+  <div class="row centrado">
     <div
-      class="col-6 col-md-2"
+      class="col-6 col-md-3 "
       v-for="servicio in servicios"
       :key="servicio.nombre"
     >
@@ -29,13 +29,13 @@
 import { ref } from "vue";
 let servicios = ref([
   {
-    nombre: "Terapia Fisica",
-    desc: "ya tres clases y me gusta mucho el enfoque que le das y la forma que tienes de explicar las cosas.",
+    nombre: "Terapia Fisica 45",
+    desc: "ya tres clases y me gusta mucho el enfoque que le das ",
     url: "terapia_fisica1.png",
   },
   {
     nombre: "Terapia Recuperativa",
-    desc: "ermine dejando otros cursos de vue que estaba haciendo por este, explicas muy bien. Excelente curso. g",
+    desc: "ermine dejando otros cursos de vue que estaba haciendo por ",
     url: "terapia_fisica2.jpg",
   },
   {
@@ -45,7 +45,7 @@ let servicios = ref([
   },
   {
     nombre: "Terapia Estiramiento",
-    desc: "de diseño y arquitectura. Me da la impresión que bindiar el atributo style puede hacer enojar a muchos en contra de",
+    desc: "de diseño y arquitectura. Me da la impresión ",
     url: "terapia_fisica4.jpg",
   },
 ]);
@@ -92,5 +92,13 @@ div.card-footer{
   background-color:#00913D !important;
   border: 1px;
   border-color:white!important ;
+}
+.centrado{
+display: flex !important;
+align-items: center !important;
+justify-content: center !important;
+flex-direction: row !important;
+flex-wrap:wrap!important;
+
 }
 </style>

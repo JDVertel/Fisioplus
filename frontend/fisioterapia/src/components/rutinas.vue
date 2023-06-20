@@ -1,6 +1,6 @@
 <template>
-  <div class="row">
-    <div class="col-md-2 col-6"
+  <div class="row centrado">
+    <div class="col-md-3 col-6"
     v-for="rutina in rutinas"
      :key="rutina.titulo">
         <div class="card">

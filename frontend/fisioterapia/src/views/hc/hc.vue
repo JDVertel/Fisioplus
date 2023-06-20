@@ -156,7 +156,7 @@
               aria-labelledby="pills_HC-tab"
               tabindex="0"
             >
-              <HCFisio />
+              <C_hc />
               <br />
               <div class="row">
                 <homeB />
@@ -180,7 +180,7 @@
 
 <script setup>
 import { ref } from "vue";
-import HCFisio from "../../components/hclinica.vue";
+import C_Hc from "../../components/hclinica.vue";
 import homeB from "./../../components/homebutton.vue";
 import Registro from "./../hc/registroForm.vue"
 
