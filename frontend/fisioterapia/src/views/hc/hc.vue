@@ -22,6 +22,7 @@
       <h6 class="display-6 text-center">Paciente no Encontrado !!!</h6>
 
  <Registro/>
+
     </div>
  
 
@@ -156,7 +157,7 @@
               aria-labelledby="pills_HC-tab"
               tabindex="0"
             >
-              <C_hc />
+              <C_Hc />
               <br />
               <div class="row">
                 <homeB />
@@ -180,7 +181,7 @@
 
 <script setup>
 import { ref } from "vue";
-import C_Hc from "../../components/hclinica.vue";
+import C_Hc from "../../components/h_clinica.vue";
 import homeB from "./../../components/homebutton.vue";
 import Registro from "./../hc/registroForm.vue"
 

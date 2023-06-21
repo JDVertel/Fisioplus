@@ -149,7 +149,7 @@
                           class="form-control form-control-sm textarea"
                           id="text_talla"
                           v-model="datosconsultas.talla"
-                          placeholder="talla (Cm)"
+                          placeholder="Talla (Cm)"
                         />
                       </div>
                       <div class="input-group mb-1">
@@ -241,7 +241,7 @@
                     </div>
                     <div class="mb-1">
                       <input
-                        type="email"
+                        type="text"
                         class="form-control form-control-sm textarea"
                         id="exampleFormControlInput1"
                         placeholder="Parentesco"

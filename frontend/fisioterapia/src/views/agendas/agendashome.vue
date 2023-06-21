@@ -99,6 +99,99 @@
           </div>
         </div>
       </div>
+      <!--  -->
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseFive"
+            aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseFive"
+          >
+            Reservas
+          </button>
+        </h2>
+        <div
+          id="panelsStayOpen-collapseFive"
+          class="accordion-collapse collapse"
+        >
+          <div class="accordion-body">
+            <div class="container">
+              <div class="row">
+                <p>Reservar nueva terapia</p>
+
+                <div class="col-6 col-md-3">
+                  <p>Seleccione el dia </p>
+                  <div class="fechas">
+                    <input
+                      class="form-control form-control-sm textarea"
+                      type="date"
+                      aria-label=".form-control-sm example"
+                      v-model="fechareserva.dia"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <p>Seleccione Tipo cita</p>
+                  <div class="fechas">
+                    <input
+                      class="form-control form-control-sm textarea"
+                      type="time"
+                      aria-label=".form-control-sm example"
+                      v-model="fechareserva.tipocita"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <p>Seleccione hora </p>
+                  <div class="fechas">
+                    <input
+                      class="form-control form-control-sm textarea"
+                      type="time"
+                      aria-label=".form-control-sm example"
+                      v-model="fechareserva.horacita"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="container" style="padding: 10px 10px 10px 10px">
+                    <p>
+                      Reservara {{ fechareserva.tipocita }} el dia {{ fechareserva.dia }} a las {{ fechareserva.hora }}                   </p>
+
+                    <button class="btn btn-primary btn-sm textarea">
+                      Agendar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form>
+              <div class="row formulario">
+                <!--            <div class="col-4">
+                  <select
+                    class="form-select form-select-sm textarea"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Plantilla</option>
+                    <option value="1">AM Normal</option>
+                    <option value="2">PM Normal</option>
+                    <option value="3">AM Sabado</option>
+                    <option value="4">PM Sabado</option>
+                  </select>
+                </div> -->
+              </div>
+              <br />
+
+              <br />
+            </form>
+          </div>
+        </div>
+      </div>
+      <!--  -->
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button
@@ -295,6 +388,7 @@
           </div>
         </div>
       </div>
+
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button
@@ -492,6 +586,13 @@ let datosinf = ref({
   f_final: "",
   tipoinf: "Seleccione",
 });
+
+let fechareserva =ref({
+  tipocita:"",
+  horacita:"",
+  fechareserva:"",
+
+})
 </script>
 
 <style>

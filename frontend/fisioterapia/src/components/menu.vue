@@ -32,9 +32,9 @@
                 <hr class="navbar-divider" />
               </li>
   
-              <li class="nav-item">
+           <!--    <li class="nav-item">
                 <a class="navbar-brand">Administracion</a>
-              </li>
+              </li> -->
   
               <li class="nav-item">
                 <router-link to="/homeAgendas"
@@ -84,6 +84,7 @@
     text-decoration: none !important;
     display: inline-block !important;
     font-size: 0.9rem !important;
+    margin: 10PX;
   }
 
 
