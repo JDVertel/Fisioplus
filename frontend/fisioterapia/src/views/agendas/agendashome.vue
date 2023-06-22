@@ -130,19 +130,21 @@
                       class="form-control form-control-sm textarea"
                       type="date"
                       aria-label=".form-control-sm example"
-                      v-model="fechareserva.dia"
+                      v-model="reserva.fechacita"
                     />
                   </div>
                 </div>
                 <div class="col-6 col-md-3">
                   <p>Seleccione Tipo cita</p>
                   <div class="fechas">
-                    <input
-                      class="form-control form-control-sm textarea"
-                      type="time"
-                      aria-label=".form-control-sm example"
-                      v-model="fechareserva.tipocita"
-                    />
+                    <select
+                    class="form-select form-select-sm textarea"
+                    aria-label="Default select example"
+                    v-model="reserva.tipocita"
+                  >                
+                    <option v-for="tipocita in tipocitas" :value="tipocita.nombre"> {{tipocita.nombre}} </option>
+              
+                  </select>
                   </div>
                 </div>
                 <div class="col-6 col-md-3">
@@ -152,14 +154,14 @@
                       class="form-control form-control-sm textarea"
                       type="time"
                       aria-label=".form-control-sm example"
-                      v-model="fechareserva.horacita"
+                      v-model="reserva.horacita"
                     />
                   </div>
                 </div>
                 <div class="col-6 col-md-3">
                   <div class="container" style="padding: 10px 10px 10px 10px">
                     <p>
-                      Reservara {{ fechareserva.tipocita }} el dia {{ fechareserva.dia }} a las {{ fechareserva.hora }}                   </p>
+                      Reservara {{ reserva.tipocita }} el dia {{ reserva.fechacita }} a las {{ reserva.horacita }}                   </p>
 
                     <button class="btn btn-primary btn-sm textarea">
                       Agendar
@@ -217,7 +219,7 @@
                     class="form-control form-control-sm textarea"
                     type="date"
                     aria-label=".form-control-sm example"
-                    v-model="datosinf.f_inicial"
+                    v-model="informes.f_inicial"
                   />
                 </div>
                 <div class="col-3 fechas">
@@ -225,7 +227,7 @@
                     class="form-control form-control-sm textarea"
                     type="date"
                     aria-label=".form-control-sm example"
-                    v-model="datosinf.f_final"
+                    v-model="informes.f_final"
                   />
                 </div>
                 <div class="col-3">
@@ -233,7 +235,7 @@
                   <select
                     class="form-select form-select-sm textarea"
                     id="inputGroupSelect01"
-                    v-model="datosinf.tipoinf"
+                    v-model="informes.tipoinf"
                   >
                     <option selected>Seleccione</option>
                     <option value="Ingresos">Ingresos</option>
@@ -287,8 +289,8 @@
                 </tbody>
               </table>
               <h6>
-                Informe de {{ datosinf.tipoinf }} realizado desde el {{ datosinf.f_inicial }} hasta el
-                {{ datosinf.f_final }}
+                Informe de {{ informes.tipoinf }} realizado desde el {{ informes.f_inicial }} hasta el
+                {{ informes.f_final }}
               </h6>
               <h6 class="display-6">Total Ingresos $ 1.500.000</h6>
             </div>
@@ -324,7 +326,7 @@
                       class="form-control form-control-sm textarea"
                       type="date"
                       aria-label=".form-control-sm example"
-                      v-model="fechaAgemdamient.dia"
+                      v-model="agendamiento.dia"
                     />
                   </div>
                 </div>
@@ -335,7 +337,7 @@
                       class="form-control form-control-sm textarea"
                       type="time"
                       aria-label=".form-control-sm example"
-                      v-model="fechaAgemdamient.h_inicial"
+                      v-model="agendamiento.h_inicial"
                     />
                   </div>
                 </div>
@@ -346,16 +348,16 @@
                       class="form-control form-control-sm textarea"
                       type="time"
                       aria-label=".form-control-sm example"
-                      v-model="fechaAgemdamient.h_final"
+                      v-model="agendamiento.h_final"
                     />
                   </div>
                 </div>
                 <div class="col-6 col-md-3">
                   <div class="container" style="padding: 10px 10px 10px 10px">
                     <p>
-                      Se agendara el dia {{ fechaAgemdamient.dia }} desde las
-                      {{ fechaAgemdamient.h_inicial }} hasta las
-                      {{ fechaAgemdamient.h_final }}
+                      Se agendara el dia {{ agendamiento.dia }} desde las
+                      {{ agendamiento.h_inicial }} hasta las
+                      {{ agendamiento.h_final }}
                     </p>
 
                     <button class="btn btn-primary btn-sm textarea">
@@ -469,13 +471,13 @@
                     class="form-control form-control-sm"
                     type="text"
                     placeholder="Nombre"
-                    v-model="newcita.nombre"
+                    v-model="tipocitas.nombre"
                   />
                   <input
                     class="form-control form-control-sm"
                     type="number"
                     placeholder="Duracion (minutos)"
-                    v-model="newcita.duracion"
+                    v-model="tipocitas.duracion"
                   />
                 </div>
 
@@ -485,7 +487,7 @@
                     <input
                       class="form-control form-control-sm"
                       type="color"
-                      v-model="newcita.color"
+                      v-model="tipocitas.color"
                     />
                   </div>
                 </div>
@@ -496,7 +498,7 @@
                     class="form-control form-control-sm"
                     type="number"
                     placeholder="$ costo individual"
-                    v-model="newcita.costo1"
+                    v-model="tipocitas.costo1"
                   />
                 </div>
                 <div class="col-4">
@@ -504,7 +506,7 @@
                     class="form-control form-control-sm"
                     type="number"
                     placeholder="$ costo Combo"
-                    v-model="newcita.costo2"
+                    v-model="tipocitas.costo2"
                   />
                 </div>
                 <div class="col-4">
@@ -526,33 +528,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
+                  <tr v-for="tipocita in tipocitas" :id="tipocita.nombre">
+                    <td>{{tipocita.id}}</td>
+                    <td>{{tipocita.nombre}}</td>
+                    <td>{{tipocita.duracion}}</td>
+                    <td>{{tipocita.color}}</td>
+                    <td>{{tipocita.costo1}}</td>
+                    <td>{{tipocita.costo2}}</td>
                   </tr>
-                  <tr>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                  </tr>
-                  <tr>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                  </tr>
+                
                 </tbody>
               </table>
-              <p>Datos de insercion {{ newcita }}</p>
+              <p>Datos de insercion {{ tipocitas }}</p>
               }
             </div>
           </div>
@@ -566,33 +553,55 @@
 
 <script setup>
 import { ref } from "vue";
+/* agenda del dia */
 
-let fechaAgemdamient = ref({
-  dia: "",
-  h_inicial: "",
-  h_final: "",
-});
+/* reservas */
 
-let newcita = ref({
-  nombre: "",
-  duracion: "",
-  costo1: "",
-  costo2: "",
-  color: "",
-});
+let reserva =ref({
+  tipocita:"",
+  horacita:"",
+  fechacita:"",
+})
 
-let datosinf = ref({
+/* informes */
+
+let informes = ref({
   f_inical: "",
   f_final: "",
   tipoinf: "Seleccione",
 });
 
-let fechareserva =ref({
-  tipocita:"",
-  horacita:"",
-  fechareserva:"",
+/* agendar dia para citas */
 
-})
+let agendamiento = ref({
+  dia: "",
+  h_inicial: "",
+  h_final: "",
+});
+
+/* tipos de citas */
+let tipocitas = ref([{
+  nombre: "masaje espalda",
+  duracion: "45",
+  costo1: "",
+  costo2: "",
+  color: "",
+},
+{
+  nombre: "masaje pierna",
+  duracion: "",
+  costo1: "",
+  costo2: "",
+  color: "",
+},
+{
+  nombre: "terapia fisica",
+  duracion: "",
+  costo1: "",
+  costo2: "",
+  color: "",
+}]);
+
 </script>
 
 <style>
