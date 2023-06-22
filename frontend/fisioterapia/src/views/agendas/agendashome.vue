@@ -471,13 +471,13 @@
                     class="form-control form-control-sm"
                     type="text"
                     placeholder="Nombre"
-                    v-model="tipocitas.nombre"
+                    v-model="nuevacita.nombre"
                   />
                   <input
                     class="form-control form-control-sm"
                     type="number"
                     placeholder="Duracion (minutos)"
-                    v-model="tipocitas.duracion"
+                    v-model="nuevacita.duracion"
                   />
                 </div>
 
@@ -487,7 +487,7 @@
                     <input
                       class="form-control form-control-sm"
                       type="color"
-                      v-model="tipocitas.color"
+                      v-model="nuevacita.color"
                     />
                   </div>
                 </div>
@@ -498,7 +498,7 @@
                     class="form-control form-control-sm"
                     type="number"
                     placeholder="$ costo individual"
-                    v-model="tipocitas.costo1"
+                    v-model="nuevacita.costo1"
                   />
                 </div>
                 <div class="col-4">
@@ -506,7 +506,7 @@
                     class="form-control form-control-sm"
                     type="number"
                     placeholder="$ costo Combo"
-                    v-model="tipocitas.costo2"
+                    v-model="nuevacita.costo2"
                   />
                 </div>
                 <div class="col-4">
@@ -539,7 +539,9 @@
                 
                 </tbody>
               </table>
-              <p>Datos de insercion {{ tipocitas }}</p>
+              <p>Datos de tabla{{ tipocitas }}</p>
+              <p>nuevacita</p>
+              {{ nuevacita }}
               }
             </div>
           </div>
@@ -601,6 +603,14 @@ let tipocitas = ref([{
   costo2: "",
   color: "",
 }]);
+
+let nuevacita= ref({
+  nombre: "",
+  duracion: "",
+  costo1: "",
+  costo2: "",
+  color: "",
+})
 
 </script>
 
