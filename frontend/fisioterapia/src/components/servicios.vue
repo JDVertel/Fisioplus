@@ -20,17 +20,17 @@
         </div>
         <div class="card-footer">
           <div class="row">
-            <div class="col-6 text-center">
+            <div class="col-8 text-center centrado">
               <small class="white"> Precio:${{ servicio.precio }} </small>
             </div>
-            <div class="col-6">
+            <div class="col-4 derecha">
               <button
                 type="button"
        
-                v-on:click="agendarwsp('mi tipo de cita')"
-                class="btn btn-primary btn-sm"
+                v-on:click="reservaCitasW(servicio.nombre, telefono1)"
+                class="btn btn-primary btn-sm btnwsp"
               >
-                <v-icon name="bi-whatsapp" /> Agendar
+                <v-icon name="bi-whatsapp" />
               </button>
             </div>
           </div>
@@ -43,6 +43,10 @@
 
 <script setup>
 import { ref } from "vue";
+//telefonos para reservas de citas
+let telefono1="3145563439"
+
+
 let servicios = ref([
   {
     nombre: "Masaje Espalda",
@@ -82,10 +86,13 @@ let servicios = ref([
   },
 ]);
 
-function agendarwsp(link){
-  alert(link)
-    /* window.open("https://wa.me/573145563439?text=Hola%20me%20interesa%20reservar%20una%20cita+link+%20desde%20tu%20pagina%20web"); */
-  }
+const reservaCitasW = (link, celular) =>{
+ const url = `https://wa.me/${celular}?text=>>>>%20Hola%20me%20interesa%20reservar%20una%20cita%20de%20 ${link}%20desde%20tu%20pagina%20web%20<<<<`;
+    window.open(url)
+}
+
+
+
 
 
 </script>
@@ -119,10 +126,12 @@ div.col-6.col-md-3 {
 .imagenservicio {
   height: 99px !important;
   width: 100% !important;
+  
 }
 div.card-body {
   height: 100px !important;
   width: 100% !important;
+  padding:8px!important ;
 }
 div.card-footer {
   background-color: #00913d;
@@ -143,5 +152,21 @@ div.card-footer {
 .white {
   color: rgb(255, 255, 255) !important;
   font-size: 0.6rem;
+}
+
+.btnwsp{
+border-radius: 35px!important;
+padding: 4px!important;
+box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1)!important;
+}
+.derecha {
+  text-align: right;
+}
+.centrado{
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  
 }
 </style>

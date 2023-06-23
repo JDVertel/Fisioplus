@@ -10,8 +10,15 @@
             <p class="card-text">
               {{rutina.texto}}
             </p>
-          
+            <div class="row">
+              <div class="col-2">
+                <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(rutina.titulo, telefono1)"><v-icon name="bi-whatsapp" /></button>
+
+              </div>
+
+            </div>
           </div>
+         
         </div>
       </div>
     </div> 
@@ -19,7 +26,8 @@
 
 <script setup>
 import { ref } from "vue";
-
+//telefonos para reservas de citas
+let telefono1="3145563439"
 let rutinas= ref([
 
 {
@@ -34,8 +42,14 @@ let rutinas= ref([
 },
 
 ]);
-</script>
 
+const reservaCitasW = (link, celular) =>{
+  const url = `https://wa.me/${celular}?text=>%20Hola%20me%20interesa%20reservar%20una%20clase%20de%20 ${link}%20desde%20tu%20pagina%20web%20<`;
+     window.open(url)
+ }
+
+
+</script>
 
 
 
@@ -46,9 +60,11 @@ div.col-6{
 
 }
 .imagenproducto{
-  height: 5.3rem !important;
+  height: 5.7rem !important;
   width: 100% !important;
   
 }
+
+
 
 </style>

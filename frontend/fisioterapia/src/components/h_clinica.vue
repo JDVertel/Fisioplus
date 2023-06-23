@@ -1075,6 +1075,8 @@
 </template>
 
 <script setup>
+// composition API
+
 import { ref } from "vue";
 
 let datosconsultas = ref(
