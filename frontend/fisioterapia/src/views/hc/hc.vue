@@ -208,7 +208,7 @@ let paciente= ref(
 )
 
 
-let registrado=1
+let registrado=0
 
 </script>
 

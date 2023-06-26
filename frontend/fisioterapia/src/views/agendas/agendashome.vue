@@ -122,70 +122,207 @@
             <div class="container">
               <div class="row">
                 <p>Reservar nueva terapia</p>
-
-                <div class="col-6 col-md-3">
-                  <p>Seleccione el dia </p>
-                  <div class="fechas">
-                    <input
-                      class="form-control form-control-sm textarea"
-                      type="date"
-                      aria-label=".form-control-sm example"
-                      v-model="reserva.fechacita"
-                    />
-                  </div>
-                </div>
-                <div class="col-6 col-md-3">
-                  <p>Seleccione Tipo cita</p>
-                  <div class="fechas">
-                    <select
+                <div class="col-4">
+                  <select
                     class="form-select form-select-sm textarea"
-                    aria-label="Default select example"
-                    v-model="reserva.tipocita"
-                  >                
-                    <option v-for="tipocita in tipocitas" :value="tipocita.nombre"> {{tipocita.nombre}} </option>
-              
+                    id="inputGroupSelect01"
+                  >
+                    <option selected>Tipo Documento</option>
+                    <option value="cc">CC</option>
+                    <option value="ti">TI</option>
+                    <option value="ce">CE</option>
                   </select>
-                  </div>
                 </div>
-                <div class="col-6 col-md-3">
-                  <p>Seleccione hora </p>
-                  <div class="fechas">
+                <div class="col-6">
+                  <div class="input-group mb-1">
                     <input
+                      type="number"
                       class="form-control form-control-sm textarea"
-                      type="time"
-                      aria-label=".form-control-sm example"
-                      v-model="reserva.horacita"
+                      id="text_numdoc"
+                      placeholder="Numero Documento"
                     />
                   </div>
                 </div>
-                <div class="col-6 col-md-3">
-                  <div class="container" style="padding: 10px 10px 10px 10px">
-                    <p>
-                      Reservara {{ reserva.tipocita }} el dia {{ reserva.fechacita }} a las {{ reserva.horacita }}                   </p>
+                <div class="col-2 text-center">
+                  <button class="btn btn-success btn-sm">Buscar</button>
+                </div>
+                <div>
+                  <p>
+                    Paciente no encontrado, ingrese los siguientes datos para
+                    registarlo y poder realizar una reserva
+                  </p>
+                </div>
+                <div class="container" style="background-color: red">
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="input-group mb-1">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm textarea"
+                          id="text_1nombre"
+                          placeholder="1 Nombre"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group mb-1">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm textarea"
+                          id="text_2nombre"
+                          placeholder="2 Nombre"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group mb-1">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm textarea"
+                          id="text_1apelli"
+                          placeholder="1 Apellido"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group mb-1">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm textarea"
+                          id="text_2apell"
+                          placeholder="2 Apellido"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group mb-1">
+                        <input
+                          type="number"
+                          class="form-control form-control-sm textarea"
+                          id="text_tel"
+                          placeholder="Telefono"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="input-group mb-1">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm textarea"
+                          id="text_direccion"
+                          placeholder="Direccion"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <button class="btn btn-success btn-sm">
+                    Registrar paciente
+                  </button>
+                </div>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-6 col-md-3">
+                      <p>Seleccione el dia</p>
+                      <select
+                        class="form-select form-select-sm textarea"
+                        aria-label="Default select example"
+                      >
+                        <option selected>dias Agendados</option>
+                        <option value="1">dia 1</option>
+                        <option value="2">dia 2</option>
+                        <option value="3">dia 3</option>
+                        <option value="4">dia 4</option>
+                      </select>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <p>Seleccione Tipo cita</p>
+                      <div class="fechas">
+                        <select
+                          class="form-select form-select-sm textarea"
+                          aria-label="Default select example"
+                          v-model="reserva.tipocita"
+                        >
+                          <option
+                            v-for="tipocita in tipocitas"
+                            :value="tipocita.nombre"
+                          >
+                            {{ tipocita.nombre }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <p>Seleccione hora</p>
+                      <div class="fechas">
+                        <input
+                          class="form-control form-control-sm textarea"
+                          type="time"
+                          aria-label=".form-control-sm example"
+                          v-model="reserva.horacita"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div
+                        class="container"
+                        style="padding: 10px 10px 10px 10px"
+                      >
+                        <p>
+                          Reservara {{ reserva.tipocita }} el dia
+                          {{ reserva.fechacita }} a las {{ reserva.horacita }}
+                        </p>
 
-                    <button class="btn btn-primary btn-sm textarea">
-                      Agendar
-                    </button>
+                        <button class="btn btn-primary btn-sm textarea">
+                          Agendar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="container">
+                  <h6>Citas del Dia</h6>
+                  <div class="table-responsive">
+                    <table class="table table-sm">
+                      <thead>
+                        <tr>
+                          <th>Fecha</th>
+                          <th>Tipo</th>
+
+                          <th>Hora</th>
+                          <th>Nombre</th>
+                          <th>ingreso</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>@mdo</td>
+                          <td>Mark</td>
+                          <td>Otto</td>
+                          <td>@mdo</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <td>@mdo</td>
+                          <td>Jacob</td>
+                          <td>Thornton</td>
+                          <td>@fat</td>
+                          <td>@mdo</td>
+                        </tr>
+                        <tr>
+                          <td>@mdo</td>
+                          <td>@mdo</td>
+                          <td>@twitter</td>
+                          <td>@mdo</td>
+                          <td>@mdo</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
                 </div>
               </div>
             </div>
 
             <form>
-              <div class="row formulario">
-                <!--            <div class="col-4">
-                  <select
-                    class="form-select form-select-sm textarea"
-                    aria-label="Default select example"
-                  >
-                    <option selected>Plantilla</option>
-                    <option value="1">AM Normal</option>
-                    <option value="2">PM Normal</option>
-                    <option value="3">AM Sabado</option>
-                    <option value="4">PM Sabado</option>
-                  </select>
-                </div> -->
-              </div>
               <br />
 
               <br />
@@ -289,7 +426,8 @@
                 </tbody>
               </table>
               <h6>
-                Informe de {{ informes.tipoinf }} realizado desde el {{ informes.f_inicial }} hasta el
+                Informe de {{ informes.tipoinf }} realizado desde el
+                {{ informes.f_inicial }} hasta el
                 {{ informes.f_final }}
               </h6>
               <h6 class="display-6">Total Ingresos $ 1.500.000</h6>
@@ -529,14 +667,13 @@
                 </thead>
                 <tbody>
                   <tr v-for="tipocita in tipocitas" :id="tipocita.nombre">
-                    <td>{{tipocita.id}}</td>
-                    <td>{{tipocita.nombre}}</td>
-                    <td>{{tipocita.duracion}}</td>
-                    <td>{{tipocita.color}}</td>
-                    <td>{{tipocita.costo1}}</td>
-                    <td>{{tipocita.costo2}}</td>
+                    <td>{{ tipocita.id }}</td>
+                    <td>{{ tipocita.nombre }}</td>
+                    <td>{{ tipocita.duracion }}</td>
+                    <td>{{ tipocita.color }}</td>
+                    <td>{{ tipocita.costo1 }}</td>
+                    <td>{{ tipocita.costo2 }}</td>
                   </tr>
-                
                 </tbody>
               </table>
               <p>Datos de tabla{{ tipocitas }}</p>
@@ -559,11 +696,11 @@ import { ref } from "vue";
 
 /* reservas */
 
-let reserva =ref({
-  tipocita:"",
-  horacita:"",
-  fechacita:"",
-})
+let reserva = ref({
+  tipocita: "",
+  horacita: "",
+  fechacita: "",
+});
 
 /* informes */
 
@@ -582,36 +719,37 @@ let agendamiento = ref({
 });
 
 /* tipos de citas */
-let tipocitas = ref([{
-  nombre: "masaje espalda",
-  duracion: "45",
-  costo1: "",
-  costo2: "",
-  color: "",
-},
-{
-  nombre: "masaje pierna",
-  duracion: "",
-  costo1: "",
-  costo2: "",
-  color: "",
-},
-{
-  nombre: "terapia fisica",
-  duracion: "",
-  costo1: "",
-  costo2: "",
-  color: "",
-}]);
+let tipocitas = ref([
+  {
+    nombre: "masaje espalda",
+    duracion: "45",
+    costo1: "",
+    costo2: "",
+    color: "",
+  },
+  {
+    nombre: "masaje pierna",
+    duracion: "",
+    costo1: "",
+    costo2: "",
+    color: "",
+  },
+  {
+    nombre: "terapia fisica",
+    duracion: "",
+    costo1: "",
+    costo2: "",
+    color: "",
+  },
+]);
 
-let nuevacita= ref({
+let nuevacita = ref({
   nombre: "",
   duracion: "",
   costo1: "",
   costo2: "",
   color: "",
-})
-
+});
 </script>
 
 <style>

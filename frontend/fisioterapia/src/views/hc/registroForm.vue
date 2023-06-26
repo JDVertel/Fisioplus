@@ -193,7 +193,7 @@
             </div>
           </div>
           <div v-if="origen=='ext'">
-            <credenciales />
+       
           </div>
         
         </form>
