@@ -20,7 +20,7 @@ export default {
 <style>
 
 #App{
-  background-image: linear-gradient(to bottom right, #ffffff, #82d8c1);
+  background-image: linear-gradient(to bottom right, #ffffff, rgb(37, 122, 99));
   min-height: 100vh;
   width: 100%;
   position:absolute;

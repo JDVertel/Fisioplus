@@ -27,14 +27,14 @@
  
 
   <!-- **************************************************************************************************** -->
-  <div class="container" v-else>
+  <div class="container fondo" v-else>
     <div id="AppHC">
       <div class="container-fluid fondo">
         <h1 class="display-6" style="text-align: center">Historia Clinica</h1>
 
         <div
-          class="container"
-          style="border: 1px solid #000; border-radius: 15px"
+          class="container fondo"
+          
         >
           <div class="row">
             <div class="col-2 retrato" style="margin: 10px">
@@ -74,7 +74,7 @@
         </div>
 
         <br />
-
+<hr>
         <div class="container">
           <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
@@ -248,5 +248,9 @@ button.accordion-button:not(.collapsed) {
 }
 .textarea {
   font-size: 0.6rem !important;
+}
+.fondo{
+padding: 1px!important;
+margin: 1px!important;
 }
 </style>
