@@ -691,6 +691,7 @@
 </template>
 
 <script setup>
+
 import { ref } from "vue";
 /* agenda del dia */
 
@@ -752,31 +753,4 @@ let nuevacita = ref({
 });
 </script>
 
-<style>
-#agendas {
-  font-size: 0.6rem;
-  background: fixed;
-  margin-top: 50px !important;
-}
-.fechas {
-  padding: 1px !important;
-}
-textarea,
-select,
-input,
-button {
-  font-size: 0.6rem !important;
-}
 
-.newplantilla {
-  padding: 5px;
-  background-color: rgb(207, 232, 224);
-  padding: 20px !important;
-}
-p {
-  margin: 1px 1px 1px !important;
-}
-.radius {
-  border-radius: 50px !important;
-}
-</style>

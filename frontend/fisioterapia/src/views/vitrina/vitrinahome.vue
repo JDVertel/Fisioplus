@@ -185,19 +185,3 @@ let Articulos = ref([
 ]);
 </script>
 
-<style>
-.config {
-  font-size: 0.6rem;
-  background: fixed;
-}
-textarea,
-select,
-input,
-button {
-  font-size: 0.6rem !important;
-}
-
-.display-6 {
-  font-size: 1.4rem !important;
-}
-</style>

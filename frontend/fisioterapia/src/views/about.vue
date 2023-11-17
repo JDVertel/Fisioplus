@@ -20,10 +20,3 @@
     <router-link to="/">Home</router-link>
 </div>
 </template>
-
-<style>
-.about {
-    padding: 30px;
-
-}
-</style>

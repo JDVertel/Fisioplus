@@ -4,7 +4,7 @@
     <div class="card mb-3" style="max-width: 540px;" v-for="producto in this.dataproductos" :key="producto.nombre">
         <div class="row g-0">
             <div class="col-4 imagen">
-                <img :src="'/src/assets/images/productos/' + `${producto.img}`" class="imgproducto" />
+                <img :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
             </div>
             <div class="col-6">
                 <div class="card-body">
@@ -43,50 +43,3 @@ export default {
 }
 </script>
 
-<style scoped>
-.imgproducto {
-    height: 80px !important;
-    width: 80px !important;
-
-    padding: 5px !important;
-
-}
-
-.card-text {
-    text-align: right !important;
-    color: rgb(0, 0, 0);
-    text-shadow: 1px 1px #fffefe;
-}
-
-div.col-4 {
-    padding: 0px !important;
-}
-
-div.card-img-overlay {
-    padding: 5px !important;
-}
-
-.cproductos {
-    border: 1px solid #00913D !important;
-
-}
-
-.hvrule {
-    padding: 5px;
-    margin: 5px;
-
-}
-.imagen{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.centrado {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-}
-</style>

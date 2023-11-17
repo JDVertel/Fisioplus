@@ -13,7 +13,7 @@ import Menu from './../components/menu.vue'
     <div class="container" align="center">
       <img
         src="./../assets/images/inicio.jpg"
-        class="card-img-top redondo1"
+        class="imagenvitrina"
         alt="..."
       />
     </div>
@@ -49,25 +49,3 @@ import Menu from './../components/menu.vue'
 
   </div>
 </template>
-
-<style scoped>
-
-.subtitulos {
-  color: white;
-  text-align: center;
-  text-shadow: 1px 1px 2px black;
-}
-
-.display-6 {
-  font-size: 1.2rem;
-}
-
-
-.redondo1 {
-  border-radius: 50% 50% 50% 50%;
-  width: 250px;
-
-}
-
-
-</style>

@@ -39,21 +39,3 @@ import { ref } from "vue";
  })
 
 </script>
-
-<style>
-.credenciales {
-    background-color: #225d03;
-    padding: 10px 12px 8px 10px;
-    border-radius: 15px;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-flow: row;
-  }
-  .etiq {
-    color: antiquewhite;
-    text-align: center;
-  }
-</style>

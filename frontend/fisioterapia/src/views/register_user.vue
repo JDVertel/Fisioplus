@@ -13,6 +13,3 @@ let formaregistro=(
 )
 </script>
 
-<style>
-
-</style>

@@ -80,7 +80,7 @@
               <br>
                 <textarea
                 placeholder="Motivo de Consulta"
-                  v-model="datosconsultas.motivoConsulta"
+                  v-model="motivoConsulta"
                   class="form-control textarea"
                   id="text_motivoconsulta"
                   rows="3"
@@ -92,7 +92,7 @@
                
                 <textarea
                 placeholder="Diagnostico Medico"
-                v-model="datosconsultas.diagnostico"
+                v-model="diagnostico"
                   class="form-control textarea"
                   id="text_diagnosticomedico"
                   rows="3"
@@ -103,7 +103,7 @@
              
                 <textarea
                 placeholder="Tratamientos Previos"
-                v-model="datosconsultas.TratPrevios"
+                v-model="TratPrevios"
                   class="form-control textarea"
                   id="text_tratamientosprevios"
                   rows="3"
@@ -114,7 +114,7 @@
               
                 <textarea
                 placeholder="Medicamentos Preinscrios"
-                v-model="datosconsultas.MedPre"
+                v-model="MedPre"
                   class="form-control textarea"
                   id="text_medicamentospreinscritos"
                   rows="3"
@@ -139,7 +139,7 @@
                           type="number"
                           class="form-control form-control-sm textarea"
                           id="text_peso"
-                          v-model="datosconsultas.peso"
+                          v-model="peso"
                           placeholder="Peso (kg)"
                         />
                       </div>
@@ -148,7 +148,7 @@
                           type="number"
                           class="form-control form-control-sm textarea"
                           id="text_talla"
-                          v-model="datosconsultas.talla"
+                          v-model="talla"
                           placeholder="Talla (Cm)"
                         />
                       </div>
@@ -157,7 +157,7 @@
                           type="number"
                           class="form-control form-control-sm textarea"
                           id="text_estatura"
-                          v-model="datosconsultas.estatura"
+                          v-model="estatura"
                           placeholder="Estatura (Cm)"
                         />
                       </div>
@@ -166,7 +166,7 @@
                           type="number"
                           class="form-control form-control-sm textarea"
                           id="text_imc"
-                          v-model="datosconsultas.imc"
+                          v-model="imc"
                           placeholder="IMC"
                         />
                       </div>
@@ -180,7 +180,7 @@
                         type="number"
                         class="form-control form-control-sm textarea"
                         id="text_temp"
-                        v-model="datosconsultas.temp"
+                        v-model="temp"
                         placeholder="Temp (C)"
                       />
                     </div>
@@ -189,7 +189,7 @@
                         type="number"
                         class="form-control form-control-sm textarea"
                         id="text_fcardiaca"
-                        v-model="datosconsultas.fcardiaca"
+                        v-model="fcardiaca"
                         placeholder="F.cardiaca"
                       />
                     </div>
@@ -198,7 +198,7 @@
                         type="number"
                         class="form-control form-control-sm textarea"
                         id="text_frespiratoria"
-                        v-model="datosconsultas.frespiratoria"
+                        v-model="frespiratoria"
                         placeholder="F.respiraotria"
                       />
                     </div>
@@ -207,7 +207,7 @@
                         type="number"
                         class="form-control form-control-sm textarea"
                         id="text_tarterial"
-                        v-model="datosconsultas.tarterial"
+                        v-model="tarterial"
                         placeholder="T.Arterial"
                       />
                     </div>
@@ -229,7 +229,7 @@
                 <div class="col-6">
                   <div class="container">
                     <div class="mb-1">
-                      <select v-model="datosconsultas.EnfHeredoF"
+                      <select v-model="EnfHeredoF"
                         class="form-select form-select-sm textarea"
                         aria-label="Default select example"
                       >
@@ -245,7 +245,7 @@
                         class="form-control form-control-sm textarea"
                         id="exampleFormControlInput1"
                         placeholder="Parentesco"
-                        v-model="datosconsultas.ParentescoEnfHeredoF"
+                        v-model="ParentescoEnfHeredoF"
                       />
                     </div>
                     <div class="mb-1">
@@ -253,7 +253,7 @@
                         class="form-control form-control-sm textarea"
                         id="exampleFormControlTextarea1"
                         placeholder="Detalle"
-                        v-model="datosconsultas.DetalleEnfHeredoF"
+                        v-model="DetalleEnfHeredoF"
                         rows="2"
                       ></textarea>
                     </div>
@@ -313,7 +313,7 @@
                       <select
                         class="form-select form-select-sm textarea"
                         aria-label="Default select example"
-                        v-model="datosconsultas.EnfPatologica"
+                        v-model="EnfPatologica"
                       >
                         <option selected>Enfermedad</option>
                         <option value="1">One</option>
@@ -327,7 +327,7 @@
                         class="form-control form-control-sm textarea"
                         id="exampleFormControlInput1"
                         placeholder="Parentesco"
-                        v-model="datosconsultas.ParentescoEnfPatologica"
+                        v-model="ParentescoEnfPatologica"
                       />
                     </div>
                     <div class="mb-1">
@@ -335,7 +335,7 @@
                         class="form-control form-control-sm textarea"
                         id="exampleFormControlTextarea1"
                         placeholder="Detalle"
-                        v-model="datosconsultas.DetalleEnfPatologica"
+                        v-model="DetalleEnfPatologica"
                         rows="2"
                       ></textarea>
                     </div>
@@ -380,7 +380,7 @@
               </div>
             </div>
           </div>
-          {{ datosconsultas }}
+           datosconsultas 
         </div>
       </div>
     </div>
@@ -806,7 +806,7 @@
                   class="form-control textarea"
                   id="exampleFormControlTextarea1"
                   rows="3"
-                  v-model="imgdiag.radiografia"
+                  v-model="radiografia"
                 ></textarea>
               </div>
             </div>
@@ -825,7 +825,7 @@
                   class="form-control textarea"
                   id="exampleFormControlTextarea1"
                   rows="3"
-                  v-model="imgdiag.ecografia"
+                  v-model="ecografia"
                 ></textarea>
               </div>
             </div>
@@ -844,7 +844,7 @@
                   class="form-control textarea"
                   id="exampleFormControlTextarea1"
                   rows="3"
-                  v-model="imgdiag.resonancia"
+                  v-model="resonancia"
                 ></textarea>
               </div>
             </div>
@@ -863,7 +863,7 @@
                   class="form-control textarea"
                   id="exampleFormControlTextarea1"
                   rows="3"
-                  v-model="imgdiag.tag"
+                  v-model="tag"
                 ></textarea>
               </div>
             </div>
@@ -882,12 +882,12 @@
                   class="form-control textarea"
                   id="exampleFormControlTextarea1"
                   rows="3"
-                  v-model="imgdiag.otros"
+                  v-model="otros"
                 ></textarea>
               </div>
             </div>
           </div>
-          {{ imgdiag }}
+           imgdiag 
         </div>
       </div>
     </div>
@@ -1058,10 +1058,10 @@
               class="form-control textarea"
               id="exampleFormControlTextarea1"
               rows="3"
-              v-model="tratamiento.descripcion"
+              v-model="descripcion"
             ></textarea>
           </div>
-         {{ tratamiento }}
+          tratamiento 
         
         </div>
       </div>
@@ -1074,33 +1074,6 @@
   </div>
 </template>
 
-<script setup>
-// composition API
 
-import { ref } from "vue";
 
-let datosconsultas = ref(
-  /* para subir */
-{
-  motivoConsulta: "",
-  diagnostico:"",
-  TratPrevios:"",
-  MedPre:"",
-  peso:"",
-  talla:"",
-  estatura:"",
-  imc:"",
-  temp:"",
-  fcardiaca:"",
-  frespiratoria:"",
-  tarterial:"",
- EnfPatologica:"Enfermedad",
-EnfHeredoF:"Enfermedad"
-},
 
-);
-let imgdiag = ref({});
-let tratamiento = ref({});
-</script>
-
-<style></style>

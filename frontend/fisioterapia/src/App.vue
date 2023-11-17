@@ -1,30 +1,22 @@
 <script>
-import { defineComponent } from 'vue';
+
 import Footer from "./views/footer.vue";
 
+import './assets/styles.css'
+
 export default {
-  name: "App",
-  components: {
-    Footer,
-  },
+    name: "App",
+    components: {
+        Footer,
+    },
 };
 </script>
 
 <template>
-  <div id="App">
+<div id="App">
     <router-view></router-view>
     <Footer />
-  </div>
+</div>
 </template>
 
-<style>
 
-#App{
-  background-image: linear-gradient(to bottom right, #ffffff, rgb(37, 122, 99));
-  min-height: 100vh;
-  width: 100%;
-  position:absolute;
-  padding-bottom: 3em;
-
-}
-</style>

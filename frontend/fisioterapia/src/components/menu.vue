@@ -16,10 +16,9 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <router-link to="/login"
-                  ><a class="nav-link-menu" aria-current="page"> Login</a></router-link
-                >
+              <a class="nav-link-menu" aria-current="page"> Login</a>
               </li>
+              
               <li class="nav-item">
                 <router-link to="/about"
                   ><a class="nav-link-menu" aria-current="page"
@@ -31,38 +30,16 @@
               <li class="nav-item">
                 <hr class="navbar-divider" />
               </li>
-  
-           <!--    <li class="nav-item">
-                <a class="navbar-brand">Administracion</a>
-              </li> -->
-  
               <li class="nav-item">
-                <router-link to="/homeAgendas"
+                <router-link to="/dashboard"
                   ><a class="nav-link-menu" aria-current="page"
-                    >Agendas</a
+                    >Dashboard</a
                   ></router-link
                 >
               </li>
-              <li class="nav-item">
-                <router-link to="/vitrina"
-                  ><a class="nav-link-menu" aria-current="page"
-                    >Vitrina</a
-                  ></router-link
-                >
-              </li>
-              <li class="nav-item">
-                <router-link to="/HC"
-                  ><a class="nav-link-menu" aria-current="page"
-                    >H Clinica</a
-                  ></router-link
-                >
-              </li>
+           
   
-             <!--  <li class="nav-item">
-                <router-link to="/about">
-                  <a class="nav-link">Informes</a></router-link
-                >
-              </li> -->
+           
             </ul>
           </div>
         </div>
@@ -74,18 +51,3 @@
 
 </script>
 
-
-
-<style>
-
-.nav-link-menu{
-    color: white !important;
-    text-shadow: 1px 1px 2px black !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    font-size: 0.9rem !important;
-    margin: 10PX;
-  }
-
-
-</style>

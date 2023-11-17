@@ -243,9 +243,3 @@ let origen = 'ext'
 </script>
 
 
-<style>
-.textarea {
-  font-size: 0.6rem !important;
-}
-
-</style>

@@ -6,13 +6,8 @@
 </template>
 
 <script>
+
 export default {
 
 }
 </script>
-
-<style>
-.minitext {
-    font-size: 0.6rem;
-  }
-</style>

@@ -83,7 +83,7 @@
         </div>
 
         <div class="col-12 col-md-6">
-            <router-link to="/homeAgendas"><a class="nav-link-menu" aria-current="page">
+            <router-link to="/productos"><a class="nav-link-menu" aria-current="page">
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="row g-0">
                             <div class="col-2 centrado">
@@ -135,22 +135,4 @@
 </div>
 </template>
 
-<style scoped>
-.menu {
-    margin-top: 2rem;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
 
-}
-
-.centrado {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-}
-</style>

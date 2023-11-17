@@ -4,7 +4,7 @@
 
     <div class="col-md-3 col-6" v-for="rutina in this.datarutinas" :key="rutina.titulo">
         <div class="card mb-3">
-            <img :src="'/src/assets/images/clasesyrutinas/'+`${rutina.url}`" class="imagenproducto" />
+            <img :src="'/src/assets/images/clasesyrutinas/'+`${rutina.url}`" class="imagenrutina" />
             <div class="card-body">
                 <h5 class="card-title">{{rutina.titulo}} <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(rutina.titulo, this.telefono1)">
                         <v-icon name="bi-whatsapp" /></button></h5>
@@ -38,27 +38,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-img {
-    height: 99px !important;
-    width: 100% !important;
-}
-
-.centrado {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-}
-.card{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-
-    border-radius: 5px;
-}
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-</style>

@@ -1,0 +1,367 @@
+/*apps --------------------------------------------------------------------------------------------------*/
+#App {
+  background-image: linear-gradient(to bottom right, #ffffff, rgb(37, 122, 99));
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  padding-bottom: 3em;
+
+}
+
+
+
+
+/*imagenes--------------------------------------------------------------------------------------------------*/
+
+.imagenvitrina {
+  border-radius: 50% !important;
+  width: 35% !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.imagenvitrina:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+
+.imagenservicio {
+  height: 99px !important;
+  width: 100% !important;
+
+}
+
+
+.imagenrutina {
+  height: 120px !important;
+  padding: 5px !important;
+}
+
+.imagenproducto {
+  height: 99px !important;
+  padding: 5px !important;
+}
+
+.imagenhc {
+  height: 99px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  border: 1px solid #00913d;
+ 
+}
+
+
+
+
+
+
+
+
+/* fuentes-------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/* cards-------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+/* tablas-------------------------------------------------------------------------------------------------------------*/
+
+.fechas {
+  padding: 1px !important;
+}
+
+textarea,
+select,
+input,
+button {
+  font-size: 0.6rem !important;
+}
+
+.newplantilla {
+  padding: 5px;
+  background-color: rgb(207, 232, 224);
+  padding: 20px !important;
+}
+
+p {
+  margin: 1px 1px 1px !important;
+}
+
+
+#agendas {
+  font-size: 0.6rem;
+  background: fixed;
+  margin-top: 50px !important;
+}
+
+.radius {
+  border-radius: 50px !important;
+}
+
+#AppHC {
+  font-size: 0.6rem;
+  background: fixed;
+}
+
+
+
+
+
+button.accordion-button.collapsed {
+  padding: 2px;
+  background-color: rgb(120, 195, 157);
+  color: aliceblue;
+  font-size: 0.7rem;
+  text-shadow: 1px 1px 2px black;
+}
+
+button.accordion-button:not(.collapsed) {
+  padding: 2px;
+  background-color: rgb(75, 198, 242);
+  color: rgba(9, 210, 109, 0.68);
+  font-size: 0.7rem;
+  color: aliceblue;
+  text-shadow: 1px 1px 2px black;
+}
+
+.retrato {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.textarea {
+  font-size: 0.6rem !important;
+}
+
+
+
+.minitext {
+  font-size: 0.6rem;
+}
+
+.menu {
+  margin-top: 2rem;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+
+}
+
+.centrado {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+}
+
+.nav-link-menu {
+  color: white !important;
+  text-shadow: 1px 1px 2px black !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  font-size: 0.9rem !important;
+  margin: 10PX;
+}
+
+
+
+
+.card-text {
+  text-align: right !important;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px #fffefe;
+}
+
+div.col-4 {
+  padding: 0px !important;
+}
+
+
+.cproductos {
+  border: 1px solid #00913D !important;
+
+}
+
+.hvrule {
+  padding: 5px;
+  margin: 5px;
+
+}
+
+
+
+.centrado {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+}
+
+
+.centrado {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardservice {
+  padding: 0.2rem !important;
+}
+
+.card {
+  margin: 0.5rem;
+  font-size: 0.7rem;
+  border-style: none !important;
+  border-color: transparent !important;
+}
+
+.card-text {
+  font-size: 0.6rem;
+  font-style: oblique;
+}
+
+.card-title {
+  font-size: 0.8rem;
+}
+
+.card-footer {
+  font-size: 0.7rem;
+}
+
+.card-body {
+  padding: 5px;
+}
+
+.col-6 {
+  padding: 2px;
+}
+
+div.col-6.col-md-3 {
+  padding: 0.2px !important;
+}
+
+
+
+div.card-body {
+  height: 100px !important;
+  width: 100% !important;
+  padding: 8px !important;
+}
+
+div.card-footer {
+  background-color: #00913d;
+}
+
+.btn-primary {
+  background-color: #00913d !important;
+  border: 1px;
+  border-color: white !important;
+}
+
+.centrado {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+}
+
+.white {
+  color: rgb(255, 255, 255) !important;
+  font-size: 0.9rem;
+}
+
+.btnwsp {
+  border-radius: 35px !important;
+  padding: 4px !important;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+.derecha {
+  text-align: right;
+}
+
+.centrado {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.textarea {
+  font-size: 0.6rem !important;
+}
+
+
+
+.config {
+  font-size: 0.6rem;
+  background: fixed;
+}
+
+textarea,
+select,
+input,
+button {
+  font-size: 0.6rem !important;
+}
+
+.display-6 {
+  font-size: 1.4rem !important;
+}
+
+.about {
+  padding: 30px;
+
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(34, 93, 3);
+  color: rgb(237, 250, 237);
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  font-size: 0.7rem;
+}
