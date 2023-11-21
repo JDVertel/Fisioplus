@@ -1,7 +1,7 @@
 <template>
 
 <div class="row centrado">
-    <div class="card mb-3" style="max-width: 540px;" v-for="producto in this.dataproductos" :key="producto.nombre">
+    <div class="card mb-3 cardproductos" style="max-width: 540px;" v-for="producto in this.dataproductos" :key="producto.nombre">
         <div class="row g-0">
             <div class="col-4 imagen">
                 <img :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />

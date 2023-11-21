@@ -26,17 +26,17 @@
         <div class="container-fluid">
             <h1 class="display-6" style="text-align: center">Historia Clinica</h1>
             <div class="card">
-              <div class="card-header">
-                daros personales 
-              </div>
+                <div class="card-header">
+                    Datos Personales
+                </div>
                 <div class="card-body">
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-2 retrato" style="margin: 10px">
+                            <div class="col-2 retrato" >
                                 <img src="./../../assets/images/usuario.jpg" class="imagenhc" alt="..." />
                             </div>
-                            <div class="col-9">
+                            <div class="col-10">
                                 <div class="container" style="margin: 10px">
                                     <h5>
                                         <strong>
@@ -63,76 +63,79 @@
                             </div>
                         </div>
                     </div>
-            
-            <br />
-            <hr>
-            <div class="container">
-                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills_historial" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-                            Historial
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills_HC-tab" data-bs-toggle="pill" data-bs-target="#pills_HC" type="button" role="tab" aria-controls="pills_HC" aria-selected="false">
-                            Historia Clinica
-                        </button>
-                    </li>
-                </ul>
+                    
+                </div>
+              
+                <br />
+                <hr>
+                <div class="container">
+                    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills_historial" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
+                                Historial
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills_HC-tab" data-bs-toggle="pill" data-bs-target="#pills_HC" type="button" role="tab" aria-controls="pills_HC" aria-selected="false">
+                                Historia Clinica
+                            </button>
+                        </li>
+                    </ul>
 
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills_historial" tabindex="0">
-                        <div class="table-responsive">
-                            <table class="table table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Fecha</th>
-                                        <th scope="col">Hallazgos</th>
-                                        <th scope="col">Tratamientos</th>
-                                        <th scope="col">Observaciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Jacob</td>
-                                        <td>Jacob</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <homeB />
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="pills_HC" role="tabpanel" aria-labelledby="pills_HC-tab" tabindex="0">
-                        <C_Hc />
-                        <br />
-                        <div class="row">
-                            <homeB />
-                            <div class="col-6">
-                                <button type="button" class="btn btn-primary btn-sm">
-                                    Guardar Historia Clinica
-                                </button>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills_historial" tabindex="0">
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Fecha</th>
+                                            <th scope="col">Hallazgos</th>
+                                            <th scope="col">Tratamientos</th>
+                                            <th scope="col">Observaciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Jacob</td>
+                                            <td>Jacob</td>
+                                            <td>@twitter</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <homeB />
                             </div>
+                        </div>
 
+                        <div class="tab-pane fade" id="pills_HC" role="tabpanel" aria-labelledby="pills_HC-tab" tabindex="0">
+                            <C_Hc />
+                            <br />
+                            <div class="row">
+                                <homeB />
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-primary btn-sm">
+                                        Guardar Historia Clinica
+                                    </button>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>    </div>
-          </div>
+
+            </div>
         </div>
         <br />
         <br />

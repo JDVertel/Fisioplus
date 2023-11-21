@@ -1,14 +1,16 @@
 <template>
 <div class="row centrado">
-    <div class="col-6 col-md-2 cardservice" v-for="servicio in this.dataservicios" :key="servicio.nombre">
-        <div class="card">
+    <div class="col-6 col-md-2 cardservicios" v-for="servicio in this.dataservicios" :key="servicio.nombre">
+        <div class="card ">
             <!--  -->
             <img :src="'/src/assets/images/servicios/' + `${servicio.url}`" class="card-img-top imagenservicio" />
             <!--  -->
-            <div class="card-body">
-                <h5 class="card-title">{{ servicio.nombre }}</h5>
+            <div class="card-body bodyservicios">
+
+                <h5 class="card-title titleservice"> {{ servicio.nombre }}</h5>
                 <p class="card-text">
-                    {{ servicio.desc }}
+                    <div class="overflow-y-auto"> {{ servicio.desc }}</div>
+
                 </p>
             </div>
             <div class="card-footer">

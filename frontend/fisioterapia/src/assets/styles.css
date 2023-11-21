@@ -27,7 +27,7 @@
 
 
 .imagenservicio {
-  height: 99px !important;
+  height: 120px !important;
   width: 100% !important;
 
 }
@@ -41,6 +41,7 @@
 .imagenproducto {
   height: 99px !important;
   padding: 5px !important;
+
 }
 
 .imagenhc {
@@ -65,13 +66,121 @@
 
 /* cards-------------------------------------------------------------------------------------------------------------*/
 
+.cardservicios {
+  font-size: 0.7rem;
+  padding: 0.2rem !important;
+  border-style: none !important;
+  border-color: transparent !important;
+  
+}
+.titleservice{
+  font-size: 1rem;
+}
+
+.bodyservicios{
+  height: 100px;
+  padding: 7px!important;
+}
+
+/*---------------------------*/
+.cardclases{
+  font-size: 0.7rem;
+}
+
+.cardproductos{
+  font-size: 0.7rem;
+
+  font-style: oblique;
+}
 
 
+div.card-footer {
+  background-color: #00913d;
+    font-size: 0.7rem;
+}
 
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
 
-
-
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
 /* tablas-------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+/*  Cards------------------------------------------------------------------------------------------------------------- */
+
+
+/*
+
+
+.card-title {
+  font-size: 0.8rem;
+}
+
+.card-body {
+  padding: 5px;
+}
+.card-text {
+  font-size: 0.6rem;
+  font-style: oblique;
+}
+
+
+
+
+div.card-body {
+  height: 100px !important;
+  width: 100% !important;
+  padding: 8px !important;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+
+
+
+
+.card-text {
+  text-align: right !important;
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px #fffefe;
+}
+
+
+*/
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------- */
 
 .fechas {
   padding: 1px !important;
@@ -180,11 +289,6 @@ button.accordion-button:not(.collapsed) {
 
 
 
-.card-text {
-  text-align: right !important;
-  color: rgb(0, 0, 0);
-  text-shadow: 1px 1px #fffefe;
-}
 
 div.col-4 {
   padding: 0px !important;
@@ -221,44 +325,10 @@ div.col-4 {
   flex-wrap: wrap !important;
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
 
-  border-radius: 5px;
-}
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
 
-.cardservice {
-  padding: 0.2rem !important;
-}
 
-.card {
-  margin: 0.5rem;
-  font-size: 0.7rem;
-  border-style: none !important;
-  border-color: transparent !important;
-}
-
-.card-text {
-  font-size: 0.6rem;
-  font-style: oblique;
-}
-
-.card-title {
-  font-size: 0.8rem;
-}
-
-.card-footer {
-  font-size: 0.7rem;
-}
-
-.card-body {
-  padding: 5px;
-}
 
 .col-6 {
   padding: 2px;
@@ -270,15 +340,8 @@ div.col-6.col-md-3 {
 
 
 
-div.card-body {
-  height: 100px !important;
-  width: 100% !important;
-  padding: 8px !important;
-}
 
-div.card-footer {
-  background-color: #00913d;
-}
+
 
 .btn-primary {
   background-color: #00913d !important;
@@ -317,16 +380,9 @@ div.card-footer {
 
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
 
-  border-radius: 5px;
-}
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
+
 
 .textarea {
   font-size: 0.6rem !important;
