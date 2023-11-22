@@ -1,17 +1,25 @@
 <template>
+<div class="container">
 
-<div class="row centrado">
+    <div class="row centrado">
 
-    <div class="col-md-3 col-6" v-for="rutina in this.datarutinas" :key="rutina.titulo">
-        <div class="card cardclases mb-3">
-            <img :src="'/src/assets/images/clasesyrutinas/'+`${rutina.url}`" class="imagenrutina" />
-            <div class="card-body">
-                <h5 class="card-title">{{rutina.titulo}} <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(rutina.titulo, this.telefono1)">
-                        <v-icon name="bi-whatsapp" /></button></h5>
-                <p class="card-text">{{rutina.texto}}</p>
-                <p class="card-text"><strong>${{rutina.precio}}</strong></p>
+        <div class="col-md-3 col-6" v-for="rutina in this.datarutinas" :key="rutina.titulo">
+            <div class="card cardclases mb-3 ">
+                <img :src="'/src/assets/images/clasesyrutinas/'+`${rutina.url}`" class="imagenrutina" />
+                <div class="card-body">
+                    <h5 class="card-title">{{rutina.titulo}} </h5>
+                    <p class="card-text">{{rutina.texto}}</p>
+                    <hr>
+                    <div class="clasesfooter">
+                        <div>   <p class="card-text"><strong>${{rutina.precio}}</strong></p></div>
+                     <div>        <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(rutina.titulo, this.telefono1)">
+                        <v-icon name="bi-whatsapp" /></button></div>
+              
+                    </div>
+                
+                </div>
+
             </div>
-
         </div>
     </div>
 </div>

@@ -144,7 +144,7 @@
                                 </div>
                             </div>
                             <div class="col-2 centrado">
-                                <h1 class="display-1"></h1>
+                                <h1 class="display-1">9</h1>
                             </div>
                         </div>
                     </div>
