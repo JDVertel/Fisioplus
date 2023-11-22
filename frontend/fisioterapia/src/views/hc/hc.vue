@@ -33,7 +33,7 @@
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-2 retrato" >
+                            <div class="col-2 retrato">
                                 <img src="./../../assets/images/usuario.jpg" class="imagenhc" alt="..." />
                             </div>
                             <div class="col-10">
@@ -44,28 +44,26 @@
                                             Personales</strong>
                                     </h5>
                                     <div class="row">
-                                        <div class="col-6 col-md-3">nombre1</div>
-                                        <div class="col-6 col-md-3">nombre2</div>
-                                        <div class="col-6 col-md-3">apellido1</div>
-                                        <div class="col-6 col-md-3">apellido2</div>
-                                        <div class="col-6 col-md-3">sexo</div>
-                                        <div class="col-6 col-md-3">EDAD</div>
-                                        <div class="col-6 col-md-3">s_tipodoc</div>
-                                        <div class="col-6 col-md-3">numdoc</div>
-                                        <div class="col-6 col-md-3">tiposangre</div>
-                                        <div class="col-6 col-md-3">ecivil</div>
-                                        <div class="col-6 col-md-3">escolaridad</div>
-                                        <div class="col-6 col-md-3">ocupacion</div>
-                                        <div class="col-6 col-md-3">direccion</div>
-                                        <div class="col-6 col-md-3">cel</div>
+                                        <div class="col-12">Nombres:</div>
+                                        <div class="col-12">Apellidos:</div>
+                                        <div class="col-6 col-md-3">Sexo:</div>
+                                        <div class="col-6 col-md-3">Edad:</div>
+                                        <div class="col-6 col-md-3">TipoDoc:</div>
+                                        <div class="col-6 col-md-3">Numdoc:</div>
+                                        <div class="col-6 col-md-3">Tipo Sangre:</div>
+                                        <div class="col-6 col-md-3">E Civil:</div>
+                                        <div class="col-6 col-md-3">Escolaridad:</div>
+                                        <div class="col-6 col-md-3">Ocupacion:</div>
+                                        <div class="col-6 col-md-3">Direccion:</div>
+                                        <div class="col-6 col-md-3">Celular:</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
-              
+
                 <br />
                 <hr>
                 <div class="container">
@@ -119,22 +117,18 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="pills_HC" role="tabpanel" aria-labelledby="pills_HC-tab" tabindex="0">
-                            <C_Hc />
-                            <br />
-                            <div class="row">
-                                <homeB />
-                                <div class="col-6">
-                                    <button type="button" class="btn btn-primary btn-sm">
-                                        Guardar Historia Clinica
-                                    </button>
-                                </div>
-
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
+                <div class="tab-pane fade" id="pills_HC" role="tabpanel" aria-labelledby="pills_HC-tab" tabindex="0">
+                    <C_Hc />
+                    <br />
+                    <div class="row">
+                        <homeB />
+                      
 
+                    </div>
+                </div>
             </div>
         </div>
         <br />
@@ -145,9 +139,16 @@
 </template>
 
 <script>
-import C_Hc from "../../components/h_clinica.vue";
+import HC from "../../components/h_clinica.vue";
 import homeB from "./../../components/homebutton.vue";
 import Registro from "./../hc/registroForm.vue"
 
 let registrado = 1
+export default {
+
+    components: {
+        C_Hc:HC,
+    }
+
+}
 </script>

@@ -2,37 +2,37 @@ export const productos = [
     {
         img: "productos1.jpg",
         nombre: "lazo para saltar y masajear ",
-        descripcion:"texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
+        descripcion: "texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
         precio: "15000",
     },
     {
         img: "producto2.jpg",
         nombre: "pelota",
-        descripcion:"texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
+        descripcion: "texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
         precio: "20000",
     },
     {
         img: "producto3.jpg",
         nombre: "crema",
-        descripcion:"texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
+        descripcion: "texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
         precio: "15000",
     },
     {
         img: "producto4.jpg",
         nombre: "masajeador",
-        descripcion:"texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
+        descripcion: "texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
         precio: "55000",
     },
     {
         img: "producto5.jpg",
         nombre: "pesas",
-        descripcion:"texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
+        descripcion: "texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
         precio: "35000",
     },
     {
         img: "producto6.jpg",
         nombre: "medias",
-        descripcion:"texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
+        descripcion: "texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf , texto, sñdlkfñdlf",
         precio: "36000",
     },
 ]
@@ -45,13 +45,13 @@ export const rutinas = [
         titulo: "Rutinas",
         texto: "This is a wider card with supporting text below as a natural lead-in",
         url: "ejercicios_rutina.jpg",
-        precio:15000,
+        precio: 15000,
     },
     {
         titulo: "ejercicios",
         texto: "This is a wider card with supporting text below as a natural lead-in",
         url: "ejercicios_rutina2.png",
-        precio:20000,
+        precio: 20000,
     },
 
 ]
@@ -95,3 +95,45 @@ export const servicios = [
         url: "terapia_fisica4.jpg",
     },
 ]
+
+/* ----------------------------------------------- */
+
+export const Articulos = [
+    {
+        id: 1,
+        categ: "servicio",
+        titulo: "titulo del servicio",
+        precio: "",
+        detalle: "",
+        img: "",
+        estado: "1",
+    },
+    {
+        id: 2,
+        categ: "clases",
+        titulo: "titulo de la clase",
+        precio: "",
+        detalle: "",
+        img: "",
+        estado: "0",
+    },
+    {
+        id: 3,
+        categ: "productos",
+        titulo: "titulo del producto",
+        precio: "",
+        detalle: "",
+        img: "",
+        estado: "1",
+    },
+    {
+        id: 4,
+        categ: "servicio",
+        titulo: "titulo servicio",
+        precio: "",
+        detalle: "",
+        img: "",
+        estado: "0",
+    },
+]
+    

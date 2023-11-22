@@ -342,7 +342,9 @@ div.col-4 {
 
 }
 
-
+div.accordion-body{
+  padding: 5px!important;
+}
 
 
 
@@ -372,7 +374,7 @@ div.col-4 {
   padding: 2px;
 }
 
-div.col-6.col-md-3 {
+div.col-6.col-md-3, div.col-12 {
   padding: 0.2px !important;
 }
 

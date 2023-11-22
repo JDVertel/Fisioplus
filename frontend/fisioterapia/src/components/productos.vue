@@ -1,13 +1,13 @@
 <template>
 <div class="container">
     <div class="row">
-        <div class="col-2 col-md-2 Cproductos" v-for="(producto, index) in this.dataproductos" :key="index">
+        <div class="col-4 col-md-2 Cproductos" v-for="(producto, index) in this.dataproductos" :key="index">
 
             <div class="card" data-bs-toggle="modal" data-bs-target="#ModalProductos" @click="detalles(index)">
 
             
 
-                <div class="card-body">
+                <div class="card-body detallesCard">
                     <img :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
                 </div>
                 <div class="card-footer" >
@@ -75,12 +75,11 @@ export default {
         },
 
         detalles(id) {
-
-            this.imagenP = this.dataproductos[id].img,
-                this.tituloP = this.dataproductos[id].nombre,
-                this.detalleP = this.dataproductos[id].descripcion,
-                this.precioP = this.dataproductos[id].precio,
-                console.log(this.detalleP);
+            this.imagenP = this.dataproductos[id].img;
+                this.tituloP = this.dataproductos[id].nombre;
+                this.detalleP = this.dataproductos[id].descripcion;
+                this.precioP = this.dataproductos[id].precio;
+              return
 
         }
 

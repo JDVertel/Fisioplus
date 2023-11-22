@@ -1070,7 +1070,41 @@
   
       </div>
     </div>
-   
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapse11"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapse11"
+        >
+          <v-icon name="fa-hand-holding-medical" fill="blue" />
+          Guardar Historia clinica
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapse11" class="accordion-collapse collapse">
+        <div class="accordion-body">
+     <div class="display-6" >guardar historia clincia</div>
+        
+        </div>
+      </div>
+ 
+      <div>
+  
+      </div>
+    </div>
+   <!-- 
+
+
+      <div class="col-6">
+                            <button type="button" class="btn btn-primary btn-sm">
+                                Guardar Historia Clinica
+                            </button>
+                        </div>
+    -->
   </div>
 </template>
 
