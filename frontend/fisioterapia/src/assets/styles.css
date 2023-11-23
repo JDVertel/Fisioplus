@@ -52,32 +52,33 @@
 }
 
 
-.imgP{
+.imgP {
   padding: 5px;
-   max-width: 200px;
+  max-width: 200px;
 }
-.titulo{
+
+.titulo {
   text-shadow: 1px 1px #fffefe;
 }
 
 
-.Tantecedentes{
-  padding: 5px!important;
+.Tantecedentes {
+  padding: 5px !important;
 }
 
 
 
 /* fuentes-------------------------------------------------------------------------------------------------------------*/
 
-.jz{
+.jz {
   text-align: justify;
-  font-size: 0.7em!important;
+  font-size: 0.7em !important;
 }
-.Cjz{
-  font-size: 0.9em!important;
+
+.Cjz {
+  font-size: 0.9em !important;
   text-align: center;
-  color: #ffffff;
-  text-shadow: 1px 1px #080808;
+  color: #00913D;
 }
 
 /* cards-------------------------------------------------------------------------------------------------------------*/
@@ -139,19 +140,38 @@ div.card-footer {
   justify-content: center !important;
   align-items: center;
   font-size: 0.9em !important;
-  padding: 10px;
-}
-.Cproductos{
-  padding: 1px!important;
-  
+  padding: 5px !important;
+
+
 }
 
-.clasesfooter{
+
+.vitrinaCard {
+  display: flex !important;
+  flex-direction: column !important;
+  align-content: center !important;
+  justify-content: center !important;
+  align-items: center;
+  font-size: 0.8em !important;
+  padding: 5px !important;
+ /* border: 1px solid #00913d !important;*/
+  height: 150px !important;
+  margin: 3px !important;
+
+}
+
+.Cproductos {
+  padding: 1px !important;
+
+}
+
+.clasesfooter {
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
 }
+
 /* tablas-------------------------------------------------------------------------------------------------------------*/
 
 
@@ -263,6 +283,9 @@ p {
   background: fixed;
 }
 
+.subtitulos {
+  text-shadow: 0px 0px 1px black;
+}
 
 
 
@@ -322,8 +345,8 @@ button.accordion-button:not(.collapsed) {
 }
 
 .nav-link-menu {
-  color: white !important;
-  text-shadow: 1px 1px 2px black !important;
+  color: black;
+  /* text-shadow: 1px 1px 2px black !important;*/
   text-decoration: none !important;
   display: inline-block !important;
   font-size: 0.9rem !important;
@@ -344,8 +367,8 @@ div.col-4 {
 
 }
 
-div.accordion-body{
-  padding: 5px!important;
+div.accordion-body {
+  padding: 5px !important;
 }
 
 
@@ -376,7 +399,8 @@ div.accordion-body{
   padding: 2px;
 }
 
-div.col-6.col-md-3, div.col-12 {
+div.col-6.col-md-3,
+div.col-12 {
   padding: 0.2px !important;
 }
 
@@ -460,6 +484,5 @@ footer {
   width: 100%;
   bottom: 0;
   position: absolute;
-  text-align: center;
   font-size: 0.7rem;
 }

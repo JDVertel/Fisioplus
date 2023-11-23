@@ -3,17 +3,18 @@
     <div class="row">
         <div class="col-4 col-md-2 Cproductos" v-for="(producto, index) in this.dataproductos" :key="index">
 
-            <div class="card" data-bs-toggle="modal" data-bs-target="#ModalProductos" @click="detalles(index)">
-
+            <div class="card vitrinaCard" data-bs-toggle="modal" data-bs-target="#ModalProductos" @click="detalles(index)">
+         
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="
+                            Cjz">{{ producto.nombre}}</p>
+                        </div>
+                    
+                    </div>
             
-
-                <div class="card-body detallesCard">
                     <img :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
-                </div>
-                <div class="card-footer" >
-                    <p class="
-                    Cjz">{{ producto.nombre}}</p>
-                </div>
+              
             </div>
 
         </div>
@@ -22,20 +23,17 @@
 </div>
 <!--  -->
 <div class="modal fade" id="ModalProductos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalle del Producto</h1>
+                <h1 class="modal-title fs-5 display-6" id="staticBackdropLabel"> {{this.tituloP}}</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body ">
                 <div class="container detallesCard">
 
-                    <div class="display-6"> <strong>
-                            {{this.tituloP}}
-                        </strong> </div>
-
                     <img :src="'/src/assets/images/productos/' + `${this.imagenP}`" class="imgP" />
+                    <hr>
                     {{ this.detalleP }}
                 </div>
             </div>
