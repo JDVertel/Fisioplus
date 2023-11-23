@@ -85,14 +85,14 @@
 
                     <div class="tab-pane fade" id="nav-disabledA" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
                         <br />
-                        <p>Antecedentes Heredofamiliares</p>
+
                         <div class="row">
                             <div class="col-12">
                                 <div class="container">
                                     <div class="mb-1">
-                                        <select v-model="tipoAnt" class="form-select form-select-sm textarea" aria-label="Default select example" >
+                                        <select    v-model="tipoAnt" class="form-select form-select-sm textarea" aria-label="Default select example"  @change="buscarenf(value)">
                                             <option value="">Tipo de antecedente</option>
-                                            <option v-for="(ant, index) in this.dataBD" :key="index" value="{{ant.id}}" @change="buscarenf(index)"  >{{ant.nombre}}</option>
+                                            <option v-for="(ant, index) in this.dataBD" :key="index" value="{{ant.id}}">{{ant.nombre}}</option>
 
                                         </select>
                                     </div>
@@ -485,14 +485,7 @@
 
         </div>
     </div>
-    <!-- 
 
-      <div class="col-6">
-                            <button type="button" class="btn btn-primary btn-sm">
-                                Guardar Historia Clinica
-                            </button>
-                        </div>
-    -->
 </div>
 </template>
 
@@ -501,16 +494,42 @@ import {
     Antecedentes
 } from './../firebase/bd'
 export default {
+    components: {
+
+    },
+
     data: () => ({
+
         dataBD: Antecedentes,
         tipoAnt: "",
         Enfermedad: "",
+        motivoConsulta: "",
+        diagnostico: "",
+        TratPrevios: "",
+        peso: "",
+        talla: "",
+        estatura: "",
+        imc: "",
+        temp: "",
+        fcardiaca: "",
+        frespiratoria: "",
+        tarterial: "",
+        ParentescoEnfHeredoF: "",
+        DetalleEnfHeredoF: "",
+        radiografia: "",
+        ecografia: "",
+        resonancia: "",
+        tag: "",
+        otros: "",
+        descripcion: "",
+        enf: "",
+        /*  */
 
     }),
     methods: {
         buscarenf(id) {
-            enf = this.dataBD[id];
-        console.log(enf);
+            /*    enf = this.dataBD[id]; */
+            console.log(id);
         }
 
     }

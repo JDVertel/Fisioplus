@@ -117,7 +117,6 @@
                             </div>
                         </div>
 
-                      
                     </div>
                 </div>
                 <div class="tab-pane fade" id="pills_HC" role="tabpanel" aria-labelledby="pills_HC-tab" tabindex="0">
@@ -125,7 +124,6 @@
                     <br />
                     <div class="row">
                         <homeB />
-                      
 
                     </div>
                 </div>
@@ -143,11 +141,13 @@ import HC from "../../components/h_clinica.vue";
 import homeB from "./../../components/homebutton.vue";
 import Registro from "./../hc/registroForm.vue"
 
-let registrado = 1
 export default {
+    data: () => ({
+        registrado: 1,
+    }),
 
     components: {
-        C_Hc:HC,
+        C_Hc: HC,
     }
 
 }
