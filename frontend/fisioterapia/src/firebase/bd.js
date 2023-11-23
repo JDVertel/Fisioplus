@@ -136,4 +136,41 @@ export const Articulos = [
         estado: "0",
     },
 ]
-    
+
+export const Antecedentes = [
+    {
+        id: "1",
+        nombre: "Heredofamiliares",
+        enfermedades: ['diabetes', 'E.neurologicas', 'HTA', 'Neoplasias', 'Cardiopatias', 'E.reumaticas', 'E.respitatorias', 'E.geneticas', 'E.endocrinologicas', 'otra']
+    },
+    {
+        id: "2",
+        nombre: "Patologicos",
+        enfermedades: ['diabetes', 'alergias', 'accidentes', 'neoplasias', 'cardiopatias', 'cirugias', 'E.respitaorias', 'dolor de cabeza', 'malformaciones congenitas', 'E.neurologicas', 'convulciones/epilepsia', 'traumatismo', 'E.infecciosas', 'E.reumaticas', 'hospitalizaciones previas', 'otras']
+    },
+    {
+        id: "3",
+        nombre: "No Patologicos",
+        enfermedades: ['diabetes', 'E.neurologicas', 'HTA', 'Neoplasias', 'Cardiopatias', 'E.reumaticas', 'E.respitatorias', 'E.geneticas', 'E.endocrinologicas', 'otra']
+    },
+    {
+        id: "4",
+        nombre: "Gineco-obstetricos",
+        enfermedades: ['diabetes', 'E.neurologicas', 'HTA', 'Neoplasias', 'Cardiopatias', 'E.reumaticas', 'E.respitatorias', 'E.geneticas', 'E.endocrinologicas', 'otra']
+    },
+    {
+        id: "5",
+        nombre: "Perinatales",
+        enfermedades: ['diabetes', 'E.neurologicas', 'HTA', 'Neoplasias', 'Cardiopatias', 'E.reumaticas', 'E.respitatorias', 'E.geneticas', 'E.endocrinologicas', 'otra']
+    },
+
+
+]
+
+
+
+
+
+
+
+
