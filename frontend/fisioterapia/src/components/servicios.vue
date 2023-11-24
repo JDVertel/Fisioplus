@@ -1,6 +1,6 @@
 <template>
 <div class="row centrado">
-    <div class="col-6 col-md-2 cardservicios" v-for="servicio in this.dataservicios" :key="servicio.nombre">
+    <div class="col-6 col-sm-4 col-md-4 col-xl-2 cardservicios" v-for="servicio in this.dataservicios" :key="servicio.nombre">
         <div class="card ">
             <!--  -->
             <img :src="'/src/assets/images/servicios/' + `${servicio.url}`" class="card-img-top imagenservicio" />

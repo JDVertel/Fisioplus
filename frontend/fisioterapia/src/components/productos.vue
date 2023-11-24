@@ -1,7 +1,7 @@
 <template>
 <div class="container">
     <div class="row">
-        <div class="col-4 col-md-2 Cproductos" v-for="(producto, index) in this.dataproductos" :key="index">
+        <div class="col-6  col-sm-4 col-md-2 Cproductos" v-for="(producto, index) in this.dataproductos" :key="index">
 
             <div class="card vitrinaCard" data-bs-toggle="modal" data-bs-target="#ModalProductos" @click="detalles(index)">
          

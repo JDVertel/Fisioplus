@@ -3,7 +3,7 @@
 
     <div class="row centrado">
 
-        <div class="col-md-3 col-6" v-for="rutina in this.datarutinas" :key="rutina.titulo">
+        <div class="col-6 col-sm-4 col-md-4" v-for="rutina in this.datarutinas" :key="rutina.titulo">
             <div class="card cardclases mb-3 ">
                 <img :src="'/src/assets/images/clasesyrutinas/'+`${rutina.url}`" class="imagenrutina" />
                 <div class="card-body">

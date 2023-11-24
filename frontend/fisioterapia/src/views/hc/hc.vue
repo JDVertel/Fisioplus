@@ -21,9 +21,9 @@
 </div>
 
 <!-- **************************************************************************************************** -->
-<div class="container" v-else>
+<div class="container hc_contenedor">
     <div id="AppHC">
-        <div class="container-fluid">
+        <div class="container-fluid hc_contenedor">
             <h1 class="display-6" style="text-align: center">Historia Clinica</h1>
             <div class="card">
                 <div class="card-header">
@@ -118,15 +118,16 @@
                         </div>
 
                     </div>
-                </div>
-                <div class="tab-pane fade" id="pills_HC" role="tabpanel" aria-labelledby="pills_HC-tab" tabindex="0">
-                    <C_Hc />
-                    <br />
-                    <div class="row">
-                        <homeB />
-
+                    <div class="tab-pane fade" id="pills_HC" role="tabpanel" aria-labelledby="pills_HC-tab" tabindex="0">
+                        <C_Hc />
+                        <br />
+                        <div class="row">
+                            <homeB />
+    
+                        </div>
                     </div>
                 </div>
+              
             </div>
         </div>
         <br />
