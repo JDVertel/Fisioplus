@@ -290,212 +290,553 @@
             </div>
         </div>
     </div>
-<!--  -->
+    <!--  Inspeccion Estatica-->
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse3" aria-expanded="false" aria-controls="panelsStayOpen-collapse3">
                 <v-icon name="io-construct-sharp" fill="red" scale="0.7" />
-               Exploracion Fisica
+                Inspeccion Estatica
             </button>
         </h2>
         <div id="panelsStayOpen-collapse3" class="accordion-collapse collapse">
             <div class="accordion-body">
-                fase de apoyo fase de balanceo adaptaci1s del cuerpo durante la marcha
-                análisis cuantitativo de la marcha
+                <p>Evaluacion de la postura:(Comparando con el lado colateral)</p>
             </div>
 
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Piel</button>
-                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Lesiones</button>
-                  <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Biotipo</button>
-                  <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" >Postura</button>
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Piel</button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Lesiones</button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Biotipo</button>
+                    <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false">Postura</button>
                 </div>
-              </nav>
-              <div class="tab-content" id="nav-tabContent">
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active m-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
                     <button type="button" class="btn btn-primary btn-sm">+Add</button>
                     <table class="table table-sm">
                         <thead>
-                          <tr>
-                            <th scope="col">Tipo</th>
-                            <th scope="col">Hallazgo</th>
-                            <th scope="col">Especificacion</th>
-               
-                          </tr>
+                            <tr>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Hallazgo</th>
+                                <th scope="col">Especificacion</th>
+
+                            </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                  
-                          </tr>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                          </tr>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                          </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+
+                            </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>Mark</td>
+                            </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>Mark</td>
+                            </tr>
                         </tbody>
-                      </table>
+                    </table>
                 </div>
                 <div class="tab-pane fade  m-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
                     <button type="button" class="btn btn-primary btn-sm">+Add</button>
                     <table class="table table-sm">
                         <thead>
-                          <tr>
-                            <th scope="col">Tipo</th>
-                            <th scope="col">Hallazgo</th>
-                            <th scope="col">Especificacion</th>
-               
-                          </tr>
+                            <tr>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Hallazgo</th>
+                                <th scope="col">Especificacion</th>
+
+                            </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                  
-                          </tr>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                          </tr>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                          </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+
+                            </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>Mark</td>
+                            </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>Mark</td>
+                            </tr>
                         </tbody>
-                      </table>
-                    
+                    </table>
+
                 </div>
                 <div class="tab-pane fade  m-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
                     <button type="button" class="btn btn-primary btn-sm">+Add</button>
                     <table class="table table-sm">
                         <thead>
-                          <tr>
-                            <th scope="col">Tipo</th>
-                            <th scope="col">Hallazgo</th>
-                            <th scope="col">Especificacion</th>
-               
-                          </tr>
+                            <tr>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Hallazgo</th>
+                                <th scope="col">Especificacion</th>
+
+                            </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                  
-                          </tr>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                          </tr>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                          </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+
+                            </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>Mark</td>
+                            </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>Mark</td>
+                            </tr>
                         </tbody>
-                      </table>
+                    </table>
                 </div>
                 <div class="tab-pane fade  m-3" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
                     <button type="button" class="btn btn-primary btn-sm">+Add</button>
                     <table class="table table-sm">
                         <thead>
-                          <tr>
-                            <th scope="col">Tipo</th>
-                            <th scope="col">Hallazgo</th>
-                            <th scope="col">Especificacion</th>
-               
-                          </tr>
+                            <tr>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Hallazgo</th>
+                                <th scope="col">Especificacion</th>
+
+                            </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                  
-                          </tr>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                          </tr>
-                          <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                          </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+
+                            </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>Mark</td>
+                            </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>Mark</td>
+                            </tr>
                         </tbody>
-                      </table>
+                    </table>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
+    <!--  Alineacion corporal -->
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="false" aria-controls="panelsStayOpen-collapse4">
                 <v-icon name="io-construct-sharp" fill="red" scale="0.7" />
-                Escala Visual Analogica del dolor (EVA)
+                Evaluacion Postural
             </button>
         </h2>
         <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse">
             <div class="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is shown
-                by default, until the collapse plugin adds the appropriate classes
-                that we use to style each element. These classes control the overall
-                appearance, as well as the showing and hiding via CSS transitions. You
-                can modify any of this with custom CSS or overriding our default
-                variables. It's also worth noting that just about any HTML can go
-                within the <code>.accordion-body</code>, though the transition does
-                limit overflow.
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#vanterior" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">V anterior</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#vlateral" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">V lateral</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#vposterior" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">V posterior</button>
+                    </li>
+                
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="vanterior" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+
+
+                        <p>Seleccione y agregue hallazgos </p>
+
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>clasificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>especificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+        
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-sm">agregar</button>
+                        </div>
+        
+                        <table class="table tabler-sm">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="vlateral" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+                        <p>Seleccione y agregue hallazgos </p>
+
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>clasificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>especificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+        
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-sm">agregar</button>
+                        </div>
+        
+                        <table class="table tabler-sm">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                    </div>
+                    <div class="tab-pane fade" id="vposterior" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                        <p>Seleccione y agregue hallazgos </p>
+
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>clasificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>especificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+        
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-sm">agregar</button>
+                        </div>
+        
+                        <table class="table tabler-sm">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+
+
+                    </div>
+             
+                  </div>
+     
+
             </div>
         </div>
     </div>
+
+    <!-- iNSPECCION dINAMICA -->
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse5" aria-expanded="false" aria-controls="panelsStayOpen-collapse5">
                 <v-icon name="io-construct-sharp" fill="red" scale="0.7" />
-                Exploracion Fisica
+                Inspeccion Dinamica
             </button>
         </h2>
         <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse">
             <div class="accordion-body">
-                inspección y palpación (sistema óseo) valoración de rangos de
-                movimiento (miembro superior) valoración de rangos de movimiento
-                (miembro inferior)
+            <p>Analisis cualitativo de la Marcha</p>
                 <!--  -->
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-homeE" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
-                            inspección y palpación (sistema óseo)
+                            Fase de Apoyo
                         </button>
                         <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profileE" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                            valoración de rangos de movimiento (miembro superior)
+                           Fase de Balanceo
                         </button>
                         <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contactE" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
-                            valoración de rangos de movimiento (miembro inferior)
+                           Adaptaciones
                         </button>
                     </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="nav-homeE" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                        inspección y palpación (sistema óseo)
+                        <p>Seleccione y agregue hallazgos </p>
+
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>clasificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>especificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+        
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-sm">agregar</button>
+                        </div>
+        
+                        <table class="table tabler-sm">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
                     </div>
                     <div class="tab-pane fade" id="nav-profileE" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                        valoración de rangos de movimiento (miembro superior)
+                        <p>Seleccione y agregue hallazgos </p>
+
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>clasificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>especificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+        
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-sm">agregar</button>
+                        </div>
+        
+                        <table class="table tabler-sm">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
                     </div>
                     <div class="tab-pane fade" id="nav-contactE" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                        valoración de rangos de movimiento (miembro inferior)
+                        <p>Seleccione y agregue hallazgos </p>
+
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>clasificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>Fase</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <select class="form-select form-select-sm" aria-label="Small select example">
+                            <option selected>especificacion</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-sm">agregar</button>
+                        </div>
+        
+                        <table class="table tabler-sm">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
                     </div>
                 </div>
             </div>
@@ -713,7 +1054,7 @@
         </h2>
         <div id="panelsStayOpen-collapse11" class="accordion-collapse collapse">
             <div class="accordion-body">
-         
+
                 <button type="button" class="btn btn-primary btn-sm">guardar historia clinica</button>
             </div>
         </div>
