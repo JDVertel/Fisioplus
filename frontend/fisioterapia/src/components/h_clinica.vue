@@ -79,10 +79,10 @@
                                         <input type="number" class="form-control form-control-sm textarea" id="text_tarterial" v-model="tarterial" placeholder="T.Arterial" />
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
-
                     <div class="tab-pane fade" id="nav-disabledA" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
                         <br />
 
@@ -290,7 +290,7 @@
             </div>
         </div>
     </div>
-    <!--  Inspeccion Estatica-->
+    <!--  INSPECCION ESTATICA-->
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse3" aria-expanded="false" aria-controls="panelsStayOpen-collapse3">
@@ -440,7 +440,7 @@
             </div>
         </div>
     </div>
-    <!--  Alineacion corporal -->
+    <!--  ALINEACION CORPORAL -->
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="false" aria-controls="panelsStayOpen-collapse4">
@@ -637,12 +637,12 @@
         </div>
     </div>
 
-    <!-- iNSPECCION dINAMICA -->
+    <!-- INSPECCION DINAMICA -->
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse5" aria-expanded="false" aria-controls="panelsStayOpen-collapse5">
-          <!--  <v-icon name="fa-user-check" fill="blue" /> -->
-          <v-icon name="fa-user-check" fill="blue" />
+                <!--  <v-icon name="fa-user-check" fill="blue" /> -->
+                <v-icon name="fa-user-check" fill="blue" />
                 Inspeccion Dinamica
             </button>
         </h2>
@@ -837,11 +837,11 @@
                         <table class="table tabler-sm">
                             <thead>
                                 <tr>
-                                    <th scope="col">DATOS A EVALUAR</th>
-                                    <th scope="col">HOMBRES</th>
-                                    <th scope="col">MUJERES</th>
-                                    <th scope="col">Der</th>
-                                    <th scope="col">Izq</th>
+                                    <th scope="col">Datos a Evaluar</th>
+                                    <th scope="col">Hombres</th>
+                                    <th scope="col">Mujeres</th>
+                                    <th scope="col">Derecha</th>
+                                    <th scope="col">Izquierda</th>
 
                                 </tr>
                             </thead>
@@ -891,228 +891,301 @@
             </div>
         </div>
     </div>
+
+    <!-- escala visual del dolor -->
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse6" aria-expanded="false" aria-controls="panelsStayOpen-collapse6">
-                <v-icon name="io-construct-sharp" fill="red" scale="0.7" />
-                Sistema muscular
+                <v-icon name="io-construct-sharp" fill="yellow" scale="0.7" />
+                Escala Visual Analogica del Dolor
             </button>
         </h2>
         <div id="panelsStayOpen-collapse6" class="accordion-collapse collapse">
             <div class="accordion-body">
-                inspección y palpación fuerza muscular evaluación muscular (escala
-                Daniels) (cuello-tronco-hombro-codo-muñeca-cadera-dedos de la
-                mano-rodilla, tobillos dedos de los pies)
-
-                <!--  -->
 
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
-                            Home
-                        </button>
-                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                            Profile
-                        </button>
-                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
-                            Contact
-                        </button>
-                        <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>
-                            Disabled
-                        </button>
+                        <button class="nav-link active" id="nav-visual-tab" data-bs-toggle="tab" data-bs-target="#evisual" type="button" role="tab" aria-controls="nav-visual" aria-selected="true">Visual</button>
+                        <button class="nav-link active" id="nav-ubic-tab" data-bs-toggle="tab" data-bs-target="#ubicacion" type="button" role="tab" aria-controls="nav-ubic" aria-selected="false">Ubicacion</button>
+                        <button class="nav-link active" id="nav-semiolo-tab" data-bs-toggle="tab" data-bs-target="#semiologia" type="button" role="tab" aria-controls="nav-semiolo" aria-selected="false">Semiologia</button>
                     </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                        ...
+                    <div class="tab-pane fade show active" id="evisual" role="tabpanel" aria-labelledby="nav-visual-tab" tabindex="0">
+                        <!--  -->
+                        <p>Seleccione la escala de dolor que describe el paciente</p>
+                        <div class="container">
+                            <div class="radio-container">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_0" />0
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_1" />1
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_2" />2
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_3" />3
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_4" />4
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_5" />5
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_6" />6
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_7" />7
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_8" />8
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_9" />9
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="esc_10" />10
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table class="default">
+                                <tr class="degradado">
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+                                    <th>&nbsp;</th>
+
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+
+                            </table>
+                            <div class="row">
+                                <div class="col-2">0 - Sin dolor</div>
+                                <div class="col-2">2 - Poco</div>
+                                <div class="col-2">4 - Moderado</div>
+                                <div class="col-2">6 - Fuerte </div>
+                                <div class="col-2">8 - Muy fuerte</div>
+                                <div class="col-2">10 - Insoportable</div>
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                        ...
+                    <!--  -->
+                </div>
+                <div class="tab-pane fade" id="ubicacion" role="tabpanel" aria-labelledby="nav-ubic-tab" tabindex="0">
+
+                    <br />
+                    <p>Detalle el dolor descrito por el Paciente</p>
+                    <br>
+                    <div class="container">
+                        <div class="row mb-3"><textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Circunstancias"></textarea></div>
+                        <div class="row mb-3"><textarea class="form-control" id="exampleFormControlTextarea2" rows="2" placeholder="Tipo"></textarea></div>
+                        <div class="row mb-3"><textarea class="form-control" id="exampleFormControlTextarea3" rows="2" placeholder="Antiguedad"></textarea></div>
+                        <div class="row mb-3"><textarea class="form-control" id="exampleFormControlTextarea4" rows="2" placeholder="Localización"></textarea></div>
+
+                        <div class="row mb-3"><textarea class="form-control" id="exampleFormControlTextarea5" rows="2" placeholder="Irradiación"></textarea></div>
+                        <div class="row mb-3"><textarea class="form-control" id="exampleFormControlTextarea6" rows="2" placeholder="Aumento"></textarea></div>
+                        <div class="row mb-3"><textarea class="form-control" id="exampleFormControlTextarea7" rows="2" placeholder="Atenuación"></textarea></div>
+                        <div class="row mb-3"><textarea class="form-control" id="exampleFormControlTextarea8" rows="2" placeholder="Duración"></textarea></div>
+                        <div class="row mb-3"><textarea class="form-control" id="exampleFormControlTextarea9" rows="2" placeholder="Actividades que le cuesta realizar"></textarea></div>
                     </div>
-                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                        ...
+
+                </div>
+                <div class="tab-pane fade" id="semiologia" role="tabpanel" aria-labelledby="nav-semiolo-tab" tabindex="0">
+                    ubicacion
+                </div>
+
+            </div>
+
+        </div>
+        <button type="button" class="btn btn-success btn-sm">+ Guardar</button>
+    </div>
+</div>
+<!-- pruebas de imagen complementaria -->
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse7" aria-expanded="false" aria-controls="panelsStayOpen-collapse7">
+            <v-icon name="ai-biorxiv-square" fill="blue" /> Pruebas de Imagen o
+            Examenes Complementarios
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse7" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-b-radiografia" data-bs-toggle="tab" data-bs-target="#nav-radiografia" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                        Radiografia
+                    </button>
+                    <button class="nav-link" id="nav-b-ecografia" data-bs-toggle="tab" data-bs-target="#nav-ecografia" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                        Ecografia
+                    </button>
+                    <button class="nav-link" id="nav-b-resonancia" data-bs-toggle="tab" data-bs-target="#nav-resonancia" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                        Resonancia
+                    </button>
+                    <button class="nav-link" id="nav-b-tag" data-bs-toggle="tab" data-bs-target="#nav-tag" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                        TAG
+                    </button>
+                    <button class="nav-link" id="nav-b-otros" data-bs-toggle="tab" data-bs-target="#nav-otros" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                        Otros
+                    </button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-radiografia" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Breve descripcion de la Radiografia</label>
+                        <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="radiografia"></textarea>
                     </div>
-                    <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
-                        ...
+                </div>
+                <div class="tab-pane fade" id="nav-ecografia" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Breve descripcion de la Ecografia</label>
+                        <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="ecografia"></textarea>
                     </div>
+                </div>
+                <div class="tab-pane fade" id="nav-resonancia" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Breve descripcion de la Resonancia</label>
+                        <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="resonancia"></textarea>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-tag" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Breve descripcion del TAG</label>
+                        <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="tag"></textarea>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nav-otros" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Breve descripcion de Otros</label>
+                        <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="otros"></textarea>
+                    </div>
+                </div>
+            </div>
+            imgdiag
+        </div>
+    </div>
+</div>
+<!-- EXPLORACION FISICA -->
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse8" aria-expanded="false" aria-controls="panelsStayOpen-collapse8">
+            <v-icon name="io-construct-sharp" fill="red" scale="0.7" />
+            Exploracion Fisica
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse8" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <strong>This is the second item's accordion body.</strong> It is
+            hidden by default, until the collapse plugin adds the appropriate
+            classes that we use to style each element. These classes control the
+            overall appearance, as well as the showing and hiding via CSS
+            transitions. You can modify any of this with custom CSS or overriding
+            our default variables. It's also worth noting that just about any HTML
+            can go within the <code>.accordion-body</code>, though the transition
+            does limit overflow.
+        </div>
+    </div>
+</div>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse9" aria-expanded="false" aria-controls="panelsStayOpen-collapse9">
+            <v-icon name="io-construct-sharp" fill="red" scale="0.7" />
+            Plan Analitico de Atencion Fisioterapeutica
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse9" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            procedimiento actual diagnostico(funcional)fisioterapéutico pronóstico
+            de enfermedad objetivos del tratamiento (generales y específicos) plan
+            de atención y tratamientos observaciones
+
+            <!--  -->
+
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                        Home
+                    </button>
+                    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                        Profile
+                    </button>
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
+                        Contact
+                    </button>
+                    <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>
+                        Disabled
+                    </button>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                    ...
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                    ...
+                </div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+                    ...
+                </div>
+                <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
+                    ...
                 </div>
             </div>
         </div>
     </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse7" aria-expanded="false" aria-controls="panelsStayOpen-collapse7">
-                <v-icon name="ai-biorxiv-square" fill="blue" /> Pruebas de Imagen o
-                Examenes Complementarios
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapse7" class="accordion-collapse collapse">
-            <div class="accordion-body">
-                <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <button class="nav-link active" id="nav-b-radiografia" data-bs-toggle="tab" data-bs-target="#nav-radiografia" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
-                            Radiografia
-                        </button>
-                        <button class="nav-link" id="nav-b-ecografia" data-bs-toggle="tab" data-bs-target="#nav-ecografia" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                            Ecografia
-                        </button>
-                        <button class="nav-link" id="nav-b-resonancia" data-bs-toggle="tab" data-bs-target="#nav-resonancia" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                            Resonancia
-                        </button>
-                        <button class="nav-link" id="nav-b-tag" data-bs-toggle="tab" data-bs-target="#nav-tag" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                            TAG
-                        </button>
-                        <button class="nav-link" id="nav-b-otros" data-bs-toggle="tab" data-bs-target="#nav-otros" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                            Otros
-                        </button>
-                    </div>
-                </nav>
-                <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-radiografia" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Breve descripcion de la Radiografia</label>
-                            <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="radiografia"></textarea>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-ecografia" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Breve descripcion de la Ecografia</label>
-                            <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="ecografia"></textarea>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-resonancia" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Breve descripcion de la Resonancia</label>
-                            <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="resonancia"></textarea>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-tag" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Breve descripcion del TAG</label>
-                            <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="tag"></textarea>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-otros" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Breve descripcion de Otros</label>
-                            <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="otros"></textarea>
-                        </div>
-                    </div>
-                </div>
-                imgdiag
+</div>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse10" aria-expanded="false" aria-controls="panelsStayOpen-collapse10">
+            <v-icon name="fa-hand-holding-medical" fill="blue" />
+            Tratamiento
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse10" class="accordion-collapse collapse">
+        <div class="accordion-body">
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
+                <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="descripcion"></textarea>
             </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse8" aria-expanded="false" aria-controls="panelsStayOpen-collapse8">
-                <v-icon name="io-construct-sharp" fill="red" scale="0.7" />
-                Maniobras, Escalas o Tests Exploratorios
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapse8" class="accordion-collapse collapse">
-            <div class="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the appropriate
-                classes that we use to style each element. These classes control the
-                overall appearance, as well as the showing and hiding via CSS
-                transitions. You can modify any of this with custom CSS or overriding
-                our default variables. It's also worth noting that just about any HTML
-                can go within the <code>.accordion-body</code>, though the transition
-                does limit overflow.
-            </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse9" aria-expanded="false" aria-controls="panelsStayOpen-collapse9">
-                <v-icon name="io-construct-sharp" fill="red" scale="0.7" />
-                Plan Analitico de Atencion Fisioterapeutica
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapse9" class="accordion-collapse collapse">
-            <div class="accordion-body">
-                procedimiento actual diagnostico(funcional)fisioterapéutico pronóstico
-                de enfermedad objetivos del tratamiento (generales y específicos) plan
-                de atención y tratamientos observaciones
-
-                <!--  -->
-
-                <nav>
-                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
-                            Home
-                        </button>
-                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                            Profile
-                        </button>
-                        <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
-                            Contact
-                        </button>
-                        <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button" role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>
-                            Disabled
-                        </button>
-                    </div>
-                </nav>
-                <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-                        ...
-                    </div>
-                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                        ...
-                    </div>
-                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                        ...
-                    </div>
-                    <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
-                        ...
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse10" aria-expanded="false" aria-controls="panelsStayOpen-collapse10">
-                <v-icon name="fa-hand-holding-medical" fill="blue" />
-                Tratamiento
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapse10" class="accordion-collapse collapse">
-            <div class="accordion-body">
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Descripcion</label>
-                    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="descripcion"></textarea>
-                </div>
-                tratamiento
-
-            </div>
-        </div>
-
-        <div>
+            tratamiento
 
         </div>
     </div>
 
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse11" aria-expanded="false" aria-controls="panelsStayOpen-collapse11">
-                <v-icon name="fa-hand-holding-medical" fill="blue" />
-                Guardar Historia clinica
-            </button>
-        </h2>
-        <div id="panelsStayOpen-collapse11" class="accordion-collapse collapse">
-            <div class="accordion-body">
+    <div>
 
-                <button type="button" class="btn btn-primary btn-sm">guardar historia clinica</button>
-            </div>
-        </div>
+    </div>
+</div>
 
-        <div>
+<div class="accordion-item">
+    <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse11" aria-expanded="false" aria-controls="panelsStayOpen-collapse11">
+            <v-icon name="fa-hand-holding-medical" fill="blue" />
+            Guardar Historia clinica
+        </button>
+    </h2>
+    <div id="panelsStayOpen-collapse11" class="accordion-collapse collapse">
+        <div class="accordion-body">
 
+            <button type="button" class="btn btn-primary btn-sm">guardar historia clinica</button>
         </div>
     </div>
 
+    <div>
+
+    </div>
 </div>
 </template>
 
