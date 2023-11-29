@@ -75,6 +75,7 @@
                                         <input type="number" class="form-control form-control-sm textarea" id="text_tarterial" v-model="tarterial" placeholder="T.Arterial" />
                                     </div>
                                 </div>
+                        
                             </div>
                         </div>
                     </div>
@@ -147,6 +148,8 @@
             </div>
         </div>
     </div>
+
+div.col
 
     <!-- modal -->
 
@@ -3284,7 +3287,7 @@
                 y tratamientos observaciones
 
                 <!--  -->
-            
+
                 <nav>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
@@ -3342,16 +3345,15 @@
                 <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="descripcion" placeholder="Pronostico de la enfermedad"></textarea>
             </div>
 
-
         </div>
-<div class="container">
-    <div class="row">
-        <div class="col-6">     <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="descripcion" placeholder="Objetivos generales"></textarea></div>
-        <div class="col-6">     <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="descripcion" placeholder="Objetivos especificos"></textarea></div>
-    </div>
-</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6"> <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="descripcion" placeholder="Objetivos generales"></textarea></div>
+                <div class="col-6"> <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="descripcion" placeholder="Objetivos especificos"></textarea></div>
+            </div>
+        </div>
 
-        <div></div>
+      
     </div>
 
     <div class="accordion-item">
