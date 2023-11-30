@@ -71,7 +71,7 @@ export default {
 
                 <p class="jz">Nuestro servicio de fisioterapia ofrece una amplia gama de tratamientos personalizados para abordar tus necesidades específicas de rehabilitación y bienestar físico. Nuestro equipo altamente calificado proporciona servicios que incluyen fisioterapia deportiva, fisioterapia manual, osteopatía, fisioterapia geriátrica, ortopédica, traumatológica, rehabilitación neurológica, fisioterapia uroginecológica, entre otros. Nos enfocamos en diagnosticar tu condición y lesión para ofrecerte el tratamiento más adecuado, junto con asesoramiento y prescripción de ejercicios personalizados. Nuestro objetivo es ayudarte a recuperarte de lesiones, mejorar tu rendimiento deportivo, prevenir lesiones futuras y mejorar tu calidad de vida. ¡Confía en nosotros para recibir la atención experta y personalizada que necesitas para tu recuperación y bienestar físico! </p>
             </div>
-            <br>
+            <hr>
             <Servicios />
         </div>
         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
@@ -81,7 +81,7 @@ export default {
             </div>
 
             <p class="jz">Ofrecemos un servicio de clases de gimnasia personalizadas y grupales para ayudarte a alcanzar tus objetivos de fitness de manera efectiva y segura. Nuestros entrenadores altamente capacitados trabajarán contigo para crear un plan de entrenamiento personalizado que se adapte a tus necesidades y habilidades individuales. Ya sea que estés buscando perder peso, aumentar la fuerza o mejorar tu flexibilidad, nuestras clases de gimnasia personalizadas te ayudarán a alcanzar tus metas de manera efectiva. Además, nuestras clases se llevan a cabo en un ambiente acogedor y motivador, lo que te permitirá disfrutar de tu entrenamiento mientras trabajas en tu cuerpo y mente. ¡Únete a nosotros y comienza tu viaje hacia una vida más saludable y activa hoy mismo! </p>
-            <br>
+            <hr>
             <Rutinas />
         </div>
         <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">

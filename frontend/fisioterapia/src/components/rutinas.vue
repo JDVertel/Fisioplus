@@ -3,7 +3,7 @@
 
     <div class="row centrado">
 
-        <div class="col-6 col-sm-4 col-md-4" v-for="rutina in this.datarutinas" :key="rutina.titulo">
+        <div class="col-6 col-sm-6 col-md-4" v-for="rutina in this.datarutinas" :key="rutina.titulo">
             <div class="card cardclases mb-3 ">
                 <img :src="'/src/assets/images/clasesyrutinas/'+`${rutina.url}`" class="imagenrutina" />
                 <div class="card-body">
@@ -11,12 +11,17 @@
                     <p class="card-text">{{rutina.texto}}</p>
                     <hr>
                     <div class="clasesfooter">
-                        <div>   <p class="card-text"><strong>${{rutina.precio}}</strong></p></div>
-                     <div>        <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(rutina.titulo, this.telefono1)">
-                        <v-icon name="bi-whatsapp" /></button></div>
-              
+                        <div class="row">
+                            <div class="col-6 centrado">  <p class="card-text" ><strong>Precio: ${{rutina.precio}}</strong></p></div>
+                            <div class="col-6 centrado ">
+                                <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(rutina.titulo, this.telefono1)">
+                                    <v-icon name="bi-whatsapp" /></button>
+                            </div>
+                        
+
+                        </div>
                     </div>
-                
+
                 </div>
 
             </div>

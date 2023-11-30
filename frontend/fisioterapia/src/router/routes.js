@@ -14,9 +14,9 @@ import hc from "./../views/hc/hc.vue";
 
 import dashboard from "./../views/dashboard/menu.vue"
 //vitrina
-import productos from "./../views/vitrina/productos.vue";
+/* import productos from "./../views/vitrina/productos.vue";
 import servicios from "./../views/vitrina/servicios.vue";
-import clases from "./../views/vitrina/clases.vue";
+import clases from "./../views/vitrina/clases.vue"; */
 
 
 const routes = [
@@ -36,9 +36,9 @@ const routes = [
   //dashboard
   { path: "/dashboard", component: dashboard, name: "dashboard" },
   //vitrina
-  { path: "/productos", component: productos, name: "productos" },
+ /*  { path: "/productos", component: productos, name: "productos" },
   { path: "/servicios", component: servicios, name: "servicios" },
-  { path: "/clases", component: clases, name: "clases" },
+  { path: "/clases", component: clases, name: "clases" }, */
 
 ];
 

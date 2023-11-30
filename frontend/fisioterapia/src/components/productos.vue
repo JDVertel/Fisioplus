@@ -2,20 +2,16 @@
 <div class="container">
     <div class="row">
         <div class="col-6  col-sm-4 col-md-2 Cproductos" v-for="(producto, index) in this.dataproductos" :key="index">
-
             <div class="card vitrinaCard" data-bs-toggle="modal" data-bs-target="#ModalProductos" @click="detalles(index)">
-         
-                    <div class="row">
-                        <div class="col-12">
-                            <p>{{ producto.nombre}}</p>
-                        </div>
-                    
-                    </div>
-            
-                    <img :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
-              
-            </div>
 
+                <img :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
+
+                <div class="modal-footer">
+                    <div class="col-12">
+                        <p class="text-center"> {{ producto.nombre}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -73,10 +69,10 @@ export default {
 
         detalles(id) {
             this.imagenP = this.dataproductos[id].img;
-                this.tituloP = this.dataproductos[id].nombre;
-                this.detalleP = this.dataproductos[id].descripcion;
-                this.precioP = this.dataproductos[id].precio;
-              return
+            this.tituloP = this.dataproductos[id].nombre;
+            this.detalleP = this.dataproductos[id].descripcion;
+            this.precioP = this.dataproductos[id].precio;
+            return
 
         }
 

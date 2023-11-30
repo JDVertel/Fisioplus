@@ -37,8 +37,8 @@
 }
 
 .imagenproducto {
-  height: 79px !important;
-  padding: 5px !important;
+  height: 95px !important;
+
 
 }
 
@@ -152,9 +152,8 @@ div.card-footer {
   align-content: center !important;
   justify-content: center !important;
   align-items: center;
-  font-size: 0.8em !important;
   padding: 5px !important;
-  /* border: 1px solid #00913d !important;*/
+  border: 1px solid #00913d !important;
   height: 150px !important;
   margin: 3px !important;
 
