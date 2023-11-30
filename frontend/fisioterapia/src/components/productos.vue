@@ -7,8 +7,7 @@
          
                     <div class="row">
                         <div class="col-12">
-                            <p class="
-                            Cjz">{{ producto.nombre}}</p>
+                            <p>{{ producto.nombre}}</p>
                         </div>
                     
                     </div>
