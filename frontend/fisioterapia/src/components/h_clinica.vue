@@ -3379,8 +3379,10 @@ div.col
 import {
     Antecedentes
 } from "./../firebase/bd";
+
 export default {
-    components: {},
+    components: {
+    },
 
     data: () => ({
         dataBD: Antecedentes,
