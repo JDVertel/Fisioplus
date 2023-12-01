@@ -52,8 +52,6 @@ import D_exp_fisica from "./hc/8_exp_fisica/Dexp_fisica.vue";
 import D_plan_atencion from "./hc/9_plan_atencion/Dplan_atencion.vue";
 import D_tratamiento from "./hc/10_tratamiento/Dtratamiento.vue";
 export default {
-    components: {},
-
     data: () => ({
 
         /*  */

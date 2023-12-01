@@ -2,7 +2,7 @@
        <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="false" aria-controls="panelsStayOpen-collapse4">
-                <v-icon name="fa-user-check" fill="blue" />
+                <v-icon name="fa-user-check" fill="yellow" />
                 Evaluacion Postural
             </button>
         </h2>

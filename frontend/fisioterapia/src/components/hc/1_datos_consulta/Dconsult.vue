@@ -105,60 +105,65 @@
                                     <textarea class="form-control form-control-sm textarea" id="exampleFormControlTextarea1" placeholder="Detalle" v-model="DetalleEnfHeredoF" rows="2"></textarea>
                                 </div>
                                 <button class="btn btn-primary btn-sm textarea" type="submit">
-                                    Adicionar
+                                   + Adicionar
                                 </button>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="container">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">Tipo</th>
-                                                <th scope="col">Enfermedad</th>
-                                                <th scope="col">Detalle</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <td colspan="2">Larry the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <div class="card">
+                                    <div class="card-header">
+                                        Antecedentes registrados
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Tipo</th>
+                                                    <th scope="col">Enfermedad</th>
+                                                    <th scope="col">Detalle</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">Larry the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        <button class="btn btn-warning">Guardar</button>
         </div>
     </div>
 </div>
 </template>
 
 <script>
-    import {
+import {
     Antecedentes
 } from "./../../../firebase/bd.js";
 
-
 export default {
 
-
-    data:()=>({
+    data: () => ({
         dataBD: Antecedentes,
         tipoAnt: "",
         Enfermedad: "",

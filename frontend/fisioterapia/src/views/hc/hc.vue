@@ -22,35 +22,39 @@
 
 <!-- **************************************************************************************************** -->
 <div class="container-fluid Cont_hc">
-   
-        <div class="row">
-            <h1 class="display-6">Historia Clinica</h1><Home />
-        </div>
-        
+
     <div class="row">
-        <div class="col-2 retrato">
-            <img src="./../../assets/images/usuario.jpg" class="imagenhc" alt="..." />
-        </div>
-        <div class="col-10">
-            <div class="container">
-                <h5>
-                    <strong>
-                        <v-icon name="ri-health-book-line" /> Datos
-                        Personales</strong>
-                </h5>
-                <div class="row">
-                    <div class="col-12">Nombres:</div>
-                    <div class="col-12">Apellidos:</div>
-                    <div class="col-6 col-md-3">Sexo:</div>
-                    <div class="col-6 col-md-3">Edad:</div>
-                    <div class="col-6 col-md-3">TipoDoc:</div>
-                    <div class="col-6 col-md-3">Numdoc:</div>
-                    <div class="col-6 col-md-3">Tipo Sangre:</div>
-                    <div class="col-6 col-md-3">E Civil:</div>
-                    <div class="col-6 col-md-3">Escolaridad:</div>
-                    <div class="col-6 col-md-3">Ocupacion:</div>
-                    <div class="col-6 col-md-3">Direccion:</div>
-                    <div class="col-6 col-md-3">Celular:</div>
+        <h1 class="display-6">Historia Clinica</h1>
+        <Home />
+    </div>
+
+    <div class="row">
+        <div class="container">
+
+            <div class="col-2 retrato">
+                <img src="./../../assets/images/usuario.jpg" class="imagenhc" alt="..." />
+            </div>
+            <div class="col-10">
+                <div class="container">
+                    <h5>
+                        <strong>
+                            <v-icon name="ri-health-book-line" /> Datos
+                            Personales</strong>
+                    </h5>
+                    <div class="row">
+                        <div class="col-12">Nombres:</div>
+                        <div class="col-12">Apellidos:</div>
+                        <div class="col-6 col-md-3">Sexo:</div>
+                        <div class="col-6 col-md-3">Edad:</div>
+                        <div class="col-6 col-md-3">TipoDoc:</div>
+                        <div class="col-6 col-md-3">Numdoc:</div>
+                        <div class="col-6 col-md-3">Tipo Sangre:</div>
+                        <div class="col-6 col-md-3">E Civil:</div>
+                        <div class="col-6 col-md-3">Escolaridad:</div>
+                        <div class="col-6 col-md-3">Ocupacion:</div>
+                        <div class="col-6 col-md-3">Direccion:</div>
+                        <div class="col-6 col-md-3">Celular:</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,8 +64,6 @@
     <br>
 
 </div>
-
-
 </template>
 
 <script>
