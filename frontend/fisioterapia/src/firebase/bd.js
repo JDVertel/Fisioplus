@@ -102,7 +102,7 @@ export const Articulos = [
         id: 1,
         categ: "servicio",
         titulo: "titulo del servicio",
-        precio: "",
+        precio: "1000",
         detalle: "",
         img: "",
         estado: "1",
@@ -298,235 +298,126 @@ export const insp_estatica = [
         nombre: "aplanada",
     },
 ]
-
+/************************************************************** */
 export const eval_postural = [
     {
         id: "1",
         clase: "vista anterior",
         organo: "craneo",
-        detalle: "simetria"
+        detalle: ['simetria','tamaño','forma(Nomocefalo)','anomalias',]
     },
+
     {
         id: "2",
         clase: "vista anterior",
-        organo: "craneo",
-        detalle: "tamaño"
+        organo: "ojos",
+        detalle: ['simetria','movimientos simetricos','coloracion de la esclerotica','forma de pupila','tamaño de pupila']
     },
+ 
     {
         id: "3",
         clase: "vista anterior",
-        organo: "craneo",
-        detalle: "forma(Nomocefalo)"
+        organo: "oidos",
+        detalle: ["simetria"]
     },
     {
         id: "4",
         clase: "vista anterior",
-        organo: "craneo",
-        detalle: "anomalias"
+        organo: "boca",
+        detalle: ["simetria", "movimientos","coloracion","tamaño","forma"]
     },
+  
     {
         id: "5",
         clase: "vista anterior",
-        organo: "ojos",
-        detalle: "simetria"
-    },
-    {
-        id: "",
-        clase: "vista anterior",
-        organo: "ojos",
-        detalle: "tamaño de pupila"
-    },
-    {
-        id: "",
-        clase: "vista anterior",
-        organo: "ojos",
-        detalle: "forma de pupila"
-    },
-    {
-        id: "",
-        clase: "vista anterior",
-        organo: "ojos",
-        detalle: "coloracion de la esclerotica"
-    },
-    {
-        id: "",
-        clase: "vista anterior",
-        organo: "ojos",
-        detalle: "movimientos simetricos"
-    },
-    {
-        id: "",
-        clase: "vista anterior",
-        organo: "oidos",
-        detalle: "simetria"
-    },
-    {
-        id: "1",
-        clase: "vista anterior",
-        organo: "boca",
-        detalle: "simetria"
-    },
-    {
-        id: "",
-        clase: "vista anterior",
-        organo: "boca",
-        detalle: "forma"
-    },
-    {
-        id: "",
-        clase: "vista anterior",
-        organo: "boca",
-        detalle: "tamaño"
-    },
-    {
-        id: "",
-        clase: "vista anterior",
-        organo: "boca",
-        detalle: "coloracion"
-    },
-    {
-        id: "",
-        clase: "vista anterior",
-        organo: "boca",
-        detalle: "movimientos"
-    },
-    {
-        id: "",
-        clase: "vista anterior",
         organo: "cabeza",
-        detalle: "alineada con respecto al torax"
+        detalle: ["alineada con respecto al torax"]
     },
     {
-        id: "",
+        id: "6",
         clase: "vista anterior",
         organo: "hombros",
-        detalle: "clavicula en forma horizontal y alineadas, nivelados"
+        detalle:[ "clavicula en forma horizontal y alineadas, nivelados"]
     },
     {
-        id: "",
+        id: "7",
         clase: "vista anterior",
         organo: "pecho",
-        detalle: "pectorales alineados"
+        detalle: ["pectorales alineados"]
     },
     {
-        id: "",
+        id: "8",
         clase: "vista anterior",
         organo: "brazos",
-        detalle: "alineacion de manos y brazos en forma paralela"
+        detalle: ["alineacion de manos y brazos en forma paralela"]
     },
     {
-        id: "",
+        id: "9",
         clase: "vista anterior",
         organo: "tronco",
-        detalle: "tronco rotado"
+        detalle: ["tronco rotado"]
     },
     {
-        id: "",
+        id: "10",
         clase: "vista anterior",
         organo: "cadera",
-        detalle: "nivelacion de las crestas ilacas"
+        detalle: ["nivelacion de las crestas ilacas","rotacion de cadera y tronco"]
     },
 
     {
-        id: "",
-        clase: "vista anterior",
-        organo: "cadera",
-        detalle: "rotacion de cadera y tronco"
-    },
-
-    {
-        id: "",
+        id: "11",
         clase: "vista anterior",
         organo: "rodillas",
-        detalle: "orientacion espacial de las rodillas genu varo/valgo"
+        detalle: ["orientacion espacial de las rodillas genu varo/valgo"]
     },
     {
-        id: "",
+        id: "12",
         clase: "vista anterior",
         organo: "tobillo",
-        detalle: "rotacion interna/ externa de cadera"
+        detalle: ["rotacion interna/ externa de cadera"]
     },
     {
-        id: "",
+        id: "13",
         clase: "vista anterior",
         organo: "pie",
-        detalle: "eversion/inversion hallux valgus"
+        detalle: ["eversion/inversion hallux valgus"]
     },
     /*************************************************** */
     {
-        id: "",
+        id: "14",
         clase: "vista lateral",
         organo: "cabeza",
         detalle: "cabeza de antepulsion"
     },
     {
-        id: "",
+        id: "15",
         clase: "vista lateral",
         organo: "oidos",
-        detalle: "forma"
-    }, {
-        id: "",
-        clase: "vista lateral",
-        organo: "oidos",
-        detalle: "tamaño"
-    }, {
-        id: "",
+        detalle: ["forma","tamaño"]
+    }, 
+    
+    {
+        id: "17",
         clase: "vista lateral",
         organo: "hombros",
-        detalle: "antepulsion de hombros"
-    }, {
-        id: "",
-        clase: "vista lateral",
-        organo: "hombros",
-        detalle: "pectus excavatum/carinatum"
-    }, {
-        id: "",
-        clase: "vista lateral",
-        organo: "hombros",
-        detalle: "pecho den tonel"
-    }, {
-        id: "",
+        detalle: ["antepulsion de hombros","pecho den tonel", "pectus excavatum/carinatum"]
+    },
+    {
+        id: "20",
         clase: "vista lateral",
         organo: "cadera",
         detalle: "inclinacion ant/post. de cadera y pelvis"
     },
     {
-        id: "",
+        id: "21",
         clase: "vista lateral",
         organo: "rodillas",
-        detalle: "genu recurvatum"
-    }, {
-        id: "",
-        clase: "vista lateral",
-        organo: "rodillas",
-        detalle: "rodillas flexionadas"
-    }, {
-        id: "",
+        detalle: ["genu recurvatum","rodillas flexionadas"]
+    },  {
+        id: "23",
         clase: "vista lateral",
         organo: "columna",
-        detalle: "normal"
-    }, {
-        id: "",
-        clase: "vista lateral",
-        organo: "columna",
-        detalle: "cifosis"
-    }, {
-        id: "",
-        clase: "vista lateral",
-        organo: "columna",
-        detalle: "lordosis"
-    },
-    {
-        id: "",
-        clase: "vista lateral",
-        organo: "columna",
-        detalle: "rectificacion"
-    },
-    {
-        id: "",
-        clase: "vista lateral",
-        organo: "columna",
-        detalle: "inversion"
+        detalle: ["normal","cifosis","lordosis", "rectificacion","inversion"]
     },
 /*********************************************************************** */
 {
@@ -539,22 +430,10 @@ export const eval_postural = [
     id: "",
     clase: "vista posterior",
     organo: "hombros",
-    detalle: "hombro caido/ elevado"
+    detalle: ["hombro caido/ elevado","abd/add de escapulas","escapulas aladas"]
 },
 
-{
-    id: "",
-    clase: "vista posterior",
-    organo: "hombros",
-    detalle: "abd/add de escapulas"
-},
 
-{
-    id: "",
-    clase: "vista posterior",
-    organo: "hombros",
-    detalle: "escapulas aladas"
-},
 
 {
     id: "",
