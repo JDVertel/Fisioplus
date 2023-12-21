@@ -17,7 +17,7 @@
     <!-- EXPLORACION FISICA -->
     <D_exp_fisica />
     <!-- Plan Analitico de Atencion Fisioterapeutica  -->
-    <D_plan_atencion />
+    <D_sis_muscular />
     <!--   Tratamiento -->
     <D_tratamiento />
     <div class="accordion-item">
@@ -49,7 +49,7 @@ import D_insp_dinam from "./hc/5_insp_dinamica/Dinsp_dinam.vue";
 import D_esc_visual from "./hc/6_esc_visual/Desc_visual.vue";
 import D_imagenes from "./hc/7_imagenes/Dimagenes.vue";
 import D_exp_fisica from "./hc/8_exp_fisica/Dexp_fisica.vue";
-import D_plan_atencion from "./hc/9_plan_atencion/Dplan_atencion.vue";
+import D_sis_muscular from "./hc/9_sistema_muscular/sistema_muscular.vue";
 import D_tratamiento from "./hc/10_tratamiento/Dtratamiento.vue";
 export default {
     data: () => ({
@@ -66,7 +66,7 @@ export default {
         D_esc_visual,
         D_imagenes,
         D_exp_fisica,
-        D_plan_atencion,
+        D_sis_muscular,
         D_tratamiento
 
     }

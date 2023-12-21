@@ -58,19 +58,16 @@
                                         <tr>
                                             <th scope="col">Inspeccion</th>
                                             <th scope="col">Observaciones</th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th scope="row">1</th>
                                             <td>Mark</td>
-
                                         </tr>
                                         <tr>
                                             <td>Jacob</td>
                                             <td>Jacob</td>
-
                                         </tr>
                                         <tr>
                                             <td>Jacob</td>
@@ -86,22 +83,7 @@
                     <div class="tab-pane fade" id="nav-smusculargen" role="tabpanel" aria-labelledby="nav-sist-muscular-general" tabindex="0">
                         <div class="container">
                             <br />
-                            <div class="mb-1" v-if="tipoAnt != 0">
-                                <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
-                                    <option value="">Inspeccion</option>
-                                    <option v-for="(item, index) in this.data_marcha" :key="index" value="{{index}}">
-                                        {{ item.nombre }}
-                                    </option>
-                                </select>
-                            </div>
-
-                            <div class="mb-1">
-                                <textarea class="form-control form-control-sm textarea" id="exampleFormControlTextarea1" placeholder="Detalle" v-model="DetalleEnfHeredoF" rows="2"></textarea>
-                            </div>
-
-                            <button type="button" class="btn btn-primary">
-                                Adicionar
-                            </button>
+                       
                             <div class="card">
                                 <div class="card-header">
                                     Registro
@@ -138,22 +120,7 @@
                     <div class="tab-pane fade" id="nav-smusculardetall" role="tabpanel" aria-labelledby="nav-sist-muscular-detalle" tabindex="0">
                         <div class="container">
                             <br />
-                            <div class="mb-1" v-if="tipoAnt != 0">
-                                <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
-                                    <option value="">Inspeccion</option>
-                                    <option v-for="(item, index) in this.data_marcha" :key="index" value="{{index}}">
-                                        {{ item.nombre }}
-                                    </option>
-                                </select>
-                            </div>
-
-                            <div class="mb-1">
-                                <textarea class="form-control form-control-sm textarea" id="exampleFormControlTextarea1" placeholder="Detalle" v-model="DetalleEnfHeredoF" rows="2"></textarea>
-                            </div>
-
-                            <button type="button" class="btn btn-primary">
-                                Adicionar
-                            </button>
+                  
                             <div class="card">
                                 <div class="card-header">
                                     Registro

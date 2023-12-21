@@ -221,81 +221,21 @@ export const insp_estatica = [
     {
         id: "1",
         clas: "piel",
-        nombre: "coloracion normolinea",
+        nombre: ["coloracion normolinea","higiene"]
     },
+
     {
         id: "2",
-        clas: "piel",
-        nombre: "higiene",
-    },
-    {
+        clas: "lesiones",
+        nombre: ["cicatrices","excoriaciones","pliegues","edema","eritema","machas, pecas(efelides) y lunares (nevus)","ampollas, maculas, papulas, etc","tumor","otros",]
+    },  {
         id: "3",
-        clas: "lesiones",
-        nombre: "cicatrices",
-    }, {
-        id: "4",
-        clas: "lesiones",
-        nombre: "excoriaciones",
-    }, {
-        id: "5",
-        clas: "lesiones",
-        nombre: "pliegues",
-    }, {
-        id: "6",
-        clas: "lesiones",
-        nombre: "edema",
-    }, {
-        id: "7",
-        clas: "lesiones",
-        nombre: "eritema",
-    }, {
-        id: "8",
-        clas: "lesiones",
-        nombre: "machas, pecas(efelides) y lunares (nevus)",
-    }, {
-        id: "9",
-        clas: "lesiones",
-        nombre: "ampollas, maculas, papulas, etc",
-    }, {
-        id: "10",
-        clas: "lesiones",
-        nombre: "tumor",
-    }, {
-        id: "11",
-        clas: "lesiones",
-        nombre: "otros",
-    }, {
-        id: "12",
         clas: "biotipo",
-        nombre: "ectomorfo",
-    }, {
-        id: "13",
-        clas: "biotipo",
-        nombre: "mesomorfo",
-    }, {
-        id: "14",
-        clas: "biotipo",
-        nombre: "endomorfo",
+        nombre: ["ectomorfo","mesomorfo","endomorfo",]
     }, {
         id: "15",
         clas: "postura",
-        nombre: "ideal",
-    }, {
-        id: "16",
-        clas: "postura",
-        nombre: "cifolordotica",
-    }, {
-        id: "17",
-        clas: "postura",
-        nombre: "espalda arqueada",
-    }, {
-        id: "18",
-        clas: "postura",
-        nombre: "militar",
-    }, {
-        id: "19",
-        clas: "postura",
-        nombre: "aplanada",
+        nombre: ["ideal","cifolordotica","espalda arqueada","militar", "aplanada",]
     },
 ]
 /************************************************************** */
@@ -433,8 +373,6 @@ export const eval_postural = [
     detalle: ["hombro caido/ elevado","abd/add de escapulas","escapulas aladas"]
 },
 
-
-
 {
     id: "",
     clase: "vista posterior",
@@ -470,162 +408,49 @@ export const insp_dinamica = [
     {
         id: "1",
         class: "fase de apoyo",
-        nombre: "contacto inicial",
+        fase: "estadio",
+        nombre: ["contacto inicial","respuesta a la carga","apoyo medio (f inicial)","apoyo medio","apoyo medio (f final)"]
     },
+  
     {
         id: "2",
-        class: "fase de apoyo",
+        class: "fase de balanceo",
         fase: "estadio",
-        nombre: "respuesta a la carga",
+        nombre: ["Apoyo final","pre-balanceo","Balanceo inicial","Balanceo medio","Balanceo final"]
     },
+ 
     {
         id: "3",
-        class: "fase de apoyo",
-        fase: "estadio",
-        nombre: "apoyo medio (f inicial)",
-    },
-    {
-        id: "4",
-        class: "fase de apoyo",
-        fase: "estadio",
-        nombre: "apoyo medio",
-    },
-    {
-        id: "5",
-        class: "fase de apoyo",
-        fase: "estadio",
-        nombre: "apoyo medio (f final)",
-    },
-    {
-        id: "6",
-        class: "fase de balanceo",
-        fase: "estadio",
-        nombre: "Apoyo final",
-    },
-    {
-        id: "7",
-        class: "fase de balanceo",
-        fase: "estadio",
-        nombre: "pre-balanceo",
-    },
-    {
-        id: "8",
-        class: "fase de balanceo",
-        fase: "estadio",
-        nombre: "Balanceo inicial",
-    },
-    {
-        id: "9",
-        class: "fase de balanceo",
-        fase: "estadio",
-        nombre: "Balanceo medio",
-    },
-    {
-        id: "10",
-        class: "fase de balanceo",
-        fase: "estadio",
-        nombre: "Balanceo final",
-    },
-    {
-        id: "11",
         class: "marcha",
         fase: "inicio de marcha",
-        nombre: "duda o multiples intentos para comenzar",
+        nombre:[ "duda o multiples intentos para comenzar","no vacilante"]
     },
+ 
     {
-        id: "12",
-        class: "marcha",
-        fase: "inicio de marcha ",
-        nombre: "no vacilante",
-    },
-    {
-        id: "13",
+        id: "4",
         class: "marcha",
         fase: "continuidad de los pasos",
-        nombre: "para o hay discuntinuidadde los pasos",
-    },
-    {
-        id: "14",
-        class: "marcha",
-        fase: "continuidad de los pasos",
-        nombre: "los pasos son continuos",
-    },
-    {
-        id: "15",
-        class: "marcha",
-        fase: "trayectoria",
-        nombre: "balanceo marcado o utiliza ayudas",
-    },
-    {
-        id: "16",
-        class: "marcha",
-        fase: "trayectoria",
-        nombre: "no hay balanceo, pero si flexion de rodillas y espalda",
-    },
-    {
-        id: "17",
-        class: "marcha",
-        fase: "trayectoria",
-        nombre: "no hay balanceo, flexion, ni ayudas",
+        nombre: ["para o hay discuntinuidadde los pasos","los pasos son continuos"]
     },
 
     {
-        id: "18",
-        class: "adaptaciones",
-        fase: "adaptaciones",
-        nombre: "cabeza",
+        id: "5",
+        class: "marcha",
+        fase: "trayectoria",
+        nombre: ["balanceo marcado o utiliza ayudas","no hay balanceo, pero si flexion de rodillas y espalda","no hay balanceo, flexion, ni ayudas"]
     },
 
-    {
-        id: "19",
-        class: "adaptaciones",
-        fase: "adaptaciones",
-        nombre: "brazos",
-    },
-    {
-        id: "20",
-        class: "adaptaciones",
-        fase: "adaptaciones",
-        nombre: "columna",
-    },
 
     {
-        id: "21",
+        id: "6",
         class: "adaptaciones",
         fase: "adaptaciones",
-        nombre: "cadera y pelvis",
+        nombre: ["cabeza","brazos","columna","cadera y pelvis", "rodillas","tobillos","pies", "otros","hombros"]
     },
-    {
-        id: "22",
-        class: "adaptaciones",
-        fase: "adaptaciones",
-        nombre: "rodillas",
-    },
-    {
-        id: "23",
-        class: "adaptaciones",
-        fase: "adaptaciones",
-        nombre: "tobillos",
-    },
-    {
-        id: "24",
-        class: "adaptaciones",
-        fase: "adaptaciones",
-        nombre: "pies",
-    },
-    {
-        id: "25",
-        class: "adaptaciones",
-        fase: "adaptaciones",
-        nombre: "otros",
-    },
-    {
-        id: "26",
-        class: "adaptaciones",
-        fase: "adaptaciones",
-        nombre: "hombros",
-    },
+
+
 ]
+
 
 
 
