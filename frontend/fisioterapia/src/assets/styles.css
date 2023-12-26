@@ -5,7 +5,7 @@
   width: 100%;
   position: absolute;
   padding-bottom: 3em;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 
@@ -210,7 +210,7 @@ p {
 }
 
 #agendas {
-  font-size: 0.6rem;
+  font-size:1rem;
   background: fixed;
   margin-top: 50px !important;
 }
@@ -227,7 +227,7 @@ button.accordion-button.collapsed {
   padding: 2px;
   background-color: rgb(120, 195, 157);
   color: aliceblue;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-shadow: 1px 1px 2px black;
 }
 
@@ -235,7 +235,7 @@ button.accordion-button:not(.collapsed) {
   padding: 2px;
   background-color: rgb(75, 198, 242);
   color: rgba(9, 210, 109, 0.68);
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: aliceblue;
   text-shadow: 1px 1px 2px black;
 }
@@ -272,7 +272,7 @@ button.accordion-button:not(.collapsed) {
   /* text-shadow: 1px 1px 2px black !important;*/
   text-decoration: none !important;
   display: inline-block !important;
-  font-size: 0.9rem !important;
+  font-size: 1rem !important;
   margin: 10PX;
 }
 
@@ -324,7 +324,7 @@ div.col-12 {
 
 .white {
   color: rgb(255, 255, 255) !important;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .btnwsp {
@@ -343,15 +343,16 @@ div.col-12 {
 
 
 .config {
-  font-size: 0.6rem;
+  font-size: 1rem;
   background: fixed;
 }
+
 
 textarea,
 select,
 input,
 button {
-  font-size: 0.6rem !important;
+  font-size:0.9rem !important;
 }
 
 .display-6 {
