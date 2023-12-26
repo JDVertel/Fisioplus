@@ -44,39 +44,9 @@
                         <button type="button" class="btn btn-primary">
                             + Adicionar
                         </button>
-                        <div class="card">
-                            <div class="card-header">
-                                Registro
-                            </div>
-                            <table class="table table-sm">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Marcha/deambulacion</th>
-                                        <th scope="col">Observaciones</th>
-                               
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                              
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Jacob</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Jacob</td>
-                                  
-                                  
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                     
                     </div>
+                    <br>
                 </div>
                 <div class="tab-pane fade" id="nav-profileB" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
                     <div class="container">
@@ -98,43 +68,44 @@
                         <button type="button" class="btn btn-primary">
                             + Adicionar
                         </button>
-                        <div class="card">
-                            <div class="card-header">
-                                Registro
-                            </div>
-                
-                                <table class="table table-sm">
-                            <thead>
-                                <tr>
-                                    <th scope="col">movilidad/traslados</th>
-                                    <th scope="col">First</th>
-                               
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                              
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                            
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>@twitter</td>
-                        
-                                </tr>
-                            </tbody>
-                        </table>
-                       
-                    
-                        </div>
-                
+
                     </div>
+                    <br>
                 </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    Registro
+                </div>
+
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">movilidad/traslados</th>
+                            <th scope="col">First</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>@twitter</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
         </div>
     </div>
@@ -149,18 +120,15 @@ import {
     observacion_movilidad
 } from "./../../../firebase/bd.js";
 
-
-
-
 export default {
 
-    data:()=>({
-data_marcha:observacion_marcha,
-data_movilidad:observacion_movilidad,
+    data: () => ({
+        data_marcha: observacion_marcha,
+        data_movilidad: observacion_movilidad,
 
     }),
 
-    methods:{
+    methods: {
 
     }
 

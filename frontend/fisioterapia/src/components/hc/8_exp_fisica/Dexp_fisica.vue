@@ -120,7 +120,7 @@
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                    Fexion
+                                                    Flexion
                                                 </button>
                                             </li>
                                             <li class="nav-item" role="presentation">
@@ -163,13 +163,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -194,13 +194,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -225,13 +225,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -256,13 +256,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -287,13 +287,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -318,13 +318,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -383,7 +383,7 @@
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                    Fexion
+                                                    Flexion
                                                 </button>
                                             </li>
                                             <li class="nav-item" role="presentation">
@@ -426,13 +426,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -457,13 +457,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -488,13 +488,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -519,13 +519,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -550,13 +550,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -581,13 +581,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -644,7 +644,7 @@
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                    Fexion
+                                                    Flexion
                                                 </button>
                                             </li>
                                             <li class="nav-item" role="presentation">
@@ -687,13 +687,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -718,13 +718,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -749,13 +749,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -780,13 +780,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -811,13 +811,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -842,13 +842,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -905,7 +905,7 @@
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                    Fexion
+                                                    Flexion
                                                 </button>
                                             </li>
                                             <li class="nav-item" role="presentation">
@@ -948,13 +948,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -979,13 +979,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1010,13 +1010,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1041,13 +1041,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1072,13 +1072,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1103,13 +1103,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1166,7 +1166,7 @@
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                    Fexion
+                                                    Flexion
                                                 </button>
                                             </li>
                                             <li class="nav-item" role="presentation">
@@ -1209,13 +1209,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1240,13 +1240,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1271,13 +1271,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1302,13 +1302,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1333,13 +1333,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1364,13 +1364,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1432,7 +1432,7 @@
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                    Fexion
+                                                    Flexion
                                                 </button>
                                             </li>
                                             <li class="nav-item" role="presentation">
@@ -1475,13 +1475,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1506,13 +1506,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1537,13 +1537,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1568,13 +1568,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1599,13 +1599,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1630,13 +1630,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1695,7 +1695,7 @@
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                    Fexion
+                                                    Flexion
                                                 </button>
                                             </li>
                                             <li class="nav-item" role="presentation">
@@ -1738,13 +1738,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1769,13 +1769,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1800,13 +1800,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1831,13 +1831,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1862,13 +1862,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1893,13 +1893,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -1958,7 +1958,7 @@
                                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                                             <li class="nav-item" role="presentation">
                                                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                    Fexion
+                                                    Flexion
                                                 </button>
                                             </li>
                                             <li class="nav-item" role="presentation">
@@ -2001,13 +2001,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -2032,13 +2032,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -2063,13 +2063,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -2094,13 +2094,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -2125,13 +2125,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
@@ -2156,13 +2156,13 @@
                                                     <tbody>
                                                         <tr>
                                                             <th scope="row">10/12/2023</th>
-                                                            <td>Fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>40</td>
                                                             <td>45</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">15/12/2023</th>
-                                                            <td>fexion</td>
+                                                            <td>Flexion</td>
                                                             <td>42</td>
                                                             <td>45</td>
                                                         </tr>
