@@ -29,13 +29,13 @@
     </div>
 
     <div class="row">
-        <div class="container">
+     
 
-            <div class="col-2 retrato">
+            <div class="col-12 col-md-2 retrato">
                 <img src="./../../assets/images/usuario.jpg" class="imagenhc" alt="..." />
             </div>
-            <div class="col-10">
-                <div class="container">
+            <div class="col-12 col-md-10">
+                <div class="container mt-3" style="padding: 25px;">
                     <h5>
                         <strong>
                             <v-icon name="ri-health-book-line" /> Datos
@@ -57,9 +57,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+      
     </div>
-    <br>
+
     <C_Hc />
     <br>
 

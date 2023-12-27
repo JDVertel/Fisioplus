@@ -78,14 +78,17 @@
                                     <th></th>
                                 </tr>
                             </table>
-                            <div class="row">
-                                <div class="col-2">0 - Sin dolor</div>
-                                <div class="col-2">2 - Poco</div>
-                                <div class="col-2">4 - Moderado</div>
-                                <div class="col-2">6 - Fuerte</div>
-                                <div class="col-2">8 - Muy fuerte</div>
-                                <div class="col-2">10 - Insoportable</div>
+                            <div class="container">
+                                <div class="row">
+                                <div class="col-4 texttable">0 - Sin dolor</div>
+                                <div class="col-4 texttable">2 - Poco</div>
+                                <div class="col-4 texttable">4 - Moderado</div>
+                                <div class="col-4 texttable">6 - Fuerte</div>
+                                <div class="col-4 texttable">8 - Muy fuerte</div>
+                                <div class="col-4 texttable">10 - Insoportable</div>
                             </div>
+                            </div>
+                       
                         </div>
                     </div>
                 </div>
