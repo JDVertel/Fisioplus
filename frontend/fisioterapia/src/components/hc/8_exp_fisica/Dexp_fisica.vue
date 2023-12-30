@@ -44,13 +44,13 @@
 
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
                     <div class="row">
                         <button type="button" class="btn btn-primary btn-sm">agregar</button>
                     </div>
 
-                    <table class="table tabler-sm">
+                    <table class="table table-sm">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -62,15 +62,15 @@
                         <tbody>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
@@ -82,1191 +82,238 @@
                 </div>
                 <div class="tab-pane fade" id="nav-msuperior" role="tabpanel" tabindex="0">
                     <div class="row">
-                        <div class="col-3">
-                            <h5>Diligencie los siguiente datos</h5>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">RAQUIS CERVICAL</th>
-                                        <th scope="col">Izquierda</th>
-                                        <th scope="col">Derecha</th>
+                   
+                            <h5>Valoracion de rangos de movimiento (Miembro Superior)</h5>
+                        
+                                <div class="col-2">
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">Fexion</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Extencion </th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Inclinacion lateral derecha</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Inclinacion lateral izquierda</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">Rotacion Izquierda</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="col-9">
-                            <div class="row">
-                                <div class="col-4">
-                                    <table class="table table-bordered ">
+                                    <table class="table table-sm">
                                         <thead>
                                             <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">First</th>
-                                                <th scope="col">Last</th>
-                                                <th scope="col">Handle</th>
+                                                <th scope="col">RAQUIS CERVICAL</th>
+                                                <th scope="col">Izq</th>
+                                                <th scope="col">Der</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
+                                                <th scope="row">Flexión</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
                                             </tr>
                                             <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
+                                                <th scope="row">Extención </th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
                                             </tr>
                                             <tr>
-                                                <th scope="row">3</th>
-                                                <td colspan="2">Larry the Bird</td>
-                                                <td>@twitter</td>
+                                                <th scope="row">Inclinación lat  der</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Inclinación lat  izq</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Rotación Izq</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Rotación Der</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
                                             </tr>
                                         </tbody>
                                     </table>
-
                                 </div>
-                                <div class="col-4">
-                                    <table class="table table-bordered ">
+                                <div class="col-2">
+                                    <table class="table table-sm">
                                         <thead>
                                             <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">First</th>
-                                                <th scope="col">Last</th>
-                                                <th scope="col">Handle</th>
+                                                <th scope="col">RAQUIS DORSOLUMBAR</th>
+                                                <th scope="col">Izq</th>
+                                                <th scope="col">Der</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
+                                                <th scope="row">Flexión</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
                                             </tr>
                                             <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
+                                                <th scope="row">Extención </th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
                                             </tr>
                                             <tr>
-                                                <th scope="row">3</th>
-                                                <td colspan="2">Larry the Bird</td>
-                                                <td>@twitter</td>
+                                                <th scope="row">Inclinación lateral der</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Inclinación lateral izq</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Rotación Izq</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Rotación Der</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
                                             </tr>
                                         </tbody>
                                     </table>
-
                                 </div>
-                                <div class="col-4">
-                                    <table class="table table-bordered ">
+                                <div class="col-2">
+                                    <table class="table table-sm">
                                         <thead>
                                             <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">First</th>
-                                                <th scope="col">Last</th>
-                                                <th scope="col">Handle</th>
+                                                <th scope="col">HOMBRO</th>
+                                                <th scope="col">Izq</th>
+                                                <th scope="col">Der</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
+                                                <th scope="row">Flexión</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
                                             </tr>
                                             <tr>
-                                                <th scope="row">2</th>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
+                                                <th scope="row">Extención </th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
                                             </tr>
                                             <tr>
-                                                <th scope="row">3</th>
-                                                <td colspan="2">Larry the Bird</td>
-                                                <td>@twitter</td>
+                                                <th scope="row">Abduccion</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Aduccion</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Rotación Interna</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Rotación Externa</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
                                             </tr>
                                         </tbody>
                                     </table>
-
                                 </div>
-                            </div>
+                        
+                       <div class="col-2">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">CODO</th>
+                                                <th scope="col">Izq</th>
+                                                <th scope="col">Der</th>
 
-                        </div>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Flexión</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Extención </th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Pronación</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Supinación</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                                  <div class="col-2">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">MUÑECA</th>
+                                                <th scope="col">Izq</th>
+                                                <th scope="col">Der</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Flexión</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Extención </th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Desviacion radial</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Desviacion cubital</th>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                            </tr>
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                 
 
                     </div>
 
                 </div>
                 <!--  -->
                 <div class="tab-pane fade" id="nav-minferior" role="tabpanel" tabindex="0">
-                    <div class="accordion-flush" id="accordionExample">
-                        <!-- item -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Cadera
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <select class="form-select form-select-sm" aria-label="Default select example">
-                                                    <option selected>Rango</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                            <!-- !al seleccionar un rango debe mostrar la tabla de historial de esos rangos adicionalmente  -->
-                                            <div class="col-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="izquierda" aria-label=".form-control-sm example" />
-                                            </div>
-                                            <div class="col-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="derecha" aria-label=".form-control-sm example" />
-                                            </div>
+                    <div class="row">
+                        <div class="col-3">
 
-                                            <div class="col-2">
-                                                <button type="button" class="btn btn-primary btn-sm">
-                                                    +
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <br />
-
-                                    <p>Historial</p>
-
-                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                Flexion
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#extencion" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
-                                                extencion
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#ilderecha" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
-                                                Abduccion
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#ilizquierda" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                                                Aduccion
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#roizquierda" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                                                R izquierda
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#roderecha" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                                                R derecha
-                                            </button>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="flexion" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="extencion" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="ilderecha" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="ilizquierda" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="roizquierda" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="roderecha" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- ----------------------------------------------------------------------------------------------- -->
-                                </div>
-                            </div>
                         </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Rodilla
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <select class="form-select form-select-sm" aria-label="Default select example">
-                                                    <option selected>Rango</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                            <!-- !al seleccionar un rango debe mostrar la tabla de historial de esos rangos adicionalmente  -->
-                                            <div class="col-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="izquierda" aria-label=".form-control-sm example" />
-                                            </div>
-                                            <div class="col-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="derecha" aria-label=".form-control-sm example" />
-                                            </div>
+                        <div class="col-9">
 
-                                            <div class="col-2">
-                                                <button type="button" class="btn btn-primary btn-sm">
-                                                    +
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <br />
-
-                                    <p>Historial</p>
-
-                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                Flexion
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#extencion" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
-                                                extencion
-                                            </button>
-                                        </li>
-
-                                    </ul>
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="flexion" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="extencion" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="ilderecha" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="ilizquierda" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="roizquierda" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="roderecha" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- ----------------------------------------------------------------------------------------------- -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Tobillo
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <select class="form-select form-select-sm" aria-label="Default select example">
-                                                    <option selected>Rango</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                            <!-- !al seleccionar un rango debe mostrar la tabla de historial de esos rangos adicionalmente  -->
-                                            <div class="col-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="izquierda" aria-label=".form-control-sm example" />
-                                            </div>
-                                            <div class="col-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="derecha" aria-label=".form-control-sm example" />
-                                            </div>
-
-                                            <div class="col-2">
-                                                <button type="button" class="btn btn-primary btn-sm">
-                                                    +
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <br />
-
-                                    <p>Historial</p>
-
-                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                Flexion
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#extencion" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
-                                                extencion
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#ilderecha" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
-                                                ilderecha
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#ilizquierda" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                                                ilizquierda
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#roizquierda" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                                                roizquierda
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#roderecha" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                                                roderecha
-                                            </button>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="flexion" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="extencion" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="ilderecha" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="ilizquierda" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="roizquierda" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="roderecha" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- ----------------------------------------------------------------------------------------------- -->
-                                </div>
-                            </div>
                         </div>
 
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                    Art Sub-Astragalina
-                                </button>
-                            </h2>
-                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <select class="form-select form-select-sm" aria-label="Default select example">
-                                                    <option selected>Rango</option>
-                                                    <option value="1">One</option>
-                                                    <option value="2">Two</option>
-                                                    <option value="3">Three</option>
-                                                </select>
-                                            </div>
-                                            <!-- !al seleccionar un rango debe mostrar la tabla de historial de esos rangos adicionalmente  -->
-                                            <div class="col-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="izquierda" aria-label=".form-control-sm example" />
-                                            </div>
-                                            <div class="col-3">
-                                                <input class="form-control form-control-sm" type="text" placeholder="derecha" aria-label=".form-control-sm example" />
-                                            </div>
-
-                                            <div class="col-2">
-                                                <button type="button" class="btn btn-primary btn-sm">
-                                                    +
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <br />
-
-                                    <p>Historial</p>
-
-                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#flexion" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
-                                                Inversión
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#extencion" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">
-                                                Eversión
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#ilderecha" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">
-                                                ilderecha
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#ilizquierda" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                                                ilizquierda
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#roizquierda" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                                                roizquierda
-                                            </button>
-                                        </li>
-                                        <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#roderecha" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">
-                                                roderecha
-                                            </button>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="flexion" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="extencion" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="ilderecha" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="ilizquierda" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="roizquierda" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="roderecha" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
-                                            <table class="table table-sm">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Fecha</th>
-                                                        <th scope="col">Rango</th>
-                                                        <th scope="col">Derecho</th>
-                                                        <th scope="col">izquierdo</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">10/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>40</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">15/12/2023</th>
-                                                        <td>Flexion</td>
-                                                        <td>42</td>
-                                                        <td>45</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td colspan="2">Larry the Bird</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!-- ----------------------------------------------------------------------------------------------- -->
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
