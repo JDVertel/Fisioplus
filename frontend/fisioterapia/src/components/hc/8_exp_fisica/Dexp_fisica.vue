@@ -20,11 +20,11 @@
                     </button>
 
                     <button class="nav-link" id="nav-msuperior-tab" data-bs-toggle="tab" data-bs-target="#nav-msuperior" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                        VR movimientos(M Superior)
+                        VR Movs(M Superior)
                     </button>
 
                     <button class="nav-link" id="nav-minferior-tab" data-bs-toggle="tab" data-bs-target="#nav-minferior" type="button" role="tab" aria-controls="nav-contact" aria-selected="true">
-                        VR movimientos(M Inferior)
+                        VR Movs(M Inferior)
                     </button>
 
                 </div>
@@ -53,27 +53,27 @@
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th>#</th>
+                                <th>First</th>
+                                <th>Last</th>
+                                <th>Handle</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                <th>1</th>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                <th>2</th>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
+                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
                             </tr>
                             <tr>
-                                <th scope="row">3</th>
+                                <th>3</th>
                                 <td colspan="2">Larry the Bird</td>
                                 <td>@twitter</td>
                             </tr>
@@ -82,224 +82,232 @@
                 </div>
                 <div class="tab-pane fade" id="nav-msuperior" role="tabpanel" tabindex="0">
                     <div class="row">
-                   
-                            <h5>Valoracion de rangos de movimiento (Miembro Superior)</h5>
-                        
-                                <div class="col-2">
 
-                                    <table class="table table-sm">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">RAQUIS CERVICAL</th>
-                                                <th scope="col">Izq</th>
-                                                <th scope="col">Der</th>
+                        <h5>Valoracion de rangos de Mov (Miembro Superior)</h5>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Flexión</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                        <div class="col-6 col-md-2">
+                            <h6>RAQUIS CERVICAL</h6>
+                            <table class="table table-sm table-success">
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Extención </th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                <thead>
+                                    <tr>
+                                        <th>Mov</th>
+                                        <th>Izq</th>
+                                        <th>Der</th>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Inclinación lat  der</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Inclinación lat  izq</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Rotación Izq</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Rotación Der</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-2">
-                                    <table class="table table-sm">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">RAQUIS DORSOLUMBAR</th>
-                                                <th scope="col">Izq</th>
-                                                <th scope="col">Der</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Flexión</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Flexión</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Extención </td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Extención </th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inclinación lat der</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inclinación lat izq</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rotación Izq</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rotación Der</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <h6>RAQUIS DORSOLUMBAR</h6>
+                            <table class="table table-sm table-info">
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Inclinación lateral der</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Inclinación lateral izq</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Rotación Izq</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Rotación Der</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-2">
-                                    <table class="table table-sm">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">HOMBRO</th>
-                                                <th scope="col">Izq</th>
-                                                <th scope="col">Der</th>
+                                <thead>
+                                    <tr>
+                                        <th>Mov</th>
+                                        <th>Izq</th>
+                                        <th>Der</th>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Flexión</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Flexión</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Extención </th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Extención </td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Abduccion</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Aduccion</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Rotación Interna</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Rotación Externa</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                        
-                       <div class="col-2">
-                                    <table class="table table-sm">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">CODO</th>
-                                                <th scope="col">Izq</th>
-                                                <th scope="col">Der</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Inclinación lateral der</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inclinación lateral izq</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rotación Izq</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rotación Der</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <h6>HOMBRO</h6>
+                            <table class="table table-sm table-warning">
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Flexión</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                <thead>
+                                    <tr>
+                                        <th>Mov</th>
+                                        <th>Izq</th>
+                                        <th>Der</th>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Extención </th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Flexión</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Pronación</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Supinación</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                          
-                                        </tbody>
-                                    </table>
-                                </div>
-                                  <div class="col-2">
-                                    <table class="table table-sm">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">MUÑECA</th>
-                                                <th scope="col">Izq</th>
-                                                <th scope="col">Der</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Extención </td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th scope="row">Flexión</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Abduccion</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aduccion</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rotación Interna</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rotación Externa</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Extención </th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                        <div class="col-6 col-md-2">
+                            <h6>CODO</h6>
+                            <table class="table table-sm table-primary">
 
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Desviacion radial</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Desviacion cubital</th>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
-                                            </tr>
-                                           
-                                        </tbody>
-                                    </table>
-                                </div>
-                 
+                                <thead>
+                                    <tr>
+                                        <th>Mov</th>
+                                        <th>Izq</th>
+                                        <th>Der</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Flexión</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Extención </td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Pronación</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Supinación</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <h6>MUÑECA</h6>
+                            <table class="table table-sm table-danger">
+
+                                <thead>
+                                    <tr>
+                                        <th>Mov</th>
+                                        <th>Izq</th>
+                                        <th>Der</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Flexión</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Extención </td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Desviacion radial</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Desviacion cubital</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
 
                     </div>
 
@@ -307,13 +315,146 @@
                 <!--  -->
                 <div class="tab-pane fade" id="nav-minferior" role="tabpanel" tabindex="0">
                     <div class="row">
-                        <div class="col-3">
+                         <div class="col-6 col-md-3">
+                            <h6>CADERA</h6>
+                            <table class="table table-sm table-secondary">
 
+                                <thead>
+                                    <tr>
+                                        <th>Mov</th>
+                                        <th>Izq</th>
+                                        <th>Der</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Flexión</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Extención </td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Abducción</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aducción</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+
+                                        <tr>
+                                        <td>R interna</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+                                        <tr>
+                                        <td>R externa</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="col-9">
+       <div class="col-6 col-md-3">
+                            <h6>RODILLA</h6>
+                            <table class="table table-sm table-danger">
 
+                                <thead>
+                                    <tr>
+                                        <th>Mov</th>
+                                        <th>Izq</th>
+                                        <th>Der</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Flexión</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Extención </td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                    
+
+                                </tbody>
+                            </table>
                         </div>
+                               <div class="col-6 col-md-3">
+                            <h6>TOBILLO</h6>
+                            <table class="table table-sm table-warning">
 
+                                <thead>
+                                    <tr>
+                                        <th>Mov</th>
+                                        <th>Izq</th>
+                                        <th>Der</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Flexión plantar</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Flexión dorsal </td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                            
+
+                                </tbody>
+                            </table>
+                        </div>
+                               <div class="col-6 col-md-3">
+                            <h6>ART.SUBASTRAGALINA</h6>
+                            <table class="table table-sm table-success">
+
+                                <thead>
+                                    <tr>
+                                        <th>Mov</th>
+                                        <th>Izq</th>
+                                        <th>Der</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Inversion</td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Eversión </td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+                                        <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
+
+                                    </tr>
+                                
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

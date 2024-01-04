@@ -14,14 +14,14 @@ import VueAxios from "vue-axios";
 
 // iconos
 
-import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { GiScarecrow ,RiHealthBookLine,FaUserCheck,FaHandHoldingMedical,AiBiorxivSquare,IoConstructSharp, FaHome, HiCheck,BiWhatsapp} from "oh-vue-icons/icons";
+/* import { OhVueIcon, addIcons } from "oh-vue-icons";
+import { GiScarecrow ,RiHealthBookLine,FaUserCheck,FaHandHoldingMedical,AiBiorxivSquare,IoConstructSharp, FaHome, HiCheck,BiWhatsapp} from "oh-vue-icons/icons"; 
 
-addIcons(GiScarecrow ,RiHealthBookLine,FaUserCheck,FaHandHoldingMedical,AiBiorxivSquare,IoConstructSharp, FaHome, HiCheck,BiWhatsapp);
+addIcons(GiScarecrow ,RiHealthBookLine,FaUserCheck,FaHandHoldingMedical,AiBiorxivSquare,IoConstructSharp, FaHome, HiCheck,BiWhatsapp);*/
 
 
 const app = createApp(App)
-app.component("v-icon",OhVueIcon);
+/* app.component("v-icon",OhVueIcon); */
 app.use(router)
 
 app.mount('#app')

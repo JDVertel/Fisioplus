@@ -13,7 +13,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="descripcion" placeholder="iagnostico fisioterapeutico"></textarea>
+                    <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="descripcion" placeholder="Diagnostico fisioterapeutico"></textarea>
                 </div>
 
                 <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3" v-model="descripcion" placeholder="Diagnostico fisioterapeutico"></textarea>
