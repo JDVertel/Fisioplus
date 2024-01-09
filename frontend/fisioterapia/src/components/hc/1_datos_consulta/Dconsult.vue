@@ -23,18 +23,21 @@
             <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-profileA" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                    <div class="mb-3">
-                        <br />
-                        <textarea placeholder="Motivo de Consulta" v-model="motivoConsulta" class="form-control textarea" id="text_motivoconsulta" rows="3"></textarea>
+                    <div class="container">
+                        <div class="mb-3">
+                            <br />
+                            <textarea placeholder="Motivo de Consulta" v-model="motivoConsulta" class="form-control textarea" id="text_motivoconsulta" rows="3"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea placeholder="Diagnostico Medico" v-model="diagnostico" class="form-control textarea" id="text_diagnosticomedico" rows="3"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea placeholder="Tratamientos Previos" v-model="TratPrevios" class="form-control textarea" id="text_tratamientosprevios" rows="3"></textarea>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <textarea placeholder="Diagnostico Medico" v-model="diagnostico" class="form-control textarea" id="text_diagnosticomedico" rows="3"></textarea>
-                    </div>
-
-                    <div class="mb-3">
-                        <textarea placeholder="Tratamientos Previos" v-model="TratPrevios" class="form-control textarea" id="text_tratamientosprevios" rows="3"></textarea>
-                    </div>
                 </div>
 
                 <div class="tab-pane fade" id="nav-contactA" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
@@ -105,7 +108,7 @@
                                     <textarea class="form-control form-control-sm textarea" id="exampleFormControlTextarea1" placeholder="Detalle" v-model="DetalleEnfHeredoF" rows="2"></textarea>
                                 </div>
                                 <button class="btn btn-primary btn-sm textarea" type="submit">
-                                   + Adicionar
+                                    + Adicionar
                                 </button>
                             </div>
                         </div>
@@ -150,7 +153,7 @@
                     </div>
                 </div>
             </div>
-        <button class="btn btn-warning">Guardar</button>
+            <button class="btn btn-warning">+ Guardar</button>
         </div>
     </div>
 </div>

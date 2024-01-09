@@ -44,7 +44,7 @@
                         <button type="button" class="btn btn-primary">
                             + Adicionar
                         </button>
-                     
+
                     </div>
                     <br>
                 </div>
@@ -73,40 +73,43 @@
                     <br>
                 </div>
             </div>
+            <div class="container">
+                <div class="card">
+                    <div class="card-header">
+                        Registro
+                    </div>
 
-            <div class="card">
-                <div class="card-header">
-                    Registro
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">movilidad/traslados</th>
+                                <th scope="col">First</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>@twitter</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
                 </div>
-
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">movilidad/traslados</th>
-                            <th scope="col">First</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>@twitter</td>
-
-                        </tr>
-                    </tbody>
-                </table>
-
             </div>
+            <button class="btn btn-warning">+ Guardar</button>
+
         </div>
     </div>
 </div>

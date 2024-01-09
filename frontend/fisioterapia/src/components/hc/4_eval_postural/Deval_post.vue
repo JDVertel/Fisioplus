@@ -44,9 +44,9 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <div class="row">
-                        <button type="button" class="btn btn-primary btn-sm">agregar</button>
-                    </div>
+             
+                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
+                 
 
                 </div>
                 <div class="tab-pane fade" id="vlateral" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
@@ -69,9 +69,9 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <div class="row">
-                        <button type="button" class="btn btn-primary btn-sm">agregar</button>
-                    </div>
+           
+                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
+                
 
                 </div>
                 <div class="tab-pane fade" id="vposterior" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
@@ -94,9 +94,9 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <div class="row">
-                        <button type="button" class="btn btn-primary btn-sm">agregar</button>
-                    </div>
+               
+                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
+                  
 
                 </div>
             </div>

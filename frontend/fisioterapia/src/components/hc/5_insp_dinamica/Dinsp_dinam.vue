@@ -48,9 +48,9 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <div class="row">
-                        <button type="button" class="btn btn-primary btn-sm">agregar</button>
-                    </div>
+           
+                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
+   
 
                 </div>
                 <div class="tab-pane fade" id="nav-profileE" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
@@ -73,9 +73,9 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <div class="row">
-                        <button type="button" class="btn btn-primary btn-sm">agregar</button>
-                    </div>
+                
+                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
+              
 
                 </div>
                 <div class="tab-pane fade" id="nav-contactE" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
@@ -98,9 +98,9 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <div class="row">
-                        <button type="button" class="btn btn-primary btn-sm">agregar</button>
-                    </div>
+             
+                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
+              
 
                 </div>
                 <div class="tab-pane fade" id="adaptaciones" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
@@ -191,9 +191,9 @@
                     </div>
                 </div>
 
-                <div class="row">
+             
                     <button type="button" class="btn btn-info btn-sm">Guardar</button>
-                </div>
+            
             </div>
         </div>
     </div>
