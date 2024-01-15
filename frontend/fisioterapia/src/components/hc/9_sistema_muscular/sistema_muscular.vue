@@ -243,13 +243,15 @@
                     <div class="tab-pane fade" id="nav-smusculardetall" role="tabpanel" aria-labelledby="nav-sist-muscular-detalle" tabindex="0">
                         <div class="container">
                             <div class="accordion" id="accordionExpMuscular">
+
+
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCuello" aria-expanded="true" aria-controls="collapsCuello">
                                             Cuello
                                         </button>
                                     </h2>
-                                    <div id="collapsCuello" class="accordion-collapse collapse show" data-bs-parent="#accordionExpMuscular">
+                                    <div id="collapseCuello" class="accordion-collapse collapse show" data-bs-parent="#accordionExpMuscular">
                                         <div class="accordion-body">
 
                                             <div class="card">
@@ -324,6 +326,10 @@
                                         </div>
                                     </div>
                                 </div>
+
+
+
+
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTronco" aria-expanded="false" aria-controls="collapseTronco">

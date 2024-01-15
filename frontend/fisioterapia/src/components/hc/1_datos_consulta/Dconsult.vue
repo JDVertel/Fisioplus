@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <textarea placeholder="Diagnostico Medico" v-model="diagnostico" class="form-control textarea" id="text_diagnosticomedico" rows="3"></textarea>
+                            <textarea placeholder="Enfermedad actual" v-model="diagnostico" class="form-control textarea" id="text_diagnosticomedico" rows="3"></textarea>
                         </div>
 
                         <div class="mb-3">

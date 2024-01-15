@@ -1,7 +1,7 @@
 <template>
   <footer>
     <br />
-    <p>&copy;Diseñado en Tecnoparque Nodo Socorro 2023</p>
+    <p>&copy; Bitdata Managements 2024</p>
     <br>
   </footer>
 </template>

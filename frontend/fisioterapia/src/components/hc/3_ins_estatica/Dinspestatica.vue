@@ -10,9 +10,9 @@
         <div class="accordion-body">
             <p>Evaluacion de la postura:(Comparando con el lado colateral)</p>
         </div>
-        <div class="container">
-            <img id="imagen_postura" src="./../../../assets/images/insp_estatica/imagen_postura.png" alt="">
-        </div>
+ 
+           
+    
 
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -49,10 +49,9 @@
 
             </div>
 
+            <div class="tab-pane fade m-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                <div class="container">
 
-
-            <div class="container">
-                <div class="tab-pane fade m-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
                     <div class="mb-1" v-if="tipoAnt != 0">
                         <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
                             <option value="">Seleccione evaluacion de lesiones</option>
@@ -66,14 +65,13 @@
                         <textarea class="form-control form-control-sm textarea" id="exampleFormControlTextarea1" placeholder="Detalle" v-model="DetalleEnfHeredoF" rows="2"></textarea>
                     </div>
                     <button type="button" class="btn btn-primary btn-sm">+ Adicionar</button>
-
                 </div>
             </div>
 
-
-
             <div class="tab-pane fade m-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
                 <div class="container">
+ <img id="imagen_postura" src="./../../../assets/images/insp_estatica/imagen_biotipo.png" alt="">
+
                     <div class="mb-1" v-if="tipoAnt != 0">
                         <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
                             <option value="">Seleccione biotipo</option>
@@ -91,10 +89,9 @@
 
             </div>
 
-
-            
             <div class="tab-pane fade m-3" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
                 <div class="container">
+                     <img id="imagen_postura" src="./../../../assets/images/insp_estatica/imagen_postura.png" alt="">
                     <div class="mb-1" v-if="tipoAnt != 0">
                         <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
                             <option value="">Seleccione postura</option>
@@ -113,39 +110,38 @@
             </div>
         </div>
 
-        <div class="container">
+        <hr>
 
-            <div class="card">
-                <div class="card-header">
-                    Registro
-                </div>
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">Tipo</th>
-                            <th scope="col">Hallazgo</th>
-                            <th scope="col">Especificacion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                        </tr>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                        </tr>
-                        <tr>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="card">
+            <div class="card-header">
+                Registro
             </div>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Hallazgo</th>
+                        <th scope="col">Especificacion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mark</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>Mark</td>
+                    </tr>
+                    <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>Mark</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
     </div>
