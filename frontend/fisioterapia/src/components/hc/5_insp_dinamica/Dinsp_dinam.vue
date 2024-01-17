@@ -19,6 +19,9 @@
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profileE" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
                         Fase de Balanceo
                     </button>
+                    <button class="nav-link" id="nav-evaluacion-tab" data-bs-toggle="tab" data-bs-target="#nav-Evaluacion" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
+                        Evaluacion
+                    </button>
                     <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contactE" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">
                         Adaptaciones
                     </button>
@@ -29,6 +32,10 @@
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-homeE" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+                    <div class="container">
+                        <img src="./../../../assets/images//insp_dinamica//fase_apoyo.jpg" alt="Logotipo" class="imginsp" />
+                    </div>
+
                     <p>Seleccione y agregue hallazgos</p>
 
                     <select class="form-select form-select-sm" aria-label="Small select example">
@@ -48,12 +55,15 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-           
-                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
-   
+
+                    <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
 
                 </div>
                 <div class="tab-pane fade" id="nav-profileE" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                    <div class="container">
+                        <img src="./../../../assets/images//insp_dinamica//fase_balanceo.jpg" alt="Logotipo" class="imginsp" />
+                    </div>
+
                     <p>Seleccione y agregue hallazgos</p>
 
                     <select class="form-select form-select-sm" aria-label="Small select example">
@@ -73,9 +83,54 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                
-                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
+
+                    <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
+
+                </div>
+                <div class="tab-pane fade" id="nav-Evaluacion" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6">
+                                       <select class="form-select form-select-sm" aria-label="Small select example">
+                                    <option selected>clasificacion</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <select class="form-select form-select-sm" aria-label="Small select example">
+                                    <option selected>Detalle</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                  <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
+                            </div>
+                            <div class="col-6">
+                                <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Clasificacion</th>
+                                    <th scope="col">Detalle</th>
+                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    
+                                    <th>Mark</th>
+                                    <td>Otto</td>
               
+                                </tr>
+                                <tr>
+                                    
+                                    <th>Jacob</th>
+                          
+                                </tr>
+                            </tbody>
+                        </table>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="tab-pane fade" id="nav-contactE" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
@@ -98,9 +153,8 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-             
-                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
-              
+
+                    <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
 
                 </div>
                 <div class="tab-pane fade" id="adaptaciones" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
@@ -191,9 +245,8 @@
                     </div>
                 </div>
 
-             
-                    <button type="button" class="btn btn-info btn-sm">Guardar</button>
-            
+                <button type="button" class="btn btn-info btn-sm">Guardar</button>
+
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
 <div class="accordion-item">
     <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse1" aria-expanded="false" aria-controls="panelsStayOpen-collapse1">
-            <v-icon name="fa-user-check" fill="blue" /> Datos de Consulta
+            Datos de Consulta
         </button>
     </h2>
     <div id="panelsStayOpen-collapse1" class="accordion-collapse collapse">
@@ -35,6 +35,10 @@
 
                         <div class="mb-3">
                             <textarea placeholder="Tratamientos Previos" v-model="TratPrevios" class="form-control textarea" id="text_tratamientosprevios" rows="3"></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea placeholder="Medicamentos Previos" v-model="MedPrevios" class="form-control textarea" id="text_medicamentosprevios" rows="3"></textarea>
                         </div>
                     </div>
 
@@ -88,7 +92,7 @@
                         <div class="col-12">
                             <div class="container">
                                 <div class="mb-1">
-                                    <select v-on:change="buscarenf(tipoAnt)" v-model="tipoAnt" class="form-select form-select-sm textarea" aria-label="Default select example">
+                                    <select v-model="tipoAnt" v-on:change=" buscar_enfermedad(this.tipoAnt, this.dataBD,'enfermedades')" class="form-select form-select-sm textarea" aria-label="Default select example">
                                         <option value="0">Tipo de antecedente</option>
                                         <option v-for="(ant, index) in this.dataBD" :key="index" :value="ant.id">
                                             {{ ant.nombre }}
@@ -163,11 +167,15 @@
 import {
     Antecedentes
 } from "./../../../firebase/bd.js";
+import {
+    buscarenf
+} from "./../../backend/rutinas.js";
 
 export default {
 
     data: () => ({
         dataBD: Antecedentes,
+        datas: "",
         tipoAnt: "",
         Enfermedad: "",
         motivoConsulta: "",
@@ -190,16 +198,26 @@ export default {
         otros: "",
         descripcion: "",
         enf: "",
+
     }),
+
     methods: {
-        buscarenf(id) {
-            this.enf = this.dataBD[id].enfermedades;
-            console.log(this.enf);
-            /*     console.log(id); */
-        },
-    },
+        /*      buscarenf(ide) {
+                 for (let i = 0; i < this.dataBD.length; i++) {
+                     if (this.dataBD[i].id === ide) {
+                         this.enf = (this.dataBD[i].enfermedades);
+                     }
+                 }
+             } */
+
+        buscar_enfermedad(ide, array, resultado) {
+            const resp = buscarenf(ide, array, resultado);
+        }
+
+    }
 
 }
+
 </script>
 
 <style>

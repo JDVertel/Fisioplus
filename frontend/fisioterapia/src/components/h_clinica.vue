@@ -1,31 +1,32 @@
 <template>
 <div class="accordion custom-header" id="accordionPanelsStayOpenExample">
-    <!-- consulkta -->
+
     <D_consulta />
-    <!-- --OBSERVACION  -->
-    <D_observacion />
-    <!--  INSPECCION ESTATICA-->
+
+    <!--    <D_observacion />
+
     <D_inspestatica />
-    <!--  EVALUACION POSTURAL -->
+
     <D_eval_post />
-    <!-- INSPECCION DINAMICA -->
+
     <D_insp_dinam />
-    <!-- escala visual del dolor -->
+
     <D_esc_visual />
-    <!-- pruebas de imagen complementaria -->
+
     <D_imagenes />
-    <!-- EXPLORACION FISICA -->
+
     <D_exp_fisica />
-    <!-- Plan Analitico de Atencion Fisioterapeutica  -->
+
     <D_sis_muscular />
-    <!-- analisis -->
+
     <D_analisis />
-    <!-- diagnostico -->
+
     <D_diagnostico />
-    <!--   Tratamiento -->
+
     <D_tratamiento />
-    <!-- orden medica -->
-    <D_ordenmedica />
+
+    <D_ordenmedica /> -->
+    
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse14" aria-expanded="false" aria-controls="panelsStayOpen-collapse14">

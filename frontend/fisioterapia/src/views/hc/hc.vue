@@ -38,7 +38,7 @@
                 <div class="container mt-3" style="padding: 25px;">
                     <h5>
                         <strong>
-                            <v-icon name="ri-health-book-line" /> Datos
+                          Datos
                             Personales</strong>
                     </h5>
                     <div class="row">
@@ -61,6 +61,7 @@
     </div>
 
     <C_Hc />
+
     <br>
 
 </div>

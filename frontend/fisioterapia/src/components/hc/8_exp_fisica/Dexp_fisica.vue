@@ -12,19 +12,21 @@
     </h2>
     <div id="panelsStayOpen-collapse8" class="accordion-collapse collapse">
         <div class="accordion-body">
+            <h6>Inspección y Palpación</h6>
+            <p>Evaluación por aparatos y sistemas: Comparando con el lado colateral</p>
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
 
                     <button class="nav-link active" id="nav-soseo-tab" data-bs-toggle="tab" data-bs-target="#nav-soseo" type="button" role="tab" aria-controls="nav-home" aria-selected="false">
-                        S Oseo
+                        Sistema Oseo
                     </button>
 
                     <button class="nav-link" id="nav-msuperior-tab" data-bs-toggle="tab" data-bs-target="#nav-msuperior" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">
-                        VR Movs(M Superior)
+                        Valoracion Rangos de Movimientos (M Superior)
                     </button>
 
                     <button class="nav-link" id="nav-minferior-tab" data-bs-toggle="tab" data-bs-target="#nav-minferior" type="button" role="tab" aria-controls="nav-contact" aria-selected="true">
-                        VR Movs(M Inferior)
+                        Valoracion Rangos de Movimientos (M Inferior)
                     </button>
 
                 </div>
@@ -35,13 +37,19 @@
                     <p>Seleccione y agregue hallazgos</p>
 
                     <select class="form-select form-select-sm" aria-label="Small select example">
-                        <option selected>tipo-parametro</option>
+                        <option selected>Clase</option>
                         <!-- !debe mostrar (inspeccion/palpacion) y el parametro en una sola casilla -->
                         <option value="1">One</option>
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
-
+                    <select class="form-select form-select-sm" aria-label="Small select example">
+                        <option selected>Tipo</option>
+                        <!-- !debe mostrar opciones del  parametro seleccionado -->
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -62,15 +70,15 @@
                         <tbody>
                             <tr>
                                 <th>1</th>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
+                                <td>xxx </td>
+                                <td>xxx </td>
+                                <td>xxx </td>
                             </tr>
                             <tr>
                                 <th>2</th>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
-                                <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1"></td>
+                                <td> xxx</td>
+                                <td>xxx </td>
+                                <td>xxx </td>
                             </tr>
                             <tr>
                                 <th>3</th>
@@ -314,8 +322,9 @@
                 </div>
                 <!--  -->
                 <div class="tab-pane fade" id="nav-minferior" role="tabpanel" tabindex="0">
+                         <h5>Valoracion de rangos de Mov (Miembro Inferior)</h5>
                     <div class="row">
-                         <div class="col-6 col-md-3">
+                        <div class="col-6 col-md-3">
                             <h6>CADERA</h6>
                             <table class="table table-sm table-secondary">
 
@@ -351,12 +360,12 @@
                                         <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
                                     </tr>
 
-                                        <tr>
+                                    <tr>
                                         <td>R interna</td>
                                         <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
                                         <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
                                     </tr>
-                                        <tr>
+                                    <tr>
                                         <td>R externa</td>
                                         <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
                                         <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
@@ -365,7 +374,7 @@
                                 </tbody>
                             </table>
                         </div>
-       <div class="col-6 col-md-3">
+                        <div class="col-6 col-md-3">
                             <h6>RODILLA</h6>
                             <table class="table table-sm table-danger">
 
@@ -390,12 +399,11 @@
                                         <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
 
                                     </tr>
-                                    
 
                                 </tbody>
                             </table>
                         </div>
-                               <div class="col-6 col-md-3">
+                        <div class="col-6 col-md-3">
                             <h6>TOBILLO</h6>
                             <table class="table table-sm table-warning">
 
@@ -420,12 +428,11 @@
                                         <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
 
                                     </tr>
-                            
 
                                 </tbody>
                             </table>
                         </div>
-                               <div class="col-6 col-md-3">
+                        <div class="col-6 col-md-3">
                             <h6>ART.SUBASTRAGALINA</h6>
                             <table class="table table-sm table-success">
 
@@ -450,7 +457,6 @@
                                         <td> <input type="number" class="form-control form-control-sm" id="exampleFormControlInput1" placeholder="DATA"></td>
 
                                     </tr>
-                                
 
                                 </tbody>
                             </table>
@@ -458,6 +464,11 @@
                     </div>
                 </div>
             </div>
+            
+            <hr>
+         <div class="container">
+             <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" placeholder="Observaciones"  rows="3"></textarea>
+         </div>
         </div>
     </div>
 </div>
