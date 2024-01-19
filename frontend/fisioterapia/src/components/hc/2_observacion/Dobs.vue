@@ -29,8 +29,8 @@
                     <div class="container">
                         <br />
                         <div class="mb-1" v-if="tipoAnt != 0">
-                            <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
-                                <option value="">Seleccione marcha</option>
+                            <select v-model="obs_marcha" class="form-select form-select-sm textarea" aria-label="Default select example">
+                                <option value="0">--Seleccione marcha--</option>
                                 <option v-for="(item, index) in this.data_marcha" :key="index" value="{{index}}">
                                     {{ item.nombre }}
                                 </option>
@@ -53,8 +53,8 @@
                         <br />
 
                         <div class="mb-1" v-if="tipoAnt != 0">
-                            <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
-                                <option value="">Seleccione marcha</option>
+                            <select v-model="obs_tipo" class="form-select form-select-sm textarea" aria-label="Default select example">
+                                <option value="0">--Seleccione tipo--</option>
                                 <option v-for="(item, index) in this.data_movilidad" :key="index" value="{{index}}">
                                     {{ item.nombre }}
                                 </option>
@@ -128,7 +128,8 @@ export default {
     data: () => ({
         data_marcha: observacion_marcha,
         data_movilidad: observacion_movilidad,
-
+        obs_marcha: "0",
+        obs_tipo: "0",
     }),
 
     methods: {

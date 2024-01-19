@@ -3,9 +3,9 @@
 
     <D_consulta />
 
-    <!--    <D_observacion />
+     <D_observacion />
 
-    <D_inspestatica />
+   <D_inspestatica />
 
     <D_eval_post />
 
@@ -25,7 +25,7 @@
 
     <D_tratamiento />
 
-    <D_ordenmedica /> -->
+    <D_ordenmedica />
     
     <div class="accordion-item">
         <h2 class="accordion-header">

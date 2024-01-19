@@ -10,9 +10,6 @@
         <div class="accordion-body">
             <p>Evaluacion de la postura:(Comparando con el lado colateral)</p>
         </div>
- 
-           
-    
 
         <nav>
             <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -33,11 +30,12 @@
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active m-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
                 <div class="container">
+
                     <div class="mb-1" v-if="tipoAnt != 0">
-                        <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
-                            <option value="">Seleccione evaluacion de piel</option>
-                            <option v-for="(item, index) in this.data_ie_piel" :key="index" value="{{index}}">
-                                {{ item.nombre }}
+                        <select v-model="i_est_piel" class="form-select form-select-sm textarea" aria-label="Default select example">
+                            <option value="0">--Seleccione evaluacion de piel--</option>
+                            <option v-for="item in this.data_ie_piel.nombres" :key="item">
+                                {{ item}}
                             </option>
                         </select>
                     </div>
@@ -51,12 +49,11 @@
 
             <div class="tab-pane fade m-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
                 <div class="container">
-
                     <div class="mb-1" v-if="tipoAnt != 0">
-                        <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
-                            <option value="">Seleccione evaluacion de lesiones</option>
-                            <option v-for="(item, index) in this.data_ie_lesiones" :key="index" value="{{index}}">
-                                {{ item.nombre }}
+                        <select v-model="i_est_lesiones" class="form-select form-select-sm textarea" aria-label="Default select example">
+                            <option value="0">--Seleccione evaluacion de lesiones--</option>
+                            <option v-for="(item, index) in this.data_ie_lesiones.nombres" :key="index" value="{{index}}">
+                                {{ item }}
                             </option>
                         </select>
                     </div>
@@ -70,13 +67,13 @@
 
             <div class="tab-pane fade m-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
                 <div class="container">
- <img id="imagen_postura" src="./../../../assets/images/insp_estatica/imagen_biotipo.png" alt="">
+                    <img id="imagen_postura" src="./../../../assets/images/insp_estatica/imagen_biotipo.png" alt="">
 
                     <div class="mb-1" v-if="tipoAnt != 0">
-                        <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
-                            <option value="">Seleccione biotipo</option>
-                            <option v-for="(item, index) in this.data_ie_biotipo" :key="index" value="{{index}}">
-                                {{ item.nombre }}
+                        <select v-model="i_e_biotipo" class="form-select form-select-sm textarea" aria-label="Default select example">
+                            <option value="0">--Seleccione biotipo--</option>
+                            <option v-for="(item, index) in this.data_ie_biotipo.nombres" :key="index" value="{{index}}">
+                                {{ item}}
                             </option>
                         </select>
                     </div>
@@ -91,12 +88,12 @@
 
             <div class="tab-pane fade m-3" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">
                 <div class="container">
-                     <img id="imagen_postura" src="./../../../assets/images/insp_estatica/imagen_postura.png" alt="">
+                    <img id="imagen_postura" src="./../../../assets/images/insp_estatica/imagen_postura.png" alt="">
                     <div class="mb-1" v-if="tipoAnt != 0">
-                        <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
-                            <option value="">Seleccione postura</option>
-                            <option v-for="(item, index) in this.data_ie_postura" :key="index" value="{{index}}">
-                                {{ item.nombre }}
+                        <select v-model="i_e_postura" class="form-select form-select-sm textarea" aria-label="Default select example">
+                            <option value="0">--Seleccione postura--</option>
+                            <option v-for="(item, index) in this.data_ie_postura.nombres" :key="index" value="{{index}}">
+                                {{ item }}
                             </option>
                         </select>
                     </div>
@@ -156,12 +153,17 @@ import {
 export default {
     data: () => ({
 
-        data_ie_piel: insp_estatica.filter((el) => el.clas == "piel"),
-        data_ie_lesiones: insp_estatica.filter((el) => el.clas == "lesiones"),
-        data_ie_biotipo: insp_estatica.filter((el) => el.clas == "biotipo"),
-        data_ie_postura: insp_estatica.filter((el) => el.clas == "postura"),
+        data_ie_piel: insp_estatica.filter((el) => el.clas === "piel")[0],
+        data_ie_lesiones: insp_estatica.filter((el) => el.clas === "lesiones")[0],
+        data_ie_biotipo: insp_estatica.filter((el) => el.clas === "biotipo")[0],
+        data_ie_postura: insp_estatica.filter((el) => el.clas === "postura")[0],
+        i_est_piel: "0",
+        i_est_lesiones: "0",
+        i_e_biotipo: "0",
+        i_e_postura: "0",
 
-    })
+    }),
+
 }
 </script>
 

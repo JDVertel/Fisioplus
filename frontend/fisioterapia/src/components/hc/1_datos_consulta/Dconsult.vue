@@ -93,7 +93,7 @@
                             <div class="container">
                                 <div class="mb-1">
                                     <select v-model="tipoAnt" v-on:change=" buscar_enfermedad(this.tipoAnt, this.dataBD,'enfermedades')" class="form-select form-select-sm textarea" aria-label="Default select example">
-                                        <option value="0">Tipo de antecedente</option>
+                                        <option value="0">--Seleccione--</option>
                                         <option v-for="(ant, index) in this.dataBD" :key="index" :value="ant.id">
                                             {{ ant.nombre }}
                                         </option>
@@ -176,7 +176,7 @@ export default {
     data: () => ({
         dataBD: Antecedentes,
         datas: "",
-        tipoAnt: "",
+        tipoAnt: "0",
         Enfermedad: "",
         motivoConsulta: "",
         diagnostico: "",
@@ -210,8 +210,8 @@ export default {
                  }
              } */
 
-        buscar_enfermedad(ide, array, resultado) {
-            const resp = buscarenf(ide, array, resultado);
+     buscar_enfermedad(ide, array, resultado) {
+             this.enf  = buscarenf(ide, array, resultado);
         }
 
     }

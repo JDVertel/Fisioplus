@@ -2,7 +2,7 @@
 <div class="accordion-item">
     <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="false" aria-controls="panelsStayOpen-collapse4">
-            <v-icon name="fa-user-check" fill="yellow" />
+
             Evaluacion Postural
         </button>
     </h2>
@@ -28,15 +28,16 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="vanterior" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                     <p>Seleccione y agregue hallazgos</p>
-
-                    <select v-on:change="buscar_d_anterior(v_anterior)" v-model="v_anterior" class="form-select form-select-sm" aria-label="Small select example">
-                        <option selected>clasificacion</option>
+                    <!-- 1 -->
+                    <select v-on:change="buscar_detalle(v_anterior, this.data_v_anterior)" v-model="v_anterior" class="form-select form-select-sm" aria-label="Small select example">
+                        <option value="0" selected>--Seleccione clasificacion--</option>
                         <option v-for="(item, index) in this.data_v_anterior" :key="index" :value="item.id">{{ item.organo}}</option>
 
                     </select>
-                    <select class="form-select form-select-sm" aria-label="Small select example">
-                        <option selected>especificacion</option>
-                        <option v-for="(it, index) in this.detalle_anterior" :key="index" value="{{it}}">{{ it}}</option>
+                    <!-- 2 -->
+                    <select class="form-select form-select-sm" aria-label="Small select example" v-model="v_anterior_org">
+                        <option value="0" selected>--Seleccione especificacion--</option>
+                        <option v-for="(item, index) in this.detalle_rta.detalle" :key="index" value="{{item}}">{{ item}}</option>
 
                     </select>
 
@@ -44,59 +45,53 @@
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-             
-                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
-                 
+
+                    <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
 
                 </div>
                 <div class="tab-pane fade" id="vlateral" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                     <p>Seleccione y agregue hallazgos</p>
-
-                    <select class="form-select form-select-sm" aria-label="Small select example">
-                        <option selected>clasificacion</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <!-- 1 -->
+                    <select class="form-select form-select-sm" aria-label="Small select example" v-on:change="buscar_detalle(v_lateral, this.data_v_lateral)" v-model="v_lateral">
+                        <option value="0" selected>-- Seleccione clasificacion--</option>
+                        <option v-for="(item, index) in this.data_v_lateral" :key="index" :value="item.id">{{ item.organo}}</option>
                     </select>
-                    <select class="form-select form-select-sm" aria-label="Small select example">
-                        <option selected>especificacion</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <!-- 2 -->
+                    <select class="form-select form-select-sm" aria-label="Small select example" v-model="v_lateral_org">
+                        <option value="0" selected>--Seleccione la especificacion--</option>
+                        <option v-for="(it, index) in this.detalle_rta.detalle" :key="index" value="{{it}}">{{ it}}</option>
+
                     </select>
 
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-           
-                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
-                
+
+                    <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
 
                 </div>
                 <div class="tab-pane fade" id="vposterior" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
                     <p>Seleccione y agregue hallazgos</p>
 
-                    <select class="form-select form-select-sm" aria-label="Small select example">
-                        <option selected>clasificacion</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                      <!-- 1 -->
+                    <select class="form-select form-select-sm" aria-label="Small select example" v-on:change="buscar_detalle(v_posterior, this.data_v_posterior)" v-model="v_posterior">
+                        <option value="0" selected>-- Seleccione clasificacion--</option>
+                        <option v-for="(item, index) in this.data_v_posterior" :key="index" :value="item.id">{{ item.organo}}</option>
                     </select>
-                    <select class="form-select form-select-sm" aria-label="Small select example">
-                        <option selected>especificacion</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <!-- 2 -->
+                    <select class="form-select form-select-sm" aria-label="Small select example" v-model="v_posterior_org">
+                        <option value="0" selected>--Seleccione la especificacion--</option>
+                        <option v-for="(it, index) in this.detalle_rta.detalle" :key="index" value="{{it}}">{{ it}}</option>
+
                     </select>
 
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-               
-                        <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
-                  
+
+                    <button type="button" class="btn btn-primary btn-sm">+ Agregar</button>
 
                 </div>
             </div>
@@ -151,18 +146,26 @@ export default {
 
     data: () => ({
         data_v_anterior: eval_postural.filter((el) => el.clase == "vista anterior"),
+
         data_v_lateral: eval_postural.filter((el) => el.clase == "vista lateral"),
+
         data_v_posterior: eval_postural.filter((el) => el.clase == "vista posterior"),
+
         /*  */
-        detalle_anterior: "",
+        detalle_rta: "",
+        v_anterior: "0",
+        v_anterior_org: "0",
+        v_lateral: "0",
+        v_lateral_org: "0",
+           v_posterior: "0",
+        v_posterior_org: "0",
 
     }),
     methods: {
-        buscar_d_anterior(id) {
-            console.log(id);
-            this.detalle_anterior = this.data_v_anterior[id].detalle;
-            console.log(this.det);
-            /*     console.log(id); */
+        buscar_detalle(id, bd) {
+            this.detalle_rta = bd.filter((el) => el.id == id)[0],
+                console.log(this.detalle_rta.detalle);
+
         },
     }
 
