@@ -168,7 +168,7 @@ import {
     Antecedentes
 } from "./../../../firebase/bd.js";
 import {
-    buscarenf
+    BuscarDetalles
 } from "./../../backend/rutinas.js";
 
 export default {
@@ -202,16 +202,8 @@ export default {
     }),
 
     methods: {
-        /*      buscarenf(ide) {
-                 for (let i = 0; i < this.dataBD.length; i++) {
-                     if (this.dataBD[i].id === ide) {
-                         this.enf = (this.dataBD[i].enfermedades);
-                     }
-                 }
-             } */
-
      buscar_enfermedad(ide, array, resultado) {
-             this.enf  = buscarenf(ide, array, resultado);
+             this.enf  = BuscarDetalles(ide, array, resultado);
         }
 
     }

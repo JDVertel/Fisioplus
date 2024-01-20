@@ -441,7 +441,7 @@ export const eval_postural = [
     id: "17",
     clase: "vista lateral",
     organo: "cadera",
-    detalle:[ "inclinacion ant/post. de cadera y pelvis",],
+    detalle: ["inclinacion ant/post. de cadera y pelvis"],
   },
   {
     id: "18",
@@ -499,7 +499,7 @@ export const eval_postural = [
 export const insp_dinamica = [
   {
     id: "1",
-    class: "fase de apoyo",
+    class: "apoyo",
     fase: "estadio",
     nombre: [
       "contacto inicial",
@@ -512,7 +512,7 @@ export const insp_dinamica = [
 
   {
     id: "2",
-    class: "fase de balanceo",
+    class: "balanceo",
     fase: "estadio",
     nombre: [
       "Apoyo final",

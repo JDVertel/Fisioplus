@@ -37,7 +37,7 @@
                     <!-- 2 -->
                     <select class="form-select form-select-sm" aria-label="Small select example" v-model="v_anterior_org">
                         <option value="0" selected>--Seleccione especificacion--</option>
-                        <option v-for="(item, index) in this.detalle_rta.detalle" :key="index" value="{{item}}">{{ item}}</option>
+                        <option v-for="(item, index) in this.detalle_rta" :key="index" value="{{item}}">{{ item}}</option>
 
                     </select>
 
@@ -59,7 +59,7 @@
                     <!-- 2 -->
                     <select class="form-select form-select-sm" aria-label="Small select example" v-model="v_lateral_org">
                         <option value="0" selected>--Seleccione la especificacion--</option>
-                        <option v-for="(it, index) in this.detalle_rta.detalle" :key="index" value="{{it}}">{{ it}}</option>
+                        <option v-for="(it, index) in this.detalle_rta" :key="index" value="{{it}}">{{ it}}</option>
 
                     </select>
 
@@ -82,7 +82,7 @@
                     <!-- 2 -->
                     <select class="form-select form-select-sm" aria-label="Small select example" v-model="v_posterior_org">
                         <option value="0" selected>--Seleccione la especificacion--</option>
-                        <option v-for="(it, index) in this.detalle_rta.detalle" :key="index" value="{{it}}">{{ it}}</option>
+                        <option v-for="(it, index) in this.detalle_rta" :key="index" value="{{it}}">{{ it}}</option>
 
                     </select>
 
@@ -142,6 +142,9 @@
 import {
     eval_postural
 } from "./../../../firebase/bd.js";
+import {
+    BuscarDetalles
+} from "./../../backend/rutinas.js";
 export default {
 
     data: () => ({
@@ -163,9 +166,7 @@ export default {
     }),
     methods: {
         buscar_detalle(id, bd) {
-            this.detalle_rta = bd.filter((el) => el.id == id)[0],
-                console.log(this.detalle_rta.detalle);
-
+       this.detalle_rta = BuscarDetalles(id, bd, "detalle");
         },
     }
 
