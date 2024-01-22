@@ -17,8 +17,8 @@ export function BuscarDetalles(ide, array, resultado) {
 
 
 /* -----------otra funcion que tambien sirve--------------------------------------------------------- */
-export function buscar_detalle(id, bd) {
+/* export function buscar_detalle(id, bd) {
   (this.detalle_rta = bd.filter((el) => el.id == id)[0]),
     console.log(this.detalle_rta.detalle);
 }
-          
+     */      

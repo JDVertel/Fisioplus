@@ -36,19 +36,17 @@
                 <div class="tab-pane fade show active" id="nav-soseo" role="tabpanel" tabindex="0">
                     <p>Seleccione y agregue hallazgos</p>
 
-                    <select class="form-select form-select-sm" aria-label="Small select example">
-                        <option selected>Clase</option>
-                        <!-- !debe mostrar (inspeccion/palpacion) y el parametro en una sola casilla -->
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select class="form-select form-select-sm" aria-label="Small select example" v-model="tipoevaluacion" v-on:change="buscardata(this.tipoevaluacion,this.data_exp,'detalle')" >
+                        <option selected value="0">--seleccione Clase--</option>
+                        <option  v-for="item in this.data_exp" :key="item.id" :value="item.id">{{item.clase}}</option>
                     </select>
-                    <select class="form-select form-select-sm" aria-label="Small select example">
-                        <option selected>Tipo</option>
-                        <!-- !debe mostrar opciones del  parametro seleccionado -->
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+
+
+
+                    <select class="form-select form-select-sm" aria-label="Small select example" v-model="tipomusculo">
+                        <option value="0" selected>--Seleccione Tipo musculo--</option>
+                        <option v-for="item in this.datosC" :key="item.id" >{{item}}</option>
+                 
                     </select>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
@@ -475,8 +473,28 @@
 </template>
 
 <script>
+import {
+    exp_fisica
+} from "./../../../firebase/bd.js";
+import {
+    BuscarDetalles
+} from "./../../backend/rutinas.js";
 export default {
+data:()=>({
+    data_exp:exp_fisica,
+    tipoevaluacion:"0",
+    tipomusculo:"0",
+    datosC:"",
 
+
+
+}),
+methods:{
+    buscardata(x,y,z){
+        this.datosC=BuscarDetalles(x,y,z)
+    }
+
+}
 }
 </script>
 

@@ -36,10 +36,10 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="mb-1">
-                                        <label for="smuscular" class="form-label mb-1">Seleccione tipo de evaluacion</label>
-                                        <select v-model="Enfermedad" class="form-select form-select-sm textarea" id="smuscular" aria-label="Default select example">
-                                            <option value="I">Inspección</option>
-                                            <option value="P">Palpación</option>
+                                        <!--  -->
+                                        <select v-model="smuscular" class="form-select form-select-sm textarea" id="smuscular" v-on:change="busquedamuscular(this.smuscular,this.data_smuscular,'detalle')" aria-label="Default select example">
+                                            <option value="0">--Seleccione tipo de evaluacion--</option>
+                                            <option v-for="item in this.data_smuscular" :key="item.id" :value="item.id"> {{item.clase}}</option>
 
                                         </select></div>
 
@@ -47,13 +47,11 @@
 
                                 <div class="col-6">
                                     <div class="mb-1">
-                                        <label for="gmuscular" class="form-label mb-1">Seleccione Grado</label>
-                                        <select v-model="Enfermedad" class="form-select form-select-sm textarea" id="gmuscular" aria-label="Default select example">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
+
+                                        <!--  -->
+                                        <select v-model="emuscular" class="form-select form-select-sm textarea" id="gmuscular" aria-label="Default select example">
+                                            <option value="0">--Seleccione caracteristica--</option>
+                                            <option v-for="i in this.consultamusc" :key="i.id" :value="i.detalle">{{i}}</option>
 
                                         </select>
                                     </div>
@@ -103,21 +101,31 @@
                         <div class="container">
                             <br />
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-5">
                                     <div class="mb-1">
-                                        <label for="smuscular" class="form-label mb-1">Seleccione Musculo</label>
-                                        <select v-model="Enfermedad" class="form-select form-select-sm textarea" id="smuscular" aria-label="Default select example">
-                                            <option value="I">Inspección</option>
-                                            <option value="P">Palpación</option>
+
+                                        <select class="form-select form-select-sm textarea" id="emuscular" aria-label="Default select example" v-model="emuscular" v-on:change="evalmuscular(this.emuscular, this.data_emuscular,'musculo')">
+                                            <option value="0">--Seleccione clase--</option>
+                                            <option v-for="item in this.data_emuscular" :key="item.id" :value="item.id"> {{item.clase}}</option>
 
                                         </select></div>
 
                                 </div>
-
-                                <div class="col-6">
+                                <div class="col-5">
                                     <div class="mb-1">
-                                        <label for="gmuscular" class="form-label mb-1">Seleccione Grado</label>
-                                        <select v-model="Enfermedad" class="form-select form-select-sm textarea" id="gmuscular" aria-label="Default select example">
+
+                                        <select class="form-select form-select-sm textarea" id="emuscular_musc" aria-label="Default select example">
+                                            <option value="0">--Seleccione musculo--</option>
+                                            <option v-for="item in this.evalmusc" :key="item.id">{{item}}</option>
+
+                                        </select></div>
+
+                                </div>
+                                <div class="col-2">
+                                    <div class="mb-1">
+
+                                        <select v-model="eval_grado" class="form-select form-select-sm textarea" id="Ggmuscular" aria-label="Default select example">
+                                            <option value="0">Grado</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -129,7 +137,7 @@
 
                                 </div>
                             </div>
-
+                            <button class="btn btn-success btn-sm mt-2 mb-2">+ Agregar al registro</button>
                             <div class="row">
                                 <div class="col-12 col-md-4">
                                     <div class="card">
@@ -163,9 +171,7 @@
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <div class="card-footer">
-                                            <button class="btn btn-success btn-sm">Guardar</button>
-                                        </div>
+
                                     </div>
 
                                 </div>
@@ -243,7 +249,6 @@
                     <div class="tab-pane fade" id="nav-smusculardetall" role="tabpanel" aria-labelledby="nav-sist-muscular-detalle" tabindex="0">
                         <div class="container">
                             <div class="accordion" id="accordionExpMuscular">
-
 
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -326,9 +331,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
 
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -1001,7 +1003,7 @@
                                                                 <td><input type="number" placeholder="Grado" class="form-control">
                                                                 </td>
                                                             </tr>
-      <tr>
+                                                            <tr>
 
                                                                 <td>Extension metatarsofalángica de dedo gordo</td>
                                                                 <td> <input type="number" placeholder="Grado" class="form-control"></td>
@@ -1053,7 +1055,33 @@
 </template>
 
 <script>
+import {
+    evaluacion_muscular,
+    sistema_muscular
+} from "./../../../firebase/bd.js";
+import {
+    BuscarDetalles
+} from "./../../backend/rutinas.js";
 export default {
+    data: () => ({
+        data_smuscular: sistema_muscular,
+        data_emuscular: evaluacion_muscular,
+        smuscular: "0",
+        emuscular: "0",
+        consultamusc: [],
+        evalmusc: [],
+        eval_grado:"0",
+
+    }),
+    methods: {
+        busquedamuscular(x, y, z) {
+            this.consultamusc = BuscarDetalles(x, y, z)
+        },
+        evalmuscular(x, y, z) {
+            this.evalmusc = BuscarDetalles(x, y, z)
+        }
+
+    }
 
 }
 </script>
