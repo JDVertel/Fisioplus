@@ -36,17 +36,15 @@
                 <div class="tab-pane fade show active" id="nav-soseo" role="tabpanel" tabindex="0">
                     <p>Seleccione y agregue hallazgos</p>
 
-                    <select class="form-select form-select-sm" aria-label="Small select example" v-model="tipoevaluacion" v-on:change="buscardata(this.tipoevaluacion,this.data_exp,'detalle')" >
+                    <select class="form-select form-select-sm" aria-label="Small select example" v-model="tipoevaluacion" v-on:change="buscardata(this.tipoevaluacion,this.data_exp,'detalle')">
                         <option selected value="0">--seleccione Clase--</option>
-                        <option  v-for="item in this.data_exp" :key="item.id" :value="item.id">{{item.clase}}</option>
+                        <option v-for="item in this.data_exp" :key="item.id" :value="item.id">{{item.clase}}</option>
                     </select>
-
-
 
                     <select class="form-select form-select-sm" aria-label="Small select example" v-model="tipomusculo">
                         <option value="0" selected>--Seleccione Tipo musculo--</option>
-                        <option v-for="item in this.datosC" :key="item.id" >{{item}}</option>
-                 
+                        <option v-for="item in this.datosC" :key="item.id">{{item}}</option>
+
                     </select>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Detalle</label>
@@ -59,29 +57,30 @@
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>First</th>
-                                <th>Last</th>
-                                <th>Handle</th>
+                                <th>Sitema</th>
+                                <th>Clase</th>
+                                <th>Musculo</th>
+                                <th>Detalle</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th>1</th>
+                                <td>1</td>
                                 <td>xxx </td>
                                 <td>xxx </td>
                                 <td>xxx </td>
                             </tr>
                             <tr>
-                                <th>2</th>
+                                <td>1</td>
                                 <td> xxx</td>
                                 <td>xxx </td>
                                 <td>xxx </td>
                             </tr>
                             <tr>
-                                <th>3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
+                                <td>1</td>
+                                <td>xxx </td>
+                                <td>xxx </td>
+                                <td>xxx </td>
                             </tr>
                         </tbody>
                     </table>
@@ -320,7 +319,7 @@
                 </div>
                 <!--  -->
                 <div class="tab-pane fade" id="nav-minferior" role="tabpanel" tabindex="0">
-                         <h5>Valoracion de rangos de Mov (Miembro Inferior)</h5>
+                    <h5>Valoracion de rangos de Mov (Miembro Inferior)</h5>
                     <div class="row">
                         <div class="col-6 col-md-3">
                             <h6>CADERA</h6>
@@ -462,11 +461,11 @@
                     </div>
                 </div>
             </div>
-            
+
             <hr>
-         <div class="container">
-             <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" placeholder="Observaciones"  rows="3"></textarea>
-         </div>
+            <div class="container">
+                <textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" placeholder="Observaciones" rows="3"></textarea>
+            </div>
         </div>
     </div>
 </div>
@@ -480,21 +479,19 @@ import {
     BuscarDetalles
 } from "./../../backend/rutinas.js";
 export default {
-data:()=>({
-    data_exp:exp_fisica,
-    tipoevaluacion:"0",
-    tipomusculo:"0",
-    datosC:"",
+    data: () => ({
+        data_exp: exp_fisica,
+        tipoevaluacion: "0",
+        tipomusculo: "0",
+        datosC: "",
 
+    }),
+    methods: {
+        buscardata(x, y, z) {
+            this.datosC = BuscarDetalles(x, y, z)
+        }
 
-
-}),
-methods:{
-    buscardata(x,y,z){
-        this.datosC=BuscarDetalles(x,y,z)
     }
-
-}
 }
 </script>
 

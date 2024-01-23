@@ -27,27 +27,28 @@
                 <table class="table table-sm mt-3">
                     <thead>
                         <tr>
-                            <th scope="col">Tipo diagnostico</th>
-                            <th scope="col">Codigo</th>
-                            <th scope="col">Detalle</th>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+
 
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <th scope="row">Mark</th>
+                            <td>Mark</td>
                             <td>Otto</td>
 
                         </tr>
                         <tr>
                             <td>1</td>
-                            <th scope="row">Mark</th>
+                            <td>Mark</td>
                             <td>Otto</td>
                         </tr>
                         <tr>
                             <td>1</td>
-                            <th scope="row">Mark</th>
+                            <td>Mark</td>
                             <td>Otto</td>
                         </tr>
                     </tbody>

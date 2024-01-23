@@ -20,6 +20,7 @@
                             <option value="1">Diagnostico Principal</option>
                             <option value="2">Diagnostico Secunadario</option>
                             <option value="3">Diagnostico Terciario</option>
+                                 <option value="4">Diagnostico Relacionado</option>
                         </select></div>
                     <div class="col-4"> <button class="btn btn-warning">agregar</button></div>
 

@@ -32,13 +32,11 @@
                     <select v-on:change="buscar_detalle(v_anterior, this.data_v_anterior)" v-model="v_anterior" class="form-select form-select-sm" aria-label="Small select example">
                         <option value="0" selected>--Seleccione clasificacion--</option>
                         <option v-for="(item, index) in this.data_v_anterior" :key="index" :value="item.id">{{ item.organo}}</option>
-
                     </select>
                     <!-- 2 -->
                     <select class="form-select form-select-sm" aria-label="Small select example" v-model="v_anterior_org">
                         <option value="0" selected>--Seleccione especificacion--</option>
                         <option v-for="(item, index) in this.detalle_rta" :key="index" value="{{item}}">{{ item}}</option>
-
                     </select>
 
                     <div class="mb-3">
@@ -104,30 +102,26 @@
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Vista</th>
+                                <th scope="col">Clase</th>
+                                <th scope="col">Especificacion</th>
+                                <th scope="col">Detalle</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
+                                <td>1</td>
                                 <td>Mark</td>
                                 <td>Otto</td>
                                 <td>@mdo</td>
                             </tr>
                             <tr>
-                                <th scope="row">2</th>
+                                <td>2</td>
                                 <td>Jacob</td>
                                 <td>Thornton</td>
                                 <td>@fat</td>
                             </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+                       
                         </tbody>
                     </table>
                 </div>
