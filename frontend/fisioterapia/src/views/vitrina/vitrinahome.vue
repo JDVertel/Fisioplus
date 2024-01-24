@@ -104,8 +104,8 @@
         </div>
 
     </div>
-
-    <homebutton />
+    
+        <v-icon name="fa-home" fill="blue" /><router-link to="/dashboard">Home</router-link>
 </div>
 
 <!-- modal crear/edit/ver-->

@@ -25,7 +25,7 @@
 
     <div class="row">
         <h1 class="display-6">Historia Clinica</h1>
-        <Home />
+  
     </div>
 
     <div class="row">
@@ -65,6 +65,8 @@
     <br>
 
 </div>
+
+    <v-icon name="fa-home" fill="blue" /><router-link to="/dashboard">Home</router-link>
 </template>
 
 <script>

@@ -686,7 +686,7 @@
       </div>
       <br />
     </div>
-    <v-icon name="fa-home" fill="blue" /><router-link to="/">Home</router-link>
+    <v-icon name="fa-home" fill="blue" /><router-link to="/dashboard">Home</router-link>
   </div>
 </template>
 

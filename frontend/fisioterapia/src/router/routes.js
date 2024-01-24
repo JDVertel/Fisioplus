@@ -17,6 +17,8 @@ import dashboard from "./../views/dashboard/menu.vue"
 /* import productos from "./../views/vitrina/productos.vue";
 import servicios from "./../views/vitrina/servicios.vue";
 import clases from "./../views/vitrina/clases.vue"; */
+//parametros
+import parametros from "./../views/parametros/index.vue";
 
 
 const routes = [
@@ -29,17 +31,21 @@ const routes = [
   { path: "/homeAgendas", component: HomeAgendas, name: "agendas" },
   //contenido web
   {
-    path: "/vitrina", component: HomeVitrina, name: "vitrina",
+    path: "/vitrina",
+    component: HomeVitrina,
+    name: "vitrina",
   },
   //hc
   { path: "/hc", component: hc, name: "hc" },
   //dashboard
   { path: "/dashboard", component: dashboard, name: "dashboard" },
   //vitrina
- /*  { path: "/productos", component: productos, name: "productos" },
+  /*  { path: "/productos", component: productos, name: "productos" },
   { path: "/servicios", component: servicios, name: "servicios" },
   { path: "/clases", component: clases, name: "clases" }, */
 
+  //parametros
+  { path: "/parametros", component: parametros, name: "parametros" },
 ];
 
 const router = createRouter({
