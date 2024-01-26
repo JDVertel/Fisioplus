@@ -214,7 +214,7 @@
 
 <script setup>
 import { ref } from "vue";
-import homeB from "./../../components/homebutton.vue";
+import homeB from "../../views/homebutton.vue";
 import credenciales from "./../hc/credenciales.vue"
 
 let paciente = ref({

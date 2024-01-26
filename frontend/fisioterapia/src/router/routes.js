@@ -2,23 +2,22 @@ import { createRouter, createWebHistory } from "vue-router";
 //aplicacion
 import Home from "./../views/home.vue";
 import About from "./../views/about.vue";
-import Menu from "./../views/dashboard/menu.vue";
-import Register from "./../views/register_user.vue";
+import Menu from "./../views/menu.vue";
+
 // agendas
-import HomeAgendas from "./../views/agendas/agendashome.vue";
+import HomeAgendas from "./../components/agendas/agendashome.vue";
 //contenido web
-import HomeVitrina from "./../views/vitrina/vitrinahome.vue";
+import HomeVitrina from "./../components/vitrina/vitrinahome.vue";
 //hc
-import hc from "./../views/hc/hc.vue";
+import hc from "./../components/hc/hc.vue";
+//dashboard
+import login from "./../views/login.vue";
 //dashboard
 
-import dashboard from "./../views/dashboard/menu.vue"
-//vitrina
-/* import productos from "./../views/vitrina/productos.vue";
-import servicios from "./../views/vitrina/servicios.vue";
-import clases from "./../views/vitrina/clases.vue"; */
-//parametros
-import parametros from "./../views/parametros/index.vue";
+
+import dashboard from "./../components/dashboard/index.vue"
+
+import parametros from "./../components/parametros/index.vue";
 
 
 const routes = [
@@ -26,7 +25,7 @@ const routes = [
   { path: "/", name: "home", component: Home },
   { path: "/about", component: About, name: "about" },
   { path: "/menu", component: Menu, name: "menu" },
-  { path: "/register", component: Register, name: "register" },
+
   // agendas
   { path: "/homeAgendas", component: HomeAgendas, name: "agendas" },
   //contenido web
@@ -39,6 +38,13 @@ const routes = [
   { path: "/hc", component: hc, name: "hc" },
   //dashboard
   { path: "/dashboard", component: dashboard, name: "dashboard" },
+
+  {
+    path: "/login",
+    component: login,
+    name: "login",
+  },
+
   //vitrina
   /*  { path: "/productos", component: productos, name: "productos" },
   { path: "/servicios", component: servicios, name: "servicios" },

@@ -114,7 +114,7 @@
 </template>
 
 <script>
-import homebutton from "../../components/homebutton.vue";
+
 import {
     Articulos
 } from "./../../firebase/bd"

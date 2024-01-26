@@ -8,9 +8,9 @@
             <div class="card-body bodyservicios">
 
                 <h5 class="card-title titleservice"> {{ servicio.nombre }}</h5>
-               
+
                 <p class="card-text">
-                {{ servicio.desc }}
+                    {{ servicio.desc }}
 
                 </p>
             </div>
@@ -38,7 +38,7 @@
 <script>
 import {
     servicios
-} from "../firebase/bd";
+} from "../../firebase/bd";
 //telefonos para reservas de citas
 
 // link wsp

@@ -49,7 +49,7 @@
 <script>
 import {
     productos
-} from './../firebase/bd.js'
+} from '../../firebase/bd'
 export default {
 
     data: () => ({

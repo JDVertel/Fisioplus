@@ -70,9 +70,9 @@
 </template>
 
 <script>
-import HC from "../../components/h_clinica.vue";
-import homeB from "./../../components/homebutton.vue";
-import Registro from "./../hc/registroForm.vue"
+import HCdetallada from "./h_clinica.vue";
+import homeB from "./../../views/homebutton.vue";
+import Registro from "./registroForm.vue"
 
 export default {
     data: () => ({
@@ -80,7 +80,7 @@ export default {
     }),
 
     components: {
-        C_Hc: HC,
+        C_Hc: HCdetallada,
         Home: homeB
     }
 

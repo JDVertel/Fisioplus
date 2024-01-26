@@ -33,7 +33,7 @@
 <script>
 import {
     rutinas
-} from './../firebase/bd'
+} from '../../firebase/bd'
 
 export default {
     data: () => ({

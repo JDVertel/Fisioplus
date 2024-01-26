@@ -47,19 +47,19 @@
 </template>
 
 <script>
-import D_consulta from "./hc/1_datos_consulta/Dconsult.vue";
-import D_observacion from "./hc/2_observacion/Dobs.vue";
-import D_inspestatica from "./hc/3_ins_estatica/Dinspestatica.vue";
-import D_eval_post from "./hc/4_eval_postural/Deval_post.vue";
-import D_insp_dinam from "./hc/5_insp_dinamica/Dinsp_dinam.vue";
-import D_esc_visual from "./hc/6_esc_visual/Desc_visual.vue";
-import D_imagenes from "./hc/7_imagenes/Dimagenes.vue";
-import D_exp_fisica from "./hc/8_exp_fisica/Dexp_fisica.vue";
-import D_sis_muscular from "./hc/9_sistema_muscular/sistema_muscular.vue";
-import D_analisis from "./hc/10_analisis/D_analisis.vue";
-import D_diagnostico from "./hc/11_diagnostico/D_diagnostico.vue";
-import D_tratamiento from "./hc/12_tratamiento/Dtratamiento.vue";
-import D_ordenmedica from "./hc/13_orden_medica/Dorden_medica.vue";
+import D_consulta from "./1_datos_consulta/Dconsult.vue";
+import D_observacion from "./2_observacion/Dobs.vue";
+import D_inspestatica from "./3_ins_estatica/Dinspestatica.vue";
+import D_eval_post from "./4_eval_postural/Deval_post.vue";
+import D_insp_dinam from "./5_insp_dinamica/Dinsp_dinam.vue";
+import D_esc_visual from "./6_esc_visual/Desc_visual.vue";
+import D_imagenes from "./7_imagenes/Dimagenes.vue";
+import D_exp_fisica from "./8_exp_fisica/Dexp_fisica.vue";
+import D_sis_muscular from "./9_sistema_muscular/sistema_muscular.vue";
+import D_analisis from "./10_analisis/D_analisis.vue";
+import D_diagnostico from "./11_diagnostico/D_diagnostico.vue";
+import D_tratamiento from "./12_tratamiento/Dtratamiento.vue";
+import D_ordenmedica from "./13_orden_medica/Dorden_medica.vue";
 
 export default {
     data: () => ({

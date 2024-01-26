@@ -6,6 +6,13 @@
         debe capturar , id-ips, isuser , rol
         
         -->
+<div class="container">
+    <h5>login</h5>
+    <hr>
+    
+</div>
+
+
     </div>
 </template>
 <script>

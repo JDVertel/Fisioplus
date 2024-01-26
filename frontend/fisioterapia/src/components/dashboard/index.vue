@@ -14,8 +14,85 @@
 </div>
 
 <div class="container menu">
-
+      <router-link to="/">Home</router-link>
     <div class="row">
+        <div class="col-12 col-md-6">
+                    <router-link to="/parametros"><a class="nav-link-menu" aria-current="page">
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="container">
+
+                                    <div class="row g-0">
+                                        <div class="col-2 centrado">
+                                            <h1 class="display-1"><svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 448 512">
+                                                    <path d="M0 96C0 43 43 0 96 0H384h32c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384 96c-53 0-96-43-96-96V96zM64 416c0 17.7 14.3 32 32 32H352V384H96c-17.7 0-32 14.3-32 32zM208 112v48H160c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V224h48c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H272V112c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16z" /></svg></h1>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Reservas citas</h5>
+                                                <p class="card-text">Desde aqui se realiza la reserva de las citas de los distintos consultorios </p>
+                            
+                                            </div>
+                                        </div>
+                                        <div class="col-2 centrado">
+                                            <h1 class="display-4">9</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a></router-link>
+                </div>
+                    <div class="col-12 col-md-6">
+                        <router-link to="/parametros"><a class="nav-link-menu" aria-current="page">
+                                <div class="card mb-3" style="max-width: 540px;">
+                                    <div class="container">
+
+                                        <div class="row g-0">
+                                            <div class="col-2 centrado">
+                                                <h1 class="display-1"><svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 448 512">
+                                                        <path d="M0 96C0 43 43 0 96 0H384h32c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384 96c-53 0-96-43-96-96V96zM64 416c0 17.7 14.3 32 32 32H352V384H96c-17.7 0-32 14.3-32 32zM208 112v48H160c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V224h48c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H272V112c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16z" /></svg></h1>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Reservas de clases</h5>
+                                                    <p class="card-text">Desde aqui se realiza la reserva de las citas de los distintos consultorios </p>
+                            
+                                                </div>
+                                            </div>
+                                            <div class="col-2 centrado">
+                                                <h1 class="display-4">9</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a></router-link>
+                    </div>
+                    <div class="col-12 col-md-6">
+                    <router-link to="/parametros"><a class="nav-link-menu" aria-current="page">
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="container">
+
+                                    <div class="row g-0">
+                                        <div class="col-2 centrado">
+                                            <h1 class="display-1"><svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 448 512">
+                                                    <path d="M0 96C0 43 43 0 96 0H384h32c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384 96c-53 0-96-43-96-96V96zM64 416c0 17.7 14.3 32 32 32H352V384H96c-17.7 0-32 14.3-32 32zM208 112v48H160c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V224h48c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H272V112c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16z" /></svg></h1>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Ventas</h5>
+                                                <p class="card-text">Desde aqui se realiza el registro de las ventas de productos </p>
+                            
+                                            </div>
+                                        </div>
+                                        <div class="col-2 centrado">
+                                            <h1 class="display-4">9</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a></router-link>
+                </div>
+
+
         <div class="col-12 col-md-6">
 
             <router-link to="/homeAgendas"><a class="nav-link-menu" aria-current="page">
@@ -28,13 +105,13 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">Agendas</h5>
-                                        <p class="card-text">Desde este módulo se realizan tareas de  agregar, editar y eliminar citas en la agenda, asi como su parametrizacion.</p>
+                                        <h5 class="card-title">Agendas fisioterapia</h5>
+                                        <p class="card-text">Desde este módulo se visualizan las agendas de fisioterapia. </p>
                                    
                                     </div>
                                 </div>
                                 <div class="col-2 centrado">
-                                    <h1 class="display-1">5</h1>
+                                    <h1 class="display-4">5</h1>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +137,7 @@
                                     </div>
                                 </div>
                                 <div class="col-2 centrado">
-                                    <div class="display-1">5</div>
+                                    <div class="display-4">5</div>
                                 </div>
                             </div>
                         </div>
@@ -80,12 +157,12 @@
                                 <div class="col-8">
                                     <div class="card-body">
                                         <h5 class="card-title">Vitrina</h5>
-                                        <p class="card-text">Este modulo permite visualizar productos o artículos en línea, con sus respectivos precios y características </p>
+                                        <p class="card-text">Este modulo permite gestionar los productos y servicios que se visualizaran en el inicio del sitio </p>
                                        
                                     </div>
                                 </div>
                                 <div class="col-2 centrado">
-                                    <h1 class="display-1">9</h1>
+                                    <h1 class="display-4">9</h1>
                                 </div>
                             </div>
                         </div>
@@ -105,20 +182,21 @@
                                 <div class="col-8">
                                     <div class="card-body">
                                         <h5 class="card-title">Parametros</h5>
-                                        <p class="card-text">Desde aqui se realiza la gestion de los valores y paramtreos  de entrada y salida de los distintos procesos </p>
+                                        <p class="card-text">Desde aqui se realiza la gestion de los valores y parametreos  de entrada y salida de los distintos procesos </p>
                             
                                     </div>
                                 </div>
                                 <div class="col-2 centrado">
-                                    <h1 class="display-1">9</h1>
+                                    <h1 class="display-4">9</h1>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </a></router-link>
         </div>
+        
     </div>
   
-    <router-link to="/">Home</router-link>
+  
 </div>
 </template>

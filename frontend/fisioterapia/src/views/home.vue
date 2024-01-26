@@ -1,8 +1,8 @@
 <script>
-import menu from './../components/menu.vue';
-import servicios from './../components/servicios.vue';
-import rutinas from './../components/rutinas.vue';
-import productos from './../components/productos.vue';
+import menu from './menu.vue';
+import servicios from './../components/vitrina/servicios.vue';
+import rutinas from './../components/vitrina/rutinas.vue';
+import productos from './../components/vitrina/productos.vue';
 
 export default {
     components: {
@@ -27,16 +27,16 @@ export default {
     <ul class="nav nav-tabs" id="myTab" role="tablist">
     
         <li class="nav-item" role="presentation">
-            <button class="nav-link active titulo" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">SERVICIOS</button>
+            <button class="nav-link active titulo" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Servicios</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">CLASES</button>
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Clases</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">TIENDA</button>
+            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">Tienda</button>
         </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">HOME</button>
+                <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Quienes Somos</button>
             </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -103,12 +103,16 @@ export default {
             <p>Productos</p>
             <Productos />
             <br>
-        </div>
-    </div>
 
     <!-- 
 
        -->
 
 </div>
+
+
+  
+            </div>
+        </div>
+
 </template>
