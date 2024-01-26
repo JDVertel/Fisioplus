@@ -1,10 +1,24 @@
 import { createStore } from "vuex";
+import Auth from "./../components/dashboard/store/auth/index";
+import Agendas from "../components/agendas/store/agendas/index";
+import Hc  from "../components/hc/store/hc";
+import Vitrina from './../components/vitrina/store/vitrina/index';
 
-export default createStore({
-  state: {
+const store = createStore({
+  modules: {
+    Auth,
+    Agendas,
+    Hc,
+    Vitrina
+
+  },
+});
+
+export default store;
+
+/*   state: {
     id_ips: "1",
     id_user:"2",
     rol:"admin",
  
-  },
-});
+  }, */
