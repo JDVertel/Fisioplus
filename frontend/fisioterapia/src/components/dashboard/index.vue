@@ -1,97 +1,87 @@
 <script>
+import {
+    mapGetters
+} from 'vuex';
+import {
+    userAuth
+} from "./store/auth/getters";
 
+export default {
+    computed: {
+        ...mapGetters('Auth', ['userAuth'])
+    }
+}
 </script>
 
 <template>
-    <h6>datos de vuex strore</h6>
- 
-<p>acceso directo  rol: {{$store.state.rol}}/  id_usuario:{{$store.state.id_user}} / id_ips:{{$store.state.id_ips}}</p>
+<h6>datos de vuex strore</h6>
+
+<p>acceso directo rol: {{$store.state.rol}}/ id_usuario:{{$store.state.id_user}} / id_ips:{{$store.state.id_ips}}</p>
 <hr>
 
+{{userAuth}}
 
 <div class="container centrado mt-5">
     <h6 class="display-5">Menu FisioterapiApp</h6>
 </div>
+<div class="centrado">
+    <router-link to="/">Home</router-link>
+</div>
 
 <div class="container menu">
-      <router-link to="/">Home</router-link>
+
     <div class="row">
         <div class="col-12 col-md-6">
-                    <router-link to="/parametros"><a class="nav-link-menu" aria-current="page">
-                            <div class="card mb-3" style="max-width: 540px;">
-                                <div class="container">
+            <router-link to="/reservas"><a class="nav-link-menu" aria-current="page">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="container">
 
-                                    <div class="row g-0">
-                                        <div class="col-2 centrado">
-                                            <h1 class="display-1"><svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 448 512">
-                                                    <path d="M0 96C0 43 43 0 96 0H384h32c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384 96c-53 0-96-43-96-96V96zM64 416c0 17.7 14.3 32 32 32H352V384H96c-17.7 0-32 14.3-32 32zM208 112v48H160c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V224h48c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H272V112c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16z" /></svg></h1>
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Reservas citas</h5>
-                                                <p class="card-text">Desde aqui se realiza la reserva de las citas de los distintos consultorios </p>
-                            
-                                            </div>
-                                        </div>
-                                        <div class="col-2 centrado">
-                                            <h1 class="display-4">9</h1>
-                                        </div>
+                            <div class="row g-0">
+                                <div class="col-2 centrado">
+                                    <h1 class="display-1"><svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 448 512">
+                                            <path d="M0 96C0 43 43 0 96 0H384h32c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384 96c-53 0-96-43-96-96V96zM64 416c0 17.7 14.3 32 32 32H352V384H96c-17.7 0-32 14.3-32 32zM208 112v48H160c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V224h48c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H272V112c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16z" /></svg></h1>
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Reservas</h5>
+                                        <p class="card-text">Desde aqui se realiza la reserva de las citas de los distintos consultorios </p>
+
                                     </div>
+                                </div>
+                                <div class="col-2 centrado">
+                                    <h1 class="display-4">9</h1>
                                 </div>
                             </div>
-                        </a></router-link>
-                </div>
-                    <div class="col-12 col-md-6">
-                        <router-link to="/parametros"><a class="nav-link-menu" aria-current="page">
-                                <div class="card mb-3" style="max-width: 540px;">
-                                    <div class="container">
-
-                                        <div class="row g-0">
-                                            <div class="col-2 centrado">
-                                                <h1 class="display-1"><svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 448 512">
-                                                        <path d="M0 96C0 43 43 0 96 0H384h32c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384 96c-53 0-96-43-96-96V96zM64 416c0 17.7 14.3 32 32 32H352V384H96c-17.7 0-32 14.3-32 32zM208 112v48H160c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V224h48c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H272V112c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16z" /></svg></h1>
-                                            </div>
-                                            <div class="col-8">
-                                                <div class="card-body">
-                                                    <h5 class="card-title">Reservas de clases</h5>
-                                                    <p class="card-text">Desde aqui se realiza la reserva de las citas de los distintos consultorios </p>
-                            
-                                                </div>
-                                            </div>
-                                            <div class="col-2 centrado">
-                                                <h1 class="display-4">9</h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a></router-link>
+                        </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                    <router-link to="/parametros"><a class="nav-link-menu" aria-current="page">
-                            <div class="card mb-3" style="max-width: 540px;">
-                                <div class="container">
+                </a></router-link>
+        </div>
 
-                                    <div class="row g-0">
-                                        <div class="col-2 centrado">
-                                            <h1 class="display-1"><svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 448 512">
-                                                    <path d="M0 96C0 43 43 0 96 0H384h32c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384 96c-53 0-96-43-96-96V96zM64 416c0 17.7 14.3 32 32 32H352V384H96c-17.7 0-32 14.3-32 32zM208 112v48H160c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V224h48c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H272V112c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16z" /></svg></h1>
-                                        </div>
-                                        <div class="col-8">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Ventas</h5>
-                                                <p class="card-text">Desde aqui se realiza el registro de las ventas de productos </p>
-                            
-                                            </div>
-                                        </div>
-                                        <div class="col-2 centrado">
-                                            <h1 class="display-4">9</h1>
-                                        </div>
+        <div class="col-12 col-md-6">
+            <router-link to="/ventas"><a class="nav-link-menu" aria-current="page">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="container">
+
+                            <div class="row g-0">
+                                <div class="col-2 centrado">
+                                    <h1 class="display-1"><svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 448 512">
+                                            <path d="M0 96C0 43 43 0 96 0H384h32c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32v64c17.7 0 32 14.3 32 32s-14.3 32-32 32H384 96c-53 0-96-43-96-96V96zM64 416c0 17.7 14.3 32 32 32H352V384H96c-17.7 0-32 14.3-32 32zM208 112v48H160c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h48v48c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V224h48c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H272V112c0-8.8-7.2-16-16-16H224c-8.8 0-16 7.2-16 16z" /></svg></h1>
+                                </div>
+                                <div class="col-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ventas</h5>
+                                        <p class="card-text">Desde aqui se realiza el registro de las ventas de productos </p>
+
                                     </div>
                                 </div>
+                                <div class="col-2 centrado">
+                                    <h1 class="display-4">9</h1>
+                                </div>
                             </div>
-                        </a></router-link>
-                </div>
-
+                        </div>
+                    </div>
+                </a></router-link>
+        </div>
 
         <div class="col-12 col-md-6">
 
@@ -105,9 +95,9 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">Agendas fisioterapia</h5>
+                                        <h5 class="card-title">Agendas </h5>
                                         <p class="card-text">Desde este módulo se visualizan las agendas de fisioterapia. </p>
-                                   
+
                                     </div>
                                 </div>
                                 <div class="col-2 centrado">
@@ -131,9 +121,9 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="card-body">
-                                         <h5 class="card-title">Historia clinica</h5>
-                                        <p class="card-text">permite el Registro digital  de las actividades relacionadas con la atención  de los pacientes</p>
-                              
+                                        <h5 class="card-title">Historia clinica</h5>
+                                        <p class="card-text">permite el Registro digital de las actividades relacionadas con la atención de los pacientes</p>
+
                                     </div>
                                 </div>
                                 <div class="col-2 centrado">
@@ -158,7 +148,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Vitrina</h5>
                                         <p class="card-text">Este modulo permite gestionar los productos y servicios que se visualizaran en el inicio del sitio </p>
-                                       
+
                                     </div>
                                 </div>
                                 <div class="col-2 centrado">
@@ -182,8 +172,8 @@
                                 <div class="col-8">
                                     <div class="card-body">
                                         <h5 class="card-title">Parametros</h5>
-                                        <p class="card-text">Desde aqui se realiza la gestion de los valores y parametreos  de entrada y salida de los distintos procesos </p>
-                            
+                                        <p class="card-text">Desde aqui se realiza la gestion de los valores y parametreos de entrada y salida de los distintos procesos </p>
+
                                     </div>
                                 </div>
                                 <div class="col-2 centrado">
@@ -194,9 +184,8 @@
                     </div>
                 </a></router-link>
         </div>
-        
+
     </div>
-  
-  
+
 </div>
 </template>

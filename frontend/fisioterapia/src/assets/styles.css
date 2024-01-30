@@ -13,7 +13,7 @@
 
 .imagenvitrina {
   border-radius: 50% !important;
-  width: 35% !important;
+  width:15rem !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
@@ -261,13 +261,6 @@ button.accordion-button:not(.collapsed) {
 
 }
 
-.centrado {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-}
 
 .nav-link-menu {
   color: black;
@@ -294,6 +287,10 @@ div.col-4 {
 
 }
 
+.Bredondo{
+  border-radius: 50%!important;
+}
+
 div.accordion-body {
   padding: 5px !important;
 }
@@ -306,6 +303,7 @@ div.accordion-body {
   flex-direction: row !important;
   flex-wrap: wrap !important;
 }
+
 
 .col-6 {
   padding: 2px;

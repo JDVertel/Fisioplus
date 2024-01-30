@@ -14,11 +14,11 @@ import hc from "./../components/hc/hc.vue";
 import login from "./../views/login.vue";
 //dashboard
 
-
-import dashboard from "./../components/dashboard/index.vue"
+import dashboard from "./../components/dashboard/index.vue";
 
 import parametros from "./../components/parametros/index.vue";
-
+import reservas from "./../components/agendas/reservas/rcitas.vue";
+import ventas from "./../components/vitrina/ventas.vue"
 
 const routes = [
   //aplication
@@ -52,6 +52,8 @@ const routes = [
 
   //parametros
   { path: "/parametros", component: parametros, name: "parametros" },
+  { path: "/reservas", component: reservas, name: "reservas" },
+  { path: "/ventas", component: ventas, name: "ventas" },
 ];
 
 const router = createRouter({
