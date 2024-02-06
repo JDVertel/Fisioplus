@@ -1,7 +1,7 @@
 <template>
 <br />
 <div class="container config">
-    <h3 class="display-6 text-center">Gestion de la vitrina</h3>
+    <h3 class="display-6 text-center">--Gestion de la vitrina--</h3>
     <div class="container">
         <br />
 
@@ -175,7 +175,7 @@
                 </tbody>
             </table>
         </div>
-        <v-icon name="fa-home" fill="blue" />
+
         <router-link to="/dashboard">Home</router-link>
 
     </div>
@@ -189,14 +189,24 @@
 <script>
 import {
     Articulos
-} from "./../../firebase/bd"
+} from "./../../firebase/bd";
+
+import {
+    mapActions
+} from "vuex";
 
 export default {
     data: () => ({
-
         dataarticulos: Articulos
 
-    })
+    }),
 
+    methods: {
+        ...mapActions('vitrina', ['load_Vitrina'])
+    },
+
+    created() {
+        this.load_Vitrina()
+    }
 }
 </script>

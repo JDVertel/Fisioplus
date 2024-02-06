@@ -36,7 +36,7 @@
                 <strong>$ {{ this.precioP }}</strong>
                 <div class="col-2 centrado">
                     <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(this.tituloP, this.telefono1)">
-                        <v-icon name="bi-whatsapp" /></button>
+                      </button>
                 </div>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 

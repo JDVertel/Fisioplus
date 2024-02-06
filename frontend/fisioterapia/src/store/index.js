@@ -2,14 +2,14 @@ import { createStore } from "vuex";
 import Auth from "./../components/dashboard/store/auth/index";
 import Agendas from "../components/agendas/store/agendas/index";
 import Hc  from "../components/hc/store/hc";
-import Vitrina from './../components/vitrina/store/vitrina/index';
+import vitrina from './../components/vitrina/store/vitrina/index';
 
 const store = createStore({
   modules: {
     Auth,
     Agendas,
     Hc,
-    Vitrina
+    vitrina
 
   },
 });

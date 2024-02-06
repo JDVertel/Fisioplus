@@ -15,7 +15,7 @@
                             <div class="col-6 centrado">  <p class="card-text" ><strong>Precio: ${{rutina.precio}}</strong></p></div>
                             <div class="col-6 centrado ">
                                 <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(rutina.titulo, this.telefono1)">
-                                    <v-icon name="bi-whatsapp" /></button>
+                                   </button>
                             </div>
                         
 

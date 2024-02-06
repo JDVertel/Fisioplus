@@ -21,7 +21,7 @@
                     </div>
                     <div class="col-4 centrado">
                         <button type="button" v-on:click="reservaCitasW(servicio.nombre, telefono1)" class="btn btn-primary btn-sm btnwsp">
-                            <v-icon name="bi-whatsapp" />
+                      
                         </button>
                     </div>
                 </div>
@@ -32,16 +32,14 @@
 </div>
 <br>
 <br>
-<br>
+
 </template>
 
 <script>
 import {
     servicios
 } from "../../firebase/bd";
-//telefonos para reservas de citas
 
-// link wsp
 
 export default {
     data: () => ({

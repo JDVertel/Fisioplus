@@ -116,9 +116,37 @@
 
 <script>
 import {
+    mapActions
+} from "vuex";
+import {
     ref
 } from "vue";
+
+export default{
+
+data:()=>({
+
+}),
+    methods: {
+        ...mapActions('Agendas', ['load_Agendas'])
+    },
+
+    created() {
+        this.load_Agendas()
+    }
+
+}
+
+
+
+
+
 /* agenda del dia */
+
+
+
+
+
 
 /* reservas */
 
@@ -175,7 +203,13 @@ let nuevacita = ref({
     costo2: "",
     color: "",
 });
+
+
+
 </script>
+
+
+
 
 <style>
 .layout {
