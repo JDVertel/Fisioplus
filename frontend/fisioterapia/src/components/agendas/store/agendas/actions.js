@@ -1,29 +1,29 @@
-// acciones asyncronas  que llaman a mutaciones 
+// acciones asyncronas  que llaman a mutaciones
 
 /* export const myAction = async({commit})=>{
 
 }  */
 
-
-
-
 import firebase_api from "@/api/firebaseApi";
 
 export const load_Agendas = async () => {
-  /* 
-  const { data } = await vitrina_api.get('/vitrina.json')
- console.log(data); */
   try {
     const response = await firebase_api.get("/agendas.json");
+
     if (response.data) {
       const { data } = response;
       console.log(data);
+      const entradas = [];
+
+      for (let id of Object.keys(data)) {
+        console.log(id);
+      }
     } else {
-      // Manejar el escenario donde no hay datos en la respuesta
+      // no hay datos
       console.log("no hay para la consulta");
     }
   } catch (error) {
-    // Manejar el error de la solicitud
+    //  error
     console.log(error);
   }
 };

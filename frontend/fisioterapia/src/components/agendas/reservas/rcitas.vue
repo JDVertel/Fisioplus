@@ -1,5 +1,5 @@
 <template>
-    <br>
+<br>
 <div>
     <div class="container">
         <h6 class="display-6">Realizar una reserva </h6>
@@ -82,74 +82,72 @@
 
         <hr>
         <div class="row">
-            
+
             <h6 class="display-6">Seleccione tipo y fecha de consulta </h6>
             <div class="col-4">
-          
-                    <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
-                        <option selected>Tipo de Reserva</option>
-                        <option value="cc">Terapia</option>
-                        <option value="ti">Consulta</option>
-                        <option value="ti">Clase</option>
 
-                    </select>
-                    
-                        <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
-                            <option selected>Profesional</option>
-                            <option value="cc">Erika</option>
-                            <option value="ti">Ramon</option>
-                            <option value="ti">Juliana</option>
+                <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
+                    <option selected>Tipo de Reserva</option>
+                    <option value="cc">Terapia</option>
+                    <option value="ti">Consulta</option>
+                    <option value="ti">Clase</option>
 
-                        </select>
-       
-                    <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
-                        <option selected>Seleccione el dia</option>
-                        <option value="cc">CC</option>
-                        <option value="ti">TI</option>
+                </select>
 
-                    </select>
+                <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
+                    <option selected>Profesional</option>
+                    <option value="cc">Erika</option>
+                    <option value="ti">Ramon</option>
+                    <option value="ti">Juliana</option>
+                </select>
 
-            
+                <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
+                    <option selected>Dia de reserva</option>
+                    <option value="cc">Terapia</option>
+                    <option value="ti">Consulta</option>
+                    <option value="ti">Clase</option>
 
-                    <input class="form-control form-control-sm" type="time" placeholder="hora" aria-label=".form-control-sm example">
+                </select>
 
-                    <button type="button " class="btn btn-success btn-sm">Reservar</button>
-                </div>
-      
+                <input class="form-control form-control-sm" type="time" placeholder="hora" aria-label=".form-control-sm example">
+
+                <button type="button " class="btn btn-success btn-sm">Reservar</button>
+            </div>
+
             <div class="col-8">
                 <div class="container">
                     <h6 class="display-6">Agenda del tipo y dia seleccionado</h6>
-      <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider">
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-  
+
             </div>
 
         </div>

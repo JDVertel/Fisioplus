@@ -138,14 +138,7 @@ data:()=>({
 }
 
 
-
-
-
 /* agenda del dia */
-
-
-
-
 
 
 /* reservas */
