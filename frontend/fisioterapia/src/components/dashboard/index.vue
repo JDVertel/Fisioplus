@@ -1,6 +1,8 @@
 <script>
 import {
-    mapGetters , mapState, mapActions
+    mapGetters,
+    mapState,
+    mapActions
 } from 'vuex';
 import {
     userAuth
@@ -9,23 +11,24 @@ import {
 export default {
     computed: {
         ...mapGetters('Auth', ['userAuth']),
-           ...mapState({
-            cantprod: state => state.vitrina.cant
-        }),
+
+        /*      ...mapState({
+              cantprod: state => state.vitrina.cant 
+
+          }),*/
+        ...mapState('vitrina', ['cant']),
+
     },
 
-    methods:{
+    methods: {
         ...mapActions('vitrina', ['load_Vitrina']),
 
-      
     },
     created() {
         this.load_Vitrina()
     }
 
 }
-
-
 </script>
 
 <template>
@@ -166,8 +169,12 @@ export default {
 
                                     </div>
                                 </div>
-                                <div class="col-2 centrado">
-                                    <h1 class="display-4">{{ cantprod }}</h1>
+                                <div class="col-2 centrado" v-if="cant">
+
+                                    <h1 class="display-4">{{ cant }}</h1>
+                                </div>
+                                <div class="col-2 centrado" v-else>
+                                    <h1>...</h1>
                                 </div>
                             </div>
                         </div>

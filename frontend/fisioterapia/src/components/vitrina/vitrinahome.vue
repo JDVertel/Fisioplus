@@ -42,7 +42,7 @@
                                     <td>{{ articulo.nombre }}</td>
                                     <td>{{ articulo.precio }}</td>
                                     <td>
-                                        <button class="btn btn-warning m-1"> edit</button>
+                                        <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal2"> edit</button>
                                         <button class="btn btn-danger m-1">delete</button>
                                         <button class="btn btn-success m-1">publicar</button>
                                     </td>
@@ -51,7 +51,7 @@
                         </table>
                     </div>
 
-                    <!-- modal 2 -->
+                    <!-- modal 2  servicios-->
                     <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -69,22 +69,23 @@
 
                                                 <div class="col">
                                                     <div>
-                                                        <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" />
+                                                        <div class="col"> <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" v-model="s_nombre" />
                                                         </div>
                                                     </div>
 
                                                 </div>
                                                 <div class="col">
-                                                    <select class="form-select form-select-sm" aria-label="Default select example">
-                                                        <option selected>Categoria</option>
-                                                        <option value="1">servicios</option>
-                                                        <option value="2">Clases</option>
+                                                    <select class="form-select form-select-sm" aria-label="Default select example" v-model="s_categoria">
+                                                        <option selected value="">Categoria</option>
+                                                         <option value="citasm">Citas</option>
+                                                        <option value="servicio">Clases</option>
+                                                   
 
                                                     </select>
                                                 </div>
-                                                <div class="col"> <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle"></textarea> </div>
+                                                <div class="col"> <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle" v-model="s_detalle"></textarea> </div>
 
-                                                <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Precio" />
+                                                <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Precio" v-model="s_precio" />
 
                                                 </div>
 
@@ -106,7 +107,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <button type="button" class="btn btn-primary" v-on:click="guardarservicio">Save changes</button>
                                 </div>
                             </div>
                         </div>
@@ -146,12 +147,12 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- Modal 1-->
+                <!-- Modal 1  productos-->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Agrrgar nuevo articulo a la tienda</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar nuevo articulo a la tienda</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
@@ -164,16 +165,16 @@
 
                                             <div class="col">
                                                 <div>
-                                                    <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" />
+                                                    <div class="col"> <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" v-model="p_nombre" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col"> <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle"></textarea> </div>
+                                            <div class="col"> <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle" v-model="p_detalle"></textarea> </div>
 
-                                            <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Precio" />
+                                            <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Precio" v-model="p_precio" />
 
                                             </div>
-                                            <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Cantidad" />
+                                            <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Cantidad" v-model="p_cant" />
 
                                             </div>
                                             <div class="col">
@@ -194,7 +195,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-primary" v-on:click="guardarArticulo">Save changes</button>
                             </div>
                         </div>
                     </div>
@@ -225,10 +226,67 @@ import {
 } from "vuex";
 
 export default {
-    data: () => ({}),
+    data: () => ({
+        //servicios
+        s_nombre: "",
+        s_categoria: "",
+        s_detalle: "",
+        s_precio: "",
+        Servicio: [],
+
+        //Articulos
+        p_nombre: "",
+        p_detalle: "",
+        p_precio: "",
+        p_cant: "",
+        Producto: [],
+
+    }),
 
     methods: {
-        ...mapActions('vitrina', ['load_Vitrina'])
+        ...mapActions('vitrina', ['load_Vitrina']),
+
+        guardarArticulo() {
+
+            // Agregar una copia de los datos al array
+            this.Producto.push({
+                id_ips: "1",
+                tipo:"producto",
+                nombre: this.p_nombre,
+                desc: this.p_detalle,
+                precio: this.p_precio,
+                cant: this.p_cant
+
+            });
+            // Limpiar los campos después de agregar la persona
+
+            this.p_nombre = '';
+            this.p_detalle = '';
+            this.p_precio = '';
+            this.p_cant = '';
+            console.log("guardando articulo", this.Producto)
+
+        },
+        guardarservicio() {
+            this.Servicio.push({
+                id_ips:"1",
+                nombre: this.s_nombre,
+                tipo: this.s_categoria,
+                desc: this.s_detalle,
+                precio: this.s_precio,
+             
+
+            });
+            // Limpiar los campos después de agregar la persona
+
+            this.s_nombre = '';
+            this.s_detalle = '';
+            this.s_categoria = '';
+            this.s_precio = '';
+            this.s_cant = '';
+
+            console.log("guardando servicio", this.Servicio)
+        }
     },
 
     computed: {
@@ -239,8 +297,6 @@ export default {
         ...mapState({
             productosFiltrados: state => state.vitrina.entry.filter(v => v.tipo === 'producto')
         }),
-
-     
 
     },
 
