@@ -38,43 +38,24 @@ export const createEntradaVitrina = async ({ commit }, entradas) => {
     publicado = true,
   } = entradas;
   const DataToSave = { id_ips, tipo, nombre, desc, precio, cant, publicado };
-  console.log("ok", DataToSave);
+  /*  console.log("ok", DataToSave); */
   const Ruta = `/vitrina.json`;
   //servicio
-   const response = await firebase_api.post(Ruta, DataToSave);
-   commit("newDataVitrina",DataToSave)
+  const { data } = await firebase_api.post(Ruta, DataToSave);
+  //agregamos el id al array para subirlo al strore
+  DataToSave.id = data.name;
+  //se llama a la mutacion y s epasa el array como
+  commit("newDataVitrina", DataToSave);
 };
 
 /* ================================================================= */
 
-export const DeleteItemVitrina= async({commit},entradas)=>{
-
-
-    const Ruta = `/vitrina/${entradas}.json`;
-    //servicio
-    const response = await firebase_api.delete(Ruta);
-
-    commit("DeleteItemVitrina",entradas)
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export const DeleteItemVitrina = async ({ commit }, entradas) => {
+  const Ruta = `/vitrina/${entradas}.json`;
+  //servicio
+  const {data}= await firebase_api.delete(Ruta);
+  commit("DeleteItemVitrina", entradas);
+};
 
 // acciones asyncronas  que llaman a mutaciones
 
