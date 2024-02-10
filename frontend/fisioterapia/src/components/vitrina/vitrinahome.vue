@@ -15,12 +15,13 @@
             </li>
 
         </ul>
+        <!-- ====================================================================================== -->
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                <h6 class="display-6">Servicios y Clases</h6>
+                <h6 class="display-6">Clases Consultas y Terapias</h6>
                 <hr />
                 <!-- Boton modal1 -->
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click=" limpiarmodal()">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click=" B_nuevo()">
                     + Agregar nuevo item de servicio
                 </button>
                 <!--  -->
@@ -44,10 +45,11 @@
                                     <td>{{ articulo.tipo }}</td>
                                     <td>{{ articulo.nombre }}</td>
                                     <td>{{ articulo.precio }}</td>
-                                    <td>{{articulo.publicado}}</td>
+                                    <td>{{articulo.publicado}} {{articulo.id}}</td>
                                     <td>
                                         <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click="M_editarservicios(articulo)"> edit</button>
-                                        <button class="btn btn-danger m-1" @click=" eliminaritem(item)">delete</button>
+
+                                        <button class="btn btn-danger m-1" @click="eliminaritem(item)">delete</button>
                                         <button class="btn btn-success m-1" @click="cambiarEstadoItem(item)">publicar</button>
                                     </td>
                                 </tr>
@@ -56,6 +58,7 @@
                     </div>
 
                 </div>
+
                 <!-- inicio modal 1  servicios-->
                 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                     <div class="modal-dialog">
@@ -74,7 +77,7 @@
 
                                             <div class="col">
                                                 <div>
-                                                    <div class="col"> <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" v-model="s_nombre" />
+                                                    <div class="col"> <input type="text" class="form-control" placeholder="Nombre" v-model="s_nombre" />
                                                     </div>
                                                 </div>
 
@@ -82,14 +85,15 @@
                                             <div class="col">
                                                 <select class="form-select form-select-sm" aria-label="Default select example" v-model="s_categoria">
                                                     <option selected value="">Categoria</option>
-                                                    <option value="citasm">Citas</option>
-                                                    <option value="servicio">Clases</option>
+                                                    <option value="Terapia">Terapias</option>
+                                                    <option value="Consulta">Consultas</option>
+                                                    <option value="Clase">Clases</option>
 
                                                 </select>
                                             </div>
-                                            <div class="col"> <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle" v-model="s_detalle"></textarea> </div>
+                                            <div class="col"> <textarea class="form-control" rows="2" placeholder="Detalle" v-model="s_detalle"></textarea> </div>
 
-                                            <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Precio" v-model="s_precio" />
+                                            <div class="col"> <input type="number" class="form-control" placeholder="Precio" v-model="s_precio" />
 
                                             </div>
 
@@ -112,21 +116,24 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                                <button type="button" v-if="!data" class="btn btn-primary" v-on:click="updateServicios(this.Articulos)">Actualizar</button>
-                                <button type="button" v-if="data" class="btn btn-primary" v-on:click="guardarServicios(this.Articulos)">Guardar</button>
+                                <button type="button" v-if="modalOption =='U'" class="btn btn-primary" v-on:click="BM_updateServicios()" data-bs-dismiss="modal">Actualizar</button>
+
+                                <button type="button" v-if="modalOption =='N'" class="btn btn-primary" v-on:click="B_guardarServicios()" data-bs-dismiss="modal">Guardar</button>
 
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- fin modal servicios-->
             </div>
+            <!-- fin modal servicios-->
+            <!-- ============================================================================================================================ -->
+            <!-- ============================================================================================================================ -->
             <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
 
                 <h6 class="display-6">Articulos Tienda</h6>
                 <hr />
                 <!-- Button modal 2  articulos -->
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" @click=" limpiarmodal()">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" @click=" B_nuevo()">
                     + Agregar nuevo producto a la tienda
                 </button>
                 <!--  -->
@@ -148,10 +155,15 @@
                                 <th scope="row">{{ item.cant }}</th>
                                 <td>{{item.nombre}}</td>
                                 <td>{{ item.precio}}</td>
-                                <td>{{item.publicado}}</td>
-                                <td> <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="M_editarproductos(item)"> edit</button>
-                                    <button class="btn btn-danger m-1" @click=" eliminaritem(item)">delete</button>
-                                    <button class="btn btn-success m-1" @click="cambiarEstadoItem(item)">publicar</button></td>
+                                <td>{{item.publicado}} {{item.id}}</td>
+                                <td>
+                                    <div>
+                                        <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="M_editarproductos(item)"> edit</button>
+                                        <button class="btn btn-danger m-1" @click=" eliminaritem(item.id)">delete</button>
+                                        <button class="btn btn-success m-1" @click="cambiarEstadoItem(item)">publicar</button>
+                                    </div>
+
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -175,16 +187,16 @@
 
                                             <div class="col">
                                                 <div>
-                                                    <div class="col"> <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre" v-model="p_nombre" />
+                                                    <div class="col"> <input type="text" class="form-control" placeholder="Nombre" v-model="p_nombre" />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col"> <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle" v-model="p_detalle"></textarea> </div>
+                                            <div class="col"> <textarea class="form-control" rows="2" placeholder="Detalle" v-model="p_detalle"></textarea> </div>
 
-                                            <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Precio" v-model="p_precio" />
+                                            <div class="col"> <input type="number" class="form-control" placeholder="Precio" v-model="p_precio" />
 
                                             </div>
-                                            <div class="col"> <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Cantidad" v-model="p_cant" />
+                                            <div class="col"> <input type="number" class="form-control" placeholder="Cantidad" v-model="p_cant" />
 
                                             </div>
                                             <div class="col">
@@ -206,8 +218,8 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-                                <button type="button" v-if="!data" class="btn btn-primary" v-on:click="updateArticulos(this.Articulos)">Actualizar</button>
-                                <button type="button" v-if="data" class="btn btn-primary" v-on:click="guardarArticulos(this.Articulos)">Guardar</button>
+                                <button type="button" v-if="modalOption == 'U'" class="btn btn-primary" v-on:click="BM_updateProductos()" data-bs-dismiss="modal">Actualizar</button>
+                                <button type="button" v-if="modalOption == 'N'" class="btn btn-primary" v-on:click="B_guardarProductos()" data-bs-dismiss="modal">Guardar</button>
                             </div>
                         </div>
                     </div>
@@ -254,11 +266,19 @@ export default {
         s_detalle: "",
         s_precio: "",
         Servicios: [],
+        //swiches
+        modalOption: ""
 
     }),
 
     methods: {
-        ...mapActions('vitrina', ['load_Vitrina']),
+        ...mapActions('vitrina', ['load_Vitrina', 'updateVitrina', 'createEntradaVitrina', 'DeleteItemVitrina']),
+        /*    ...mapActions('vitrina', ['updateVitrina']), */
+
+        B_nuevo() {
+            this.limpiarmodal(),
+                this.modalOption = 'N'
+        },
 
         limpiarmodal() {
 
@@ -275,41 +295,12 @@ export default {
             this.s_cant = '';
             this.Servicios = [];
             this.Productos = [];
+            this.Opc = "";
 
         },
 
-        //-----------ARTICULOS
-        guardarArticulos() {
-            // Agregar una copia de los datos al array
-            this.Productos.push({
-                id_ips: "1",
-                tipo: "producto",
-                nombre: this.p_nombre,
-                desc: this.p_detalle,
-                precio: this.p_precio,
-                cant: this.p_cant
-
-            });
-            // Limpiar los campos después de agregar la persona
-
-            console.log("guardando articulo", this.Productos)
-            this.limpiarmodal();
-        },
-
-        M_editarproductos(data) {
-            console.log(data);
-            this.p_nombre = data.nombre;
-            this.p_detalle = data.desc;
-            this.p_precio = data.precio;
-            this.p_cant = data.cant;
-        },
-
-        updateArticulos(dataArticulo) {
-            console.log("actualizando el servicio", dataArticulo)
-        },
-        //----------SERVICIOS
-        guardarServicios() {
-            this.limpiarmodal();
+        //----------SERVICIOS-----------------------------------------
+        B_guardarServicios() {
 
             this.Servicios.push({
                 id_ips: "1",
@@ -325,27 +316,100 @@ export default {
             this.limpiarmodal();
         },
 
+        BM_updateServicios(dataService) {
+
+            this.Servicios.push({
+                id: this.id,
+                id_ips: this.id_ips,
+                nombre: this.s_nombre,
+                tipo: this.s_categoria,
+                desc: this.s_detalle,
+                precio: this.s_precio,
+
+            });
+            console.log("actualizando el servicio", this.Servicios)
+
+            this.limpiarmodal();
+        },
+
         M_editarservicios(data) {
-            /*  console.log(servicio); */
+            this.modalOption = 'U'
+            this.i_ips = data.id_ips;
             this.s_nombre = data.nombre;
             this.s_categoria = data.tipo;
             this.s_detalle = data.desc;
             this.s_precio = data.precio;
             this.s_cant = data.cant;
-        },
-        updateServicios(dataService) {
-            console.log("actualizando el servicio", dataService)
-        },
-        //--------ITEMS
-
-        eliminaritem() {
-            console.log("eliminandoitem");
+            this.id = data.id;
         },
 
-        cambiarEstadoItem() {
+        //-----------PRODUCTOS-----------------------------------------
+        B_guardarProductos() {
+            this.modalOption = 'N'
+            this.Productos.push({
+                id: this.id,
+                id_ips: "1",
+                tipo: "producto",
+                nombre: this.p_nombre,
+                desc: this.p_detalle,
+                precio: this.p_precio,
+                cant: this.p_cant
+
+            });
+            // Limpiar los campos después de agregar la persona
+            this.createEntradaVitrina(this.Productos[0]);
+            /*    console.log("guardando el producto", this.Productos) */
+            this.limpiarmodal();
+        },
+        /* ---------------------------------------------------------------- */
+        M_editarproductos(data) {
+            this.modalOption = 'U'
+            this.id = data.id;
+            this.p_nombre = data.nombre;
+            this.p_detalle = data.desc;
+            this.p_precio = data.precio;
+            this.p_cant = data.cant;
+        },
+        /* ------------------------------------------------------------------ */
+        BM_updateProductos(dataArticulo) {
+            this.Productos.push({
+                id: this.id,
+                id_ips: "1",
+                tipo: "producto",
+                nombre: this.p_nombre,
+                desc: this.p_detalle,
+                precio: this.p_precio,
+                cant: this.p_cant
+
+            });
+
+            //llamado al action
+            this.saveVitrina();
+            this.limpiarmodal();
+        },
+        /* -------------------------------------------------------------------- */
+        async saveVitrina() {
+            this.updateVitrina(this.Productos[0])
+            /* console.log(this.Productos); */
+        },
+
+        //--------ITEMS-----------------------------------------
+
+        eliminaritem(item) {
+
+            this.DeleteItemVitrina(item);
+          console.log(item);
+        },
+
+
+
+
+        cambiarEstadoItem(item) {
             console.log("cambiando estado del item")
         }
     },
+
+    //===================================================================
 
     computed: {
         ...mapState({
