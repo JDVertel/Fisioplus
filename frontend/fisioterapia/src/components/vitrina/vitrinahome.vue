@@ -100,13 +100,13 @@
                                             <div class="col">
                                                 <div class="row">
                                                     <div class="mb-3">
-                                                        <input class="form-control" type="file" id="formFile" />
+                                                        <input class="form-control" type="file" id="formFile" @change="onSelectImage" accept="image/png,  image/jpeg,  image/jpg" />
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-4 col-md-3">
-                                            <img src="..." class="img-thumbnail" alt="...">
+                                            <img :src="local_Image" class="img-thumbnail" alt="...">
                                         </div>
 
                                     </div>
@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click=" limpiarmodal()">Close</button>
 
                                 <button type="button" v-if="modalOption =='U'" class="btn btn-primary" v-on:click="BM_updateServicios()" data-bs-dismiss="modal">Actualizar</button>
 
@@ -138,38 +138,39 @@
                 </button>
                 <!--  -->
                 <div class="container">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Img</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Publicado</th>
-                                <th scope="col">Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="item in productosFiltrados" :key="item.id">
-                                <td><img src="..." class="img-thumbnail" alt="..."></td>
-                                <th scope="row">{{ item.cant }}</th>
-                                <td>{{item.nombre}}</td>
-                                <td>{{ item.precio}}</td>
-                                <td>{{item.publicado}} {{item.id}}</td>
-                                <td>
-                                    <div>
-                                        <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="M_editarproductos(item)"> edit</button>
-                                        <button class="btn btn-danger m-1" @click=" eliminaritem(item.id)">delete</button>
-                                        <button class="btn btn-success m-1" @click="cambiarEstadoItem(item)">publicar</button>
-                                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Img</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Publicado</th>
+                                    <th scope="col">Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in productosFiltrados" :key="item.id">
+                                    <td><img src="..." class="img-thumbnail" alt="..."></td>
+                                    <th scope="row">{{ item.cant }}</th>
+                                    <td>{{item.nombre}}</td>
+                                    <td>{{ item.precio}}</td>
+                                    <td>{{item.publicado}} {{item.id}}</td>
+                                    <td>
+                                        <div>
+                                            <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="M_editarproductos(item)"> edit</button>
+                                            <button class="btn btn-danger m-1" @click=" eliminaritem(item.id)">delete</button>
+                                            <button class="btn btn-success m-1" @click="cambiarEstadoItem(item)">publicar</button>
+                                        </div>
 
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-                <!-- Modal 2  productos-->
+                <!--INICIO  Modal 2  productos-->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -202,13 +203,13 @@
                                             <div class="col">
                                                 <div class="row">
                                                     <div class="mb-3">
-                                                        <input class="form-control" type="file" id="formFile" />
+                                                        <input class="form-control" type="file" id="formFile" @change="onSelectImage" accept="image/png,  image/jpeg,  image/jpg" />
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-4 col-md-3">
-                                            <img src="..." class="img-thumbnail" alt="...">
+                                            <img :src="local_Image" class="img-thumbnail" alt="...">
                                         </div>
 
                                     </div>
@@ -216,7 +217,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click=" limpiarmodal()">Close</button>
 
                                 <button type="button" v-if="modalOption == 'U'" class="btn btn-primary" v-on:click="BM_updateProductos()" data-bs-dismiss="modal">Actualizar</button>
                                 <button type="button" v-if="modalOption == 'N'" class="btn btn-primary" v-on:click="B_guardarProductos()" data-bs-dismiss="modal">Guardar</button>
@@ -267,7 +268,10 @@ export default {
         s_precio: "",
         Servicios: [],
         //swiches
-        modalOption: ""
+        modalOption: "",
+        //images
+        local_Image: null,
+        file: null
 
     }),
 
@@ -296,6 +300,10 @@ export default {
             this.Servicios = [];
             this.Productos = [];
             this.Opc = "";
+            this.local_Image = null;
+            this.data = null;
+            this.modalOption = "";
+            this.file = null;
 
         },
 
@@ -398,15 +406,27 @@ export default {
         eliminaritem(item) {
 
             this.DeleteItemVitrina(item);
-          console.log(item);
+            console.log(item);
         },
-
-
-
 
         cambiarEstadoItem(item) {
             console.log("cambiando estado del item")
-        }
+        },
+
+        //----- IMAGEN-------------------------------------------
+        onSelectImage(event) {
+            const file = event.target.files[0]
+            if (!file) {
+                return
+                this.file = null;
+            } else {
+                const fr = new FileReader()
+                fr.onload = () => this.local_Image = fr.result
+                fr.readAsDataURL(file)
+                this.file = file;
+            }
+        },
+
     },
 
     //===================================================================
@@ -419,9 +439,8 @@ export default {
         ...mapState({
             productosFiltrados: state => state.vitrina.entry.filter(v => v.tipo === 'producto')
         }),
-
     },
-
+    //=====================================================================
     created() {
         this.load_Vitrina()
     },
