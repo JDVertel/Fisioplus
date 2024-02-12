@@ -276,7 +276,7 @@ export default {
     }),
 
     methods: {
-        ...mapActions('vitrina', ['load_Vitrina', 'updateVitrina', 'createEntradaVitrina', 'DeleteItemVitrina']),
+        ...mapActions('vitrina', ['load_Vitrina', 'updateVitrina', 'createEntradaVitrina', 'DeleteItemVitrina', 'CambiarEstadoVitrina']),
         /*    ...mapActions('vitrina', ['updateVitrina']), */
 
         B_nuevo() {
@@ -287,16 +287,24 @@ export default {
         limpiarmodal() {
 
             /* limpia los campos de los modales de la vitrina */
-
+            this.p_id = "";
+            this.p_id_ips = "";
+            this.p_tipo = "";
             this.p_nombre = '';
             this.p_detalle = '';
             this.p_precio = '';
             this.p_cant = '';
+            this.p_publicado = "";
+
+            this.s_id = "";
+            this.s_id_ips = "";
             this.s_nombre = '';
             this.s_detalle = '';
-            this.s_categoria = '';
+            this.s_tipo = "";
             this.s_precio = '';
             this.s_cant = '';
+            this.s_publicado = "";
+
             this.Servicios = [];
             this.Productos = [];
             this.Opc = "";
@@ -349,19 +357,21 @@ export default {
             this.s_precio = data.precio;
             this.s_cant = data.cant;
             this.id = data.id;
+            this.publicado = data.publicado
         },
 
         //-----------PRODUCTOS-----------------------------------------
         B_guardarProductos() {
             this.modalOption = 'N'
             this.Productos.push({
-                id: this.id,
-                id_ips: "1",
+                id_ips: "1", //cambia a variable de sesion en produccion
                 tipo: "producto",
                 nombre: this.p_nombre,
                 desc: this.p_detalle,
                 precio: this.p_precio,
-                cant: this.p_cant
+                cant: this.p_cant,
+                img: this.p_img,
+                publicado: true,
 
             });
             // Limpiar los campos después de agregar la persona
@@ -372,18 +382,24 @@ export default {
         /* ---------------------------------------------------------------- */
         M_editarproductos(data) {
             this.modalOption = 'U'
-            this.id = data.id;
+            this.p_id = data.id
+            this.p_id_ips = data.id_ips
+            this.p_tipo = data.tipo
+            this.p_publicado = data.publicado
+            /*  */
             this.p_nombre = data.nombre;
             this.p_detalle = data.desc;
             this.p_precio = data.precio;
             this.p_cant = data.cant;
         },
         /* ------------------------------------------------------------------ */
-        BM_updateProductos(dataArticulo) {
+        BM_updateProductos() {
             this.Productos.push({
-                id: this.id,
-                id_ips: "1",
-                tipo: "producto",
+                id: this.p_id,
+                id_ips: this.p_id_ips,
+                tipo: this.p_tipo,
+                publicado: this.p_publicado,
+                /*  */
                 nombre: this.p_nombre,
                 desc: this.p_detalle,
                 precio: this.p_precio,
@@ -404,14 +420,19 @@ export default {
         //--------ITEMS-----------------------------------------
 
         eliminaritem(item) {
-
             this.DeleteItemVitrina(item);
             console.log(item);
         },
 
+/* -------------------------------- */
+
         cambiarEstadoItem(item) {
-            console.log("cambiando estado del item")
+            this.CambiarEstadoVitrina(item)
+     
         },
+
+
+
 
         //----- IMAGEN-------------------------------------------
         onSelectImage(event) {

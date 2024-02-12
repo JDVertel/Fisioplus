@@ -25,19 +25,25 @@ export const updateVitrina = async ({ commit }, entradas) => {
   const response = await firebase_api.put(ruta, dataToSave);
   commit("updateDataVitrina", { ...entradas });
 };
+
+
+
+
+
 /* ============================================================= */
 
 export const createEntradaVitrina = async ({ commit }, entradas) => {
   const {
-    id_ips = "1",
-    tipo = "producto",
+    id_ips,
+    tipo,
     nombre,
     desc,
     precio,
     cant,
-    publicado = true,
+    img,
+    publicado
   } = entradas;
-  const DataToSave = { id_ips, tipo, nombre, desc, precio, cant, publicado };
+  const DataToSave = { id_ips, tipo, nombre, desc, precio, cant, img, publicado };
   /*  console.log("ok", DataToSave); */
   const Ruta = `/vitrina.json`;
   //servicio
@@ -47,6 +53,22 @@ export const createEntradaVitrina = async ({ commit }, entradas) => {
   //se llama a la mutacion y s epasa el array como
   commit("newDataVitrina", DataToSave);
 };
+
+
+
+
+/* =========================================== */
+export const CambiarEstadoVitrina=async({commit}, entradas)=>{
+  /*  */
+  const { id_ips, tipo, nombre, desc, precio, cant, publicado } = entradas;
+  const DataStore = { id_ips, tipo, nombre, desc, precio, cant, publicado };
+  DataStore.publicado=!publicado
+console.log(DataStore);
+  const ruta = `/vitrina/${entradas.id}.json`;
+  entradas.publicado=!entradas.publicado;
+  const response = await firebase_api.put(ruta, DataStore);
+  commit("updateDataVitrina",{...entradas});
+}
 
 /* ================================================================= */
 
