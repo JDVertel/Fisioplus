@@ -49,8 +49,9 @@
                                     <td>
                                         <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click="M_editarservicios(articulo)"> edit</button>
 
-                                        <button class="btn btn-danger m-1" @click="eliminaritem(item)">delete</button>
-                                        <button class="btn btn-success m-1" @click="cambiarEstadoItem(item)">publicar</button>
+                                        <button class="btn btn-danger m-1" @click="eliminaritem(articulo.id)">delete</button>
+
+                                        <button class="btn btn-success m-1" @click="cambiarEstadoItem(articulo)">publicar</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -83,11 +84,11 @@
 
                                             </div>
                                             <div class="col">
-                                                <select class="form-select form-select-sm" aria-label="Default select example" v-model="s_categoria">
+                                                <select class="form-select form-select-sm" aria-label="Default select example" v-model="s_tipo">
                                                     <option selected value="">Categoria</option>
-                                                    <option value="Terapia">Terapias</option>
-                                                    <option value="Consulta">Consultas</option>
-                                                    <option value="Clase">Clases</option>
+                                                    <option value="terapia">Terapia</option>
+                                                    <option value="consulta">Consulta</option>
+                                                    <option value="clase">Clase</option>
 
                                                 </select>
                                             </div>
@@ -98,11 +99,11 @@
                                             </div>
 
                                             <div class="col">
-                                                <div class="row">
+                                              
                                                     <div class="mb-3">
                                                         <input class="form-control" type="file" id="formFile" @change="onSelectImage" accept="image/png,  image/jpeg,  image/jpg" />
                                                     </div>
-                                                </div>
+                                             
                                             </div>
                                         </div>
                                         <div class="col-4 col-md-3">
@@ -160,7 +161,9 @@
                                     <td>
                                         <div>
                                             <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="M_editarproductos(item)"> edit</button>
+
                                             <button class="btn btn-danger m-1" @click=" eliminaritem(item.id)">delete</button>
+
                                             <button class="btn btn-success m-1" @click="cambiarEstadoItem(item)">publicar</button>
                                         </div>
 
@@ -203,7 +206,8 @@
                                             <div class="col">
                                                 <div class="row">
                                                     <div class="mb-3">
-                                                        <input class="form-control" type="file" id="formFile" @change="onSelectImage" accept="image/png,  image/jpeg,  image/jpg" />
+                                                        <input class="form-control"     type="file" id="formFile" @change="onSelectImage" 
+                                                      accept="image/png,  image/jpeg,  image/jpg" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -259,6 +263,7 @@ export default {
         p_detalle: "",
         p_precio: "",
         p_cant: "",
+        p_tipo:"",
         Productos: [],
 
         //servicios
@@ -267,6 +272,7 @@ export default {
         s_detalle: "",
         s_precio: "",
         Servicios: [],
+        s_tipo:"",
         //swiches
         modalOption: "",
         //images
@@ -276,7 +282,7 @@ export default {
     }),
 
     methods: {
-        ...mapActions('vitrina', ['load_Vitrina', 'updateVitrina', 'createEntradaVitrina', 'DeleteItemVitrina', 'CambiarEstadoVitrina']),
+        ...mapActions('vitrina', ['load_Vitrina', 'updateVitrinaP','updateVitrinaS', 'createEntradaVitrina', 'DeleteItemVitrina', 'CambiarEstadoVitrina']),
         /*    ...mapActions('vitrina', ['updateVitrina']), */
 
         B_nuevo() {
@@ -317,70 +323,63 @@ export default {
 
         //----------SERVICIOS-----------------------------------------
         B_guardarServicios() {
-
+            this.modalOption = 'N'
             this.Servicios.push({
                 id_ips: "1",
+                //cambia a variable de sesion en produccion
                 nombre: this.s_nombre,
-                tipo: this.s_categoria,
+                tipo: this.s_tipo,
                 desc: this.s_detalle,
                 precio: this.s_precio,
-
+                img:this.s_img,
+                publicado:true,
             });
             // Limpiar los campos después de agregar la persona
-
-            console.log("guardando servicio", this.Servicios)
-            this.limpiarmodal();
-        },
-
-        BM_updateServicios(dataService) {
-
-            this.Servicios.push({
-                id: this.id,
-                id_ips: this.id_ips,
-                nombre: this.s_nombre,
-                tipo: this.s_categoria,
-                desc: this.s_detalle,
-                precio: this.s_precio,
-
-            });
-            console.log("actualizando el servicio", this.Servicios)
-
+            this.createEntradaVitrina(this.Servicios[0]);
+            console.log("guardando servicio", this.Servicios[0])
             this.limpiarmodal();
         },
 
         M_editarservicios(data) {
             this.modalOption = 'U'
-            this.i_ips = data.id_ips;
+            this.s_id = data.id;
+            this.s_id_ips = data.id_ips;
+            this.s_publicado = data.publicado
+            this.s_tipo = data.tipo;
+            //
             this.s_nombre = data.nombre;
-            this.s_categoria = data.tipo;
             this.s_detalle = data.desc;
-            this.s_precio = data.precio;
-            this.s_cant = data.cant;
-            this.id = data.id;
-            this.publicado = data.publicado
+            this.s_precio = data.precio;    
+           
         },
 
-        //-----------PRODUCTOS-----------------------------------------
-        B_guardarProductos() {
-            this.modalOption = 'N'
-            this.Productos.push({
-                id_ips: "1", //cambia a variable de sesion en produccion
-                tipo: "producto",
-                nombre: this.p_nombre,
-                desc: this.p_detalle,
-                precio: this.p_precio,
-                cant: this.p_cant,
-                img: this.p_img,
-                publicado: true,
 
+        BM_updateServicios() {
+            this.Servicios.push({
+                id: this.s_id,
+                id_ips: this.s_id_ips,
+                tipo: this.s_tipo,
+                publicado: this.s_publicado,
+                //
+                nombre: this.s_nombre,
+                desc: this.s_detalle,
+                precio: this.s_precio,
             });
-            // Limpiar los campos después de agregar la persona
-            this.createEntradaVitrina(this.Productos[0]);
-            /*    console.log("guardando el producto", this.Productos) */
+            this.saveVitrinaS();
             this.limpiarmodal();
         },
-        /* ---------------------------------------------------------------- */
-        M_editarproductos(data) {
+
+        async saveVitrinaS() {
+            this.updateVitrinaP(this.Servicios[0])
+            /* console.log(this.Productos); */
+        },
+
+
+
+
+        //-----------PRODUCTOS-----------------------------------------
+
+        M_editarproductos() {
             this.modalOption = 'U'
             this.p_id = data.id
             this.p_id_ips = data.id_ips
@@ -393,6 +392,28 @@ export default {
             this.p_cant = data.cant;
         },
         /* ------------------------------------------------------------------ */
+
+
+        B_guardarProductos() {
+            this.modalOption = 'N'
+            this.Productos.push({
+                id_ips: "1",
+                 //cambia a variable de sesion en produccion
+                tipo: "producto",
+                nombre: this.p_nombre,
+                desc: this.p_detalle,
+                precio: this.p_precio,
+                cant: this.p_cant,
+                img: this.p_img,
+                publicado: true,
+            });
+            // Limpiar los campos después de agregar la persona
+            this.createEntradaVitrina(this.Productos[0]);
+               console.log("guardando el producto", this.Productos)
+            this.limpiarmodal();
+        },
+        /* ---------------------------------------------------------------- */
+
         BM_updateProductos() {
             this.Productos.push({
                 id: this.p_id,
@@ -408,14 +429,26 @@ export default {
             });
 
             //llamado al action
-            this.saveVitrina();
+            this.saveVitrinaP();
             this.limpiarmodal();
         },
         /* -------------------------------------------------------------------- */
-        async saveVitrina() {
-            this.updateVitrina(this.Productos[0])
+        async saveVitrinaP() {
+            this.updateVitrinaP(this.Productos[0])
             /* console.log(this.Productos); */
         },
+
+
+
+
+
+
+
+
+
+
+
+
 
         //--------ITEMS-----------------------------------------
 
