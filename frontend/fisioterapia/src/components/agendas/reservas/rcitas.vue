@@ -4,33 +4,33 @@
     <div class="container">
         <table class="table table-sm">
             <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                </tr>
             </tbody>
-          </table>
+        </table>
     </div>
     <div class="container">
         <h6 class="display-6">Realizar una reserva </h6>
@@ -100,23 +100,23 @@
                             <option value="ti">Consulta</option>
                             <option value="ti">Clase</option>
                         </select></div>
-                        <div class="col-6 col-md-3">
-                    <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
-                        <option selected>Profesional</option>
-                        <option value="cc">Erika</option>
-                        <option value="ti">Ramon</option>
-                        <option value="ti">Juliana</option>
-                    </select></div>
                     <div class="col-6 col-md-3">
-                    <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
-                        <option selected>Dia de reserva</option>
-                        <option value="cc">Terapia</option>
-                        <option value="ti">Consulta</option>
-                        <option value="ti">Clase</option>
-                    </select></div>
+                        <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
+                            <option selected>Profesional</option>
+                            <option value="cc">Erika</option>
+                            <option value="ti">Ramon</option>
+                            <option value="ti">Juliana</option>
+                        </select></div>
                     <div class="col-6 col-md-3">
-                    <input class="form-control form-control-sm" type="time" placeholder="hora" aria-label=".form-control-sm example">
-                </div>
+                        <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
+                            <option selected>Dia de reserva</option>
+                            <option value="cc">Terapia</option>
+                            <option value="ti">Consulta</option>
+                            <option value="ti">Clase</option>
+                        </select></div>
+                    <div class="col-6 col-md-3">
+                        <input class="form-control form-control-sm" type="time" placeholder="hora" aria-label=".form-control-sm example">
+                    </div>
                     <button type="button " class="btn btn-success btn-sm">Reservar</button>
                 </div>
                 <br>
@@ -154,36 +154,47 @@
                 </div>
             </div>
         </div>
- 
+
     </div>
     <router-link to="/dashboard">Home</router-link>
 </div>
 </template>
 
 <script>
+import {
+    mapState,
+    mapActions,
+} from 'vuex';
+
 import registroPaciente from '@/components/usuarios/registro.vue'
 export default {
 
     data: () => ({
-
         B_tipodoc: "",
         B_numdoc: "",
         //Auth
         existepaciente: true,
         id_registrado: "",
+
     }),
     components: {
         registroPaciente,
     },
     methods: {
+        ...mapActions('agendas', ['loadProfesionales']),
+
         Buscarpaciente() {
             const id = this.B_tipodoc + this.B_numdoc;
             console.log("paciente buscado", id)
         }
-    }
+    },
+    computed: {
+        /*        ...mapState({
+                   listadoProfesionales: sate => state.agendas.profesionales.filter(p = p.tipo == "clase")
+               }) */
+    },
+    created() {
+        this.loadProfesionales()
+    },
 }
 </script>
-
-<style lang="">
-
-</style>

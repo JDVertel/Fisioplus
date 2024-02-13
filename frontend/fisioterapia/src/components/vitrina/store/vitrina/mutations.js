@@ -1,3 +1,4 @@
+
 export const setVitrina = (state, entradas) => {
   state.entry = "";
   state.entry = [...state.entry, ...entradas];

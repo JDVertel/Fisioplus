@@ -99,11 +99,11 @@
                                             </div>
 
                                             <div class="col">
-                                              
-                                                    <div class="mb-3">
-                                                        <input class="form-control" type="file" id="formFile" @change="onSelectImage" accept="image/png,  image/jpeg,  image/jpg" />
-                                                    </div>
-                                             
+
+                                                <div class="mb-3">
+                                                    <input class="form-control" type="file" id="formFile" @change="onSelectImage" accept="image/png,  image/jpeg,  image/jpg" />
+                                                </div>
+
                                             </div>
                                         </div>
                                         <div class="col-4 col-md-3">
@@ -206,8 +206,7 @@
                                             <div class="col">
                                                 <div class="row">
                                                     <div class="mb-3">
-                                                        <input class="form-control"     type="file" id="formFile" @change="onSelectImage" 
-                                                      accept="image/png,  image/jpeg,  image/jpg" />
+                                                        <input class="form-control" type="file" id="formFile" @change="onSelectImage" accept="image/png,  image/jpeg,  image/jpg" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -247,10 +246,6 @@
 
 <script>
 import {
-    Articulos
-} from "./../../firebase/bd";
-
-import {
     mapActions,
     mapState
 } from "vuex";
@@ -263,7 +258,7 @@ export default {
         p_detalle: "",
         p_precio: "",
         p_cant: "",
-        p_tipo:"",
+        p_tipo: "",
         Productos: [],
 
         //servicios
@@ -272,7 +267,7 @@ export default {
         s_detalle: "",
         s_precio: "",
         Servicios: [],
-        s_tipo:"",
+        s_tipo: "",
         //swiches
         modalOption: "",
         //images
@@ -282,7 +277,7 @@ export default {
     }),
 
     methods: {
-        ...mapActions('vitrina', ['load_Vitrina', 'updateVitrinaP','updateVitrinaS', 'createEntradaVitrina', 'DeleteItemVitrina', 'CambiarEstadoVitrina']),
+        ...mapActions('vitrina', ['load_Vitrina', 'updateVitrinaP', 'updateVitrinaS', 'createEntradaVitrina', 'DeleteItemVitrina', 'CambiarEstadoVitrina']),
         /*    ...mapActions('vitrina', ['updateVitrina']), */
 
         B_nuevo() {
@@ -331,8 +326,8 @@ export default {
                 tipo: this.s_tipo,
                 desc: this.s_detalle,
                 precio: this.s_precio,
-                img:this.s_img,
-                publicado:true,
+                img: this.s_img,
+                publicado: true,
             });
             // Limpiar los campos después de agregar la persona
             this.createEntradaVitrina(this.Servicios[0]);
@@ -349,10 +344,9 @@ export default {
             //
             this.s_nombre = data.nombre;
             this.s_detalle = data.desc;
-            this.s_precio = data.precio;    
-           
-        },
+            this.s_precio = data.precio;
 
+        },
 
         BM_updateServicios() {
             this.Servicios.push({
@@ -374,12 +368,9 @@ export default {
             /* console.log(this.Productos); */
         },
 
-
-
-
         //-----------PRODUCTOS-----------------------------------------
 
-        M_editarproductos() {
+        M_editarproductos(data) {
             this.modalOption = 'U'
             this.p_id = data.id
             this.p_id_ips = data.id_ips
@@ -393,12 +384,11 @@ export default {
         },
         /* ------------------------------------------------------------------ */
 
-
         B_guardarProductos() {
             this.modalOption = 'N'
             this.Productos.push({
                 id_ips: "1",
-                 //cambia a variable de sesion en produccion
+                //cambia a variable de sesion en produccion
                 tipo: "producto",
                 nombre: this.p_nombre,
                 desc: this.p_detalle,
@@ -409,7 +399,7 @@ export default {
             });
             // Limpiar los campos después de agregar la persona
             this.createEntradaVitrina(this.Productos[0]);
-               console.log("guardando el producto", this.Productos)
+            console.log("guardando el producto", this.Productos)
             this.limpiarmodal();
         },
         /* ---------------------------------------------------------------- */
@@ -438,18 +428,6 @@ export default {
             /* console.log(this.Productos); */
         },
 
-
-
-
-
-
-
-
-
-
-
-
-
         //--------ITEMS-----------------------------------------
 
         eliminaritem(item) {
@@ -457,15 +435,12 @@ export default {
             console.log(item);
         },
 
-/* -------------------------------- */
+        /* -------------------------------- */
 
         cambiarEstadoItem(item) {
             this.CambiarEstadoVitrina(item)
-     
+
         },
-
-
-
 
         //----- IMAGEN-------------------------------------------
         onSelectImage(event) {
@@ -494,6 +469,7 @@ export default {
             productosFiltrados: state => state.vitrina.entry.filter(v => v.tipo === 'producto')
         }),
     },
+
     //=====================================================================
     created() {
         this.load_Vitrina()

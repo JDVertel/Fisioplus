@@ -34,7 +34,6 @@ export default {
 <template>
 <h6>datos de vuex strore</h6>
 
-<p>acceso directo rol: {{$store.state.rol}}/ id_usuario:{{$store.state.id_user}} / id_ips:{{$store.state.id_ips}}</p>
 <hr>
 
 {{userAuth}}
