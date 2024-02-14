@@ -161,40 +161,56 @@
 </template>
 
 <script>
+import registroPaciente from '@/components/usuarios/registro.vue'
+
 import {
-    mapState,
     mapActions,
+    mapState,
+
 } from 'vuex';
 
-import registroPaciente from '@/components/usuarios/registro.vue'
 export default {
-
     data: () => ({
-        B_tipodoc: "",
-        B_numdoc: "",
         //Auth
         existepaciente: true,
         id_registrado: "",
+        //parametros de consulta de paciente
+        B_tipodoc: "",
+        B_numdoc: "",
+        //parametros de consulta
+        queryparams: [{
+                list: "profesionales",
+                parametro: "tipo",
+                valor: "consulta"
+            }
+
+        ]
 
     }),
+
     components: {
         registroPaciente,
     },
-    methods: {
-        ...mapActions('agendas', ['loadProfesionales']),
 
-        Buscarpaciente() {
-            const id = this.B_tipodoc + this.B_numdoc;
-            console.log("paciente buscado", id)
-        }
+    methods: {
+        ...mapActions('Agendas', ['loadProfesionales', 'getDatabyParam']),
+
+        /*  Buscarpaciente() {
+             const id = this.B_tipodoc + this.B_numdoc;
+             console.log("paciente buscado", id)
+         } */
     },
+
     computed: {
         /*        ...mapState({
                    listadoProfesionales: sate => state.agendas.profesionales.filter(p = p.tipo == "clase")
                }) */
     },
+
     created() {
-        this.loadProfesionales()
+        /*  this.loadProfesionales() */
+        this.getDatabyParam(this.queryparams)
     },
+
 }
 </script>

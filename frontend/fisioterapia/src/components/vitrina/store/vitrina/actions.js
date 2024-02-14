@@ -26,7 +26,6 @@ export const updateVitrinaP = async ({ commit }, entradas) => {
   commit("updateDataVitrina", { ...entradas });
 };
 
-
 export const updateVitrinaS = async ({ commit }, entradas) => {
   console.log("variable entradas ", entradas);
   const { id_ips, tipo, nombre, desc, precio, publicado } = entradas;
@@ -37,12 +36,11 @@ export const updateVitrinaS = async ({ commit }, entradas) => {
   commit("updateDataVitrina", { ...entradas });
 };
 
-
-
 /* ============================================================= */
 
 export const createEntradaVitrina = async ({ commit }, entradas) => {
-  const {
+  const { id_ips, tipo, nombre, desc, precio, cant, img, publicado } = entradas;
+  const DataToSave = {
     id_ips,
     tipo,
     nombre,
@@ -50,9 +48,8 @@ export const createEntradaVitrina = async ({ commit }, entradas) => {
     precio,
     cant,
     img,
-    publicado
-  } = entradas;
-  const DataToSave = { id_ips, tipo, nombre, desc, precio, cant, img, publicado };
+    publicado,
+  };
   /*  console.log("ok", DataToSave); */
   const Ruta = `/vitrina.json`;
   //servicio
@@ -63,33 +60,54 @@ export const createEntradaVitrina = async ({ commit }, entradas) => {
   commit("newDataVitrina", DataToSave);
 };
 
-
-
-
 /* =========================================== */
-export const CambiarEstadoVitrina=async({commit}, entradas)=>{
+export const CambiarEstadoVitrina = async ({ commit }, entradas) => {
   /*  */
   const { id_ips, tipo, nombre, desc, precio, cant, publicado } = entradas;
   const DataStore = { id_ips, tipo, nombre, desc, precio, cant, publicado };
-  DataStore.publicado=!publicado
-console.log(DataStore);
+  DataStore.publicado = !publicado;
+  console.log(DataStore);
   const ruta = `/vitrina/${entradas.id}.json`;
-  entradas.publicado=!entradas.publicado;
+  entradas.publicado = !entradas.publicado;
   const response = await firebase_api.put(ruta, DataStore);
-  commit("updateDataVitrina",{...entradas});
-}
+  commit("updateDataVitrina", { ...entradas });
+};
 
 /* ================================================================= */
 
 export const DeleteItemVitrina = async ({ commit }, entradas) => {
   const Ruta = `/vitrina/${entradas}.json`;
   //servicio
-  const {data}= await firebase_api.delete(Ruta);
+  const { data } = await firebase_api.delete(Ruta);
   commit("DeleteItemVitrina", entradas);
 };
 
 // acciones asyncronas  que llaman a mutaciones
 
-/* export const myAction = async({commit})=>{
 
-}  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================funcion filtrado x id */
+/* const response = await firebase_api.get('/vitrina.json', {
+  params: {
+    orderBy: '"tipo"',
+    equalTo: '"terapia"',
+  },
+});
+ */
