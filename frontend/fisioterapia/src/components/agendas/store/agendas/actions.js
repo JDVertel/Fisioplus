@@ -1,6 +1,34 @@
 import firebase_api from "@/api/firebaseApi";
 
 /* ============================================ */
+export const getDatabyParam = async ({ commit }, parametros) => {
+  console.log(parametros)
+  //  bd  -  parametro - valor
+  const [{ bd, parametro, valor}] = parametros;
+  console.log(parametro);
+  console.log(valor);
+  console.log(bd);
+  const response = await firebase_api.get(`/${bd}.json`, {
+    params: {
+      orderBy: `"${parametro}"`,
+      equalTo: `"${valor}"`,
+    },
+  });
+  const { data } = response;
+  const dataentradas = [];
+  for (let id of Object.keys(data)) {
+    dataentradas.push({
+      id,
+      ...data[id],
+    });
+  }
+  console.log(dataentradas);
+};
+
+
+
+
+
 
 export const loadProfesionales = async ({ commit }) => {
   const response = await firebase_api.get("/agendas.json");
@@ -17,23 +45,3 @@ export const loadProfesionales = async ({ commit }) => {
 };
 
 /* ============================================= */
-export const getDatabyParam = async ({ commit }, parametros) => {
-  const [{ parametro, valor }] = parametros;
-  console.log(parametro);
-  console.log(valor);
-  const response = await firebase_api.get("/profesionales.json", {
-    params: {
-      orderBy: `"${parametro}"`, // Reemplazar el valor de orderBy por el parámetro correspondiente
-      equalTo: '"consulta"',
-    },
-  });
-  const { data } = response;
-  const dataentradas = [];
-  for (let id of Object.keys(data)) {
-    dataentradas.push({
-      id,
-      ...data[id],
-    });
-  }
-  console.log(dataentradas);
-};

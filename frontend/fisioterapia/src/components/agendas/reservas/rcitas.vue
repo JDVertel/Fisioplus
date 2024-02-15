@@ -128,7 +128,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">First</th>
                                 <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">Handler</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
@@ -177,39 +177,52 @@ export default {
         //parametros de consulta de paciente
         B_tipodoc: "",
         B_numdoc: "",
-        //parametros de consulta
-        queryparams: [{
-                list: "profesionales",
-                parametro: "tipo",
-                valor: "consulta"
-            }
 
-        ]
+        //  list  -  parametro - valor
+        paramsPaciente:"",
+
+        //parametros de consulta profesionales
+        paramsProfesionales: [{
+                bd: "profesionales",
+                parametro: "tipo",
+                valor: "consulta",
+        }]
 
     }),
 
     components: {
+
         registroPaciente,
     },
 
     methods: {
         ...mapActions('Agendas', ['loadProfesionales', 'getDatabyParam']),
 
-        /*  Buscarpaciente() {
-             const id = this.B_tipodoc + this.B_numdoc;
-             console.log("paciente buscado", id)
-         } */
-    },
+/* ------------------------------------------------------------------------ */
 
+        Buscarpaciente() {
+            const idpaciente = this.B_tipodoc + this.B_numdoc;
+            
+            this.paramsPaciente = [{
+                bd: "pacientes",
+                parametro: "numdoc",
+                valor: idpaciente,
+            }]
+
+            this.getDatabyParam(this.paramsPaciente);
+        }
+    },
+/* ------------------------------------------------------------------------ */
     computed: {
         /*        ...mapState({
                    listadoProfesionales: sate => state.agendas.profesionales.filter(p = p.tipo == "clase")
                }) */
-    },
 
+    },
+/* ------------------------------------------------------------------------ */
     created() {
         /*  this.loadProfesionales() */
-        this.getDatabyParam(this.queryparams)
+       /*  this.getDatabyParam(this.paramsProfesionales) */
     },
 
 }
