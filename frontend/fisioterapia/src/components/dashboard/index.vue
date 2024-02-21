@@ -4,19 +4,15 @@ import {
     mapState,
     mapActions
 } from 'vuex';
-import {
+/* import {
     userAuth
-} from "./store/auth/getters";
+} from "./store/auth/getters"; */
 
 export default {
     computed: {
-        ...mapGetters('Auth', ['userAuth']),
 
-        /*      ...mapState({
-              cantprod: state => state.vitrina.cant 
-
-          }),*/
         ...mapState('vitrina', ['cant']),
+        ...mapState('Auth',['user','auth'] )
 
     },
 
@@ -36,7 +32,9 @@ export default {
 
 <hr>
 
-{{userAuth}}
+{{user}}
+<hr>
+{{ auth }}
 
 <div class="container centrado mt-5">
     <h6 class="display-5">Menu FisioterapiApp</h6>
@@ -102,7 +100,7 @@ export default {
 
         <div class="col-12 col-md-6">
 
-            <router-link to="/homeAgendas"><a class="nav-link-menu" aria-current="page">
+            <router-link to="/agendas"><a class="nav-link-menu" aria-current="page">
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="container">
                             <div class="row g-0">

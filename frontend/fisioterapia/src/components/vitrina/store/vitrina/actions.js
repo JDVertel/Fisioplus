@@ -1,5 +1,4 @@
 import firebase_api from "@/api/firebaseApi";
-import { updateDataVitrina } from "./mutations";
 /* ============================================================= */
 export const load_Vitrina = async ({ commit }) => {
   const response = await firebase_api.get("/vitrina.json");

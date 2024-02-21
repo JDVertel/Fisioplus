@@ -5,7 +5,7 @@ import About from "./../views/about.vue";
 import Menu from "./../views/menu.vue";
 
 // agendas
-import HomeAgendas from "./../components/agendas/agendashome.vue";
+import Agendas from "./../components/agendas/agendas/index.vue";
 //contenido web
 import HomeVitrina from "./../components/vitrina/vitrinahome.vue";
 //hc
@@ -27,7 +27,7 @@ const routes = [
   { path: "/menu", component: Menu, name: "menu" },
 
   // agendas
-  { path: "/homeAgendas", component: HomeAgendas, name: "agendas" },
+  { path: "/agendas", component: Agendas, name: "agendas" },
   //contenido web
   {
     path: "/vitrina",

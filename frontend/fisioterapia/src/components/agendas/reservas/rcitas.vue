@@ -1,6 +1,11 @@
 <template>
+{{ datapaciente }}
+<hr>
+{{ existepaciente }}
+<hr>
 <br>
 <div>
+
     <div class="container">
         <table class="table table-sm">
             <thead>
@@ -59,12 +64,12 @@
         </div>
     </div>
 
-    <!--  aqui comoponente de registro de usuario -->
-    <div v-if="this.existepaciente==false">
+    <!--  aqui componente de registro de usuario -->
+    <div v-if="this.existepaciente == 2">
         <registroPaciente />
     </div>
     <br>
-    <div class="container">
+    <div class="container" v-if="this.existepaciente == 1">
 
         <div class="card">
             <div class="card-header">
@@ -75,20 +80,27 @@
                     <tr>
                         <th>Documento</th>
                         <th>Nombre</th>
-                        <th>Reservas</th>
+                        <th>Telefono</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>fecha1</td>
+                    <tr v-for="pac in datapaciente" :key="pac.id">
+                        <td>{{pac.numdoc}}</td>
+                        <td>{{pac.name1}} {{pac.apell1}}</td>
+                        <td>{{pac.celular}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <hr>
+        <div class="row">
+            <div class="col-3"><button class="btn btn-success btn-sm" @click=" BuscarProfesionales">Reservar</button></div>
+            <div class="col-3"><button class="btn btn-success btn-sm">Editar</button></div>
+            <div class="col-3"><button class="btn btn-success btn-sm">Hc</button></div>
+            <div class="col-3"><button class="btn btn-success btn-sm">Historial</button></div>
+            <hr>
+        </div>
         <div class="container">
             <div class="row">
 
@@ -106,14 +118,16 @@
                             <option value="cc">Erika</option>
                             <option value="ti">Ramon</option>
                             <option value="ti">Juliana</option>
-                        </select></div>
+                        </select>
+                    </div>
                     <div class="col-6 col-md-3">
                         <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
                             <option selected>Dia de reserva</option>
                             <option value="cc">Terapia</option>
                             <option value="ti">Consulta</option>
                             <option value="ti">Clase</option>
-                        </select></div>
+                        </select>
+                    </div>
                     <div class="col-6 col-md-3">
                         <input class="form-control form-control-sm" type="time" placeholder="hora" aria-label=".form-control-sm example">
                     </div>
@@ -166,63 +180,72 @@ import registroPaciente from '@/components/usuarios/registro.vue'
 import {
     mapActions,
     mapState,
-
 } from 'vuex';
 
 export default {
     data: () => ({
         //Auth
-        existepaciente: true,
-        id_registrado: "",
         //parametros de consulta de paciente
         B_tipodoc: "",
         B_numdoc: "",
 
         //  list  -  parametro - valor
-        paramsPaciente:"",
+        paramsPaciente: "",
 
         //parametros de consulta profesionales
         paramsProfesionales: [{
-                bd: "profesionales",
-                parametro: "tipo",
-                valor: "consulta",
+            bd: "profesionales",
+            parametro: "id_ips",
+            valor: 1,
+            rta: "setStateProfesionales"
+
         }]
 
     }),
 
     components: {
-
         registroPaciente,
     },
 
     methods: {
-        ...mapActions('Agendas', ['loadProfesionales', 'getDatabyParam']),
+        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales',]),
 
-/* ------------------------------------------------------------------------ */
+        /* ------------------------------------------------------------------------ */
 
         Buscarpaciente() {
             const idpaciente = this.B_tipodoc + this.B_numdoc;
-            
             this.paramsPaciente = [{
                 bd: "pacientes",
                 parametro: "numdoc",
                 valor: idpaciente,
+                rta: "setStatePaciente"
             }]
-
             this.getDatabyParam(this.paramsPaciente);
+          
+        },
+
+        BuscarProfesionales(){
+         
+            this.getDatabyParam(this.paramsProfesionales);
         }
+         
+        
+
     },
-/* ------------------------------------------------------------------------ */
+    /* ------------------------------------------------------------------------ */
     computed: {
+
+        ...mapState('Agendas', ['datapaciente', 'existepaciente']),
+
         /*        ...mapState({
                    listadoProfesionales: sate => state.agendas.profesionales.filter(p = p.tipo == "clase")
                }) */
 
     },
-/* ------------------------------------------------------------------------ */
+    /* ------------------------------------------------------------------------ */
     created() {
         /*  this.loadProfesionales() */
-       /*  this.getDatabyParam(this.paramsProfesionales) */
+
     },
 
 }
