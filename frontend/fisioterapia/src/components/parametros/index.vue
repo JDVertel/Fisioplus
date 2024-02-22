@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="numero documento" v-model="user_numdoc">
+                                    <input type="number" class="form-control" placeholder="numero documento" v-model="user_numdoc">
                                 </div>
 
                             </div>
@@ -92,6 +92,7 @@
                                 <td>{{user.nombre}}</td>
                                 <td>{{user.doc}}</td>
                                 <td>{{user.estado}}</td>
+                                <td> <button class="btn btn-danger m-1 btn-sm" @click=" eliminaritemU(user.id)">X</button></td>
                             </tr>
 
                         </tbody>
@@ -131,7 +132,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="numero documento" v-model="pro_numdoc">
+                                    <input type="number" class="form-control" placeholder="numero documento" v-model="pro_numdoc">
                                 </div>
 
                             </div>
@@ -164,7 +165,12 @@
                                 <div class="mb-3">
                                     <input type="email" class="form-control" placeholder="correo" v-model="pro_correo">
                                 </div>
+                            </div>
 
+                            <div class="col-4">
+                                <div class="mb-3">
+                                    <input type="number" class="form-control" placeholder="celular" v-model="pro_celular">
+                                </div>
                             </div>
 
                             <div class="col-4">
@@ -176,13 +182,13 @@
 
                             <div class="col-4">
                                 <div class="mb-3">
-                      
-                                    <select class="form-select" aria-label="Default select example"  v-model="pro_tipo">
+
+                                    <select class="form-select" aria-label="Default select example" v-model="pro_tipo">
                                         <option selected>Tipo profesional</option>
                                         <option value="fisioterapia">Fisioterapia</option>
                                         <option value="consulta">Consulta</option>
                                         <option value="clases">Clases</option>
-                                      </select>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-4">
@@ -206,9 +212,8 @@
                                 <th scope="row">{{prof.tipo}}</th>
                                 <td>{{prof.name1}} {{prof.apell1}}</td>
                                 <td>{{prof.cel}}</td>
-                                <td></td>
+                                <td> <button class="btn btn-danger m-1 btn-sm" @click=" eliminaritemP(prof.id)">X</button></td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -242,6 +247,11 @@ export default {
     data: () => ({
         form_user: false,
         form_prof: false,
+        Datanewuser: [],
+        Datanewprof: [],
+        DataDeleteP: [],
+        DataDeleteU: [],
+
         /* ---------------- */
         paramsProfesionales: [{
             bd: "profesionales",
@@ -260,15 +270,12 @@ export default {
         }],
 
         /* --------------------------------------- */
-        Data_adduser: [{
 
-        }],
-        Data_addprof: [{
-
-        }]
         /* --------------------------------------- */
 
     }),
+
+    /* --------------------------------------------------------------------------------------------------- */
     methods: {
         btn_adduser() {
             this.form_user = !this.form_user;
@@ -282,16 +289,57 @@ export default {
         },
 
         adduser() {
-
+            this.Datanewuser.push({
+                estado: true,
+                id_ips: "1",
+                doc: this.user_tipodoc + this.user_numdoc,
+                nombre: this.user_nombre,
+                pass: this.user_pass1,
+                rol: this.user_rol,
+                bd: "usuarios",
+            })
+            this.createEntradaUser(this.Datanewuser[0]);
         },
 
         addprof() {
+            this.Datanewprof.push({
+                id_ips: "1",
+                estado: true,
+                doc: this.pro_tipodoc + this.pro_numdoc,
+                name1: this.pro_name1,
+                name2: this.pro_name2,
+                apell1: this.pro_apell1,
+                apell2: this.pro_apell2,
+                cel: this.pro_celular,
+                reg_medico: this.pro_reg_medico,
+                tipo: this.pro_tipo,
+                correo: this.pro_correo,
+                bd: "profesionales"
+            })
+            this.createEntradaProf(this.Datanewprof[0]);
 
         },
 
         /* _---------------------------------------------------------------------------- */
 
-        ...mapActions('Agendas', ['getDatabyParam']),
+        eliminaritemP(id) {
+            console.log("eliminanfo prof" + id)
+            this.DataDeleteP.push({
+                id: id,
+                bd: "profesionales"
+
+            })
+            this.DeleteItem(this.DataDeleteP[0]);
+        },
+        eliminaritemU(id) {
+            this.DataDeleteU.push({
+                id: id,
+                bd: "usuarios"
+            })
+            this.DeleteItem(this.DataDeleteU[0]);
+        },
+
+        ...mapActions('Agendas', ['getDatabyParam', 'createEntradaUser', 'createEntradaProf', 'DeleteItem']),
 
     },
     computed: {
