@@ -33,6 +33,7 @@ const routes = [
     path: "/vitrina",
     component: HomeVitrina,
     name: "vitrina",
+
   },
   //hc
   { path: "/hc", component: hc, name: "hc" },
@@ -52,7 +53,7 @@ const routes = [
 
   //parametros
   { path: "/parametros", component: parametros, name: "parametros" },
-  { path: "/reservas", component: reservas, name: "reservas" },
+  { path: "/reservas/:id_user", component: reservas, name: "reservas" },
   { path: "/ventas", component: ventas, name: "ventas" },
 ];
 

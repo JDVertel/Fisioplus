@@ -12,10 +12,19 @@ export const setStatePaciente=(state, entryDataPaciente)=>{
     state.existepaciente = entryDataPaciente.length;
 }
 
-export const noregistrado=(state, noreg)=>{
+
+
+
+export const SetStatenoregistrado=(state, noreg)=>{
     state.existepaciente=noreg;
 }
 
+
+export const setStateCitas=(state , citas)=>{
+    state.dataCitas="";
+    state.dataCitas=[...state.dataCitas, ...citas];
+
+}
 
 /* ------PROFESIONALES */
 

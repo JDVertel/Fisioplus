@@ -9,17 +9,24 @@ import {
 } from "./store/auth/getters"; */
 
 export default {
+    data: () => ({
+
+        id_ips: "",
+        id_user: "dato pasado port routherlink",
+
+        rol: "",
+        info: "",
+    }),
+
     computed: {
-
         ...mapState('vitrina', ['cant']),
-        ...mapState('Auth',['user','auth'] )
-
+        ...mapState('Auth', ['user', 'auth']),
     },
 
     methods: {
         ...mapActions('vitrina', ['load_Vitrina']),
-
     },
+
     created() {
         this.load_Vitrina()
     }
@@ -28,17 +35,14 @@ export default {
 </script>
 
 <template>
-<h6>datos de vuex strore</h6>
-
-<hr>
-
-{{user}}
-<hr>
-{{ auth }}
-
 <div class="container centrado mt-5">
     <h6 class="display-5">Menu FisioterapiApp</h6>
 </div>
+<hr>
+{{user}}
+<hr>
+{{ auth }}
+<hr>
 <div class="centrado">
     <router-link to="/">Home</router-link>
 </div>
@@ -47,7 +51,7 @@ export default {
 
     <div class="row">
         <div class="col-12 col-md-6">
-            <router-link to="/reservas"><a class="nav-link-menu" aria-current="page">
+            <router-link :to="{name:'reservas', params:{id_user: this.id_user}}"><a class="nav-link-menu" aria-current="page">
                     <div class="card mb-3" style="max-width: 540px;">
                         <div class="container">
 

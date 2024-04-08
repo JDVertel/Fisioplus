@@ -1,8 +1,11 @@
 import firebase_api from "@/api/firebaseApi";
 
+
+
 /*AGENDAS ============================================ */
-export const getDatabyParam = async({ commit }, parametros) => {
-    console.log(parametros);
+/* funcion que trae los registros a partir de un filtrado parametro->valor */
+export const getDatabyParam = async ({ commit }, parametros) => {
+    /*    console.log(parametros); */
     //  bd  -  parametro - valor- rta
     const [{ bd, parametro, valor, rta }] = parametros;
     console.log(bd);
@@ -24,26 +27,72 @@ export const getDatabyParam = async({ commit }, parametros) => {
             ...data[id],
         });
     }
+
     console.log(datasalida)
+
 
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
     } else {
         console.log("sin datos en la consulta")
         const datasalida = 2;
-        commit("noregistrado", datasalida);
+        commit("SetStatenoregistrado", datasalida);
     }
 };
 
 /* ============================================= */
+/* FUNCION QUE CONSULTA  REGISTROS A PARTIR DE UNA FECHA INICIAL (DE HOY EN ADELANTE) */
+
+export const getDataByRangoSuperior = async ({ commit }, parametros) => {
+
+    const [{ bd, parametro, valor , rta}] = parametros;
+    console.log(bd, parametro, valor, rta );
+
+    const response = await firebase_api.get(`/${bd}.json`,
+        {
+            params: {
+                orderBy: `"${parametro}"`,
+                startAt: `"${valor}"`,
+        
+              
+            },
+        })
+    const { data } = response;
+    const datasalida = [];
+    for (let id of Object.keys(data)) {
+        datasalida.push({
+            id,
+            ...data[id],
+        });
+    }
+    console.log(datasalida);
+
+    if (datasalida.length != 0) {
+        commit(`${rta}`, datasalida);
+    } else {
+        console.log("sin datos en la consulta")
+    
+    }
+
+};
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 /* CONFIGURACION======================================= */
-
-export const createEntradaUser = async({ commit }, entradas) => {
+//guardart datos 
+export const createEntradaUser = async ({ commit }, entradas) => {
 
     const {
         id_ips,
@@ -77,7 +126,9 @@ export const createEntradaUser = async({ commit }, entradas) => {
 
 //-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
-export const createEntradaProf = async({ commit }, entradas) => {
+
+
+export const createEntradaProf = async ({ commit }, entradas) => {
 
     const {
         id_ips,
@@ -111,7 +162,7 @@ export const createEntradaProf = async({ commit }, entradas) => {
     console.log("ok", entradas);
     const Ruta = `/${bd}.json`;
     console.log(Ruta)
-        //servicio
+    //servicio
     const { data } = await firebase_api.post(Ruta, DataToSave);
     //agregamos el id al array para subirlo al strore
     DataToSave.id = data.name;
@@ -120,7 +171,7 @@ export const createEntradaProf = async({ commit }, entradas) => {
     /*     commit("newDataVitrina", DataToSave); */
 };
 /* ------------------------------------------------------------------------------------------------ */
-export const DeleteItem = async({ commit }, entradas) => {
+export const DeleteItem = async ({ commit }, entradas) => {
     const { id, bd } = entradas;
     const Ruta = `/${bd}/${id}.json`;
     console.log(Ruta);

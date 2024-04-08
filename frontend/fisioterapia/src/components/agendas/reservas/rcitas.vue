@@ -1,42 +1,17 @@
 <template>
-{{ datapaciente }}
+datos del store auth
 <hr>
-{{ existepaciente }}
+{{ user }}
 <hr>
+
+<hr>
+id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
+<hr>
+{{ dataCitas }}
+
 <br>
 <div>
 
-    <div class="container">
-        <table class="table table-sm">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
     <div class="container">
         <h6 class="display-6">Realizar una reserva </h6>
         <h6>Buscar o crear un usuario</h6>
@@ -59,7 +34,7 @@
             </div>
 
             <div class="col-2 text-center">
-                <button class="btn btn-warning btn-sm">+</button>
+                <!--    <button class="btn btn-warning btn-sm">+</button> -->
             </div>
         </div>
     </div>
@@ -80,56 +55,87 @@
                     <tr>
                         <th>Documento</th>
                         <th>Nombre</th>
-                        <th>Telefono</th>
+
+                        <th>Opc</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="pac in datapaciente" :key="pac.id">
                         <td>{{pac.numdoc}}</td>
                         <td>{{pac.name1}} {{pac.apell1}}</td>
-                        <td>{{pac.celular}}</td>
+                        <td> <button class="btn btn-success btn-sm" @click=" BuscarProfesionales">Reservar</button> <button class="btn btn-success btn-sm" @click=" Verhistorial">Historial</button></td>
                     </tr>
                 </tbody>
+
             </table>
         </div>
 
-        <hr>
-        <div class="row">
-            <div class="col-3"><button class="btn btn-success btn-sm" @click=" BuscarProfesionales">Reservar</button></div>
-            <div class="col-3"><button class="btn btn-success btn-sm">Editar</button></div>
-            <div class="col-3"><button class="btn btn-success btn-sm">Hc</button></div>
-            <div class="col-3"><button class="btn btn-success btn-sm">Historial</button></div>
-            <hr>
-        </div>
-        <div class="container">
+        <br>
+
+        <div class="container" v-if="existeprofesionales">
             <div class="row">
 
                 <h6 class="display-6">Seleccione tipo y fecha de consulta </h6>
                 <div class="row">
-                    <div class="col-6 col-md-3"> <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
-                            <option selected>Tipo de Reserva</option>
-                            <option value="cc">Terapia</option>
-                            <option value="ti">Consulta</option>
-                            <option value="ti">Clase</option>
+                    <div class="col-6 col-md-3"> <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="t_reserva" @change="filtarProf()">
+                            <option selected value="">Tipo de Reserva</option>
+                            <option value="terapia">Terapia</option>
+                            <option value="consulta">Consulta</option>
+                            <option value="clase">Clase</option>
                         </select></div>
                     <div class="col-6 col-md-3">
-                        <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
-                            <option selected>Profesional</option>
-                            <option value="cc">Erika</option>
-                            <option value="ti">Ramon</option>
-                            <option value="ti">Juliana</option>
+                        <select class="form-select form-select-sm textarea" id="inputGroupSelect02" v-model="p_reserva" @change="filtrarFechasByProf()">
+                            <option selected value="">Profesional</option>
+                            <option v-for="profactivo in this.profactivos" :key="profactivo.id" :value="profactivo.id">{{profactivo.name1}} {{profactivo.apell1}}</option>
+
                         </select>
                     </div>
                     <div class="col-6 col-md-3">
-                        <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
-                            <option selected>Dia de reserva</option>
-                            <option value="cc">Terapia</option>
-                            <option value="ti">Consulta</option>
-                            <option value="ti">Clase</option>
+                        <select class="form-select form-select-sm textarea" id="inputGroupSelect03" v-model="f_reserva">
+                            <option selected value="">Dia de reserva</option>
+                            <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.id">{{fecha.fecha}} </option>
                         </select>
                     </div>
                     <div class="col-6 col-md-3">
-                        <input class="form-control form-control-sm" type="time" placeholder="hora" aria-label=".form-control-sm example">
+                        <div class="row">
+                            <div class="col-4">
+
+                                <select class="form-select form-select-sm textarea" id="inputGroupSelectHora">
+                                    <option selected>H</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <select class="form-select form-select-sm textarea" id="inputGroupSelectMin">
+                                    <option selected>M</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="40">40</option>
+                                    <option value="50">50</option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <select class="form-select form-select-sm textarea" id="inputGroupSelectJornada">
+                                    <option selected>J</option>
+                                    <option value="am">AM</option>
+                                    <option value="pm">PM</option>
+                                </select>
+                            </div>
+                            <div class="col3"></div>
+                        </div>
+
                     </div>
                     <button type="button " class="btn btn-success btn-sm">Reservar</button>
                 </div>
@@ -139,10 +145,10 @@
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handler</th>
+                                <th scope="col">fecha</th>
+                                <th scope="col">hora</th>
+                                <th scope="col">nombre</th>
+                                <th scope="col">tipo</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
@@ -174,6 +180,8 @@
 </div>
 </template>
 
+<!-- --------------------------------------------------------------------------------------------------- -->
+
 <script>
 import registroPaciente from '@/components/usuarios/registro.vue'
 
@@ -183,34 +191,42 @@ import {
 } from 'vuex';
 
 export default {
+
     data: () => ({
         //Auth
         //parametros de consulta de paciente
         B_tipodoc: "",
         B_numdoc: "",
+        id: "",
+        //formulario de reservas---
+        t_reserva: "",
+        p_reserva: "",
+        f_reserva: "",
+        profactivos: "",
 
+        //-----------------------------
         //  list  -  parametro - valor
-        paramsPaciente: "",
-
+        //parametros de consulta pacientes
+        paramsPaciente: [],
         //parametros de consulta profesionales
-        paramsProfesionales: [{
-            bd: "profesionales",
-            parametro: "id_ips",
-            valor: 1,
-            rta: "setStateProfesionales"
-
-        }]
+        paramsProfesionales: [],
+        //parametros para buscar citas por fechas
+        paramsFechasCitas: [],
+        //--------------agendamiento
+        fechasActivas: "",
 
     }),
+
+    /* --------------------------------------------------------------------------- */
 
     components: {
         registroPaciente,
     },
 
-    methods: {
-        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales',]),
+    /* ------------------------------------------------------------------------ */
 
-        /* ------------------------------------------------------------------------ */
+    methods: {
+        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', ]),
 
         Buscarpaciente() {
             const idpaciente = this.B_tipodoc + this.B_numdoc;
@@ -221,30 +237,71 @@ export default {
                 rta: "setStatePaciente"
             }]
             this.getDatabyParam(this.paramsPaciente);
-          
         },
 
-        BuscarProfesionales(){
-         
+        BuscarProfesionales() {
+            this.paramsProfesionales = [{
+                bd: "profesionales",
+                parametro: "id_ips",
+                valor: this.id_ips,
+                rta: "setStateProfesionales"
+            }]
             this.getDatabyParam(this.paramsProfesionales);
+            this.filtarFechas()
+        },
+
+        filtarProf() {
+            console.log(this.t_reserva)
+            this.profactivos = this.dataprofesionales.filter(profesional => profesional.tipo == this.t_reserva)
+            console.log(this.profactivos)
+
+        },
+
+        filtarFechas() {
+            const fecha = this.fechahoy()
+
+            this.paramsFechasCitas = [{
+                bd: "agendas",
+                parametro: "fecha",
+                valor: fecha,
+                rta: "setStateCitas"
+            }]
+            this.getDataByRangoSuperior(this.paramsFechasCitas);
+
+        },
+
+        fechahoy() {
+            const date = new Date();
+            const options = {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            };
+            const formatter = new Intl.DateTimeFormat('es-ES', options);
+            const formattedDate = formatter.format(date);
+            return formattedDate
+        },
+
+        filtrarFechasByProf() {
+            this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
+
+            console.log("Fechas Activas:", this.fechasActivas[0]);
         }
-         
-        
 
     },
-    /* ------------------------------------------------------------------------ */
+
+    /* 
+    ------------------------------------------------------------------------ */
     computed: {
 
-        ...mapState('Agendas', ['datapaciente', 'existepaciente']),
-
-        /*        ...mapState({
-                   listadoProfesionales: sate => state.agendas.profesionales.filter(p = p.tipo == "clase")
-               }) */
+        ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas']),
+        ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
 
     },
+
     /* ------------------------------------------------------------------------ */
+
     created() {
-        /*  this.loadProfesionales() */
 
     },
 
