@@ -45,16 +45,16 @@ export const getDatabyParam = async ({ commit }, parametros) => {
 
 export const getDataByRangoSuperior = async ({ commit }, parametros) => {
 
-    const [{ bd, parametro, valor , rta}] = parametros;
-    console.log(bd, parametro, valor, rta );
+    const [{ bd, parametro, valor, rta }] = parametros;
+    console.log(bd, parametro, valor, rta);
 
     const response = await firebase_api.get(`/${bd}.json`,
         {
             params: {
                 orderBy: `"${parametro}"`,
                 startAt: `"${valor}"`,
-        
-              
+
+
             },
         })
     const { data } = response;
@@ -71,12 +71,51 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
         commit(`${rta}`, datasalida);
     } else {
         console.log("sin datos en la consulta")
-    
+
     }
 
 };
 
 
+
+
+
+
+
+export const createEntradaCitaNueva = async ({ commit }, entradas) => {
+
+    const {
+        estado,
+        hora,
+        id_agenda,
+        tipo,
+        bd
+
+    } = entradas;
+
+
+    
+    const DataToSave = {
+
+        estado,
+        hora,
+        id_agenda,
+        tipo
+     
+
+    };
+    console.log("ok", entradas);
+
+    const Ruta = `/${bd}.json`;
+    console.log(Ruta)
+    //servicio
+    const { data } = await firebase_api.post(Ruta, DataToSave);
+    //agregamos el id al array para subirlo al strore
+    DataToSave.id = data.name;
+    //se llama a la mutacion y s epasa el array como
+    console.log(DataToSave);
+    /*     commit("newDataVitrina", DataToSave); */
+}
 
 
 

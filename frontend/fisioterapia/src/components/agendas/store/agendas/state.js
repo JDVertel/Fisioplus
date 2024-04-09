@@ -11,6 +11,7 @@ export default()=>({
     existeusuarios:"",
     /*  */
     dataCitas:[],
-    citasdisponibles:""
+    citasdisponibles:"",
     /*  */
+    dataAgendas:[]
 })

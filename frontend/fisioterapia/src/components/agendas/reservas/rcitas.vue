@@ -90,18 +90,18 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
                         </select>
                     </div>
-                    <div class="col-6 col-md-3">
-                        <select class="form-select form-select-sm textarea" id="inputGroupSelect03" v-model="f_reserva">
+                    <div class="col-5 col-md-3">
+                        <select class="form-select form-select-sm textarea" id="inputGroupSelect03" v-model="f_reserva" @change=" VerListadoCitas()">
                             <option selected value="">Dia de reserva</option>
                             <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.id">{{fecha.fecha}} </option>
                         </select>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col-7 col-md-3">
                         <div class="row">
                             <div class="col-4">
 
-                                <select class="form-select form-select-sm textarea" id="inputGroupSelectHora">
-                                    <option selected>H</option>
+                                <select class="form-select form-select-sm textarea" v-model="cita_hora" id="inputGroupSelectHora">
+                                    <option selected>Hora</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -117,8 +117,9 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                                 </select>
                             </div>
                             <div class="col-4">
-                                <select class="form-select form-select-sm textarea" id="inputGroupSelectMin">
-                                    <option selected>M</option>
+                                <select class="form-select form-select-sm textarea" v-model="cita_min" id="inputGroupSelectMin">
+                                    <option selected>Min</option>
+                                    <option value="00">00</option>
                                     <option value="10">10</option>
                                     <option value="20">20</option>
                                     <option value="30">30</option>
@@ -127,8 +128,8 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                                 </select>
                             </div>
                             <div class="col-4">
-                                <select class="form-select form-select-sm textarea" id="inputGroupSelectJornada">
-                                    <option selected>J</option>
+                                <select class="form-select form-select-sm textarea" v-model="cita_jorn" id="inputGroupSelectJornada">
+                                    <option selected>Jornada</option>
                                     <option value="am">AM</option>
                                     <option value="pm">PM</option>
                                 </select>
@@ -137,7 +138,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                         </div>
 
                     </div>
-                    <button type="button " class="btn btn-success btn-sm">Reservar</button>
+                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()">Reservar</button>
                 </div>
                 <br>
                 <div class="container">
@@ -214,6 +215,15 @@ export default {
         paramsFechasCitas: [],
         //--------------agendamiento
         fechasActivas: "",
+        //----------------parametros para guardar citas
+        params_GuardarFechaCita: [],
+        //---variables de fecha
+        cita_hora: "",
+        cita_min: "",
+        cita_jorn: "",
+        listahora: "",
+        //---parametros consulta de tabla de citas del dia seleccionado
+        params_citasDia: []
 
     }),
 
@@ -226,7 +236,7 @@ export default {
     /* ------------------------------------------------------------------------ */
 
     methods: {
-        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', ]),
+        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha']),
 
         Buscarpaciente() {
             const idpaciente = this.B_tipodoc + this.B_numdoc;
@@ -286,8 +296,42 @@ export default {
             this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
 
             console.log("Fechas Activas:", this.fechasActivas[0]);
-        }
+        },
 
+        GuardarCita() {
+
+            if (this.cita_jorn == "pm") {
+                const intValue = parseInt(this.cita_hora);
+                const jor = 12
+                this.cita_hora_ok = intValue + jor
+                this.listahora = this.cita_hora_ok + ":" + this.cita_min
+            } else {
+                this.listahora = this.cita_hora + ":" + this.cita_min
+            }
+
+            this.params_GuardarFechaCita = [{
+                estado: true,
+                hora: this.listahora,
+                id_agenda: this.f_reserva,
+                tipo: this.t_reserva,
+                bd: "citas"
+
+            }]
+
+            this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
+
+        },
+
+        VerListadoCitas() {
+           this.params_citasDia= [{
+                bd: "citas",
+                parametro: "id_agenda",
+                valor: this.f_reserva,
+                rta: "setStateAgendas"
+
+            }]
+            this.getDatabyParam(this.params_citasDia)
+        }
     },
 
     /* 

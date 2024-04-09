@@ -26,6 +26,11 @@ export const setStateCitas=(state , citas)=>{
 
 }
 
+export const setSateAgendas=(state, data)=>{
+    //dataAgendas
+    state.dataAgendas=""
+    state.dataAgendas=[...state.dataAgendas, ...data];
+}
 /* ------PROFESIONALES */
 
 export const setStateProfesionales=(state, entryDataProfesionales)=>{
