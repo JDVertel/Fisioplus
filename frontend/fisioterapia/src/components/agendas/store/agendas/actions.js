@@ -8,10 +8,10 @@ export const getDatabyParam = async ({ commit }, parametros) => {
     /*    console.log(parametros); */
     //  bd  -  parametro - valor- rta
     const [{ bd, parametro, valor, rta }] = parametros;
-    console.log(bd);
-    console.log(parametro);
-    console.log(valor);
-    console.log(rta);
+    /*     console.log(bd);
+        console.log(parametro);
+        console.log(valor);
+        console.log(rta); */
 
     const response = await firebase_api.get(`/${bd}.json`, {
         params: {
@@ -34,11 +34,48 @@ export const getDatabyParam = async ({ commit }, parametros) => {
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
     } else {
+        console.log("sin datos en la consulta");
+    }
+return datasalida
+};
+
+export const getDataUsersbyParam = async ({ commit }, parametros) => {
+    /*    console.log(parametros); */
+    //  bd  -  parametro - valor- rta
+    const [{ bd, parametro, valor, rta }] = parametros;
+    console.log(bd);
+    console.log(parametro);
+    console.log(valor);
+    console.log(rta);
+
+    const response = await firebase_api.get(`/${bd}.json`, {
+        params: {
+            orderBy: `"${parametro}"`,
+            equalTo: `"${valor}"`,
+        },
+    });
+    const { data } = response;
+    const datasalida = [];
+    for (let id of Object.keys(data)) {
+        datasalida.push({
+            id,
+            ...data[id],
+        });
+    }
+    console.log(datasalida)
+    if (datasalida.length != 0) {
+        commit(`${rta}`, datasalida);
+    } else {
         console.log("sin datos en la consulta")
         const datasalida = 2;
         commit("SetStatenoregistrado", datasalida);
     }
+
 };
+
+
+
+
 
 /* ============================================= */
 /* FUNCION QUE CONSULTA  REGISTROS A PARTIR DE UNA FECHA INICIAL (DE HOY EN ADELANTE) */
@@ -85,23 +122,27 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
 export const createEntradaCitaNueva = async ({ commit }, entradas) => {
 
     const {
+        paciente,
+        telpaciente,
         estado,
         hora,
         id_agenda,
         tipo,
-        bd
+        bd,
+        rta
 
     } = entradas;
 
 
-    
-    const DataToSave = {
 
+    const DataToSave = {
+        paciente,
+        telpaciente,
         estado,
         hora,
         id_agenda,
         tipo
-     
+
 
     };
     console.log("ok", entradas);
@@ -114,6 +155,9 @@ export const createEntradaCitaNueva = async ({ commit }, entradas) => {
     DataToSave.id = data.name;
     //se llama a la mutacion y s epasa el array como
     console.log(DataToSave);
+  /*   commit("UpdateStateCita", datasalida); */
+
+
     /*     commit("newDataVitrina", DataToSave); */
 }
 

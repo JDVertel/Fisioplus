@@ -8,8 +8,10 @@ datos del store auth
 id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 <hr>
 {{ dataCitas }}
+<hr>
+{{ datapaciente }}
+<hr>
 
-<br>
 <div>
 
     <div class="container">
@@ -63,7 +65,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                     <tr v-for="pac in datapaciente" :key="pac.id">
                         <td>{{pac.numdoc}}</td>
                         <td>{{pac.name1}} {{pac.apell1}}</td>
-                        <td> <button class="btn btn-success btn-sm" @click=" BuscarProfesionales">Reservar</button> <button class="btn btn-success btn-sm" @click=" Verhistorial">Historial</button></td>
+                        <td> <button class="btn btn-success btn-sm" @click=" BuscarProfesionales">Reservar </button> <button class="btn btn-success btn-sm" @click=" Verhistorial">Historial</button></td>
                     </tr>
                 </tbody>
 
@@ -87,7 +89,6 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                         <select class="form-select form-select-sm textarea" id="inputGroupSelect02" v-model="p_reserva" @change="filtrarFechasByProf()">
                             <option selected value="">Profesional</option>
                             <option v-for="profactivo in this.profactivos" :key="profactivo.id" :value="profactivo.id">{{profactivo.name1}} {{profactivo.apell1}}</option>
-
                         </select>
                     </div>
                     <div class="col-5 col-md-3">
@@ -138,7 +139,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                         </div>
 
                     </div>
-                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()">Reservar</button>
+                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()">Guardar Reservar</button>
                 </div>
                 <br>
                 <div class="container">
@@ -146,30 +147,23 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">fecha</th>
+
                                 <th scope="col">hora</th>
                                 <th scope="col">nombre</th>
+                                <th scope="col">celular</th>
                                 <th scope="col">tipo</th>
+                                <th scope="col">Opc</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                            <tr v-for="cita in this.ListaCitasDia" :key="cita.id">
+                                <td>{{cita.hora}}</td>
+                                <th>{{cita.paciente}}</th>
+                                <td>{{cita.telpaciente}}</td>
+                                <td>{{cita.tipo}}</td>
+                                <td><button>x</button></td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -188,6 +182,7 @@ import registroPaciente from '@/components/usuarios/registro.vue'
 
 import {
     mapActions,
+    mapGetters,
     mapState,
 } from 'vuex';
 
@@ -223,7 +218,8 @@ export default {
         cita_jorn: "",
         listahora: "",
         //---parametros consulta de tabla de citas del dia seleccionado
-        params_citasDia: []
+        params_citasDia: [],
+        ListaCitasDia: []
 
     }),
 
@@ -236,8 +232,8 @@ export default {
     /* ------------------------------------------------------------------------ */
 
     methods: {
-        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha']),
-
+        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam']),
+        /*  */
         Buscarpaciente() {
             const idpaciente = this.B_tipodoc + this.B_numdoc;
             this.paramsPaciente = [{
@@ -246,9 +242,10 @@ export default {
                 valor: idpaciente,
                 rta: "setStatePaciente"
             }]
-            this.getDatabyParam(this.paramsPaciente);
+            this.getDataUsersbyParam(this.paramsPaciente);
         },
 
+        /*  */
         BuscarProfesionales() {
             this.paramsProfesionales = [{
                 bd: "profesionales",
@@ -256,17 +253,17 @@ export default {
                 valor: this.id_ips,
                 rta: "setStateProfesionales"
             }]
-            this.getDatabyParam(this.paramsProfesionales);
+            this.getDataUsersbyParam(this.paramsProfesionales);
             this.filtarFechas()
         },
-
+        /*  */
         filtarProf() {
             console.log(this.t_reserva)
             this.profactivos = this.dataprofesionales.filter(profesional => profesional.tipo == this.t_reserva)
             console.log(this.profactivos)
 
         },
-
+        /*  */
         filtarFechas() {
             const fecha = this.fechahoy()
 
@@ -279,7 +276,7 @@ export default {
             this.getDataByRangoSuperior(this.paramsFechasCitas);
 
         },
-
+        /*  */
         fechahoy() {
             const date = new Date();
             const options = {
@@ -291,14 +288,15 @@ export default {
             const formattedDate = formatter.format(date);
             return formattedDate
         },
-
+        /*  */
         filtrarFechasByProf() {
             this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
 
             console.log("Fechas Activas:", this.fechasActivas[0]);
         },
+        /*  */
 
-        GuardarCita() {
+     async   GuardarCita() {
 
             if (this.cita_jorn == "pm") {
                 const intValue = parseInt(this.cita_hora);
@@ -308,29 +306,30 @@ export default {
             } else {
                 this.listahora = this.cita_hora + ":" + this.cita_min
             }
-
             this.params_GuardarFechaCita = [{
+                paciente: this.datapaciente[0].name1,
+                telpaciente: this.datapaciente[0].celular,
                 estado: true,
                 hora: this.listahora,
                 id_agenda: this.f_reserva,
                 tipo: this.t_reserva,
-                bd: "citas"
-
+                bd: "citas",
+                /*        rta: "UpdateStateCitas" */
             }]
+          await   this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
 
-            this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
-
+         this.VerListadoCitas();
         },
+        /*  */
 
-        VerListadoCitas() {
-           this.params_citasDia= [{
+        async VerListadoCitas() {
+            this.params_citasDia = [{
                 bd: "citas",
                 parametro: "id_agenda",
                 valor: this.f_reserva,
                 rta: "setStateAgendas"
-
             }]
-            this.getDatabyParam(this.params_citasDia)
+            this.ListaCitasDia = await this.getDatabyParam(this.params_citasDia)
         }
     },
 
@@ -338,16 +337,13 @@ export default {
     ------------------------------------------------------------------------ */
     computed: {
 
-        ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas']),
+        ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas']),
         ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
 
     },
 
     /* ------------------------------------------------------------------------ */
 
-    created() {
-
-    },
-
-}
+    created() {}
+};
 </script>

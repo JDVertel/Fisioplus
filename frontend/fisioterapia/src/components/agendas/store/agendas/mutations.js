@@ -26,9 +26,15 @@ export const setStateCitas=(state , citas)=>{
 
 }
 
-export const setSateAgendas=(state, data)=>{
+export const UpdateStateCitas=(state , citas)=>{
+    state.dataCitas="";
+    state.dataCitas=[...state.dataCitas, ...citas];
+
+}
+
+export const setStateAgendas=(state, data)=>{
     //dataAgendas
-    state.dataAgendas=""
+    state.dataAgendas="";
     state.dataAgendas=[...state.dataAgendas, ...data];
 }
 /* ------PROFESIONALES */
@@ -45,3 +51,12 @@ export const setStateUsuarios=(state, entryDataUsuarios)=>{
     state.datausuarios=[...state.datausuarios, ...entryDataUsuarios];
     state.existeusuarios = entryDataUsuarios.length;
 }
+
+/* -------------------------------------------------------- */
+export const updateDataVitrina = (state, entradas) => {
+    const idx = state.entry.map((e) => e.id).indexOf(entradas.id);
+    //console.log("imprimo", { idx });
+    state.entry[idx] = entradas;
+  };
+
+  /* -------------------------------------------------------- */
