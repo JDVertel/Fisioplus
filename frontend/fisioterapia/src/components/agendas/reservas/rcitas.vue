@@ -76,70 +76,39 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
         <div class="container" v-if="existeprofesionales">
             <div class="row">
+                <div class="container">
 
-                <h6 class="display-6">Seleccione tipo y fecha de consulta </h6>
-                <div class="row">
-                    <div class="col-6 col-md-3"> <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="t_reserva" @change="filtarProf()">
-                            <option selected value="">Tipo de Reserva</option>
-                            <option value="terapia">Terapia</option>
-                            <option value="consulta">Consulta</option>
-                            <option value="clase">Clase</option>
-                        </select></div>
-                    <div class="col-6 col-md-3">
-                        <select class="form-select form-select-sm textarea" id="inputGroupSelect02" v-model="p_reserva" @change="filtrarFechasByProf()">
-                            <option selected value="">Profesional</option>
-                            <option v-for="profactivo in this.profactivos" :key="profactivo.id" :value="profactivo.id">{{profactivo.name1}} {{profactivo.apell1}}</option>
-                        </select>
-                    </div>
-                    <div class="col-5 col-md-3">
-                        <select class="form-select form-select-sm textarea" id="inputGroupSelect03" v-model="f_reserva" @change=" VerListadoCitas()">
-                            <option selected value="">Dia de reserva</option>
-                            <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.id">{{fecha.fecha}} </option>
-                        </select>
-                    </div>
-                    <div class="col-7 col-md-3">
-                        <div class="row">
-                            <div class="col-4">
-
-                                <select class="form-select form-select-sm textarea" v-model="cita_hora" id="inputGroupSelectHora">
-                                    <option selected>Hora</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                </select>
-                            </div>
-                            <div class="col-4">
-                                <select class="form-select form-select-sm textarea" v-model="cita_min" id="inputGroupSelectMin">
-                                    <option selected>Min</option>
-                                    <option value="00">00</option>
-                                    <option value="10">10</option>
-                                    <option value="20">20</option>
-                                    <option value="30">30</option>
-                                    <option value="40">40</option>
-                                    <option value="50">50</option>
-                                </select>
-                            </div>
-                            <div class="col-4">
-                                <select class="form-select form-select-sm textarea" v-model="cita_jorn" id="inputGroupSelectJornada">
-                                    <option selected>Jornada</option>
-                                    <option value="am">AM</option>
-                                    <option value="pm">PM</option>
-                                </select>
-                            </div>
-                            <div class="col3"></div>
+                    <h6 class="display-6">Seleccione tipo y fecha de consulta </h6>
+                    <div class="row">
+                        <div class="col-6 col-md-3"> <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="t_reserva" @change="filtarProf()">
+                                <option selected value="">Tipo de Reserva</option>
+                                <option value="terapia">Terapia</option>
+                                <option value="consulta">Consulta</option>
+                                <option value="clase">Clase</option>
+                            </select></div>
+                        <div class="col-6 col-md-3">
+                            <select class="form-select form-select-sm textarea" id="inputGroupSelect02" v-model="p_reserva" @change="filtrarFechasByProf()">
+                                <option selected value="">Profesional</option>
+                                <option v-for="profactivo in this.profactivos" :key="profactivo.id" :value="profactivo.id">{{profactivo.name1}} {{profactivo.apell1}}</option>
+                            </select>
                         </div>
-
+                        <div class="col-6 col-md-3">
+                            <select class="form-select form-select-sm textarea" id="inputGroupSelect03" v-model="f_reserva" @change=" VerListadoCitas()">
+                                <option selected value="">Dia de reserva</option>
+                                <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.id">{{fecha.fecha}} </option>
+                            </select>
+                        </div>
+                    
+                        <div class="col-6 col-md-3">
+                       <div class="input-group input-group-sm mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Hora:</span>
+                                    <input type="time" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-elsev-model="listahora">
+                                  </div>
+                
+                        </div>
+                        
+                        <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()">Guardar Reservar</button>
                     </div>
-                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()">Guardar Reservar</button>
                 </div>
                 <br>
                 <div class="container">
@@ -156,7 +125,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
-                            <tr v-for="cita in this.ListaCitasDia" :key="cita.id">
+                            <tr v-for="cita in this.sortedListaCitasDia" :key="cita.id">
                                 <td>{{cita.hora}}</td>
                                 <th>{{cita.paciente}}</th>
                                 <td>{{cita.telpaciente}}</td>
@@ -213,13 +182,12 @@ export default {
         //----------------parametros para guardar citas
         params_GuardarFechaCita: [],
         //---variables de fecha
-        cita_hora: "",
-        cita_min: "",
-        cita_jorn: "",
+
         listahora: "",
         //---parametros consulta de tabla de citas del dia seleccionado
         params_citasDia: [],
-        ListaCitasDia: []
+        ListaCitasDia: [],
+        desord_ListaCitasDia: []
 
     }),
 
@@ -296,16 +264,39 @@ export default {
         },
         /*  */
 
-     async   GuardarCita() {
+        /*    updateMinutesIn10() {
+             const [hours, minutes] = this.timeValue.split(':').map(Number);
+             const totalMinutes = hours * 60 + minutes;
+             this.minutesIn10 = Math.floor(totalMinutes / 10) * 10;
+           }, */
 
-            if (this.cita_jorn == "pm") {
-                const intValue = parseInt(this.cita_hora);
-                const jor = 12
-                this.cita_hora_ok = intValue + jor
-                this.listahora = this.cita_hora_ok + ":" + this.cita_min
-            } else {
-                this.listahora = this.cita_hora + ":" + this.cita_min
-            }
+        async GuardarCita() {
+
+            /*                   if (this.cita_jorn == "pm") {
+                                  const intValue = parseInt(this.cita_hora);
+                                  const jor = 12
+                                  this.cita_hora_ok = intValue + jor
+                                  this.listahora = this.cita_hora_ok + ":" + this.cita_min
+                              } else {
+                                  this.listahora = this.cita_hora + ":" + this.cita_min
+                              }
+
+                        const horaString = this.cita_hora + ":" + this.cita_min + " " + this.cita_jorn */
+
+            // Convertir la cadena de texto en un objeto Date
+            /*      let fecha = new Date();
+                 let hora = parseInt(horaString.split(':')[0]);
+                 let ampm = horaString.split(' ')[1];
+                 if (ampm === 'pm') {
+                     hora += 12;
+                 }
+                 fecha.setHours(hora);
+                 fecha.setMinutes(parseInt(horaString.split(':')[1])); 
+
+                 console.log(fecha);*/
+            /* -------------------------------------------------------- */
+
+            /* --------------------------------------------------------------- */
             this.params_GuardarFechaCita = [{
                 paciente: this.datapaciente[0].name1,
                 telpaciente: this.datapaciente[0].celular,
@@ -316,9 +307,9 @@ export default {
                 bd: "citas",
                 /*        rta: "UpdateStateCitas" */
             }]
-          await   this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
+            await this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
 
-         this.VerListadoCitas();
+            this.VerListadoCitas();
         },
         /*  */
 
@@ -329,16 +320,25 @@ export default {
                 valor: this.f_reserva,
                 rta: "setStateAgendas"
             }]
-            this.ListaCitasDia = await this.getDatabyParam(this.params_citasDia)
-        }
-    },
+            this.desord_ListaCitasDia = await this.getDatabyParam(this.params_citasDia);
+            //ordenamos la cita por hora
 
+        },
+
+    },
     /* 
     ------------------------------------------------------------------------ */
     computed: {
 
         ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas']),
         ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
+        sortedListaCitasDia() {
+            return this.desord_ListaCitasDia.sort((a, b) => {
+                const hourA = a.hora.split(':')[0];
+                const hourB = b.hora.split(':')[0];
+                return hourA - hourB;
+            });
+        }
 
     },
 
@@ -347,3 +347,8 @@ export default {
     created() {}
 };
 </script>
+<style>
+centrado{
+    align-content: center;
+}
+</style>
