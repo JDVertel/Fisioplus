@@ -209,7 +209,7 @@
                         </thead>
                         <tbody>
                             <tr v-for="prof in dataprofesionales" :key="prof.id">
-                                <th scope="row">{{prof.tipo}}</th>
+                                <th>{{prof.tipo}}</th>
                                 <td>{{prof.name1}} {{prof.apell1}}</td>
                                 <td>{{prof.cel}}</td>
                                 <td> <button class="btn btn-danger m-1 btn-sm" @click=" eliminaritemP(prof.id)">X</button></td>
@@ -331,6 +331,9 @@ export default {
             })
             this.DeleteItem(this.DataDeleteP[0]);
         },
+
+
+
         eliminaritemU(id) {
             this.DataDeleteU.push({
                 id: id,
