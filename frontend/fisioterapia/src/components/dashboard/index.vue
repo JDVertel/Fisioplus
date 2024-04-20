@@ -210,5 +210,14 @@ export default {
 
     </div>
 
+
+   <h4>stores</h4> <br>
+    <hr>
+    <hr>
+    store de agendas
+    <hr>
+    <hr>
+    store de vitrina
+
 </div>
 </template>

@@ -5,7 +5,7 @@ import firebase_api from "@/api/firebaseApi";
 /*AGENDAS ============================================ */
 /* funcion que trae los registros a partir de un filtrado parametro->valor */
 export const getDatabyParam = async ({ commit }, parametros) => {
-    /*    console.log(parametros); */
+       console.log(parametros);
     //  bd  -  parametro - valor- rta
     const [{ bd, parametro, valor, rta }] = parametros;
     /*     console.log(bd);

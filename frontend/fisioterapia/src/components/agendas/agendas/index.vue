@@ -170,19 +170,19 @@ import {
     mapState,
 } from "vuex";
 
-
 export default {
     /* --------------------------------------------------------------------------------------------------- */
     data: () => ({
         t_reserva: "",
+        profactivos: "",
+        paramsgetAllAgendas :[],
+
     }),
     /* --------------------------------------------------------------------------------------------------- */
-    
-    
-    
+
     methods: {
 
-        ...mapActions('Agendas', ['getDataUsersbyParam']),
+        ...mapActions('Agendas', ['getDataUsersbyParam','getDataByRangoSuperior']),
 
         BuscarProfesionales() {
             this.paramsProfesionales = [{
@@ -202,17 +202,58 @@ export default {
             console.log(this.profactivos)
 
         },
+
+/* ---------------------------------------------------------- */
+
+        filtarFechas() {
+            const fecha = this.fechahoy()
+
+            this.paramsFechasCitas = [{
+                bd: "agendas",
+                parametro: "fecha",
+                valor: fecha,
+                rta: "setStateCitas"
+            }]
+            this.getDataByRangoSuperior(this.paramsFechasCitas);
+
+        },
+        /*  */
+        fechahoy() {
+            const date = new Date();
+            const options = {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            };
+            const formatter = new Intl.DateTimeFormat('es-ES', options);
+            const formattedDate = formatter.format(date);
+            return formattedDate
+        },
+
+        filtrarFechasByProf() {
+            this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
+
+            console.log("Fechas Activas:", this.fechasActivas[0]);
+        },
+/* -------------------------------------------------------------------------------------------------------------------------------------- */
+
     },
+
+
+
+
+
 
     /* --------------------------------------------------------------------------------------------------- */
     computed: {
-        ...mapState('Auth', ['user', 'id_ips', 'rol', 'info',]),
-        ...mapState('Agendas', ['dataprofesionales',]),
+        ...mapState('Auth', ['user', 'id_ips', 'rol', 'info', ]),
+        ...mapState('Agendas', ['dataprofesionales', ]),
 
     },
     /* --------------------------------------------------------------------------------------------------- */
     created() {
-       this.BuscarProfesionales() 
+        this.BuscarProfesionales()
+
     }
     /* --------------------------------------------------------------------------------------------------- */
 }
