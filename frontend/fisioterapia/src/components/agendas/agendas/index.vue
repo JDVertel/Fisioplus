@@ -3,6 +3,8 @@ datos de store
 <hr>
 {{ id_ips }}-----{{ rol }}---{{ info }}
 {{ dataprofesionales }}
+<hr>
+{{ dataCitas }}
 <div class="container">
     <div class="body">
         <br>
@@ -71,7 +73,7 @@ datos de store
                                 </select></div>
 
                             <div class="col-3">
-                                <select class="form-select form-select-sm textarea" id="inputGroupSelect02">
+                                <select class="form-select form-select-sm textarea" id="inputGroupSelect02" v-model="p_reserva" @change="filtrarFechasByProf()">
                                     <option selected value="">Profesional</option>
                                     <option v-for="profactivo in this.profactivos" :key="profactivo.id" :value="profactivo.id">{{profactivo.name1}} {{profactivo.apell1}}</option>
                                 </select>
@@ -79,58 +81,32 @@ datos de store
                             <div class="col-3">
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
-                                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fecha_agenda" @input="formatearfecha()">
                                 </div>
                             </div>
-                            <div class="col-3"><button type="button" class="btn btn-primary btn-sm">Small button</button></div>
+                            <div class="col-3"><button type="button" class="btn btn-primary btn-sm" @click="GuardarAgenda()">+ Adicionar</button></div>
                         </div>
                     </div>
                     <hr>
-
-                    <h3 class="display-6">Listado de agendas</h3>
+                    GuardarAgenda()
+                    <h3 class="display-6">Listado de agendas del profesional </h3>
 
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
+                                <th scope="col">fecha</th>
+                                <th scope="col">clase</th>
+                                <th scope="col">Asignadas</th>
+
                                 <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                                        <button type="button" class="btn btn-danger">X </button>
-                                        <button type="button" class="btn btn-warning">Edit</button>
-                                        <button type="button" class="btn btn-success">Reasig</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>
-                                    <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                                        <button type="button" class="btn btn-danger">X </button>
-                                        <button type="button" class="btn btn-warning">Edit</button>
-                                        <button type="button" class="btn btn-success">Reasig</button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
+                            <tr v-for="fecha in fechasActivas" :key="fecha.id">
+                                <td>{{fecha.fecha}}</td>
+                                <td>{{fecha.clase}}</td>
+                                <td>ok</td>
 
-                                <td>@twitter</td>
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                                         <button type="button" class="btn btn-danger">X </button>
@@ -139,6 +115,7 @@ datos de store
                                     </div>
                                 </td>
                             </tr>
+
                         </tbody>
                     </table>
 
@@ -169,42 +146,34 @@ import {
     mapGetters,
     mapState,
 } from "vuex";
-
+import moment from 'moment';
 export default {
     /* --------------------------------------------------------------------------------------------------- */
     data: () => ({
         t_reserva: "",
         profactivos: "",
-        paramsgetAllAgendas :[],
+        paramsgetAllAgendas: [],
+        p_reserva: "",
+        fechasActivas: "",
+        fecha_agenda: "",
+        params_GuardarFechaAgenda: [],
+ 
+        
 
     }),
     /* --------------------------------------------------------------------------------------------------- */
 
     methods: {
 
-        ...mapActions('Agendas', ['getDataUsersbyParam','getDataByRangoSuperior']),
-
-        BuscarProfesionales() {
-            this.paramsProfesionales = [{
-                bd: "profesionales",
-                parametro: "id_ips",
-                valor: this.id_ips,
-                rta: "setStateProfesionales"
-            }]
-            this.getDataUsersbyParam(this.paramsProfesionales);
-
-        },
+        ...mapActions('Agendas', ['getDataUsersbyParam', 'getDataByRangoSuperior', 'CreateAgendaNueva']),
 
         filtarProf() {
-
             console.log(this.t_reserva)
             this.profactivos = this.dataprofesionales.filter(profesional => profesional.tipo == this.t_reserva)
             console.log(this.profactivos)
 
         },
-
-/* ---------------------------------------------------------- */
-
+        /* ---------------------------------------------------------- */
         filtarFechas() {
             const fecha = this.fechahoy()
 
@@ -231,28 +200,56 @@ export default {
         },
 
         filtrarFechasByProf() {
-            this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
+            console.log("dataCitas >" + this.dataCitas),
+                console.log("p reserva >" + this.p_reserva),
+                console.log("t_reserva >" + this.t_reserva),
+                this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
 
             console.log("Fechas Activas:", this.fechasActivas[0]);
         },
-/* -------------------------------------------------------------------------------------------------------------------------------------- */
+        /* -------------------------------------------------------------------------------------------------------------------------------------- */
+        GuardarAgenda() {
+            this.params_GuardarFechaAgenda = [{
+                id_profesional: this.p_reserva,
+                fecha: this.formattedDate,
+                Id_ips: this.id_ips,
+                clase: this.t_reserva,
+                bd: "agendas",
+                /*        rta: "UpdateStateCitas" */
+            }]
+            this.CreateAgendaNueva(this.params_GuardarFechaAgenda[0]);
+        },
+
+        /*  */
+        async VerListadoAgendas() {
+            this.params_citasDia = [{
+                bd: "citas",
+                parametro: "id_agenda",
+                valor: this.f_reserva,
+                rta: "setStateAgendas"
+            }]
+            this.desord_ListaCitasDia = await this.getDatabyParam(this.params_citasDia[0]);
+            //ordenamos la cita por hora
+        },
+
+        formatearfecha() {
+            console.log(this.fecha_agenda)
+        }
 
     },
-
-
-
-
-
 
     /* --------------------------------------------------------------------------------------------------- */
     computed: {
         ...mapState('Auth', ['user', 'id_ips', 'rol', 'info', ]),
-        ...mapState('Agendas', ['dataprofesionales', ]),
+        ...mapState('Agendas', ['dataprofesionales', 'dataCitas']),
+
+        formattedDate() {
+            return moment(this.fecha_agenda).format('DD/MM/YYYY');
+        }
 
     },
     /* --------------------------------------------------------------------------------------------------- */
     created() {
-        this.BuscarProfesionales()
 
     }
     /* --------------------------------------------------------------------------------------------------- */

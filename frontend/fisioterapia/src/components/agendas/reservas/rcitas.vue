@@ -1,5 +1,5 @@
 <template>
-<!-- datos del store auth
+datos del store auth
 <hr>
 {{ user }}
 <hr>
@@ -10,7 +10,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 {{ dataCitas }}
 <hr>
 {{ datapaciente }}
-<hr> -->
+<hr>
 
 <div class="container">
     <h6 class="display-6">Realizar una reserva </h6>
@@ -63,7 +63,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                 <tr v-for="pac in datapaciente" :key="pac.id">
                     <td>{{pac.numdoc}}</td>
                     <td>{{pac.name1}} {{pac.apell1}}</td>
-                    <td> <button class="btn btn-success btn-sm" @click=" BuscarProfesionales">Reservar </button> <button class="btn btn-success btn-sm" @click=" Verhistorial">Historial</button></td>
+                    <!--   <td> <button class="btn btn-success btn-sm" @click=" BuscarProfesionales">Reservar </button> </td> -->
                 </tr>
             </tbody>
 
@@ -214,13 +214,13 @@ export default {
 
         /*  */
         BuscarProfesionales() {
-            this.paramsProfesionales = [{
-                bd: "profesionales",
-                parametro: "id_ips",
-                valor: this.id_ips,
-                rta: "setStateProfesionales"
-            }]
-            this.getDataUsersbyParam(this.paramsProfesionales);
+            /*       this.paramsProfesionales = [{
+                      bd: "profesionales",
+                      parametro: "id_ips",
+                      valor: this.id_ips,
+                      rta: "setStateProfesionales"
+                  }]
+                  this.getDataUsersbyParam(this.paramsProfesionales); */
             this.filtarFechas()
         },
         /*  */
@@ -231,30 +231,29 @@ export default {
 
         },
         /*  */
-        filtarFechas() {
-            const fecha = this.fechahoy()
+        /*   filtarFechas() {
+              const fecha = this.fechahoy()
+              this.paramsFechasCitas = [{
+                  bd: "agendas",
+                  parametro: "fecha",
+                  valor: fecha,
+                  rta: "setStateCitas"
+              }]
+              this.getDataByRangoSuperior(this.paramsFechasCitas);
 
-            this.paramsFechasCitas = [{
-                bd: "agendas",
-                parametro: "fecha",
-                valor: fecha,
-                rta: "setStateCitas"
-            }]
-            this.getDataByRangoSuperior(this.paramsFechasCitas);
+          },
 
-        },
-        /*  */
-        fechahoy() {
-            const date = new Date();
-            const options = {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit'
-            };
-            const formatter = new Intl.DateTimeFormat('es-ES', options);
-            const formattedDate = formatter.format(date);
-            return formattedDate
-        },
+          fechahoy() {
+              const date = new Date();
+              const options = {
+                  year: 'numeric',
+                  month: '2-digit',
+                  day: '2-digit'
+              };
+              const formatter = new Intl.DateTimeFormat('es-ES', options);
+              const formattedDate = formatter.format(date);
+              return formattedDate
+          }, */
         /*  */
         filtrarFechasByProf() {
             this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
@@ -301,28 +300,30 @@ export default {
             await this.DeleteItem(this.paramsDelCitas[0]);
             this.VerListadoCitas();
         },
-
     },
-    /* 
-    ------------------------------------------------------------------------ */
-    computed: {
+        /* 
+        ------------------------------------------------------------------------ */
+        computed: {
 
-        ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas']),
-        ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
-        sortedListaCitasDia() {
-            return this.desord_ListaCitasDia.sort((a, b) => {
-                const hourA = a.hora.split(':')[0];
-                const hourB = b.hora.split(':')[0];
-                return hourA - hourB;
-            });
+            ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas']),
+            ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
+            sortedListaCitasDia() {
+                return this.desord_ListaCitasDia.sort((a, b) => {
+                    const hourA = a.hora.split(':')[0];
+                    const hourB = b.hora.split(':')[0];
+                    return hourA - hourB;
+                });
+            }
+
+        },
+
+        /* ------------------------------------------------------------------------ */
+
+        created() {
+
         }
-
-    },
-
-    /* ------------------------------------------------------------------------ */
-
-    created() {}
-};
+  
+}
 </script>
 
 <style>

@@ -1,47 +1,7 @@
-<script>
-import {
-    mapGetters,
-    mapState,
-    mapActions
-} from 'vuex';
-/* import {
-    userAuth
-} from "./store/auth/getters"; */
-
-export default {
-    data: () => ({
-
-        id_ips: "",
-        id_user: "dato pasado port routherlink",
-
-        rol: "",
-        info: "",
-    }),
-
-    computed: {
-        ...mapState('vitrina', ['cant']),
-        ...mapState('Auth', ['user', 'auth']),
-    },
-
-    methods: {
-        ...mapActions('vitrina', ['load_Vitrina']),
-    },
-
-    created() {
-        this.load_Vitrina()
-    }
-
-}
-</script>
-
 <template>
 <div class="container centrado mt-5">
     <h6 class="display-5">Menu FisioterapiApp</h6>
 </div>
-<hr>
-{{user}}
-<hr>
-{{ auth }}
 <hr>
 <div class="centrado">
     <router-link to="/">Home</router-link>
@@ -209,15 +169,101 @@ export default {
         </div>
 
     </div>
+    <div class="container">
+        <h4>stores</h4> <br>
+        <hr>
+        <hr>
+        store de auth :>
+        {{ auth }} {{ id_ips }} {{ id_user }} {{ rol }} {{ info }}
+        <hr>
+        store de vitrina
+        {{ cant }}
+        <hr>
+        store de agendas
+        <hr>
+        <strong> profesionales:</strong>
+        {{ dataprofesionales }}
+        <br>
+    <strong>agendas: </strong>   {{ dataCitas }}
 
-
-   <h4>stores</h4> <br>
-    <hr>
-    <hr>
-    store de agendas
-    <hr>
-    <hr>
-    store de vitrina
+    </div>
 
 </div>
+<br>
 </template>
+
+<script>
+import {
+    mapGetters,
+    mapState,
+    mapActions
+} from 'vuex';
+/* import {
+    userAuth
+} from "./store/auth/getters"; */
+
+export default {
+    data: () => ({
+
+    }),
+
+    computed: {
+        ...mapState('vitrina', ['cant']),
+        ...mapState('Auth', ['auth', 'id_ips', 'id_user', 'rol', 'info']),
+        ...mapState('Agendas',['dataprofesionales','dataCitas'])
+    },
+
+    methods: {
+        ...mapActions('vitrina', ['load_Vitrina']),
+        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem']),
+
+        BuscarProfesionales() {
+            this.paramsProfesionales = [{
+                bd: "profesionales",
+                parametro: "id_ips",
+                valor: this.id_ips,
+                rta: "setStateProfesionales"
+            }]
+            this.getDataUsersbyParam(this.paramsProfesionales);
+
+        },
+
+
+        filtarFechas() {
+            const fecha = this.fechahoy()
+            this.paramsFechasCitas = [{
+                bd: "agendas",
+                parametro: "fecha",
+                valor: fecha,
+                rta: "setStateCitas"
+            }]
+            this.getDataByRangoSuperior(this.paramsFechasCitas);
+
+        },
+
+        fechahoy() {
+            const date = new Date();
+            const options = {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            };
+            const formatter = new Intl.DateTimeFormat('es-ES', options);
+            const formattedDate = formatter.format(date);
+            return formattedDate
+        },
+
+
+
+
+
+    },
+
+    created() {
+        this.load_Vitrina()
+        this.BuscarProfesionales()
+        this.filtarFechas()
+    }
+
+}
+</script>

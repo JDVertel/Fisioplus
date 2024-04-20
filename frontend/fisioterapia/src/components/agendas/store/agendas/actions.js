@@ -5,7 +5,7 @@ import firebase_api from "@/api/firebaseApi";
 /*AGENDAS ============================================ */
 /* funcion que trae los registros a partir de un filtrado parametro->valor */
 export const getDatabyParam = async ({ commit }, parametros) => {
-       console.log(parametros);
+    console.log(parametros);
     //  bd  -  parametro - valor- rta
     const [{ bd, parametro, valor, rta }] = parametros;
     /*     console.log(bd);
@@ -36,7 +36,7 @@ export const getDatabyParam = async ({ commit }, parametros) => {
     } else {
         console.log("sin datos en la consulta");
     }
-return datasalida
+    return datasalida
 };
 
 
@@ -115,9 +115,41 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
 
 };
 
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
 
+export const CreateAgendaNueva= async ({ commit }, entradas) => {
 
+    const {
+        id_profesional,
+        fecha,
+        id_ips,
+        clase,
+        bd,
+    } = entradas;
+
+    const D_Save = {
+        id_profesional,
+        fecha,
+        id_ips,
+        clase,
+        };
+
+    console.log("ok entrada guardar datos", entradas);
+    
+    const Ruta = `/${bd}.json`;
+    console.log(Ruta)
+    //servicio
+    const { data } = await firebase_api.post(Ruta,D_Save);
+    //agregamos el id al array para subirlo al strore
+    D_Save.id = data.name;
+    //se llama a la mutacion y s epasa el array como
+    console.log(D_Save);
+
+
+}
+
+/* ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
 
 
@@ -131,8 +163,6 @@ export const createEntradaCitaNueva = async ({ commit }, entradas) => {
         id_agenda,
         tipo,
         bd,
-        rta
-
     } = entradas;
 
 
@@ -157,19 +187,11 @@ export const createEntradaCitaNueva = async ({ commit }, entradas) => {
     DataToSave.id = data.name;
     //se llama a la mutacion y s epasa el array como
     console.log(DataToSave);
-  /*   commit("UpdateStateCita", datasalida); */
+    /*   commit("UpdateStateCita", datasalida); */
 
 
     /*     commit("newDataVitrina", DataToSave); */
 }
-
-
-
-
-
-
-
-
 
 
 
