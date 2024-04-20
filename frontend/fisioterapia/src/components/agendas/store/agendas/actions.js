@@ -39,6 +39,8 @@ export const getDatabyParam = async ({ commit }, parametros) => {
 return datasalida
 };
 
+
+/* ------------------------------------------------------------------------------------------------ */
 export const getDataUsersbyParam = async ({ commit }, parametros) => {
     /*    console.log(parametros); */
     //  bd  -  parametro - valor- rta
@@ -262,3 +264,7 @@ export const DeleteItem = async ({ commit }, entradas) => {
     const { data } = await firebase_api.delete(Ruta);
     /*   commit("DeleteItemVitrina", entradas); */
 };
+
+
+/* =========================AAAAGENDAS==== */
+

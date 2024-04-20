@@ -1,15 +1,9 @@
 <template>
+datos de store
+<hr>
+{{ id_ips }}-----{{ rol }}---{{ info }}
+{{ dataprofesionales }}
 <div class="container">
-    <!--             <div class="container">
-                <div class="row">
-                    <div class="col-2"><button class="btn btn-success">-</button></div>
-                    <div class="col-8">
-                        <h6 class="centrado titulo">Agendas del dia</h6>
-                    </div>
-                    <div class="col-2"><button class="btn btn-success">+</button></div>
-                </div>
-            </div> -->
-
     <div class="body">
         <br>
         <h6>Detalles</h6>
@@ -68,18 +62,20 @@
                     <h1 class="display-6">Adicionar un Nueva agenda</h1>
                     <div class="container">
                         <div class="row">
-                            <div class="col-3"><select class="form-select form-select-sm" aria-label="Small select example">
-                                    <option selected>Tipo de cita</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+
+                            <div class="col-3"><select class="form-select form-select-sm" aria-label="Small select example" v-model="t_reserva" @change=" filtarProf()">
+                                    <option selected value="">Tipo de Reserva</option>
+                                    <option value="terapia">Terapia</option>
+                                    <option value="consulta">Consulta</option>
+                                    <option value="clase">Clase</option>
                                 </select></div>
-                            <div class="col-3"><select class="form-select form-select-sm" aria-label="Small select example">
-                                    <option selected>Profesional</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select></div>
+
+                            <div class="col-3">
+                                <select class="form-select form-select-sm textarea" id="inputGroupSelect02">
+                                    <option selected value="">Profesional</option>
+                                    <option v-for="profactivo in this.profactivos" :key="profactivo.id" :value="profactivo.id">{{profactivo.name1}} {{profactivo.apell1}}</option>
+                                </select>
+                            </div>
                             <div class="col-3">
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
@@ -165,86 +161,61 @@
 </div>
 </template>
 
+<!-- ======================================================================================== -->
+
 <script>
 import {
-    mapActions
+    mapActions,
+    mapGetters,
+    mapState,
 } from "vuex";
-import {
-    ref
-} from "vue";
+
 
 export default {
-
+    /* --------------------------------------------------------------------------------------------------- */
     data: () => ({
-
+        t_reserva: "",
     }),
+    /* --------------------------------------------------------------------------------------------------- */
+    
+    
+    
     methods: {
-        ...mapActions('Agendas', ['load_Agendas'])
+
+        ...mapActions('Agendas', ['getDataUsersbyParam']),
+
+        BuscarProfesionales() {
+            this.paramsProfesionales = [{
+                bd: "profesionales",
+                parametro: "id_ips",
+                valor: this.id_ips,
+                rta: "setStateProfesionales"
+            }]
+            this.getDataUsersbyParam(this.paramsProfesionales);
+
+        },
+
+        filtarProf() {
+
+            console.log(this.t_reserva)
+            this.profactivos = this.dataprofesionales.filter(profesional => profesional.tipo == this.t_reserva)
+            console.log(this.profactivos)
+
+        },
     },
 
+    /* --------------------------------------------------------------------------------------------------- */
+    computed: {
+        ...mapState('Auth', ['user', 'id_ips', 'rol', 'info',]),
+        ...mapState('Agendas', ['dataprofesionales',]),
+
+    },
+    /* --------------------------------------------------------------------------------------------------- */
     created() {
-        this.load_Agendas()
+       this.BuscarProfesionales() 
     }
-
+    /* --------------------------------------------------------------------------------------------------- */
 }
-
-/* agenda del dia */
-
-/* reservas */
-
-let reserva = ref({
-    tipocita: "",
-    horacita: "",
-    fechacita: "",
-});
-
-/* informes */
-
-let informes = ref({
-    f_inical: "",
-    f_final: "",
-    tipoinf: "Seleccione",
-});
-
-/* agendar dia para citas */
-
-let agendamiento = ref({
-    dia: "",
-    h_inicial: "",
-    h_final: "",
-});
-
-/* tipos de citas */
-let tipocitas = ref([{
-        nombre: "masaje espalda",
-        duracion: "45",
-        costo1: "",
-        costo2: "",
-        color: "",
-    },
-    {
-        nombre: "masaje pierna",
-        duracion: "",
-        costo1: "",
-        costo2: "",
-        color: "",
-    },
-    {
-        nombre: "terapia fisica",
-        duracion: "",
-        costo1: "",
-        costo2: "",
-        color: "",
-    },
-]);
-
-let nuevacita = ref({
-    nombre: "",
-    duracion: "",
-    costo1: "",
-    costo2: "",
-    color: "",
-});
 </script>
 
 <style>
