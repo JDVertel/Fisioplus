@@ -118,7 +118,7 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
 
-export const CreateAgendaNueva= async ({ commit }, entradas) => {
+export const CreateAgendaNueva = async ({ commit }, entradas) => {
 
     const {
         id_profesional,
@@ -133,14 +133,14 @@ export const CreateAgendaNueva= async ({ commit }, entradas) => {
         fecha,
         id_ips,
         clase,
-        };
+    };
 
     console.log("ok entrada guardar datos", entradas);
-    
+
     const Ruta = `/${bd}.json`;
     console.log(Ruta)
     //servicio
-    const { data } = await firebase_api.post(Ruta,D_Save);
+    const { data } = await firebase_api.post(Ruta, D_Save);
     //agregamos el id al array para subirlo al strore
     D_Save.id = data.name;
     //se llama a la mutacion y s epasa el array como
@@ -287,6 +287,12 @@ export const DeleteItem = async ({ commit }, entradas) => {
     /*   commit("DeleteItemVitrina", entradas); */
 };
 
+
+export const clearDataStoreA = async ({ commit }) => {
+
+    commit("ClearStoreM");
+
+}
 
 /* =========================AAAAGENDAS==== */
 

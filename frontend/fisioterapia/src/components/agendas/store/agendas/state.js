@@ -13,5 +13,6 @@ export default()=>({
     dataCitas:[],
     citasdisponibles:"",
     /*  */
-    dataAgendas:[]
+    dataAgendas:[],
+    agendasdisponibles:[]
 })

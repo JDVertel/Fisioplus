@@ -20,6 +20,8 @@ export const SetStatenoregistrado=(state, noreg)=>{
 }
 
 
+/* ++++++++++++++AGENDAS++++++++++++ */
+
 export const setStateCitas=(state , citas)=>{
     state.dataCitas="";
     state.dataCitas=[...state.dataCitas, ...citas];
@@ -37,13 +39,31 @@ export const setStateAgendas=(state, data)=>{
     state.dataAgendas="";
     state.dataAgendas=[...state.dataAgendas, ...data];
 }
-/* ------PROFESIONALES */
+
+export const ClearStoreM=(state)=>{
+state.dataCitas=[];
+state.citasdisponibles="";
+state.dataAgendas=[];
+state.datapaciente=[];
+state.existepaciente="";
+state.dataprofesionales=[];
+state.existeprofesionales="";
+
+
+}
+
+/* ------PROFESIONALES++++++++++ */
 
 export const setStateProfesionales=(state, entryDataProfesionales)=>{
     state. dataprofesionales="";
     state.dataprofesionales=[...state.dataprofesionales, ...entryDataProfesionales];
     state.existeprofesionales = entryDataProfesionales.length;
 }
+
+
+
+
+
 
 /* -----------USUARIOS----- */
 export const setStateUsuarios=(state, entryDataUsuarios)=>{

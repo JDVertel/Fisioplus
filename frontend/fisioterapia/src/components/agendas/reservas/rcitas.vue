@@ -1,5 +1,5 @@
 <template>
-datos del store auth
+<!-- datos del store auth
 <hr>
 {{ user }}
 <hr>
@@ -10,7 +10,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 {{ dataCitas }}
 <hr>
 {{ datapaciente }}
-<hr>
+<hr> -->
 
 <div class="container">
     <h6 class="display-6">Realizar una reserva </h6>
@@ -30,12 +30,12 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
             <input type="number" class="form-control form-control-sm textarea" id="text_numdoc" placeholder="Numero Documento" v-model="B_numdoc" />
         </div>
         <div class="col-6 col-md-3 ">
-            <button class="btn btn-success btn-sm" @click="Buscarpaciente">Buscar</button>
+            <button class="btn btn-success btn-sm" @click="Buscarpaciente" :disabled="BuscarP_isButtonDisabled"  >Buscar</button>
         </div>
 
-        <div class="col-6  col-md-3 text-center">
+        <!--    <div class="col-6  col-md-3 text-center">
             <button class="btn btn-warning btn-sm">+ crear nuevo</button>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -63,7 +63,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                 <tr v-for="pac in datapaciente" :key="pac.id">
                     <td>{{pac.numdoc}}</td>
                     <td>{{pac.name1}} {{pac.apell1}}</td>
-                    <!--   <td> <button class="btn btn-success btn-sm" @click=" BuscarProfesionales">Reservar </button> </td> -->
+                    <td> <button class="btn btn-success btn-sm" @click=" BuscarProfesionales">Reservar </button> </td>
                 </tr>
             </tbody>
 
@@ -76,7 +76,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
         <div class="row">
             <div class="container">
 
-                <h6 class="display-6">Seleccione tipo y fecha de consulta </h6>
+                <h6 class="display-6">Seleccione tipo , profesional y fecha de consulta </h6>
                 <div class="row">
                     <div class="col-6 col-md-3"> <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="t_reserva" @change="filtarProf()">
                             <option selected value="">Tipo de Reserva</option>
@@ -105,26 +105,26 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
                     </div>
 
-                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()">Guardar Reservar</button>
+                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()"  :disabled="GuardarR_isButtonDisabled" >Guardar Reservar</button>
                 </div>
             </div>
             <br>
             <div class="container">
-                <h6 class="display-6">Agenda del tipo y dia seleccionado</h6>
+                <h6 class="display-6">Agenda del tipo, profesional y dia seleccionado</h6>
                 <table class="table table-sm">
                     <thead>
                         <tr>
-                            <th scope="col">hora</th>
-                            <th scope="col">nombre</th>
-                            <th scope="col">celular</th>
-                            <th scope="col">tipo</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Tipo</th>
                             <th scope="col">Opc</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="cita in this.sortedListaCitasDia" :key="cita.id">
-                            <td>{{cita.hora}}</td>
-                            <th>{{cita.paciente}}</th>
+                            <th>{{cita.hora}}</th>
+                            <td>{{cita.paciente}}</td>
                             <td>{{cita.telpaciente}}</td>
                             <td>{{cita.tipo}}</td>
                             <td><button class="btn btn-danger m-1 btn-sm" @click="deleteItemC(cita.id)">X</button></td>
@@ -185,7 +185,8 @@ export default {
         //---parametros consulta de tabla de citas del dia seleccionado
         params_citasDia: [],
         ListaCitasDia: [],
-        desord_ListaCitasDia: []
+        desord_ListaCitasDia: [],
+        paramsClear: [],
 
     }),
 
@@ -198,7 +199,7 @@ export default {
     /* ------------------------------------------------------------------------ */
 
     methods: {
-        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem']),
+        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA']),
 
         /*  */
         Buscarpaciente() {
@@ -214,13 +215,13 @@ export default {
 
         /*  */
         BuscarProfesionales() {
-            /*       this.paramsProfesionales = [{
-                      bd: "profesionales",
-                      parametro: "id_ips",
-                      valor: this.id_ips,
-                      rta: "setStateProfesionales"
-                  }]
-                  this.getDataUsersbyParam(this.paramsProfesionales); */
+            this.paramsProfesionales = [{
+                bd: "profesionales",
+                parametro: "id_ips",
+                valor: this.id_ips,
+                rta: "setStateProfesionales"
+            }]
+            this.getDataUsersbyParam(this.paramsProfesionales);
             this.filtarFechas()
         },
         /*  */
@@ -231,29 +232,29 @@ export default {
 
         },
         /*  */
-        /*   filtarFechas() {
-              const fecha = this.fechahoy()
-              this.paramsFechasCitas = [{
-                  bd: "agendas",
-                  parametro: "fecha",
-                  valor: fecha,
-                  rta: "setStateCitas"
-              }]
-              this.getDataByRangoSuperior(this.paramsFechasCitas);
+        filtarFechas() {
+            const fecha = this.fechahoy()
+            this.paramsFechasCitas = [{
+                bd: "agendas",
+                parametro: "fecha",
+                valor: fecha,
+                rta: "setStateCitas"
+            }]
+            this.getDataByRangoSuperior(this.paramsFechasCitas);
 
-          },
+        },
 
-          fechahoy() {
-              const date = new Date();
-              const options = {
-                  year: 'numeric',
-                  month: '2-digit',
-                  day: '2-digit'
-              };
-              const formatter = new Intl.DateTimeFormat('es-ES', options);
-              const formattedDate = formatter.format(date);
-              return formattedDate
-          }, */
+        fechahoy() {
+            const date = new Date();
+            const options = {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit'
+            };
+            const formatter = new Intl.DateTimeFormat('es-ES', options);
+            const formattedDate = formatter.format(date);
+            return formattedDate
+        },
         /*  */
         filtrarFechasByProf() {
             this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
@@ -300,29 +301,44 @@ export default {
             await this.DeleteItem(this.paramsDelCitas[0]);
             this.VerListadoCitas();
         },
+
+        clearStore() {
+            this.paramsClear[{
+                ruta: "ClearStoreM"
+            }]
+            this.clearDataStoreA(this.paramsClear)
+        }
     },
-        /* 
-        ------------------------------------------------------------------------ */
-        computed: {
+    /* 
+    ------------------------------------------------------------------------ */
+    computed: {
 
-            ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas']),
-            ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
-            sortedListaCitasDia() {
-                return this.desord_ListaCitasDia.sort((a, b) => {
-                    const hourA = a.hora.split(':')[0];
-                    const hourB = b.hora.split(':')[0];
-                    return hourA - hourB;
-                });
-            }
-
+        ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas']),
+        ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
+        sortedListaCitasDia() {
+            return this.desord_ListaCitasDia.sort((a, b) => {
+                const hourA = a.hora.split(':')[0];
+                const hourB = b.hora.split(':')[0];
+                return hourA - hourB;
+            });
         },
 
-        /* ------------------------------------------------------------------------ */
+        BuscarP_isButtonDisabled() {
+            return !this.B_tipodoc || !this.B_numdoc;
+        },
 
-        created() {
-
+        GuardarR_isButtonDisabled() {
+            return !this.t_reserva || !this.p_reserva || !this.listahora || !this.f_reserva;
         }
-  
+
+    },
+
+    /* ------------------------------------------------------------------------ */
+
+    created() {
+        this.clearStore()
+    }
+
 }
 </script>
 

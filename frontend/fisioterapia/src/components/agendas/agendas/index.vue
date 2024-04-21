@@ -1,10 +1,10 @@
 <template>
-datos de store
-<hr>
+<!-- <hr>
+    datos de store
 {{ id_ips }}-----{{ rol }}---{{ info }}
 {{ dataprofesionales }}
 <hr>
-{{ dataCitas }}
+{{ dataCitas }} -->
 <div class="container">
     <div class="body">
         <br>
@@ -65,26 +65,26 @@ datos de store
                     <div class="container">
                         <div class="row">
 
-                            <div class="col-3"><select class="form-select form-select-sm" aria-label="Small select example" v-model="t_reserva" @change=" filtarProf()">
+                            <div class="col-6 col-md-3"><select class="form-select form-select-sm" aria-label="Small select example" v-model="t_reserva" @change=" filtarProf()">
                                     <option selected value="">Tipo de Reserva</option>
                                     <option value="terapia">Terapia</option>
                                     <option value="consulta">Consulta</option>
                                     <option value="clase">Clase</option>
                                 </select></div>
 
-                            <div class="col-3">
+                            <div class="col-6 col-md-3">
                                 <select class="form-select form-select-sm textarea" id="inputGroupSelect02" v-model="p_reserva" @change="filtrarFechasByProf()">
                                     <option selected value="">Profesional</option>
                                     <option v-for="profactivo in this.profactivos" :key="profactivo.id" :value="profactivo.id">{{profactivo.name1}} {{profactivo.apell1}}</option>
                                 </select>
                             </div>
-                            <div class="col-3">
+                            <div class="col-6 col-md-3">
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
-                                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fecha_agenda" @input="formatearfecha()">
+                                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fecha_agenda" >
                                 </div>
                             </div>
-                            <div class="col-3"><button type="button" class="btn btn-primary btn-sm" @click="GuardarAgenda()">+ Adicionar</button></div>
+                            <div class="col-6 col-md-3"><button type="button" class="btn btn-primary btn-sm" @click="GuardarAgenda()" :disabled="isButtonDisabled" >+ Adicionar</button></div>
                         </div>
                     </div>
                     <hr>
@@ -157,15 +157,24 @@ export default {
         fechasActivas: "",
         fecha_agenda: "",
         params_GuardarFechaAgenda: [],
- 
-        
 
     }),
     /* --------------------------------------------------------------------------------------------------- */
 
     methods: {
 
-        ...mapActions('Agendas', ['getDataUsersbyParam', 'getDataByRangoSuperior', 'CreateAgendaNueva']),
+        ...mapActions('Agendas', ['getDataUsersbyParam', 'getDataByRangoSuperior', 'CreateAgendaNueva','getDatabyParam']),
+
+        BuscarProfesionales() {
+            this.paramsProfesionales = [{
+                bd: "profesionales",
+                parametro: "id_ips",
+                valor: this.id_ips,
+                rta: "setStateProfesionales"
+            }]
+            this.getDataUsersbyParam(this.paramsProfesionales);
+            this.filtarFechas()
+        },
 
         filtarProf() {
             console.log(this.t_reserva)
@@ -199,10 +208,10 @@ export default {
             return formattedDate
         },
 
+
+
+
         filtrarFechasByProf() {
-            console.log("dataCitas >" + this.dataCitas),
-                console.log("p reserva >" + this.p_reserva),
-                console.log("t_reserva >" + this.t_reserva),
                 this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
 
             console.log("Fechas Activas:", this.fechasActivas[0]);
@@ -218,23 +227,23 @@ export default {
                 /*        rta: "UpdateStateCitas" */
             }]
             this.CreateAgendaNueva(this.params_GuardarFechaAgenda[0]);
+           this.VerListadoAgendas() 
         },
 
         /*  */
         async VerListadoAgendas() {
-            this.params_citasDia = [{
-                bd: "citas",
-                parametro: "id_agenda",
-                valor: this.f_reserva,
+            this.params_Agendas_Dia = [{
+                bd: "agendas",
+                parametro: "id_profesional",
+                valor: this.p_reserva,
                 rta: "setStateAgendas"
             }]
-            this.desord_ListaCitasDia = await this.getDatabyParam(this.params_citasDia[0]);
+            this.desord_ListaCitasDia = await this.getDatabyParam(this.params_Agendas_Dia[0]);
             //ordenamos la cita por hora
         },
 
-        formatearfecha() {
-            console.log(this.fecha_agenda)
-        }
+
+     
 
     },
 
@@ -245,12 +254,16 @@ export default {
 
         formattedDate() {
             return moment(this.fecha_agenda).format('DD/MM/YYYY');
+        },
+
+        isButtonDisabled() {
+            return !this.t_reserva || !this.p_reserva || !this.fecha_agenda;
         }
 
     },
     /* --------------------------------------------------------------------------------------------------- */
     created() {
-
+        this.BuscarProfesionales()
     }
     /* --------------------------------------------------------------------------------------------------- */
 }
