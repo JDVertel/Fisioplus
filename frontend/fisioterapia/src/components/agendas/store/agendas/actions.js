@@ -54,6 +54,7 @@ export const getDataUsersbyParam = async ({ commit }, parametros) => {
         params: {
             orderBy: `"${parametro}"`,
             equalTo: `"${valor}"`,
+    
         },
     });
     const { data } = response;

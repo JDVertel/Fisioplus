@@ -181,71 +181,62 @@ export default {
             console.log(this.t_reserva)
             this.profactivos = this.dataprofesionales.filter(profesional => profesional.tipo == this.t_reserva)
             console.log(this.profactivos)
-
         },
         /* ---------------------------------------------------------- */
-        async filtarFechas() {
-            const fecha = this.fechahoy()
+
+        filtarFechas() {
+            const fecha = this.diaformatedfecha;
             console.log(fecha);
             this.paramsFechasCitas = [{
                 bd: "agendas",
                 parametro: "fecha",
                 valor: fecha,
-                rta: "setStateCitas"
+                rta: "setStateAgendas"
             }]
-            await this.getDataByRangoSuperior(this.paramsFechasCitas);
-
-        },
-        /*  */
-        fechahoy() {
-            const date = new Date();
-            const options = {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit'
-            };
-            const formatter = new Intl.DateTimeFormat('es-ES', options);
-            const formattedDate = formatter.format(date);
-            return formattedDate
+            this.getDataByRangoSuperior(this.paramsFechasCitas);
         },
 
-        filtrarFechasByProf() {
-            this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
 
-            console.log("Fechas Activas:", this.fechasActivas[0]);
+       async  filtrarFechasByProf() {
+            this.fechasActivas = this.dataAgendas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
+            console.log("Fechas Activas:", this.fechasActivas);
         },
         /* -------------------------------------------------------------------------------------------------------------------------------------- */
         async GuardarAgenda() {
             this.params_GuardarFechaAgenda = [{
                 id_profesional: this.p_reserva,
                 fecha: this.formattedDate,
-                Id_ips: this.id_ips,
+                id_ips: this.id_ips,
                 clase: this.t_reserva,
                 bd: "agendas",
                 /*        rta: "UpdateStateCitas" */
             }]
             await this.CreateAgendaNueva(this.params_GuardarFechaAgenda[0]);
-            this.filtarFechas()
-            this.filtrarFechasByProf()
+          
+            this.filtarFechas();
+
         },
 
-        /*  */
+
 
     },
 
     /* --------------------------------------------------------------------------------------------------- */
     computed: {
         ...mapState('Auth', ['user', 'id_ips', 'rol', 'info', ]),
-        ...mapState('Agendas', ['dataprofesionales', 'dataCitas']),
+        ...mapState('Agendas', ['dataprofesionales','dataAgendas']),
 
         formattedDate() {
-            return moment(this.fecha_agenda).format('DD/MM/YYYY');
+            return moment(this.fecha_agenda).format('YYYY-MM-DD');
+        },
+
+        diaformatedfecha(){
+            return moment(new Date).format('YYYY-MM-DD');
         },
 
         isButtonDisabled() {
             return !this.t_reserva || !this.p_reserva || !this.fecha_agenda;
         }
-
     },
     /* --------------------------------------------------------------------------------------------------- */
     created() {

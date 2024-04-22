@@ -241,7 +241,6 @@ export default {
                 rta: "setStateCitas"
             }]
             this.getDataByRangoSuperior(this.paramsFechasCitas);
-
         },
 
         fechahoy() {

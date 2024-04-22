@@ -22,6 +22,18 @@ export const SetStatenoregistrado=(state, noreg)=>{
 
 /* ++++++++++++++AGENDAS++++++++++++ */
 
+
+export const setStateAgendas=(state, data)=>{
+    //dataAgendas
+    state.dataAgendas="";
+    state.dataAgendas=[...state.dataAgendas, ...data];
+}
+
+
+
+
+/* ------------------------------------CITAS ------------------------------------------------ */
+
 export const setStateCitas=(state , citas)=>{
     state.dataCitas="";
     state.dataCitas=[...state.dataCitas, ...citas];
@@ -33,13 +45,7 @@ export const UpdateStateCitas=(state , citas)=>{
     state.dataCitas=[...state.dataCitas, ...citas];
 
 }
-
-export const setStateAgendas=(state, data)=>{
-    //dataAgendas
-    state.dataAgendas="";
-    state.dataAgendas=[...state.dataAgendas, ...data];
-}
-
+/* ---------------------------------VACIAR STORE GENERAL-------------------------------------- */
 export const ClearStoreM=(state)=>{
 state.dataCitas=[];
 state.citasdisponibles="";
