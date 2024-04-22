@@ -30,7 +30,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
             <input type="number" class="form-control form-control-sm textarea" id="text_numdoc" placeholder="Numero Documento" v-model="B_numdoc" />
         </div>
         <div class="col-6 col-md-3 ">
-            <button class="btn btn-success btn-sm" @click="Buscarpaciente" :disabled="BuscarP_isButtonDisabled"  >Buscar</button>
+            <button class="btn btn-success btn-sm" @click="Buscarpaciente" :disabled="BuscarP_isButtonDisabled">Buscar</button>
         </div>
 
         <!--    <div class="col-6  col-md-3 text-center">
@@ -41,15 +41,15 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
 <!--  aqui componente de registro de usuario -->
 <div v-if="this.existepaciente == 2">
-<br>
-    <div class="card text-end" >
+    <br>
+    <div class="card text-center">
         <div class="card-body">
-          <h5 class="card-title">Registro de nuevo paciente</h5>
-          <p class="card-text">Paciente no encontrado, ingrese los siguientes datos para
-            registarlo y poder realizar una reserva</p>
+            <h5 class="card-title">Registro de nuevo paciente</h5>
+            <p class="card-text">Paciente no encontrado, ingrese los siguientes datos para
+                registarlo y poder realizar una reserva</p>
             <br>
             <div class="row">
-   
+
                 <div class="col-6">
                     <div class="input-group mb-1">
                         <input type="text" class="form-control form-control-sm textarea" id="text_1nombre" placeholder="1 Nombre" v-model="name1" />
@@ -72,17 +72,17 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                 </div>
                 <div class="col-6">
                     <div class="input-group mb-1">
-                        <input type="number" class="form-control form-control-sm textarea" id="text_tel" placeholder="Telefono" v-model="telefono" />
+                        <input type="number" class="form-control form-control-sm textarea" id="text_tel" placeholder="Celular" v-model="celular" />
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="input-group mb-1">
-                        <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Email" v-model="direcc" />
+                        <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Email" v-model="email" />
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="input-group mb-1">
-                        <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Direccion" v-model="direcc" />
+                        <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Direccion" v-model="dir" />
                     </div>
                 </div>
                 <div class="col-12">
@@ -92,14 +92,13 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                     </div>
                 </div>
             </div>
-            
-            <button class="btn btn-success btn-sm" @click="RegistrarPaciente(PacienteData)">
+
+            <button class="btn btn-success btn-sm" @click=" registarPaciente()">
                 Registrar cliente
             </button>
         </div>
-      </div>
     </div>
-
+</div>
 
 <br>
 <div class="container" v-if="this.existepaciente == 1">
@@ -163,7 +162,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
                     </div>
 
-                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()"  :disabled="GuardarR_isButtonDisabled" >Guardar Reservar</button>
+                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()" :disabled="GuardarR_isButtonDisabled">Guardar Reservar</button>
                 </div>
             </div>
             <br>
@@ -245,6 +244,16 @@ export default {
         ListaCitasDia: [],
         desord_ListaCitasDia: [],
         paramsClear: [],
+        // adicionar usuario
+        name1: "",
+        name2: "",
+        apell1: "",
+        apell2: "",
+        celular: "",
+        email: "",
+        dir: "",
+        fnacimiento: "",
+        paramsGuardarPaciente: [],
 
     }),
 
@@ -257,7 +266,7 @@ export default {
     /* ------------------------------------------------------------------------ */
 
     methods: {
-        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA']),
+        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA','createEntradanewPaciente']),
 
         /*  */
         Buscarpaciente() {
@@ -291,16 +300,15 @@ export default {
         },
         /*  */
         filtarFechas() {
-         
+
             this.paramsFechasCitas = [{
                 bd: "agendas",
                 parametro: "fecha",
-                valor:this.diaformatedfecha,
+                valor: this.diaformatedfecha,
                 rta: "setStateCitas"
             }]
             this.getDataByRangoSuperior(this.paramsFechasCitas);
         },
-
 
         filtrarFechasByProf() {
             this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
@@ -323,7 +331,6 @@ export default {
             this.VerListadoCitas();
         },
         /*  */
-
 
         async VerListadoCitas() {
             this.params_citasDia = [{
@@ -351,9 +358,26 @@ export default {
                 ruta: "ClearStoreM"
             }]
             this.clearDataStoreA(this.paramsClear)
-        }
-    },
+        },
 
+        registarPaciente() {
+            const idpaciente = this.B_tipodoc + this.B_numdoc;
+            this.paramsGuardarPaciente = [{
+                numdoc:idpaciente,
+                name1: this.name1,
+                name2: this.name2,
+                apell1: this.apell1,
+                apell2: this.apell2,
+                celular: this.celular,
+                email: this.email,
+                dir: this.dir,
+                fnacimiento: this.fnacimento,
+                bd: "pacientes",
+            }]
+            this.createEntradanewPaciente(this.paramsGuardarPaciente[0])
+        }
+
+    },
 
     computed: {
         ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas']),
@@ -373,15 +397,13 @@ export default {
         GuardarR_isButtonDisabled() {
             return !this.t_reserva || !this.p_reserva || !this.listahora || !this.f_reserva;
         },
-/*  */
+        /*  */
         formattedDate() {
             return moment(this.fecha_agenda).format('YYYY-MM-DD');
         },
-        diaformatedfecha(){
+        diaformatedfecha() {
             return moment(new Date).format('YYYY-MM-DD');
         },
-
-     
     },
 
     /* ------------------------------------------------------------------------ */

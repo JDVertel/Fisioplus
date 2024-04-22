@@ -45,16 +45,16 @@ export const getDataUsersbyParam = async ({ commit }, parametros) => {
     /*    console.log(parametros); */
     //  bd  -  parametro - valor- rta
     const [{ bd, parametro, valor, rta }] = parametros;
-/*     console.log(bd);
-    console.log(parametro);
-    console.log(valor);
-    console.log(rta); */
+    /*     console.log(bd);
+        console.log(parametro);
+        console.log(valor);
+        console.log(rta); */
 
     const response = await firebase_api.get(`/${bd}.json`, {
         params: {
             orderBy: `"${parametro}"`,
             equalTo: `"${valor}"`,
-    
+
         },
     });
     const { data } = response;
@@ -114,20 +114,11 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
 
 export const CreateAgendaNueva = async ({ commit }, entradas) => {
 
-    const {
-        id_profesional,
-        fecha,
-        id_ips,
-        clase,
-        bd,
-    } = entradas;
+    const { id_profesional, fecha, id_ips, clase, bd,} = entradas;
 
     const D_Save = {
-        id_profesional,
-        fecha,
-        id_ips,
-        clase,
-    };
+        id_profesional, fecha, id_ips, clase,
+ };
 
     console.log("ok entrada guardar datos", entradas);
 
@@ -150,27 +141,10 @@ export const CreateAgendaNueva = async ({ commit }, entradas) => {
 export const createEntradaCitaNueva = async ({ commit }, entradas) => {
 
     const {
-        paciente,
-        telpaciente,
-        estado,
-        hora,
-        id_agenda,
-        tipo,
-        bd,
-    } = entradas;
-
-
+        paciente, telpaciente, estado, hora, id_agenda, tipo, bd,} = entradas;
 
     const DataToSave = {
-        paciente,
-        telpaciente,
-        estado,
-        hora,
-        id_agenda,
-        tipo
-
-
-    };
+        paciente, telpaciente,estado,hora,id_agenda,tipo };
     console.log("ok", entradas);
 
     const Ruta = `/${bd}.json`;
@@ -190,30 +164,21 @@ export const createEntradaCitaNueva = async ({ commit }, entradas) => {
 
 
 
+export const createEntradanewPaciente = async ({ commit }, entradas) => {
+    const {   numdoc, name1, name2, apell1, apell2, celular, email, dir, fnacimiento, bd} = entradas;
+    const DataToSave={  numdoc, name1, name2, apell1, apell2, celular, email, dir, fnacimiento,}
+    const Ruta = `/${bd}.json`;
+    const { data } = await firebase_api.post(Ruta, DataToSave);
+    DataToSave.id = data.name;
+}
+
+
 
 /* CONFIGURACION======================================= */
 //guardart datos 
 export const createEntradaUser = async ({ commit }, entradas) => {
-
-    const {
-        id_ips,
-        estado,
-        nombre,
-        pass,
-        rol,
-        doc,
-        bd
-
-    } = entradas;
-    const DataToSave = {
-        id_ips,
-        estado,
-        doc,
-        nombre,
-        pass,
-        rol
-    };
-
+    const { id_ips, estado, nombre, pass, rol, doc,bd } = entradas;
+    const DataToSave = { id_ips, estado, doc, nombre, pass,rol };
     const Ruta = `/${bd}.json`;
     /*   console.log(Ruta) */
     //servicio
@@ -231,35 +196,8 @@ export const createEntradaUser = async ({ commit }, entradas) => {
 
 export const createEntradaProf = async ({ commit }, entradas) => {
 
-    const {
-        id_ips,
-        estado,
-        doc,
-        name1,
-        name2,
-        apell1,
-        apell2,
-        cel,
-        reg_medico,
-        tipo,
-        correo,
-        bd
-
-    } = entradas;
-    const DataToSave = {
-        id_ips,
-        estado,
-        doc,
-        name1,
-        name2,
-        apell1,
-        apell2,
-        cel,
-        reg_medico,
-        tipo,
-        correo,
-
-    };
+    const {id_ips,estado, doc, name1, name2, apell1, apell2, cel, reg_medico, tipo, correo, bd } = entradas;
+    const DataToSave = { id_ips, estado, doc, name1, name2,  apell1, apell2, cel, reg_medico, tipo, correo,};
     console.log("ok", entradas);
     const Ruta = `/${bd}.json`;
     console.log(Ruta)
@@ -271,6 +209,10 @@ export const createEntradaProf = async ({ commit }, entradas) => {
     console.log(DataToSave);
     /*     commit("newDataVitrina", DataToSave); */
 };
+
+
+
+
 /* ------------------------------------------------------------------------------------------------ */
 export const DeleteItem = async ({ commit }, entradas) => {
     const { id, bd } = entradas;
