@@ -157,8 +157,8 @@ export default {
         fechasActivas: "",
         fecha_agenda: "",
         params_GuardarFechaAgenda: [],
-        params_Agendas_Dia: []
-
+        params_Agendas_Dia: [],
+        paramsFechasAgendas: []
     }),
     /* --------------------------------------------------------------------------------------------------- */
 
@@ -174,8 +174,24 @@ export default {
                 rta: "setStateProfesionales"
             }]
             this.getDataUsersbyParam(this.paramsProfesionales);
-            this.filtarFechas()
+            this.VerListadoAgendass();
+        
         },
+
+
+         async VerListadoAgendass() {
+            const fecha = this.diaformatedfecha;
+            console.log(fecha);
+            this.paramsFechasAgendas = [{
+                bd: "agendas",
+                parametro: "fecha",
+                valor: fecha,
+                rta: "setStateAgendas"
+            }]
+          await  this.getDataByRangoSuperior(this.paramsFechasAgendas);
+          this. filtrarFechasByProf()
+        },
+
 
         filtarProf() {
             console.log(this.t_reserva)
@@ -184,20 +200,9 @@ export default {
         },
         /* ---------------------------------------------------------- */
 
-        filtarFechas() {
-            const fecha = this.diaformatedfecha;
-            console.log(fecha);
-            this.paramsFechasCitas = [{
-                bd: "agendas",
-                parametro: "fecha",
-                valor: fecha,
-                rta: "setStateAgendas"
-            }]
-            this.getDataByRangoSuperior(this.paramsFechasCitas);
-        },
+    
 
-
-       async  filtrarFechasByProf() {
+        async filtrarFechasByProf() {
             this.fechasActivas = this.dataAgendas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
             console.log("Fechas Activas:", this.fechasActivas);
         },
@@ -212,25 +217,21 @@ export default {
                 /*        rta: "UpdateStateCitas" */
             }]
             await this.CreateAgendaNueva(this.params_GuardarFechaAgenda[0]);
-          
-            this.filtarFechas();
-
+            this.VerListadoAgendass();
         },
-
-
 
     },
 
     /* --------------------------------------------------------------------------------------------------- */
     computed: {
         ...mapState('Auth', ['user', 'id_ips', 'rol', 'info', ]),
-        ...mapState('Agendas', ['dataprofesionales','dataAgendas']),
+        ...mapState('Agendas', ['dataprofesionales', 'dataAgendas']),
 
         formattedDate() {
             return moment(this.fecha_agenda).format('YYYY-MM-DD');
         },
 
-        diaformatedfecha(){
+        diaformatedfecha() {
             return moment(new Date).format('YYYY-MM-DD');
         },
 

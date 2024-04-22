@@ -45,10 +45,10 @@ export const getDataUsersbyParam = async ({ commit }, parametros) => {
     /*    console.log(parametros); */
     //  bd  -  parametro - valor- rta
     const [{ bd, parametro, valor, rta }] = parametros;
-    console.log(bd);
+/*     console.log(bd);
     console.log(parametro);
     console.log(valor);
-    console.log(rta);
+    console.log(rta); */
 
     const response = await firebase_api.get(`/${bd}.json`, {
         params: {
@@ -101,7 +101,7 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
             ...data[id],
         });
     }
-    /* console.log(datasalida); */
+    console.log(datasalida);
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
     } else {

@@ -152,7 +152,7 @@ import {
     mapGetters,
     mapState,
 } from 'vuex';
-
+import moment from 'moment';
 export default {
 
     data: () => ({
@@ -233,28 +233,17 @@ export default {
         },
         /*  */
         filtarFechas() {
-            const fecha = this.fechahoy()
+         
             this.paramsFechasCitas = [{
                 bd: "agendas",
                 parametro: "fecha",
-                valor: fecha,
+                valor:this.diaformatedfecha,
                 rta: "setStateCitas"
             }]
             this.getDataByRangoSuperior(this.paramsFechasCitas);
         },
 
-        fechahoy() {
-            const date = new Date();
-            const options = {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit'
-            };
-            const formatter = new Intl.DateTimeFormat('es-ES', options);
-            const formattedDate = formatter.format(date);
-            return formattedDate
-        },
-        /*  */
+
         filtrarFechasByProf() {
             this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
 
@@ -325,7 +314,16 @@ export default {
 
         GuardarR_isButtonDisabled() {
             return !this.t_reserva || !this.p_reserva || !this.listahora || !this.f_reserva;
-        }
+        },
+/*  */
+        formattedDate() {
+            return moment(this.fecha_agenda).format('YYYY-MM-DD');
+        },
+        diaformatedfecha(){
+            return moment(new Date).format('YYYY-MM-DD');
+        },
+
+     
     },
 
     /* ------------------------------------------------------------------------ */
