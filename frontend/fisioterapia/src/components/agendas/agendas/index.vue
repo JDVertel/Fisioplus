@@ -81,10 +81,10 @@
                             <div class="col-6 col-md-3">
                                 <div class="input-group input-group-sm mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
-                                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fecha_agenda" >
+                                    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fecha_agenda">
                                 </div>
                             </div>
-                            <div class="col-6 col-md-3"><button type="button" class="btn btn-primary btn-sm" @click="GuardarAgenda()" :disabled="isButtonDisabled" >+ Adicionar</button></div>
+                            <div class="col-6 col-md-3"><button type="button" class="btn btn-primary btn-sm" @click="GuardarAgenda()" :disabled="isButtonDisabled">+ Adicionar</button></div>
                         </div>
                     </div>
                     <hr>
@@ -157,13 +157,14 @@ export default {
         fechasActivas: "",
         fecha_agenda: "",
         params_GuardarFechaAgenda: [],
+        params_Agendas_Dia: []
 
     }),
     /* --------------------------------------------------------------------------------------------------- */
 
     methods: {
 
-        ...mapActions('Agendas', ['getDataUsersbyParam', 'getDataByRangoSuperior', 'CreateAgendaNueva','getDatabyParam']),
+        ...mapActions('Agendas', ['getDataUsersbyParam', 'getDataByRangoSuperior', 'CreateAgendaNueva', 'getDatabyParam']),
 
         BuscarProfesionales() {
             this.paramsProfesionales = [{
@@ -183,16 +184,16 @@ export default {
 
         },
         /* ---------------------------------------------------------- */
-        filtarFechas() {
+        async filtarFechas() {
             const fecha = this.fechahoy()
-
+            console.log(fecha);
             this.paramsFechasCitas = [{
                 bd: "agendas",
                 parametro: "fecha",
                 valor: fecha,
                 rta: "setStateCitas"
             }]
-            this.getDataByRangoSuperior(this.paramsFechasCitas);
+            await this.getDataByRangoSuperior(this.paramsFechasCitas);
 
         },
         /*  */
@@ -208,16 +209,13 @@ export default {
             return formattedDate
         },
 
-
-
-
         filtrarFechasByProf() {
-                this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
+            this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
 
             console.log("Fechas Activas:", this.fechasActivas[0]);
         },
         /* -------------------------------------------------------------------------------------------------------------------------------------- */
-        GuardarAgenda() {
+        async GuardarAgenda() {
             this.params_GuardarFechaAgenda = [{
                 id_profesional: this.p_reserva,
                 fecha: this.formattedDate,
@@ -226,24 +224,12 @@ export default {
                 bd: "agendas",
                 /*        rta: "UpdateStateCitas" */
             }]
-            this.CreateAgendaNueva(this.params_GuardarFechaAgenda[0]);
-           this.VerListadoAgendas() 
+            await this.CreateAgendaNueva(this.params_GuardarFechaAgenda[0]);
+            this.filtarFechas()
+            this.filtrarFechasByProf()
         },
 
         /*  */
-        async VerListadoAgendas() {
-            this.params_Agendas_Dia = [{
-                bd: "agendas",
-                parametro: "id_profesional",
-                valor: this.p_reserva,
-                rta: "setStateAgendas"
-            }]
-            this.desord_ListaCitasDia = await this.getDatabyParam(this.params_Agendas_Dia[0]);
-            //ordenamos la cita por hora
-        },
-
-
-     
 
     },
 

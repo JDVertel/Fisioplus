@@ -83,17 +83,13 @@ export const getDataUsersbyParam = async ({ commit }, parametros) => {
 /* FUNCION QUE CONSULTA  REGISTROS A PARTIR DE UNA FECHA INICIAL (DE HOY EN ADELANTE) */
 
 export const getDataByRangoSuperior = async ({ commit }, parametros) => {
-
     const [{ bd, parametro, valor, rta }] = parametros;
     console.log(bd, parametro, valor, rta);
-
     const response = await firebase_api.get(`/${bd}.json`,
         {
             params: {
                 orderBy: `"${parametro}"`,
                 startAt: `"${valor}"`,
-
-
             },
         })
     const { data } = response;
@@ -104,15 +100,12 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
             ...data[id],
         });
     }
-    console.log(datasalida);
-
+    /* console.log(datasalida); */
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
     } else {
         console.log("sin datos en la consulta")
-
     }
-
 };
 
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
@@ -138,7 +131,7 @@ export const CreateAgendaNueva = async ({ commit }, entradas) => {
     console.log("ok entrada guardar datos", entradas);
 
     const Ruta = `/${bd}.json`;
-    console.log(Ruta)
+    /*    console.log(Ruta) */
     //servicio
     const { data } = await firebase_api.post(Ruta, D_Save);
     //agregamos el id al array para subirlo al strore

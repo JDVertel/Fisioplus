@@ -263,7 +263,6 @@ export default {
         },
 
         async GuardarCita() {
-
             this.params_GuardarFechaCita = [{
                 paciente: this.datapaciente[0].name1 + " " + this.datapaciente[0].apell1,
                 telpaciente: this.datapaciente[0].celular,
@@ -275,10 +274,10 @@ export default {
                 /*        rta: "UpdateStateCitas" */
             }]
             await this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
-
             this.VerListadoCitas();
         },
         /*  */
+
 
         async VerListadoCitas() {
             this.params_citasDia = [{
@@ -289,7 +288,6 @@ export default {
             }]
             this.desord_ListaCitasDia = await this.getDatabyParam(this.params_citasDia);
             //ordenamos la cita por hora
-
         },
 
         async deleteItemC(id) {
@@ -309,10 +307,9 @@ export default {
             this.clearDataStoreA(this.paramsClear)
         }
     },
-    /* 
-    ------------------------------------------------------------------------ */
-    computed: {
 
+
+    computed: {
         ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas']),
         ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
         sortedListaCitasDia() {
@@ -330,7 +327,6 @@ export default {
         GuardarR_isButtonDisabled() {
             return !this.t_reserva || !this.p_reserva || !this.listahora || !this.f_reserva;
         }
-
     },
 
     /* ------------------------------------------------------------------------ */
