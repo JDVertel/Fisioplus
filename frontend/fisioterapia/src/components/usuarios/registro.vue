@@ -11,10 +11,10 @@
                 <div class="input-group mb-1">
                     <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="tipodoc">
                         <option selected value="">Tipo</option>
-                        <option value="cc">CC</option>
-                        <option value="ti">TI</option>
-                        <option value="ce">CE</option>
-                        <option value="pa">PASAPORTE</option>
+                        <option value="CC">CC</option>
+                        <option value="TI">TI</option>
+                        <option value="CE">CE</option>
+                        <option value="PA">PASAPORTE</option>
                     </select>
                 </div>
             </div>

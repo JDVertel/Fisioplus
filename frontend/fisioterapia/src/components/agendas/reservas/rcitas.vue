@@ -20,10 +20,10 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
         <div class="col-6 col-md-3">
             <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="B_tipodoc">
                 <option selected value="">Tipo Documento</option>
-                <option value="cc">CC</option>
-                <option value="ti">TI</option>
-                <option value="ce">CE</option>
-                <option value="pa">PASAPORTE</option>
+                <option value="CC">CC</option>
+                <option value="TI">TI</option>
+                <option value="CE">CE</option>
+                <option value="PA">PASAPORTE</option>
             </select>
         </div>
         <div class="col-6 col-md-3">
@@ -41,8 +41,66 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
 <!--  aqui componente de registro de usuario -->
 <div v-if="this.existepaciente == 2">
-    <registroPaciente />
-</div>
+<br>
+    <div class="card text-end" >
+        <div class="card-body">
+          <h5 class="card-title">Registro de nuevo paciente</h5>
+          <p class="card-text">Paciente no encontrado, ingrese los siguientes datos para
+            registarlo y poder realizar una reserva</p>
+            <br>
+            <div class="row">
+   
+                <div class="col-6">
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control form-control-sm textarea" id="text_1nombre" placeholder="1 Nombre" v-model="name1" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control form-control-sm textarea" id="text_2nombre" placeholder="2 Nombre" v-model="name2" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control form-control-sm textarea" id="text_1apelli" placeholder="1 Apellido" v-model="apell1" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control form-control-sm textarea" id="text_2apell" placeholder="2 Apellido" v-model="apell2" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-1">
+                        <input type="number" class="form-control form-control-sm textarea" id="text_tel" placeholder="Telefono" v-model="telefono" />
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Email" v-model="direcc" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Direccion" v-model="direcc" />
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="input-group input-group-sm mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">F Nacimiento:</span>
+                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fnacimiento">
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn btn-success btn-sm" @click="RegistrarPaciente(PacienteData)">
+                Registrar cliente
+            </button>
+        </div>
+      </div>
+    </div>
+
+
 <br>
 <div class="container" v-if="this.existepaciente == 1">
 
