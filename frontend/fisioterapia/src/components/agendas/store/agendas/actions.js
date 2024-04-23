@@ -91,7 +91,7 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
             params: {
                 orderBy: `"${parametro}"`,
                 startAt: `"${valor}"`,
-              
+
             },
         })
     const { data } = response;
@@ -115,11 +115,11 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
 
 export const CreateAgendaNueva = async ({ commit }, entradas) => {
 
-    const { id_profesional, fecha, id_ips, clase, bd,} = entradas;
+    const { id_profesional, fecha, id_ips, clase, bd, } = entradas;
 
     const D_Save = {
         id_profesional, fecha, id_ips, clase,
- };
+    };
 
     console.log("ok entrada guardar datos", entradas);
 
@@ -142,10 +142,11 @@ export const CreateAgendaNueva = async ({ commit }, entradas) => {
 export const createEntradaCitaNueva = async ({ commit }, entradas) => {
 
     const {
-        paciente,numdoc, telpaciente, estado, hora, id_agenda, tipo,fecha, bd,} = entradas;
+        paciente, numdoc, telpaciente, estado, hora, id_agenda, tipo, fecha, bd, } = entradas;
 
     const DataToSave = {
-        paciente,numdoc, telpaciente,estado,hora,id_agenda,tipo,fecha };
+        paciente, numdoc, telpaciente, estado, hora, id_agenda, tipo, fecha
+    };
     console.log("ok", entradas);
 
     const Ruta = `/${bd}.json`;
@@ -166,23 +167,23 @@ export const createEntradaCitaNueva = async ({ commit }, entradas) => {
 
 
 export const createEntradanewPaciente = async ({ commit }, entradas) => {
-    const {   numdoc, name1, name2, apell1, apell2, celular, email, dir, fnacimiento, bd} = entradas;
-    const DataToSave={  numdoc, name1, name2, apell1, apell2, celular, email, dir, fnacimiento,}
+    const { numdoc, name1, name2, apell1, apell2, celular, email, dir, fnacimiento, bd } = entradas;
+    const DataToSave = { numdoc, name1, name2, apell1, apell2, celular, email, dir, fnacimiento, }
     const Ruta = `/${bd}.json`;
     const { data } = await firebase_api.post(Ruta, DataToSave);
     DataToSave.id = data.name;
-    console.log("paciente guardado exitosamente",+ data.name);
+    console.log("paciente guardado exitosamente", + data.name);
 }
 
-export const ClosetModalNewPaciente=async({commit})=>{
+export const ClosetModalNewPaciente = async ({ commit }) => {
     commit("ClosetModalP");
 }
 
 /* CONFIGURACION======================================= */
 //guardart datos 
 export const createEntradaUser = async ({ commit }, entradas) => {
-    const { id_ips, estado, nombre, pass, rol, doc,bd } = entradas;
-    const DataToSave = { id_ips, estado, doc, nombre, pass,rol };
+    const { id_ips, estado, nombre, pass, rol, doc, bd } = entradas;
+    const DataToSave = { id_ips, estado, doc, nombre, pass, rol };
     const Ruta = `/${bd}.json`;
     /*   console.log(Ruta) */
     //servicio
@@ -200,8 +201,8 @@ export const createEntradaUser = async ({ commit }, entradas) => {
 
 export const createEntradaProf = async ({ commit }, entradas) => {
 
-    const {id_ips,estado, doc, name1, name2, apell1, apell2, cel, reg_medico, tipo, correo, bd } = entradas;
-    const DataToSave = { id_ips, estado, doc, name1, name2,  apell1, apell2, cel, reg_medico, tipo, correo,};
+    const { id_ips, estado, doc, name1, name2, apell1, apell2, cel, reg_medico, tipo, correo, bd } = entradas;
+    const DataToSave = { id_ips, estado, doc, name1, name2, apell1, apell2, cel, reg_medico, tipo, correo, };
     console.log("ok", entradas);
     const Ruta = `/${bd}.json`;
     console.log(Ruta)
@@ -243,20 +244,18 @@ export const clearDataStoreA = async ({ commit }) => {
 
 
 export const NewgetDataUsersbyParam = async ({ commit }, parametros) => {
-    /*    console.log(parametros); */
-    //  bd  -  parametro - valor- rta
-    const [{ bd, parametro1, valor1, parametro2, valor2, rta }] = parametros;
- 
-
-/*     const response = await firebase_api.get(`/${bd}.json`, {
+    const [{ bd, parametro1, valor1, rta }] = parametros;
+          console.log(bd);
+       console.log(parametro1);
+       console.log(valor1);
+       console.log(rta);
+    const response = await firebase_api.get(`/${bd}.json`, {
         params: {
-            orderBy: `"${parametro}"`,
-            equalTo: `"${valor}"`,
-
+            orderBy: `"${parametro1}"`,
+            startAt: `"${valor1}"`,
         },
-    }); */
 
-    const response = await firebase_api.get(`/${bd}.json?orderBy="property1"&equalTo="value1"&orderBy="property2"& startAt="value2"`);
+    });
     const { data } = response;
     const datasalida = [];
     for (let id of Object.keys(data)) {
@@ -271,7 +270,7 @@ export const NewgetDataUsersbyParam = async ({ commit }, parametros) => {
         console.log(datasalida);
     } else {
         console.log("sin datos en la consulta")
-    
+
     }
 
 };

@@ -147,6 +147,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                 <h5 class="display-6">Citas Vigentes del paciente</h5>
             </div>
             <br>
+            {{ this.citaspaciente }}
             <table class="table table-sm">
                 <thead>
                     <tr>
@@ -198,7 +199,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                     <div class="col-6 col-md-3">
                         <select class="form-select form-select-sm textarea" id="inputGroupSelect03" v-model="f_reserva" @change="VerListadoCitas()">
                             <option selected value="">Dia de reserva</option>
-                            <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.fecha" >{{fecha.fecha}} </option>
+                            <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.fecha">{{fecha.fecha}} </option>
                         </select>
                     </div>
 
@@ -303,7 +304,9 @@ export default {
         fnacimiento: "",
         paramsGuardarPaciente: [],
         paramsClosetModalPac: [],
-        paramsCitasPaciente:[],
+        paramsCitasPaciente: [],
+        citaspaciente: [],
+        idpaciente: "",
 
     }),
 
@@ -316,19 +319,19 @@ export default {
     /* ------------------------------------------------------------------------ */
 
     methods: {
-        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA', 'createEntradanewPaciente', 'ClosetModalNewPaciente']),
+        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA', 'createEntradanewPaciente', 'ClosetModalNewPaciente', 'NewgetDataUsersbyParam']),
 
         /*  */
         Buscarpaciente() {
-            const idpaciente = this.B_tipodoc + this.B_numdoc;
+            this.idpaciente = this.B_tipodoc + this.B_numdoc;
             this.paramsPaciente = [{
                 bd: "pacientes",
                 parametro: "numdoc",
-                valor: idpaciente,
+                valor: this.idpaciente,
                 rta: "setStatePaciente"
             }]
             this.getDataUsersbyParam(this.paramsPaciente);
-            /* this.buscarAllCitasPAciente(); */
+            this.buscarAllCitasPAciente();
         },
 
         /*  */
@@ -362,8 +365,12 @@ export default {
 
         filtrarFechasByProf() {
             this.fechasActivas = this.dataAgendas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
-
             console.log("Fechas Activas:", this.fechasActivas[0]);
+        },
+
+        filtrarcitasPaciente() {
+            this.citaspaciente = this.dataCitasPaciente.filter(reg => reg.numdoc == this.idpaciente);
+            console.log("citas del paciente ", this.citaspaciente[0])
         },
 
         async GuardarCita() {
@@ -375,7 +382,7 @@ export default {
                 hora: this.listahora,
                 id_agenda: this.f_reserva,
                 tipo: this.t_reserva,
-                fecha:this.fecha,
+                fecha: this.diaformatedfecha,
                 bd: "citas",
                 /*        rta: "UpdateStateCitas" */
             }]
@@ -413,9 +420,9 @@ export default {
         },
 
         async registarPaciente() {
-            const idpaciente = this.B_tipodoc + this.B_numdoc;
+            this.idpaciente = this.B_tipodoc + this.B_numdoc;
             this.paramsGuardarPaciente = [{
-                numdoc: idpaciente,
+                numdoc: this.idpaciente,
                 name1: this.name1,
                 name2: this.name2,
                 apell1: this.apell1,
@@ -447,24 +454,22 @@ export default {
             console.log("cerrando modal")
         },
 
-        buscarAllCitasPAciente() {
-            const idpaciente = this.B_tipodoc + this.B_numdoc;
+        async buscarAllCitasPAciente() {
+
             this.paramsCitasPaciente = [{
                 bd: "citas",
-                parametro1: "numdoc",
-                valor1: idpaciente,
-                parametro2:"fecha",
-                valor2: this.diaformatedfecha,
+                parametro1: "fecha",
+                valor1: this.diaformatedfecha,
                 rta: "setStateCitasPaciente"
             }]
-            this.getDataUsersbyParam(this.paramsCitasPaciente);
-
+            this.NewgetDataUsersbyParam(this.paramsCitasPaciente);
+            await this.filtrarcitasPaciente()
         }
 
     },
 
     computed: {
-        ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas']),
+        ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas', 'dataCitasPaciente']),
         ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
 
         sortedListaCitasDia() {
@@ -494,6 +499,7 @@ export default {
         diaformatedfecha() {
             return moment(new Date).format('YYYY-MM-DD');
         },
+        /*  */
 
     },
 
