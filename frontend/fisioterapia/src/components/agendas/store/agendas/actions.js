@@ -142,10 +142,10 @@ export const CreateAgendaNueva = async ({ commit }, entradas) => {
 export const createEntradaCitaNueva = async ({ commit }, entradas) => {
 
     const {
-        paciente, telpaciente, estado, hora, id_agenda, tipo, bd,} = entradas;
+        paciente,numdoc, telpaciente, estado, hora, id_agenda, tipo,fecha, bd,} = entradas;
 
     const DataToSave = {
-        paciente, telpaciente,estado,hora,id_agenda,tipo };
+        paciente,numdoc, telpaciente,estado,hora,id_agenda,tipo,fecha };
     console.log("ok", entradas);
 
     const Ruta = `/${bd}.json`;
@@ -234,5 +234,44 @@ export const clearDataStoreA = async ({ commit }) => {
 
 }
 
+
+
+
+
+
 /* =========================AAAAGENDAS==== */
 
+
+export const NewgetDataUsersbyParam = async ({ commit }, parametros) => {
+    /*    console.log(parametros); */
+    //  bd  -  parametro - valor- rta
+    const [{ bd, parametro1, valor1, parametro2, valor2, rta }] = parametros;
+ 
+
+/*     const response = await firebase_api.get(`/${bd}.json`, {
+        params: {
+            orderBy: `"${parametro}"`,
+            equalTo: `"${valor}"`,
+
+        },
+    }); */
+
+    const response = await firebase_api.get(`/${bd}.json?orderBy="property1"&equalTo="value1"&orderBy="property2"& startAt="value2"`);
+    const { data } = response;
+    const datasalida = [];
+    for (let id of Object.keys(data)) {
+        datasalida.push({
+            id,
+            ...data[id],
+        });
+    }
+    console.log(datasalida)
+    if (datasalida.length != 0) {
+        commit(`${rta}`, datasalida);
+        console.log(datasalida);
+    } else {
+        console.log("sin datos en la consulta")
+    
+    }
+
+};

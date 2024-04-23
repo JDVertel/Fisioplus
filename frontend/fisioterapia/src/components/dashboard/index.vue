@@ -28,7 +28,7 @@
                                     </div>
                                 </div>
                                 <div class="col-2 centrado">
-                                    <h1 class="display-4">9</h1>
+                                    <h1 class="display-4">-9</h1>
                                 </div>
                             </div>
                         </div>

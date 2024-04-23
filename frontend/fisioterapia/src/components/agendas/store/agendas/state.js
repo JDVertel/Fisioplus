@@ -14,5 +14,7 @@ export default()=>({
     citasdisponibles:"",
     /*  */
     dataAgendas:[],
-    agendasdisponibles:[]
+    agendasdisponibles:[],
+
+    dataCitasPaciente:[],
 })

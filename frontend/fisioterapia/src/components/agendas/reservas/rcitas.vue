@@ -7,13 +7,12 @@
 <hr>
 id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 <hr>
-{{ dataCitas }}
+
 <hr>
 {{ datapaciente }}
 <hr> -->
 
 <div class="container">
-    <br>
 
     <div class="container centrado mt-5">
         <h6 class="display-5">Reservas</h6>
@@ -39,7 +38,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                 </div>
 
                 <div class="col-3 col-md-3 ">
-                    <button class="btn btn-success btn-sm" @click="Buscarpaciente" :disabled="BuscarP_isButtonDisabled">Buscar</button>
+                    <button class="btn btn-success btn-sm" @click="Buscarpaciente()" :disabled="BuscarP_isButtonDisabled">Buscar</button>
                 </div>
 
             </div>
@@ -142,6 +141,38 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
             </tbody>
 
         </table>
+        <div class="container" style="background-color:#97BFB4">
+            <br>
+            <div>
+                <h5 class="display-6">Citas Vigentes del paciente</h5>
+            </div>
+            <br>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Profesional</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <br>
@@ -165,9 +196,9 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                         </select>
                     </div>
                     <div class="col-6 col-md-3">
-                        <select class="form-select form-select-sm textarea" id="inputGroupSelect03" v-model="f_reserva" @change=" VerListadoCitas()">
+                        <select class="form-select form-select-sm textarea" id="inputGroupSelect03" v-model="f_reserva" @change="VerListadoCitas()">
                             <option selected value="">Dia de reserva</option>
-                            <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.id">{{fecha.fecha}} </option>
+                            <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.fecha" >{{fecha.fecha}} </option>
                         </select>
                     </div>
 
@@ -179,7 +210,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
                     </div>
 
-                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()" :disabled="Guardar_p_isButtonDisabled">Guardar Reservar</button>
+                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()" :disabled="GuardarR_isButtonDisabled">Guardar Reservar</button>
                 </div>
             </div>
             <br>
@@ -272,6 +303,7 @@ export default {
         fnacimiento: "",
         paramsGuardarPaciente: [],
         paramsClosetModalPac: [],
+        paramsCitasPaciente:[],
 
     }),
 
@@ -296,6 +328,7 @@ export default {
                 rta: "setStatePaciente"
             }]
             this.getDataUsersbyParam(this.paramsPaciente);
+            /* this.buscarAllCitasPAciente(); */
         },
 
         /*  */
@@ -307,7 +340,7 @@ export default {
                 rta: "setStateProfesionales"
             }]
             this.getDataUsersbyParam(this.paramsProfesionales);
-            this.filtarFechas()
+            this.filtarFechasAgendas()
         },
         /*  */
         filtarProf() {
@@ -317,19 +350,18 @@ export default {
 
         },
         /*  */
-        filtarFechas() {
-
+        filtarFechasAgendas() {
             this.paramsFechasCitas = [{
                 bd: "agendas",
                 parametro: "fecha",
                 valor: this.diaformatedfecha,
-                rta: "setStateCitas"
+                rta: "setStateAgendas"
             }]
             this.getDataByRangoSuperior(this.paramsFechasCitas);
         },
 
         filtrarFechasByProf() {
-            this.fechasActivas = this.dataCitas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
+            this.fechasActivas = this.dataAgendas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
 
             console.log("Fechas Activas:", this.fechasActivas[0]);
         },
@@ -337,11 +369,13 @@ export default {
         async GuardarCita() {
             this.params_GuardarFechaCita = [{
                 paciente: this.datapaciente[0].name1 + " " + this.datapaciente[0].apell1,
+                numdoc: this.datapaciente[0].numdoc,
                 telpaciente: this.datapaciente[0].celular,
-                estado:"0",
+                estado: "0",
                 hora: this.listahora,
                 id_agenda: this.f_reserva,
                 tipo: this.t_reserva,
+                fecha:this.fecha,
                 bd: "citas",
                 /*        rta: "UpdateStateCitas" */
             }]
@@ -355,7 +389,7 @@ export default {
                 bd: "citas",
                 parametro: "id_agenda",
                 valor: this.f_reserva,
-                rta: "setStateAgendas"
+                rta: "setStateCitas"
             }]
             this.desord_ListaCitasDia = await this.getDatabyParam(this.params_citasDia);
             //ordenamos la cita por hora
@@ -409,9 +443,22 @@ export default {
                     existepaciente: "0",
                     rta: "ClosetModalP"
                 }],
-
                 this.ClosetModalNewPaciente(this.paramsClosetModalPac[0])
             console.log("cerrando modal")
+        },
+
+        buscarAllCitasPAciente() {
+            const idpaciente = this.B_tipodoc + this.B_numdoc;
+            this.paramsCitasPaciente = [{
+                bd: "citas",
+                parametro1: "numdoc",
+                valor1: idpaciente,
+                parametro2:"fecha",
+                valor2: this.diaformatedfecha,
+                rta: "setStateCitasPaciente"
+            }]
+            this.getDataUsersbyParam(this.paramsCitasPaciente);
+
         }
 
     },
@@ -439,6 +486,7 @@ export default {
         Guardar_p_isButtonDisabled() {
             return !this.name1 || !this.apell1 || !this.celular || !this.email || !this.dir || !this.fnacimiento;
         },
+
         /*  */
         formattedDate() {
             return moment(this.fecha_agenda).format('YYYY-MM-DD');
@@ -447,7 +495,6 @@ export default {
             return moment(new Date).format('YYYY-MM-DD');
         },
 
-   
     },
 
     /* ------------------------------------------------------------------------ */

@@ -38,23 +38,23 @@
                             <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="FVerAgenda" @change="this.VerAgendaDia()">
                         </div>
 
-                        cant:  {{cantAgendasDia  }} 
+                        cant: {{cantAgendasDia }}
                         <br>
-               
+
                         <ol class="list-group">
 
                             <li v-for=" reg in this.ListVerAgenda" :key="reg.id" class="list-group-item d-flex justify-content-center align-items-center">
 
-                                <div class="col-2"><button type="button" class="btn btn-primary btn-sm">+</button></div>
+                                <div class="col-2"><button type="button" class="btn btn-primary btn-sm">Ver</button></div>
                                 <div class="col-10">
 
                                     <div class="ms-2 me-auto">
-                                        <div class="fw-bold">{{reg.id_profesional}} </div>
+                                        <div class="fw-bold">Profesional: {{this.nombreProfesional(reg.id_profesional)}}</div>
                                         Agenda de {{ reg.clase }}
                                     </div>
-                                    <span class="badge bg-primary rounded-pill">18</span>
-                                    <span class="badge bg-success rounded-pill">10</span>
-                                    <span class="badge bg-danger rounded-pill">6</span>
+                                    <span class="badge bg-primary rounded-pill">Reservadas 18</span>
+                                    <span class="badge bg-success rounded-pill">Asistidas 10</span>
+                                    <span class="badge bg-danger rounded-pill">NO asistidas 6</span>
                                 </div>
 
                             </li>
@@ -166,7 +166,7 @@ export default {
         AgendasOrdenadas: [],
         FVerAgenda: "",
         ListVerAgenda: [],
-        CantAgendadDia:""
+        CantAgendadDia: ""
     }),
     /* --------------------------------------------------------------------------------------------------- */
 
@@ -240,6 +240,12 @@ export default {
             return rta
         },
 
+        nombreProfesional(dataID) {
+            const nombreProf = this.dataprofesionales.filter(prof => prof.id == dataID)
+            const resultado = nombreProf[0]
+            return resultado.name1 + " " + resultado.apell1
+        }
+
     },
 
     /* --------------------------------------------------------------------------------------------------- */
@@ -261,10 +267,11 @@ export default {
         sortedListaAgendasProfesional() {
             this.fechasActivas.sort((a, b) => new Date(a.date) - new Date(b.date));
         },
-        cantAgendasDia(){
-         const cant=  this.ListVerAgenda.length;
-         return cant
-        }
+        cantAgendasDia() {
+            const cant = this.ListVerAgenda.length;
+            return cant
+        },
+
     },
     /* --------------------------------------------------------------------------------------------------- */
     created() {

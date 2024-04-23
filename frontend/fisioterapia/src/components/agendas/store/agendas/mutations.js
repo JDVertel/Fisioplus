@@ -29,7 +29,10 @@ export const setStateAgendas=(state, data)=>{
     state.dataAgendas=[...state.dataAgendas, ...data];
 }
 
-
+export const setStateCitasPaciente=(state,data)=>{
+    state.dataCitasPaciente="",
+    state.dataCitasPaciente=[...state.dataCitasPaciente, ...data];
+}
 
 
 /* ------------------------------------CITAS ------------------------------------------------ */
