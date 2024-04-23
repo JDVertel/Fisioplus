@@ -91,6 +91,7 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
             params: {
                 orderBy: `"${parametro}"`,
                 startAt: `"${valor}"`,
+              
             },
         })
     const { data } = response;
@@ -170,9 +171,12 @@ export const createEntradanewPaciente = async ({ commit }, entradas) => {
     const Ruta = `/${bd}.json`;
     const { data } = await firebase_api.post(Ruta, DataToSave);
     DataToSave.id = data.name;
+    console.log("paciente guardado exitosamente",+ data.name);
 }
 
-
+export const ClosetModalNewPaciente=async({commit})=>{
+    commit("ClosetModalP");
+}
 
 /* CONFIGURACION======================================= */
 //guardart datos 

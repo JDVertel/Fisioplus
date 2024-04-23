@@ -7,12 +7,14 @@
 {{ dataCitas }} -->
 <div class="container">
     <div class="body">
-        <br>
-        <h6>Detalles</h6>
+        <div class="container centrado mt-5">
+            <h6 class="display-5">Agendamiento</h6>
+        </div>
         <hr>
+
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Agendas del Sistema</button>
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Agendas del Dia</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">+ Gestionar - </button>
@@ -31,29 +33,30 @@
                     <!--  -->
                     <div class="sidebar">
                         <br>
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
+                            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="FVerAgenda" @change="this.VerAgendaDia()">
+                        </div>
+                        <br>
 
                         <ol class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">04/02/2024</div>
-                                    Agenda de Fisioterapia
+
+                            <li    v-for=" reg in this.ListVerAgenda" :key="reg.id"  class="list-group-item d-flex justify-content-center align-items-center" >
+
+                                <div class="col-2"><button type="button" class="btn btn-primary btn-sm">+</button></div>
+                                <div class="col-10">
+
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">{{reg.id_profesional}} </div>
+                                        Agenda de {{ reg.clase }}
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">18</span>
+                                    <span class="badge bg-success rounded-pill">10</span>
+                                    <span class="badge bg-danger rounded-pill">6</span>
                                 </div>
-                                <span class="badge bg-primary rounded-pill">18</span>
+
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">04/02/2024</div>
-                                    Agenda de masajes
-                                </div>
-                                <span class="badge bg-primary rounded-pill">23</span>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">04/02/2024</div>
-                                    Agenda de consultas
-                                </div>
-                                <span class="badge bg-primary rounded-pill">2</span>
-                            </li>
+                       
                         </ol>
                     </div>
 
@@ -94,10 +97,9 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">fecha</th>
-                                <th scope="col">clase</th>
-                                <th scope="col">Asignadas</th>
-
+                                <th>Fecha</th>
+                                <th>Tipo</th>
+                                <th>Asig</th>
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -158,7 +160,10 @@ export default {
         fecha_agenda: "",
         params_GuardarFechaAgenda: [],
         params_Agendas_Dia: [],
-        paramsFechasAgendas: []
+        paramsFechasAgendas: [],
+        AgendasOrdenadas: [],
+        FVerAgenda: "",
+        ListVerAgenda: [],
     }),
     /* --------------------------------------------------------------------------------------------------- */
 
@@ -175,11 +180,10 @@ export default {
             }]
             this.getDataUsersbyParam(this.paramsProfesionales);
             this.VerListadoAgendass();
-        
+
         },
 
-
-         async VerListadoAgendass() {
+        async VerListadoAgendass() {
             const fecha = this.diaformatedfecha;
             console.log(fecha);
             this.paramsFechasAgendas = [{
@@ -188,10 +192,9 @@ export default {
                 valor: fecha,
                 rta: "setStateAgendas"
             }]
-          await  this.getDataByRangoSuperior(this.paramsFechasAgendas);
-          this. filtrarFechasByProf()
+            await this.getDataByRangoSuperior(this.paramsFechasAgendas);
+            this.filtrarFechasByProf()
         },
-
 
         filtarProf() {
             console.log(this.t_reserva)
@@ -199,8 +202,6 @@ export default {
             console.log(this.profactivos)
         },
         /* ---------------------------------------------------------- */
-
-    
 
         async filtrarFechasByProf() {
             this.fechasActivas = this.dataAgendas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
@@ -216,9 +217,24 @@ export default {
                 bd: "agendas",
                 /*        rta: "UpdateStateCitas" */
             }]
-            await this.CreateAgendaNueva(this.params_GuardarFechaAgenda[0]);
+            this.fecha_agenda = "",
+                await this.CreateAgendaNueva(this.params_GuardarFechaAgenda[0]);
             this.VerListadoAgendass();
         },
+
+        fijarfechadia() {
+            const fecha = this.diaformatedfecha;
+            this.FVerAgenda = fecha;
+          
+        },
+
+        VerAgendaDia() {
+            console.log(this.dataAgendas)
+            console.log(this.FVerAgenda)
+            let rta = this.dataAgendas.filter(agenda => agenda.fecha == this.FVerAgenda);
+            this.ListVerAgenda=rta
+            console.log("estos son mis datos",  this.ListVerAgenda);
+        }
 
     },
 
@@ -237,11 +253,18 @@ export default {
 
         isButtonDisabled() {
             return !this.t_reserva || !this.p_reserva || !this.fecha_agenda;
-        }
+        },
+        sortedListaAgendasProfesional() {
+            this.fechasActivas.sort((a, b) => new Date(a.date) - new Date(b.date));
+        },
+
     },
     /* --------------------------------------------------------------------------------------------------- */
     created() {
         this.BuscarProfesionales()
+        this.fijarfechadia()
+        this.VerAgendaDia()
+
     }
     /* --------------------------------------------------------------------------------------------------- */
 }

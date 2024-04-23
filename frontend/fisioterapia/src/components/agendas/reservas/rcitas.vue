@@ -13,94 +13,111 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 <hr> -->
 
 <div class="container">
-    <h6 class="display-6">Realizar una reserva </h6>
-    <h6>Buscar o crear un usuario</h6>
+    <br>
 
-    <div class="row">
-        <div class="col-6 col-md-3">
-            <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="B_tipodoc">
-                <option selected value="">Tipo Documento</option>
-                <option value="CC">CC</option>
-                <option value="TI">TI</option>
-                <option value="CE">CE</option>
-                <option value="PA">PASAPORTE</option>
-            </select>
-        </div>
-        <div class="col-6 col-md-3">
-            <input type="number" class="form-control form-control-sm textarea" id="text_numdoc" placeholder="Numero Documento" v-model="B_numdoc" />
-        </div>
-        <div class="col-6 col-md-3 ">
-            <button class="btn btn-success btn-sm" @click="Buscarpaciente" :disabled="BuscarP_isButtonDisabled">Buscar</button>
-        </div>
-
-        <!--    <div class="col-6  col-md-3 text-center">
-            <button class="btn btn-warning btn-sm">+ crear nuevo</button>
-        </div> -->
+    <div class="container centrado mt-5">
+        <h6 class="display-5">Reservas</h6>
     </div>
+    <hr>
+    <div class="card text-left">
+        <div class="card-body">
+            <h5 class="card-title">Realizar una reserva </h5>
+            <p class="card-text">Ingrese la identificacion del paciente</p>
+            <br>
+            <div class="row">
+                <div class="col-4 col-md-3">
+                    <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="B_tipodoc">
+                        <option selected value="">Tipo Doc</option>
+                        <option value="CC">CC</option>
+                        <option value="TI">TI</option>
+                        <option value="CE">CE</option>
+                        <option value="PA">PAS</option>
+                    </select>
+                </div>
+                <div class="col-5 col-md-3">
+                    <input type="number" class="form-control form-control-sm textarea" id="text_numdoc" placeholder="# Documento" v-model="B_numdoc" />
+                </div>
+
+                <div class="col-3 col-md-3 ">
+                    <button class="btn btn-success btn-sm" @click="Buscarpaciente" :disabled="BuscarP_isButtonDisabled">Buscar</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <h6 class="display-6"></h6>
+
 </div>
 
 <!--  aqui componente de registro de usuario -->
 <div v-if="this.existepaciente == 2">
     <br>
-    <div class="card text-center">
-        <div class="card-body">
-            <h5 class="card-title">Registro de nuevo paciente</h5>
-            <p class="card-text">Paciente no encontrado, ingrese los siguientes datos para
-                registarlo y poder realizar una reserva</p>
-            <br>
-            <div class="row">
+    <div class="container">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">Registro de nuevo paciente</h5>
+                <p class="card-text">Paciente no encontrado, ingrese los siguientes datos para
+                    registarlo y poder realizar una reserva</p>
+                <br>
+                <div class="row">
 
-                <div class="col-6">
-                    <div class="input-group mb-1">
-                        <input type="text" class="form-control form-control-sm textarea" id="text_1nombre" placeholder="1 Nombre" v-model="name1" />
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_1nombre" placeholder="1 Nombre" v-model="name1" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_2nombre" placeholder="2 Nombre" v-model="name2" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_1apelli" placeholder="1 Apellido" v-model="apell1" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_2apell" placeholder="2 Apellido" v-model="apell2" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="number" class="form-control form-control-sm textarea" id="text_tel" placeholder="Celular" v-model="celular" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Email" v-model="email" />
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Direccion" v-model="dir" />
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">F Nacimiento:</span>
+                            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fnacimiento">
+                        </div>
                     </div>
                 </div>
-                <div class="col-6">
-                    <div class="input-group mb-1">
-                        <input type="text" class="form-control form-control-sm textarea" id="text_2nombre" placeholder="2 Nombre" v-model="name2" />
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="input-group mb-1">
-                        <input type="text" class="form-control form-control-sm textarea" id="text_1apelli" placeholder="1 Apellido" v-model="apell1" />
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="input-group mb-1">
-                        <input type="text" class="form-control form-control-sm textarea" id="text_2apell" placeholder="2 Apellido" v-model="apell2" />
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="input-group mb-1">
-                        <input type="number" class="form-control form-control-sm textarea" id="text_tel" placeholder="Celular" v-model="celular" />
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="input-group mb-1">
-                        <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Email" v-model="email" />
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="input-group mb-1">
-                        <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Direccion" v-model="dir" />
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="input-group input-group-sm mb-3">
-                        <span class="input-group-text" id="inputGroup-sizing-sm">F Nacimiento:</span>
-                        <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fnacimiento">
-                    </div>
-                </div>
+                <button class="btn btn-warning btn-sm" @click=" cerrarmodal()">
+                    Cancelar
+                </button>
+                <button class="btn btn-success btn-sm" @click=" registarPaciente()" :disabled="Guardar_p_isButtonDisabled">
+                    Registrar cliente
+                </button>
             </div>
-
-            <button class="btn btn-success btn-sm" @click=" registarPaciente()">
-                Registrar cliente
-            </button>
         </div>
     </div>
 </div>
 
 <br>
+
 <div class="container" v-if="this.existepaciente == 1">
 
     <div class="card">
@@ -162,7 +179,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
                     </div>
 
-                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()" :disabled="GuardarR_isButtonDisabled">Guardar Reservar</button>
+                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()" :disabled="Guardar_p_isButtonDisabled">Guardar Reservar</button>
                 </div>
             </div>
             <br>
@@ -254,6 +271,7 @@ export default {
         dir: "",
         fnacimiento: "",
         paramsGuardarPaciente: [],
+        paramsClosetModalPac: [],
 
     }),
 
@@ -266,7 +284,7 @@ export default {
     /* ------------------------------------------------------------------------ */
 
     methods: {
-        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA','createEntradanewPaciente']),
+        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA', 'createEntradanewPaciente', 'ClosetModalNewPaciente']),
 
         /*  */
         Buscarpaciente() {
@@ -360,10 +378,10 @@ export default {
             this.clearDataStoreA(this.paramsClear)
         },
 
-        registarPaciente() {
+        async registarPaciente() {
             const idpaciente = this.B_tipodoc + this.B_numdoc;
             this.paramsGuardarPaciente = [{
-                numdoc:idpaciente,
+                numdoc: idpaciente,
                 name1: this.name1,
                 name2: this.name2,
                 apell1: this.apell1,
@@ -374,7 +392,26 @@ export default {
                 fnacimiento: this.fnacimento,
                 bd: "pacientes",
             }]
-            this.createEntradanewPaciente(this.paramsGuardarPaciente[0])
+            await this.createEntradanewPaciente(this.paramsGuardarPaciente[0])
+            this.Buscarpaciente()
+        },
+
+        CerrarModalNewPaciente() {
+            this.name1 = ""
+            this.name2 = "",
+                this.apell1 = "",
+                this.apell2 = "",
+                this.celular = "",
+                this.email = "",
+                this.dir = "",
+                this.fnacimiento = "",
+                this.paramsClosetModalPac = [{
+                    existepaciente: "0",
+                    rta: "ClosetModalP"
+                }],
+
+                this.ClosetModalNewPaciente(this.paramsClosetModalPac[0])
+            console.log("cerrando modal")
         }
 
     },
@@ -382,6 +419,7 @@ export default {
     computed: {
         ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas']),
         ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
+
         sortedListaCitasDia() {
             return this.desord_ListaCitasDia.sort((a, b) => {
                 const hourA = a.hora.split(':')[0];
@@ -396,6 +434,10 @@ export default {
 
         GuardarR_isButtonDisabled() {
             return !this.t_reserva || !this.p_reserva || !this.listahora || !this.f_reserva;
+        },
+
+        Guardar_p_isButtonDisabled() {
+            return !this.name1 || !this.apell1 || !this.celular || !this.email || !this.dir || !this.fnacimiento;
         },
         /*  */
         formattedDate() {

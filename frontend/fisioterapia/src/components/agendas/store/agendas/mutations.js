@@ -78,11 +78,21 @@ export const setStateUsuarios=(state, entryDataUsuarios)=>{
     state.existeusuarios = entryDataUsuarios.length;
 }
 
+export const ClosetModalP=(state)=>{
+    state.existeusuarios = 0;
+}
+
+
+
+
+
+
 /* -------------------------------------------------------- */
 export const updateDataVitrina = (state, entradas) => {
     const idx = state.entry.map((e) => e.id).indexOf(entradas.id);
     //console.log("imprimo", { idx });
     state.entry[idx] = entradas;
   };
+
 
   /* -------------------------------------------------------- */
