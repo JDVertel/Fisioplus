@@ -37,11 +37,13 @@
                             <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
                             <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="FVerAgenda" @change="this.VerAgendaDia()">
                         </div>
-                        <br>
 
+                        cant:  {{cantAgendasDia  }} 
+                        <br>
+               
                         <ol class="list-group">
 
-                            <li    v-for=" reg in this.ListVerAgenda" :key="reg.id"  class="list-group-item d-flex justify-content-center align-items-center" >
+                            <li v-for=" reg in this.ListVerAgenda" :key="reg.id" class="list-group-item d-flex justify-content-center align-items-center">
 
                                 <div class="col-2"><button type="button" class="btn btn-primary btn-sm">+</button></div>
                                 <div class="col-10">
@@ -56,7 +58,7 @@
                                 </div>
 
                             </li>
-                       
+
                         </ol>
                     </div>
 
@@ -164,6 +166,7 @@ export default {
         AgendasOrdenadas: [],
         FVerAgenda: "",
         ListVerAgenda: [],
+        CantAgendadDia:""
     }),
     /* --------------------------------------------------------------------------------------------------- */
 
@@ -171,7 +174,7 @@ export default {
 
         ...mapActions('Agendas', ['getDataUsersbyParam', 'getDataByRangoSuperior', 'CreateAgendaNueva', 'getDatabyParam']),
 
-        BuscarProfesionales() {
+        async BuscarProfesionales() {
             this.paramsProfesionales = [{
                 bd: "profesionales",
                 parametro: "id_ips",
@@ -179,7 +182,9 @@ export default {
                 rta: "setStateProfesionales"
             }]
             this.getDataUsersbyParam(this.paramsProfesionales);
-            this.VerListadoAgendass();
+            await this.VerListadoAgendass();
+            this.fijarfechadia();
+            await this.VerAgendaDia();
 
         },
 
@@ -223,18 +228,17 @@ export default {
         },
 
         fijarfechadia() {
-            const fecha = this.diaformatedfecha;
-            this.FVerAgenda = fecha;
-          
+            const ListAgendas = this.diaformatedfecha;
+            this.FVerAgenda = ListAgendas;
+            return ListAgendas
         },
 
         VerAgendaDia() {
-            console.log(this.dataAgendas)
-            console.log(this.FVerAgenda)
             let rta = this.dataAgendas.filter(agenda => agenda.fecha == this.FVerAgenda);
-            this.ListVerAgenda=rta
-            console.log("estos son mis datos",  this.ListVerAgenda);
-        }
+            this.ListVerAgenda = rta
+            console.log("estos son mis datos", this.ListVerAgenda);
+            return rta
+        },
 
     },
 
@@ -257,13 +261,14 @@ export default {
         sortedListaAgendasProfesional() {
             this.fechasActivas.sort((a, b) => new Date(a.date) - new Date(b.date));
         },
-
+        cantAgendasDia(){
+         const cant=  this.ListVerAgenda.length;
+         return cant
+        }
     },
     /* --------------------------------------------------------------------------------------------------- */
     created() {
         this.BuscarProfesionales()
-        this.fijarfechadia()
-        this.VerAgendaDia()
 
     }
     /* --------------------------------------------------------------------------------------------------- */

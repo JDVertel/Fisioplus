@@ -338,7 +338,7 @@ export default {
             this.params_GuardarFechaCita = [{
                 paciente: this.datapaciente[0].name1 + " " + this.datapaciente[0].apell1,
                 telpaciente: this.datapaciente[0].celular,
-                estado: true,
+                estado:"0",
                 hora: this.listahora,
                 id_agenda: this.f_reserva,
                 tipo: this.t_reserva,
@@ -446,6 +446,8 @@ export default {
         diaformatedfecha() {
             return moment(new Date).format('YYYY-MM-DD');
         },
+
+   
     },
 
     /* ------------------------------------------------------------------------ */
