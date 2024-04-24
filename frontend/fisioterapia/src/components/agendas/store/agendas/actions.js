@@ -77,9 +77,6 @@ export const getDataUsersbyParam = async ({ commit }, parametros) => {
 };
 
 
-
-
-
 /* ============================================= */
 /* FUNCION QUE CONSULTA  REGISTROS A PARTIR DE UNA FECHA INICIAL (DE HOY EN ADELANTE) */
 
@@ -138,14 +135,13 @@ export const CreateAgendaNueva = async ({ commit }, entradas) => {
 /* ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
 
-
 export const createEntradaCitaNueva = async ({ commit }, entradas) => {
 
     const {
-        paciente, numdoc, telpaciente, estado, hora, id_agenda, tipo, fecha, bd, } = entradas;
+        paciente, numdoc, telpaciente, estado, hora, id_agenda, tipo, fecha, idprofesional, bd, } = entradas;
 
     const DataToSave = {
-        paciente, numdoc, telpaciente, estado, hora, id_agenda, tipo, fecha
+        paciente, numdoc, telpaciente, estado, hora, id_agenda, tipo, fecha, idprofesional
     };
     console.log("ok", entradas);
 
@@ -162,8 +158,6 @@ export const createEntradaCitaNueva = async ({ commit }, entradas) => {
 
     /*     commit("newDataVitrina", DataToSave); */
 }
-
-
 
 
 export const createEntradanewPaciente = async ({ commit }, entradas) => {
@@ -244,11 +238,12 @@ export const clearDataStoreA = async ({ commit }) => {
 
 
 export const NewgetDataUsersbyParam = async ({ commit }, parametros) => {
+    console.log("llegando al action");
     const [{ bd, parametro1, valor1, rta }] = parametros;
-          console.log(bd);
-       console.log(parametro1);
-       console.log(valor1);
-       console.log(rta);
+    console.log(bd);
+    console.log(parametro1);
+    console.log(valor1);
+    console.log(rta);
     const response = await firebase_api.get(`/${bd}.json`, {
         params: {
             orderBy: `"${parametro1}"`,

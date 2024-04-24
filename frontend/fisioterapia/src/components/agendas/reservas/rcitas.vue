@@ -10,6 +10,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
 <hr>
 {{ datapaciente }}
+{{ dataCitasPaciente }}
 <hr> -->
 
 <div class="container">
@@ -141,36 +142,33 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
             </tbody>
 
         </table>
-        <div class="container" style="background-color:#97BFB4">
+        
+        <div class="container" style="background-color:#97BFB4"  v-if="this.dataCitasPaciente.length >0">
             <br>
             <div>
                 <h5 class="display-6">Citas Vigentes del paciente</h5>
             </div>
             <br>
-            {{ this.citaspaciente }}
-            <table class="table table-sm">
+           
+            <table class="table table-sm" >
                 <thead>
-                    <tr>
+                    <tr >
                         <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Profesional</th>
+                        <th>Opc</th>
 
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-
+                    <tr v-for="cita in dataCitasPaciente" :key="cita.id">
+                        <td>{{cita.fecha}}</td>
+                        <td>{{cita.hora}}</td>
+                        <td>{{cita.tipo}}</td>
+                        <td>{{cita.idprofesional}}</td>
+                        <td><button class="btn btn-danger btn-sm"  @click="deleteItemC(cita.id)" >x</button></td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-
-                    </tr>
-
                 </tbody>
             </table>
         </div>
@@ -184,7 +182,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
                 <h6 class="display-6">Seleccione tipo , profesional y fecha de consulta </h6>
                 <div class="row">
-                    <div class="col-6 col-md-3"> <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="t_reserva" @change="filtarProf()">
+                    <div class="col-6 col-md-3"> <select class="form-select form-select-sm textarea" id="inputGroupSelect_treserva" v-model="t_reserva" @change="filtarProf()">
                             <option selected value="">Tipo de Reserva</option>
                             <option value="terapia">Terapia</option>
                             <option value="consulta">Consulta</option>
@@ -197,9 +195,9 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                         </select>
                     </div>
                     <div class="col-6 col-md-3">
-                        <select class="form-select form-select-sm textarea" id="inputGroupSelect03" v-model="f_reserva" @change="VerListadoCitas()">
+                        <select class="form-select form-select-sm textarea" id="miSelect" v-model="f_reserva" @change="VerListadoCitas()">
                             <option selected value="">Dia de reserva</option>
-                            <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.fecha">{{fecha.fecha}} </option>
+                            <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.id">{{fecha.fecha}} </option>
                         </select>
                     </div>
 
@@ -224,7 +222,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                             <th scope="col">Nombre</th>
                             <th scope="col">Celular</th>
                             <th scope="col">Tipo</th>
-                            <th scope="col">Opc</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
@@ -233,7 +231,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                             <td>{{cita.paciente}}</td>
                             <td>{{cita.telpaciente}}</td>
                             <td>{{cita.tipo}}</td>
-                            <td><button class="btn btn-danger m-1 btn-sm" @click="deleteItemC(cita.id)">X</button></td>
+                  
                         </tr>
 
                     </tbody>
@@ -307,6 +305,7 @@ export default {
         paramsCitasPaciente: [],
         citaspaciente: [],
         idpaciente: "",
+        valorSeleccionadoSelect:"",
 
     }),
 
@@ -366,6 +365,9 @@ export default {
         filtrarFechasByProf() {
             this.fechasActivas = this.dataAgendas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
             console.log("Fechas Activas:", this.fechasActivas[0]);
+            this.desord_ListaCitasDia=[];
+            this.f_reserva="";
+
         },
 
         filtrarcitasPaciente() {
@@ -382,12 +384,17 @@ export default {
                 hora: this.listahora,
                 id_agenda: this.f_reserva,
                 tipo: this.t_reserva,
-                fecha: this.diaformatedfecha,
+                fecha: this.valorSeleccionadoSelect,
+                idprofesional:this.p_reserva,
                 bd: "citas",
                 /*        rta: "UpdateStateCitas" */
             }]
+
             await this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
+
             this.VerListadoCitas();
+            this.vaciarcamposReservas();
+
         },
         /*  */
 
@@ -399,6 +406,7 @@ export default {
                 rta: "setStateCitas"
             }]
             this.desord_ListaCitasDia = await this.getDatabyParam(this.params_citasDia);
+           this. capturalabeldeselect();
             //ordenamos la cita por hora
         },
 
@@ -438,14 +446,14 @@ export default {
         },
 
         CerrarModalNewPaciente() {
-            this.name1 = ""
-            this.name2 = "",
-                this.apell1 = "",
-                this.apell2 = "",
-                this.celular = "",
-                this.email = "",
-                this.dir = "",
-                this.fnacimiento = "",
+            this.name1 = "";
+            this.name2 = "";
+            this.apell1 = "";
+            this.apell2 = "";
+            this.celular = "";
+            this.email = "";
+            this.dir = "";
+            this.fnacimiento = "",
                 this.paramsClosetModalPac = [{
                     existepaciente: "0",
                     rta: "ClosetModalP"
@@ -454,8 +462,17 @@ export default {
             console.log("cerrando modal")
         },
 
-        async buscarAllCitasPAciente() {
+        vaciarcamposReservas() {
+            this.f_reserva = "";
+            this.p_reserva = "";
+            this.t_reserva = "";
+            this.listahora = "";
+            //    this.desord_ListaCitasDia=[];
 
+        },
+
+        buscarAllCitasPAciente() {
+            console.log("entrando en la funcion consultar citas de paciente", this.diaformatedfecha)
             this.paramsCitasPaciente = [{
                 bd: "citas",
                 parametro1: "fecha",
@@ -463,7 +480,12 @@ export default {
                 rta: "setStateCitasPaciente"
             }]
             this.NewgetDataUsersbyParam(this.paramsCitasPaciente);
-            await this.filtrarcitasPaciente()
+        },
+
+        capturalabeldeselect() {
+            const selectElement = document.getElementById("miSelect");
+           this.valorSeleccionadoSelect = selectElement.options[selectElement.selectedIndex].textContent
+       
         }
 
     },
