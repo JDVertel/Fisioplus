@@ -39,7 +39,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                 </div>
 
                 <div class="col-3 col-md-3 ">
-                    <button class="btn btn-success btn-sm" @click="Buscarpaciente()" :disabled="BuscarP_isButtonDisabled">Buscar</button>
+                    <button class="btn btn-success btn-sm" @click="Buscar_paciente()" :disabled="BuscarP_isButtonDisabled">Buscar</button>
                 </div>
 
             </div>
@@ -51,7 +51,6 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
 </div>
 
-<!--  aqui componente de registro de usuario -->
 <div v-if="this.existepaciente == 2">
     <br>
     <div class="container">
@@ -105,10 +104,10 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-warning btn-sm" @click=" cerrarmodal()">
+                <button class="btn btn-warning btn-sm" @click=" cancelar_cerrarmodal()">
                     Cancelar
                 </button>
-                <button class="btn btn-success btn-sm" @click=" registarPaciente()" :disabled="Guardar_p_isButtonDisabled">
+                <button class="btn btn-success btn-sm" @click="registar_Paciente()" :disabled="Guardar_p_isButtonDisabled">
                     Registrar cliente
                 </button>
             </div>
@@ -137,22 +136,22 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                 <tr v-for="pac in datapaciente" :key="pac.id">
                     <td>{{pac.numdoc}}</td>
                     <td>{{pac.name1}} {{pac.apell1}}</td>
-                    <td> <button class="btn btn-success btn-sm" @click=" BuscarProfesionales">Reservar </button> </td>
+                    <td> <button class="btn btn-success btn-sm" @click="Reservar_BuscarProfesionales">Reservar </button> </td>
                 </tr>
             </tbody>
 
         </table>
-        
-        <div class="container" style="background-color:#97BFB4"  v-if="this.dataCitasPaciente.length >0">
+
+        <div class="container" style="background-color:#97BFB4" v-if="this.dataCitasPaciente.length >0">
             <br>
             <div>
-                <h5 class="display-6">Citas Vigentes del paciente</h5>
+                <h5 class="display-6">Citas Vigentes del Paciente</h5>
             </div>
             <br>
-           
-            <table class="table table-sm" >
+
+            <table class="table table-sm">
                 <thead>
-                    <tr >
+                    <tr>
                         <th scope="col">Fecha</th>
                         <th scope="col">Hora</th>
                         <th scope="col">Tipo</th>
@@ -166,8 +165,8 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                         <td>{{cita.fecha}}</td>
                         <td>{{cita.hora}}</td>
                         <td>{{cita.tipo}}</td>
-                        <td>{{cita.idprofesional}}</td>
-                        <td><button class="btn btn-danger btn-sm"  @click="deleteItemC(cita.id)" >x</button></td>
+                        <td>{{this.nombreProfesional(cita.idprofesional)}}</td>
+                        <td><button class="btn btn-danger btn-sm" @click="eliminar_ItemCita(cita.id)">x</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -176,7 +175,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
     <br>
 
-    <div class="container" v-if="existeprofesionales">
+    <div class="container" v-if="btnagendar">
         <div class="row">
             <div class="container">
 
@@ -195,7 +194,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                         </select>
                     </div>
                     <div class="col-6 col-md-3">
-                        <select class="form-select form-select-sm textarea" id="miSelect" v-model="f_reserva" @change="VerListadoCitas()">
+                        <select class="form-select form-select-sm textarea" id="miSelect" v-model="f_reserva" @change="VerListadoCitasAsignadas()">
                             <option selected value="">Dia de reserva</option>
                             <option v-for="fecha in this.fechasActivas" :key="fecha.id" :value="fecha.id">{{fecha.fecha}} </option>
                         </select>
@@ -209,7 +208,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
                     </div>
 
-                    <button type="button " class="btn btn-success btn-sm" @click="GuardarCita()" :disabled="GuardarR_isButtonDisabled">Guardar Reservar</button>
+                    <button type="button " class="btn btn-success btn-sm" @click="Guardar_cita()" :disabled="GuardarR_isButtonDisabled">Guardar cita</button>
                 </div>
             </div>
             <br>
@@ -222,7 +221,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                             <th scope="col">Nombre</th>
                             <th scope="col">Celular</th>
                             <th scope="col">Tipo</th>
-                           
+
                         </tr>
                     </thead>
                     <tbody>
@@ -231,17 +230,19 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                             <td>{{cita.paciente}}</td>
                             <td>{{cita.telpaciente}}</td>
                             <td>{{cita.tipo}}</td>
-                  
+
                         </tr>
 
                     </tbody>
                 </table>
+                <br>
+
             </div>
         </div>
     </div>
 
 </div>
-<div class="container">
+<div class="container home ">
     <router-link to="/dashboard">Home</router-link>
 </div>
 </template>
@@ -305,7 +306,8 @@ export default {
         paramsCitasPaciente: [],
         citaspaciente: [],
         idpaciente: "",
-        valorSeleccionadoSelect:"",
+        valorSeleccionadoSelect: "",
+        btnagendar: false,
 
     }),
 
@@ -320,8 +322,7 @@ export default {
     methods: {
         ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA', 'createEntradanewPaciente', 'ClosetModalNewPaciente', 'NewgetDataUsersbyParam']),
 
-        /*  */
-        Buscarpaciente() {
+        Buscar_paciente() {
             this.idpaciente = this.B_tipodoc + this.B_numdoc;
             this.paramsPaciente = [{
                 bd: "pacientes",
@@ -333,101 +334,9 @@ export default {
             this.buscarAllCitasPAciente();
         },
 
-        /*  */
-        BuscarProfesionales() {
-            this.paramsProfesionales = [{
-                bd: "profesionales",
-                parametro: "id_ips",
-                valor: this.id_ips,
-                rta: "setStateProfesionales"
-            }]
-            this.getDataUsersbyParam(this.paramsProfesionales);
-            this.filtarFechasAgendas()
-        },
-        /*  */
-        filtarProf() {
-            console.log(this.t_reserva)
-            this.profactivos = this.dataprofesionales.filter(profesional => profesional.tipo == this.t_reserva)
-            console.log(this.profactivos)
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-        },
-        /*  */
-        filtarFechasAgendas() {
-            this.paramsFechasCitas = [{
-                bd: "agendas",
-                parametro: "fecha",
-                valor: this.diaformatedfecha,
-                rta: "setStateAgendas"
-            }]
-            this.getDataByRangoSuperior(this.paramsFechasCitas);
-        },
-
-        filtrarFechasByProf() {
-            this.fechasActivas = this.dataAgendas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
-            console.log("Fechas Activas:", this.fechasActivas[0]);
-            this.desord_ListaCitasDia=[];
-            this.f_reserva="";
-
-        },
-
-        filtrarcitasPaciente() {
-            this.citaspaciente = this.dataCitasPaciente.filter(reg => reg.numdoc == this.idpaciente);
-            console.log("citas del paciente ", this.citaspaciente[0])
-        },
-
-        async GuardarCita() {
-            this.params_GuardarFechaCita = [{
-                paciente: this.datapaciente[0].name1 + " " + this.datapaciente[0].apell1,
-                numdoc: this.datapaciente[0].numdoc,
-                telpaciente: this.datapaciente[0].celular,
-                estado: "0",
-                hora: this.listahora,
-                id_agenda: this.f_reserva,
-                tipo: this.t_reserva,
-                fecha: this.valorSeleccionadoSelect,
-                idprofesional:this.p_reserva,
-                bd: "citas",
-                /*        rta: "UpdateStateCitas" */
-            }]
-
-            await this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
-
-            this.VerListadoCitas();
-            this.vaciarcamposReservas();
-
-        },
-        /*  */
-
-        async VerListadoCitas() {
-            this.params_citasDia = [{
-                bd: "citas",
-                parametro: "id_agenda",
-                valor: this.f_reserva,
-                rta: "setStateCitas"
-            }]
-            this.desord_ListaCitasDia = await this.getDatabyParam(this.params_citasDia);
-           this. capturalabeldeselect();
-            //ordenamos la cita por hora
-        },
-
-        async deleteItemC(id) {
-            this.paramsDelCitas = [{
-                id: id,
-                bd: "citas"
-            }]
-
-            await this.DeleteItem(this.paramsDelCitas[0]);
-            this.VerListadoCitas();
-        },
-
-        clearStore() {
-            this.paramsClear[{
-                ruta: "ClearStoreM"
-            }]
-            this.clearDataStoreA(this.paramsClear)
-        },
-
-        async registarPaciente() {
+        async registar_Paciente() {
             this.idpaciente = this.B_tipodoc + this.B_numdoc;
             this.paramsGuardarPaciente = [{
                 numdoc: this.idpaciente,
@@ -442,10 +351,126 @@ export default {
                 bd: "pacientes",
             }]
             await this.createEntradanewPaciente(this.paramsGuardarPaciente[0])
-            this.Buscarpaciente()
+            this.Buscar_paciente()
         },
 
-        CerrarModalNewPaciente() {
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        Reservar_BuscarProfesionales() {
+            this.filtarFechasCitas_vigentesPacientes()
+            this.btnagendar = true;
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        async Guardar_cita() {
+            this.capturalabeldeselect();
+            this.params_GuardarFechaCita = [{
+                paciente: this.datapaciente[0].name1 + " " + this.datapaciente[0].apell1,
+                numdoc: this.datapaciente[0].numdoc,
+                telpaciente: this.datapaciente[0].celular,
+                estado: "0",
+                hora: this.listahora,
+                id_agenda: this.f_reserva,
+                tipo: this.t_reserva,
+                fecha: this.valorSeleccionadoSelect,
+                idprofesional: this.p_reserva,
+                bd: "citas",
+                /*        rta: "UpdateStateCitas" */
+            }]
+            await this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
+            this.VerListadoCitasAsignadas();
+            this.buscarAllCitasPAciente()
+            this.filtarFechasCitas_vigentesPacientes()
+            this.vaciarcamposReservas();
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        cargarProfesionales() {
+            this.paramsProfesionales = [{
+                bd: "profesionales",
+                parametro: "id_ips",
+                valor: this.id_ips,
+                rta: "setStateProfesionales"
+            }]
+            this.getDataUsersbyParam(this.paramsProfesionales);
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        filtarProf() {
+            this.profactivos = this.dataprofesionales.filter(profesional => profesional.tipo == this.t_reserva)
+            console.log("filtrado de profesionales", this.profactivos)
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        filtarFechasCitas_vigentesPacientes() {
+            this.paramsFechasCitas = [{
+                bd: "agendas",
+                parametro: "fecha",
+                valor: this.diaformatedfecha,
+                rta: "setStateAgendas"
+            }]
+            this.getDataByRangoSuperior(this.paramsFechasCitas);
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        filtrarFechasByProf() {
+            this.fechasActivas = this.dataAgendas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
+            console.log("Fechas del profesional activas:", this.fechasActivas[0]);
+            this.desord_ListaCitasDia = [];
+            this.f_reserva = "";
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        filtrarcitasPaciente() {
+            this.citaspaciente = this.dataCitasPaciente.filter(reg => reg.numdoc == this.idpaciente);
+            console.log("citas del paciente ", this.citaspaciente[0])
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        async VerListadoCitasAsignadas() {
+            this.params_citasDia = [{
+                bd: "citas",
+                parametro: "id_agenda",
+                valor: this.f_reserva,
+                rta: "setStateCitas"
+            }]
+            this.desord_ListaCitasDia = await this.getDatabyParam(this.params_citasDia);
+            //ordenamos la cita por hora computado
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        async eliminar_ItemCita(id) {
+            this.paramsDelCitas = [{
+                id: id,
+                bd: "citas"
+            }]
+            await this.DeleteItem(this.paramsDelCitas[0]);
+            this.buscarAllCitasPAciente()
+            this.filtarFechasCitas_vigentesPacientes()
+
+            /*       this.buscarAllCitasPAciente() */
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        clearStore() {
+            this.paramsClear[{
+                ruta: "ClearStoreM"
+            }]
+            this.clearDataStoreA(this.paramsClear)
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        cancelar_cerrarmodalNewPaciente() {
             this.name1 = "";
             this.name2 = "";
             this.apell1 = "";
@@ -462,17 +487,21 @@ export default {
             console.log("cerrando modal")
         },
 
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
         vaciarcamposReservas() {
             this.f_reserva = "";
             this.p_reserva = "";
             this.t_reserva = "";
             this.listahora = "";
             //    this.desord_ListaCitasDia=[];
+            console.log("vaciando de campos del formulario de reservas")
 
         },
 
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
         buscarAllCitasPAciente() {
-            console.log("entrando en la funcion consultar citas de paciente", this.diaformatedfecha)
             this.paramsCitasPaciente = [{
                 bd: "citas",
                 parametro1: "fecha",
@@ -482,10 +511,19 @@ export default {
             this.NewgetDataUsersbyParam(this.paramsCitasPaciente);
         },
 
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
         capturalabeldeselect() {
             const selectElement = document.getElementById("miSelect");
-           this.valorSeleccionadoSelect = selectElement.options[selectElement.selectedIndex].textContent
-       
+            this.valorSeleccionadoSelect = selectElement.options[selectElement.selectedIndex].textContent
+        },
+
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        nombreProfesional(dataID) {
+            const nombreProf = this.dataprofesionales.filter(prof => prof.id == dataID)
+            const resultado = nombreProf[0]
+            return resultado.name1 + " " + resultado.apell1
         }
 
     },
@@ -529,6 +567,7 @@ export default {
 
     created() {
         this.clearStore()
+        this.cargarProfesionales()
     }
 
 }

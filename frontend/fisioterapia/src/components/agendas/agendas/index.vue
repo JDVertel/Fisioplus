@@ -132,12 +132,13 @@
                 </div>
                 <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">3</div>
             </div>
-
+<br>
         </div>
 
     </div>
     <br>
-    <router-link to="/dashboard">Home</router-link>
+    <div class="container home">    <router-link to="/dashboard">Home</router-link></div>
+
 
 </div>
 </template>

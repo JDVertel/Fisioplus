@@ -1,18 +1,9 @@
 import firebase_api from "@/api/firebaseApi";
 
 
-
-/*AGENDAS ============================================ */
-/* funcion que trae los registros a partir de un filtrado parametro->valor */
 export const getDatabyParam = async ({ commit }, parametros) => {
     console.log(parametros);
-    //  bd  -  parametro - valor- rta
     const [{ bd, parametro, valor, rta }] = parametros;
-    /*     console.log(bd);
-        console.log(parametro);
-        console.log(valor);
-        console.log(rta); */
-
     const response = await firebase_api.get(`/${bd}.json`, {
         params: {
             orderBy: `"${parametro}"`,
@@ -27,10 +18,7 @@ export const getDatabyParam = async ({ commit }, parametros) => {
             ...data[id],
         });
     }
-
-    console.log(datasalida)
-
-
+    console.log("data consulta por parametros", bd, "por",parametro ,"rta:", datasalida)
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
     } else {
@@ -40,21 +28,15 @@ export const getDatabyParam = async ({ commit }, parametros) => {
 };
 
 
-/* ------------------------------------------------------------------------------------------------ */
+
 export const getDataUsersbyParam = async ({ commit }, parametros) => {
-    /*    console.log(parametros); */
-    //  bd  -  parametro - valor- rta
+
     const [{ bd, parametro, valor, rta }] = parametros;
-    /*     console.log(bd);
-        console.log(parametro);
-        console.log(valor);
-        console.log(rta); */
 
     const response = await firebase_api.get(`/${bd}.json`, {
         params: {
             orderBy: `"${parametro}"`,
             equalTo: `"${valor}"`,
-
         },
     });
     const { data } = response;
@@ -65,7 +47,7 @@ export const getDataUsersbyParam = async ({ commit }, parametros) => {
             ...data[id],
         });
     }
-    console.log(datasalida)
+    console.log("busqueda por parametro", parametro ,bd,  datasalida)
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
     } else {
@@ -77,18 +59,16 @@ export const getDataUsersbyParam = async ({ commit }, parametros) => {
 };
 
 
-/* ============================================= */
-/* FUNCION QUE CONSULTA  REGISTROS A PARTIR DE UNA FECHA INICIAL (DE HOY EN ADELANTE) */
+
 
 export const getDataByRangoSuperior = async ({ commit }, parametros) => {
     const [{ bd, parametro, valor, rta }] = parametros;
-    console.log(bd, parametro, valor, rta);
+    console.log("parametros consulta por rango superior", valor, parametros);
     const response = await firebase_api.get(`/${bd}.json`,
         {
             params: {
                 orderBy: `"${parametro}"`,
                 startAt: `"${valor}"`,
-
             },
         })
     const { data } = response;
@@ -99,7 +79,7 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
             ...data[id],
         });
     }
-    console.log(datasalida);
+    console.log("datos de consulta de",bd, " rango:",valor ,datasalida);
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
     } else {
@@ -107,7 +87,7 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
     }
 };
 
-/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
 
 
 export const CreateAgendaNueva = async ({ commit }, entradas) => {
@@ -132,32 +112,25 @@ export const CreateAgendaNueva = async ({ commit }, entradas) => {
 
 }
 
-/* ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 
 
 export const createEntradaCitaNueva = async ({ commit }, entradas) => {
-
     const {
         paciente, numdoc, telpaciente, estado, hora, id_agenda, tipo, fecha, idprofesional, bd, } = entradas;
-
     const DataToSave = {
         paciente, numdoc, telpaciente, estado, hora, id_agenda, tipo, fecha, idprofesional
     };
-    console.log("ok", entradas);
-
+    
     const Ruta = `/${bd}.json`;
-    console.log(Ruta)
+    console.log("se guardara:", entradas ,"en bd", bd ,"ruta:", Ruta);
     //servicio
     const { data } = await firebase_api.post(Ruta, DataToSave);
     //agregamos el id al array para subirlo al strore
     DataToSave.id = data.name;
     //se llama a la mutacion y s epasa el array como
     console.log(DataToSave);
-    /*   commit("UpdateStateCita", datasalida); */
-
-
-    /*     commit("newDataVitrina", DataToSave); */
 }
+
 
 
 export const createEntradanewPaciente = async ({ commit }, entradas) => {
@@ -169,12 +142,13 @@ export const createEntradanewPaciente = async ({ commit }, entradas) => {
     console.log("paciente guardado exitosamente", + data.name);
 }
 
+
 export const ClosetModalNewPaciente = async ({ commit }) => {
     commit("ClosetModalP");
 }
 
-/* CONFIGURACION======================================= */
-//guardart datos 
+
+
 export const createEntradaUser = async ({ commit }, entradas) => {
     const { id_ips, estado, nombre, pass, rol, doc, bd } = entradas;
     const DataToSave = { id_ips, estado, doc, nombre, pass, rol };
@@ -188,8 +162,6 @@ export const createEntradaUser = async ({ commit }, entradas) => {
     console.log(DataToSave);
     /*     commit("newDataVitrina", DataToSave); */
 };
-
-//-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
 
 
 
@@ -210,9 +182,6 @@ export const createEntradaProf = async ({ commit }, entradas) => {
 };
 
 
-
-
-/* ------------------------------------------------------------------------------------------------ */
 export const DeleteItem = async ({ commit }, entradas) => {
     const { id, bd } = entradas;
     const Ruta = `/${bd}/${id}.json`;
@@ -230,26 +199,14 @@ export const clearDataStoreA = async ({ commit }) => {
 }
 
 
-
-
-
-
-/* =========================AAAAGENDAS==== */
-
-
 export const NewgetDataUsersbyParam = async ({ commit }, parametros) => {
-    console.log("llegando al action");
     const [{ bd, parametro1, valor1, rta }] = parametros;
-    console.log(bd);
-    console.log(parametro1);
-    console.log(valor1);
-    console.log(rta);
+    /* console.log( parametros); */
     const response = await firebase_api.get(`/${bd}.json`, {
         params: {
             orderBy: `"${parametro1}"`,
             startAt: `"${valor1}"`,
         },
-
     });
     const { data } = response;
     const datasalida = [];
@@ -259,10 +216,9 @@ export const NewgetDataUsersbyParam = async ({ commit }, parametros) => {
             ...data[id],
         });
     }
-    console.log(datasalida)
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
-        console.log(datasalida);
+        console.log("data de citas activas paciente",datasalida);
     } else {
         console.log("sin datos en la consulta")
 
