@@ -10,7 +10,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
 <hr>
 {{ datapaciente }}
-{{ dataCitasPaciente }}
+{{ dataAllCitasPaciente }}
 <hr> -->
 
 <div class="container">
@@ -39,7 +39,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                 </div>
 
                 <div class="col-3 col-md-3 ">
-                    <button class="btn btn-success btn-sm" @click="Buscar_paciente()" :disabled="BuscarP_isButtonDisabled">Buscar</button>
+                    <button class="btn btn-success btn-sm" @click=" BTN_Buscar_paciente()" :disabled="BuscarP_isButtonDisabled">Buscar</button>
                 </div>
 
             </div>
@@ -107,7 +107,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                 <button class="btn btn-warning btn-sm" @click=" cancelar_cerrarmodal()">
                     Cancelar
                 </button>
-                <button class="btn btn-success btn-sm" @click="registar_Paciente()" :disabled="Guardar_p_isButtonDisabled">
+                <button class="btn btn-success btn-sm" @click=" BTN_registar_Paciente()" :disabled="Guardar_p_isButtonDisabled">
                     Registrar cliente
                 </button>
             </div>
@@ -136,13 +136,13 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                 <tr v-for="pac in datapaciente" :key="pac.id">
                     <td>{{pac.numdoc}}</td>
                     <td>{{pac.name1}} {{pac.apell1}}</td>
-                    <td> <button class="btn btn-success btn-sm" @click="Reservar_BuscarProfesionales">Reservar </button> </td>
+                    <td> <button class="btn btn-success btn-sm" @click=" BTN_Reservar_BuscarProfesionales">Reservar </button> </td>
                 </tr>
             </tbody>
 
         </table>
 
-        <div class="container" style="background-color:#97BFB4" v-if="this.dataCitasPaciente.length >0">
+        <div class="container" style="background-color:#97BFB4" v-if="this.dataAllCitasPaciente.length >0">
             <br>
             <div>
                 <h5 class="display-6">Citas Vigentes del Paciente</h5>
@@ -166,7 +166,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                         <td>{{cita.hora}}</td>
                         <td>{{cita.tipo}}</td>
                         <td>{{this.nombreProfesional(cita.idprofesional)}}</td>
-                        <td><button class="btn btn-danger btn-sm" @click="eliminar_ItemCita(cita.id)">x</button></td>
+                        <td><button class="btn btn-danger btn-sm" @click=" BTN_eliminar_ItemCita(cita.id)">x</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -208,7 +208,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
                     </div>
 
-                    <button type="button " class="btn btn-success btn-sm" @click="Guardar_cita()" :disabled="GuardarR_isButtonDisabled">Guardar cita</button>
+                    <button type="button " class="btn btn-success btn-sm" @click=" BTN_Guardar_cita()" :disabled="GuardarR_isButtonDisabled">Guardar cita</button>
                 </div>
             </div>
             <br>
@@ -321,8 +321,10 @@ export default {
 
     methods: {
         ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA', 'createEntradanewPaciente', 'ClosetModalNewPaciente', 'NewgetDataUsersbyParam']),
+        /* =================================================== */
+        /* ---------PACIENTES---------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-        Buscar_paciente() {
+        BTN_Buscar_paciente() {
             this.idpaciente = this.B_tipodoc + this.B_numdoc;
             this.paramsPaciente = [{
                 bd: "pacientes",
@@ -331,13 +333,12 @@ export default {
                 rta: "setStatePaciente"
             }]
             this.getDataUsersbyParam(this.paramsPaciente);
-            this.filtrarcitasPaciente() 
+            this.GetCitasVigentesPaciente();
+        
 
         },
 
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        async registar_Paciente() {
+        async BTN_registar_Paciente() {
             this.idpaciente = this.B_tipodoc + this.B_numdoc;
             this.paramsGuardarPaciente = [{
                 numdoc: this.idpaciente,
@@ -352,43 +353,41 @@ export default {
                 bd: "pacientes",
             }]
             await this.createEntradanewPaciente(this.paramsGuardarPaciente[0])
-            this.Buscar_paciente()
+            this.BTN_Buscar_paciente()
         },
 
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+        /*   cancelar_cerrarmodalNewPaciente() {
+              this.name1 = "";
+              this.name2 = "";
+              this.apell1 = "";
+              this.apell2 = "";
+              this.celular = "";
+              this.email = "";
+              this.dir = "";
+              this.fnacimiento = "",
+                  this.paramsClosetModalPac = [{
+                      existepaciente: "0",
+                      rta: "ClosetModalP"
+                  }],
+                  this.ClosetModalNewPaciente(this.paramsClosetModalPac[0])
+              console.log("cerrando modal")
+          }, */
 
-        Reservar_BuscarProfesionales() {
+        /* =================================================== */
+        /* ----------------PROFESIONALES--------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        nombreProfesional(dataID) {
+            const nombreProf = this.dataprofesionales.filter(prof => prof.id == dataID)
+            const resultado = nombreProf[0]
+            return resultado.name1 + " " + resultado.apell1
+        },
+
+        BTN_Reservar_BuscarProfesionales() {
             this.Get_Agendamiento_pacientes_fecha()
             this.btnagendar = true;
         },
 
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        async Guardar_cita() {
-            this.capturalabeldeselect();
-            this.params_GuardarFechaCita = [{
-                paciente: this.datapaciente[0].name1 + " " + this.datapaciente[0].apell1,
-                numdoc: this.datapaciente[0].numdoc,
-                telpaciente: this.datapaciente[0].celular,
-                estado: "0",
-                hora: this.listahora,
-                id_agenda: this.f_reserva,
-                tipo: this.t_reserva,
-                fecha: this.valorSeleccionadoSelect,
-                idprofesional: this.p_reserva,
-                bd: "citas",
-                /*        rta: "UpdateStateCitas" */
-            }]
-            await this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
-            this.VerListadoCitasAsignadas();
-            this.buscarCitasAllPacientes()
-            this.Get_Agendamiento_pacientes_fecha()
-            this.vaciarcamposReservas();
-        },
-
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        cargarProfesionales() {
+        GetAllProfesionalesToIPS() {
             this.paramsProfesionales = [{
                 bd: "profesionales",
                 parametro: "id_ips",
@@ -398,36 +397,39 @@ export default {
             this.getDataUsersbyParam(this.paramsProfesionales);
         },
 
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
         filtarProf() {
             this.profactivos = this.dataprofesionales.filter(profesional => profesional.tipo == this.t_reserva)
             console.log("filtrado de profesionales", this.profactivos)
         },
 
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        Get_Agendamiento_pacientes_fecha() {
-            this.paramsFechasCitas = [{
-                bd: "agendas",
-                parametro: "fecha",
-                valor: this.diaformatedfecha,
-                rta: "setStateAgendas"
+        /* =================================================== */
+        /* ------------------------------CITAS------------------------------------------------------------------------------------------------------------------------------------- */
+ async  GetCitasVigentesPaciente() {
+            this.paramsCitasPaciente = [{
+                bd: "citas",
+                parametro1: "fecha",
+                valor1: this.diaformatedfecha,
+                rta: "setStateCitasPaciente"
             }]
-            this.getDataByRangoSuperior(this.paramsFechasCitas);
+       await this.NewgetDataUsersbyParam(this.paramsCitasPaciente);
+       this.filtrarcitasPaciente_reservadas() ;
+       this.VerListadoCitasAsignada();
         },
 
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        filtrarFechasByProf() {
-            this.fechasActivas = this.dataAgendas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
-            console.log("Fechas del profesional activas:", this.fechasActivas[0]);
-            this.desord_ListaCitasDia = [];
-            this.f_reserva = "";
+        filtrarcitasPaciente_reservadas() {
+            console.log("ejecutando filtrocitaspaciente");
+            this.citaspaciente = this.dataAllCitasPaciente.filter(reg => reg.numdoc == this.idpaciente);
+            console.log("citas del paciente ", this.citaspaciente)
         },
 
-
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+        async BTN_eliminar_ItemCita(id) {
+            this.paramsDelCitas = [{
+                id: id,
+                bd: "citas"
+            }]
+            await this.DeleteItem(this.paramsDelCitas[0]);
+            this.GetCitasVigentesPaciente()
+        },
 
         async VerListadoCitasAsignadas() {
             this.params_citasDia = [{
@@ -440,49 +442,72 @@ export default {
             //ordenamos la cita por hora computado
         },
 
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        async eliminar_ItemCita(id) {
-            this.paramsDelCitas = [{
-                id: id,
-                bd: "citas"
+        async BTN_Guardar_cita() {
+            this.capturalabeldeselect();
+            this.params_GuardarFechaCita = [{
+                paciente: this.datapaciente[0].name1 + " " + this.datapaciente[0].apell1,
+                numdoc: this.datapaciente[0].numdoc,
+                telpaciente: this.datapaciente[0].celular,
+                estado: "0",
+                hora: this.listahora,
+                id_agenda: this.f_reserva,
+                tipo: this.t_reserva,
+                fecha: this.valorSeleccionadoSelect,
+                idprofesional: this.p_reserva,
+                bd: "citas",
+               
             }]
-            await this.DeleteItem(this.paramsDelCitas[0]);
-            this.buscarCitasAllPacientes()
-            this.Get_Agendamiento_pacientes_fecha()
-
-            /*       this.buscarCitasAllPacientes() */
+            await this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
+            this.GetCitasVigentesPaciente()
+            this.VerListadoCitasAsignadas()
+            this.vaciarcamposReservas();
         },
 
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+        filtrarFechasByProf() {
+            this.fechasActivas = this.dataAgendas.filter(registro => registro.id_profesional === this.p_reserva && registro.clase === this.t_reserva);
+            console.log("Fechas del profesional activas:", this.fechasActivas[0]);
+            this.desord_ListaCitasDia = [];
+            this.f_reserva = "";
+        },
 
-        clearStore() {
+        /*  GetAllcitasToPaciente() {
+             console.log("ejecutando buscarallcitas pacientes")
+             this.paramsCitasPaciente = [{
+                 bd: "citas",
+                 parametro1: "fecha",
+                 valor1: this.diaformatedfecha,
+                 rta: "setStateCitasPaciente"
+             }]
+             this.NewgetDataUsersbyParam(this.paramsCitasPaciente);
+
+         }, */
+
+        Get_Agendamiento_pacientes_fecha() {
+            this.paramsFechasCitas = [{
+                bd: "agendas",
+                parametro: "fecha",
+                valor: this.diaformatedfecha,
+                rta: "setStateAgendas"
+            }]
+            this.getDataByRangoSuperior(this.paramsFechasCitas);
+        },
+        /* =================================================== */
+        /* -------------------AGENDAS----------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        capturalabeldeselect() {
+            const selectElement = document.getElementById("miSelect");
+            this.valorSeleccionadoSelect = selectElement.options[selectElement.selectedIndex].textContent
+        },
+
+        /* =================================================== */
+        /* ------------------SISTEMAS------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+        DeleteStore() {
             this.paramsClear[{
-                ruta: "ClearStoreM"
+                ruta: "DeleteStoreM"
             }]
             this.clearDataStoreA(this.paramsClear)
         },
-
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        cancelar_cerrarmodalNewPaciente() {
-            this.name1 = "";
-            this.name2 = "";
-            this.apell1 = "";
-            this.apell2 = "";
-            this.celular = "";
-            this.email = "";
-            this.dir = "";
-            this.fnacimiento = "",
-                this.paramsClosetModalPac = [{
-                    existepaciente: "0",
-                    rta: "ClosetModalP"
-                }],
-                this.ClosetModalNewPaciente(this.paramsClosetModalPac[0])
-            console.log("cerrando modal")
-        },
-
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
         vaciarcamposReservas() {
             this.f_reserva = "";
@@ -493,46 +518,10 @@ export default {
 
         },
 
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        buscarCitasAllPacientes() {
-            console.log("ejecutando buscarallcitas pacientes")
-            this.paramsCitasPaciente = [{
-                bd: "citas",
-                parametro1: "fecha",
-                valor1: this.diaformatedfecha,
-                rta: "setStateCitasPaciente"
-            }]
-            this.NewgetDataUsersbyParam(this.paramsCitasPaciente);
-       
-        },
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        filtrarcitasPaciente() {
-            console.log("ejecutando filtrocitaspaciente");
-            this.citaspaciente = this.dataCitasPaciente.filter(reg => reg.numdoc == this.idpaciente);
-            console.log("citas del paciente ", this.citaspaciente)
-        },
-
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        capturalabeldeselect() {
-            const selectElement = document.getElementById("miSelect");
-            this.valorSeleccionadoSelect = selectElement.options[selectElement.selectedIndex].textContent
-        },
-
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        nombreProfesional(dataID) {
-            const nombreProf = this.dataprofesionales.filter(prof => prof.id == dataID)
-            const resultado = nombreProf[0]
-            return resultado.name1 + " " + resultado.apell1
-        }
-
     },
 
     computed: {
-        ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas', 'dataCitasPaciente']),
+        ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas', 'dataAllCitasPaciente']),
         ...mapState('Auth', ['user', 'id_ips', 'id_user', 'rol', 'info']),
 
         sortedListaCitasDia() {
@@ -566,19 +555,13 @@ export default {
 
     },
 
-    getters: {
-        tablaCitasVigentes(state) {
-         
 
-            
-        }
-    },
     /* ------------------------------------------------------------------------ */
 
     created() {
-        this.clearStore()
-        this.cargarProfesionales()
-        this.buscarCitasAllPacientes()
+        this.DeleteStore()
+        this.GetAllProfesionalesToIPS()
+        /*  this.GetAllcitasToPaciente() */
     }
 
 }

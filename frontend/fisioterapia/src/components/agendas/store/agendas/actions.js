@@ -1,6 +1,7 @@
 import firebase_api from "@/api/firebaseApi";
 
 
+/* -----------------------AGENDAS----------------------------------------- */
 export const getDatabyParam = async ({ commit }, parametros) => {
     console.log(parametros);
     const [{ bd, parametro, valor, rta }] = parametros;
@@ -27,6 +28,57 @@ export const getDatabyParam = async ({ commit }, parametros) => {
     return datasalida
 };
 
+export const getDataByRangoSuperior = async ({ commit }, parametros) => {
+    const [{ bd, parametro, valor, rta }] = parametros;
+    console.log("parametros consulta por rango superior", valor, parametros);
+    const response = await firebase_api.get(`/${bd}.json`,
+        {
+            params: {
+                orderBy: `"${parametro}"`,
+                startAt: `"${valor}"`,
+            },
+        })
+ const { data } = response;
+    const datasalida = [];
+    for (let id of Object.keys(data)) {
+        datasalida.push({
+            id,
+            ...data[id],
+        });
+    }
+    console.log("datos de consulta de",bd, " rango:",valor ,datasalida);
+    if (datasalida.length != 0) {
+        commit(`${rta}`, datasalida);
+    } else {
+        console.log("sin datos en la consulta")
+    }
+};
+
+export const CreateAgendaNueva = async ({ commit }, entradas) => {
+
+    const { id_profesional, fecha, id_ips, clase, bd, } = entradas;
+
+    const D_Save = {
+        id_profesional, fecha, id_ips, clase,
+    };
+
+    console.log("ok entrada guardar datos", entradas);
+
+    const Ruta = `/${bd}.json`;
+    /*    console.log(Ruta) */
+    //servicio
+    const { data } = await firebase_api.post(Ruta, D_Save);
+    //agregamos el id al array para subirlo al strore
+    D_Save.id = data.name;
+    //se llama a la mutacion y s epasa el array como
+    console.log(D_Save);
+
+
+}
+
+
+
+/* -----------------------CITAS----------------------------------------- */
 
 
 export const getDataUsersbyParam = async ({ commit }, parametros) => {
@@ -59,61 +111,6 @@ export const getDataUsersbyParam = async ({ commit }, parametros) => {
 };
 
 
-
-
-export const getDataByRangoSuperior = async ({ commit }, parametros) => {
-    const [{ bd, parametro, valor, rta }] = parametros;
-    console.log("parametros consulta por rango superior", valor, parametros);
-    const response = await firebase_api.get(`/${bd}.json`,
-        {
-            params: {
-                orderBy: `"${parametro}"`,
-                startAt: `"${valor}"`,
-            },
-        })
-    const { data } = response;
-    const datasalida = [];
-    for (let id of Object.keys(data)) {
-        datasalida.push({
-            id,
-            ...data[id],
-        });
-    }
-    console.log("datos de consulta de",bd, " rango:",valor ,datasalida);
-    if (datasalida.length != 0) {
-        commit(`${rta}`, datasalida);
-    } else {
-        console.log("sin datos en la consulta")
-    }
-};
-
-
-
-
-export const CreateAgendaNueva = async ({ commit }, entradas) => {
-
-    const { id_profesional, fecha, id_ips, clase, bd, } = entradas;
-
-    const D_Save = {
-        id_profesional, fecha, id_ips, clase,
-    };
-
-    console.log("ok entrada guardar datos", entradas);
-
-    const Ruta = `/${bd}.json`;
-    /*    console.log(Ruta) */
-    //servicio
-    const { data } = await firebase_api.post(Ruta, D_Save);
-    //agregamos el id al array para subirlo al strore
-    D_Save.id = data.name;
-    //se llama a la mutacion y s epasa el array como
-    console.log(D_Save);
-
-
-}
-
-
-
 export const createEntradaCitaNueva = async ({ commit }, entradas) => {
     const {
         paciente, numdoc, telpaciente, estado, hora, id_agenda, tipo, fecha, idprofesional, bd, } = entradas;
@@ -132,7 +129,6 @@ export const createEntradaCitaNueva = async ({ commit }, entradas) => {
 }
 
 
-
 export const createEntradanewPaciente = async ({ commit }, entradas) => {
     const { numdoc, name1, name2, apell1, apell2, celular, email, dir, fnacimiento, bd } = entradas;
     const DataToSave = { numdoc, name1, name2, apell1, apell2, celular, email, dir, fnacimiento, }
@@ -147,6 +143,36 @@ export const ClosetModalNewPaciente = async ({ commit }) => {
     commit("ClosetModalP");
 }
 
+export const NewgetDataUsersbyParam = async ({ commit }, parametros) => {
+    const [{ bd, parametro1, valor1, rta }] = parametros;
+    console.log("action", parametros);
+    const response = await firebase_api.get(`/${bd}.json`, {
+        params: {
+            orderBy: `"${parametro1}"`,
+            startAt: `"${valor1}"`,
+        },
+    });
+    const { data } = response;
+    const datasalida = [];
+    for (let id of Object.keys(data)) {
+        datasalida.push({
+            id,
+            ...data[id],
+        });
+    }
+    if (datasalida.length != 0) {
+        commit(`${rta}`, datasalida);
+        console.log("data de citas activas paciente",datasalida);
+
+    } else {
+        console.log("sin datos en la consulta")
+
+    }
+
+};
+
+
+/* ---------------------PARAMETROS--------------------------------- */
 
 
 export const createEntradaUser = async ({ commit }, entradas) => {
@@ -162,7 +188,6 @@ export const createEntradaUser = async ({ commit }, entradas) => {
     console.log(DataToSave);
     /*     commit("newDataVitrina", DataToSave); */
 };
-
 
 
 export const createEntradaProf = async ({ commit }, entradas) => {
@@ -199,30 +224,3 @@ export const clearDataStoreA = async ({ commit }) => {
 }
 
 
-export const NewgetDataUsersbyParam = async ({ commit }, parametros) => {
-    const [{ bd, parametro1, valor1, rta }] = parametros;
-    /* console.log( parametros); */
-    const response = await firebase_api.get(`/${bd}.json`, {
-        params: {
-            orderBy: `"${parametro1}"`,
-            startAt: `"${valor1}"`,
-        },
-    });
-    const { data } = response;
-    const datasalida = [];
-    for (let id of Object.keys(data)) {
-        datasalida.push({
-            id,
-            ...data[id],
-        });
-    }
-    if (datasalida.length != 0) {
-        commit(`${rta}`, datasalida);
-        console.log("data de citas activas paciente",datasalida);
-
-    } else {
-        console.log("sin datos en la consulta")
-
-    }
-
-};

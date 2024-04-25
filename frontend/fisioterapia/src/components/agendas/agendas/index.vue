@@ -35,7 +35,7 @@
                         <br>
                         <div class="input-group input-group-sm mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Fecha</span>
-                            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="FVerAgenda" @change="this.VerAgendaDia()">
+                            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="FVerAgenda" @change="this.FiltrarAgendaDia()">
                         </div>
 
                         cant: {{cantAgendasDia }}
@@ -132,13 +132,14 @@
                 </div>
                 <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">3</div>
             </div>
-<br>
+            <br>
         </div>
 
     </div>
     <br>
-    <div class="container home">    <router-link to="/dashboard">Home</router-link></div>
-
+    <div class="container home">
+        <router-link to="/dashboard">Home</router-link>
+    </div>
 
 </div>
 </template>
@@ -183,13 +184,13 @@ export default {
                 rta: "setStateProfesionales"
             }]
             this.getDataUsersbyParam(this.paramsProfesionales);
-            await this.VerListadoAgendass();
+            await this.GetListadoAgendas();
             this.fijarfechadia();
-            await this.VerAgendaDia();
+            await this.FiltrarAgendaDia();
 
         },
 
-        async VerListadoAgendass() {
+        async GetListadoAgendas() {
             const fecha = this.diaformatedfecha;
             console.log(fecha);
             this.paramsFechasAgendas = [{
@@ -225,7 +226,7 @@ export default {
             }]
             this.fecha_agenda = "",
                 await this.CreateAgendaNueva(this.params_GuardarFechaAgenda[0]);
-            this.VerListadoAgendass();
+            this.GetListadoAgendas();
         },
 
         fijarfechadia() {
@@ -234,7 +235,7 @@ export default {
             return ListAgendas
         },
 
-        VerAgendaDia() {
+        FiltrarAgendaDia() {
             let rta = this.dataAgendas.filter(agenda => agenda.fecha == this.FVerAgenda);
             this.ListVerAgenda = rta
             console.log("estos son mis datos", this.ListVerAgenda);

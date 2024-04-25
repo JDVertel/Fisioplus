@@ -30,8 +30,8 @@ export const setStateAgendas=(state, data)=>{
 }
 
 export const setStateCitasPaciente=(state,data)=>{
-    state.dataCitasPaciente="",
-    state.dataCitasPaciente=[...state.dataCitasPaciente, ...data];
+    state.dataAllCitasPaciente="",
+    state.dataAllCitasPaciente=[...state.dataAllCitasPaciente, ...data];
 }
 
 
@@ -43,11 +43,11 @@ export const setStateCitas=(state , citas)=>{
 
 }
 
-export const UpdateStateCitas=(state , citas)=>{
+/* export const UpdateStateCitas=(state , citas)=>{
     state.dataCitas="";
     state.dataCitas=[...state.dataCitas, ...citas];
 
-}
+} */
 /* ---------------------------------VACIAR STORE GENERAL-------------------------------------- */
 export const ClearStoreM=(state)=>{
 state.dataCitas=[];
