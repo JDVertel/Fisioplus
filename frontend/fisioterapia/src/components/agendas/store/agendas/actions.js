@@ -219,6 +219,7 @@ export const NewgetDataUsersbyParam = async ({ commit }, parametros) => {
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
         console.log("data de citas activas paciente",datasalida);
+
     } else {
         console.log("sin datos en la consulta")
 

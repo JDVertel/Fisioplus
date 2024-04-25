@@ -161,7 +161,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="cita in dataCitasPaciente" :key="cita.id">
+                    <tr v-for="cita in this.citaspaciente" :key="cita.id">
                         <td>{{cita.fecha}}</td>
                         <td>{{cita.hora}}</td>
                         <td>{{cita.tipo}}</td>
@@ -331,7 +331,8 @@ export default {
                 rta: "setStatePaciente"
             }]
             this.getDataUsersbyParam(this.paramsPaciente);
-            this.buscarAllCitasPAciente();
+            this.filtrarcitasPaciente() 
+
         },
 
         /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -357,7 +358,7 @@ export default {
         /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
         Reservar_BuscarProfesionales() {
-            this.filtarFechasCitas_vigentesPacientes()
+            this.Get_Agendamiento_pacientes_fecha()
             this.btnagendar = true;
         },
 
@@ -380,8 +381,8 @@ export default {
             }]
             await this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
             this.VerListadoCitasAsignadas();
-            this.buscarAllCitasPAciente()
-            this.filtarFechasCitas_vigentesPacientes()
+            this.buscarCitasAllPacientes()
+            this.Get_Agendamiento_pacientes_fecha()
             this.vaciarcamposReservas();
         },
 
@@ -406,7 +407,7 @@ export default {
 
         /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-        filtarFechasCitas_vigentesPacientes() {
+        Get_Agendamiento_pacientes_fecha() {
             this.paramsFechasCitas = [{
                 bd: "agendas",
                 parametro: "fecha",
@@ -425,12 +426,6 @@ export default {
             this.f_reserva = "";
         },
 
-        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-
-        filtrarcitasPaciente() {
-            this.citaspaciente = this.dataCitasPaciente.filter(reg => reg.numdoc == this.idpaciente);
-            console.log("citas del paciente ", this.citaspaciente[0])
-        },
 
         /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -453,10 +448,10 @@ export default {
                 bd: "citas"
             }]
             await this.DeleteItem(this.paramsDelCitas[0]);
-            this.buscarAllCitasPAciente()
-            this.filtarFechasCitas_vigentesPacientes()
+            this.buscarCitasAllPacientes()
+            this.Get_Agendamiento_pacientes_fecha()
 
-            /*       this.buscarAllCitasPAciente() */
+            /*       this.buscarCitasAllPacientes() */
         },
 
         /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -494,14 +489,14 @@ export default {
             this.p_reserva = "";
             this.t_reserva = "";
             this.listahora = "";
-            //    this.desord_ListaCitasDia=[];
             console.log("vaciando de campos del formulario de reservas")
 
         },
 
         /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-        buscarAllCitasPAciente() {
+        buscarCitasAllPacientes() {
+            console.log("ejecutando buscarallcitas pacientes")
             this.paramsCitasPaciente = [{
                 bd: "citas",
                 parametro1: "fecha",
@@ -509,6 +504,14 @@ export default {
                 rta: "setStateCitasPaciente"
             }]
             this.NewgetDataUsersbyParam(this.paramsCitasPaciente);
+       
+        },
+        /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+        filtrarcitasPaciente() {
+            console.log("ejecutando filtrocitaspaciente");
+            this.citaspaciente = this.dataCitasPaciente.filter(reg => reg.numdoc == this.idpaciente);
+            console.log("citas del paciente ", this.citaspaciente)
         },
 
         /* ------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -563,11 +566,19 @@ export default {
 
     },
 
+    getters: {
+        tablaCitasVigentes(state) {
+         
+
+            
+        }
+    },
     /* ------------------------------------------------------------------------ */
 
     created() {
         this.clearStore()
         this.cargarProfesionales()
+        this.buscarCitasAllPacientes()
     }
 
 }
