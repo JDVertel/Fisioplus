@@ -52,6 +52,7 @@
                                         <div class="fw-bold">Profesional: {{this.nombreProfesional(reg.id_profesional)}}</div>
                                         Agenda de {{ reg.clase }}
                                     </div>
+                                
                                     <span class="badge bg-primary rounded-pill">Reservadas 18</span>
                                     <span class="badge bg-success rounded-pill">Asistidas 10</span>
                                     <span class="badge bg-danger rounded-pill">NO asistidas 6</span>
@@ -93,7 +94,6 @@
                         </div>
                     </div>
                     <hr>
-                    GuardarAgenda()
                     <h3 class="display-6">Listado de agendas del profesional </h3>
 
                     <table class="table">
@@ -101,7 +101,7 @@
                             <tr>
                                 <th>Fecha</th>
                                 <th>Tipo</th>
-                                <th>Asig</th>
+                          <!--       <th>Asig</th> -->
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -109,13 +109,13 @@
                             <tr v-for="fecha in fechasActivas" :key="fecha.id">
                                 <td>{{fecha.fecha}}</td>
                                 <td>{{fecha.clase}}</td>
-                                <td>ok</td>
+                                <!-- <td></td> -->
 
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                                        <button type="button" class="btn btn-danger">X </button>
-                                        <button type="button" class="btn btn-warning">Edit</button>
-                                        <button type="button" class="btn btn-success">Reasig</button>
+                                        <button type="button" class="btn btn-danger" @click="BTN_eliminar_ItemAgenda(fecha.id)">X </button>
+                                       <!--  <button type="button" class="btn btn-warning">Edit</button>
+                                        <button type="button" class="btn btn-success">Reasig</button> -->
                                     </div>
                                 </td>
                             </tr>
@@ -168,13 +168,15 @@ export default {
         AgendasOrdenadas: [],
         FVerAgenda: "",
         ListVerAgenda: [],
-        CantAgendadDia: ""
+        CantAgendadDia: "",
+        paramsDelAgendas: [],
+        paramsAgenda:[],
     }),
     /* --------------------------------------------------------------------------------------------------- */
 
     methods: {
 
-        ...mapActions('Agendas', ['getDataUsersbyParam', 'getDataByRangoSuperior', 'CreateAgendaNueva', 'getDatabyParam']),
+        ...mapActions('Agendas', ['getDataUsersbyParam', 'getDataByRangoSuperior', 'CreateAgendaNueva', 'getDatabyParam', 'DeleteItem']),
 
         async BuscarProfesionales() {
             this.paramsProfesionales = [{
@@ -188,6 +190,15 @@ export default {
             this.fijarfechadia();
             await this.FiltrarAgendaDia();
 
+        },
+
+      async  GetCitasAgendaSeleccionada(id) {
+            this.paramsAgenda = [{
+                bd: "citas",
+                param: id_agenda,
+                valor: id,
+            }]
+         await   this.getDatabyParam(this.paramsAgenda)
         },
 
         async GetListadoAgendas() {
@@ -246,7 +257,16 @@ export default {
             const nombreProf = this.dataprofesionales.filter(prof => prof.id == dataID)
             const resultado = nombreProf[0]
             return resultado.name1 + " " + resultado.apell1
-        }
+        },
+
+        async BTN_eliminar_ItemAgenda(id) {
+            this.paramsDelAgendas = [{
+                id: id,
+                bd: "agendas"
+            }]
+            await this.DeleteItem(this.paramsDelAgendas[0]);
+            this.GetListadoAgendas()
+        },
 
     },
 

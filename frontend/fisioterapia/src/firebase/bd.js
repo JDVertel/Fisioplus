@@ -771,7 +771,6 @@ export const evaluacion_muscular = [
     id: "4",
     clase: "tronco y musculos respitarorios",
     musculo: [
-
       "Extensores de la espalda y la pelvis",
       "Extensores de la espalda",
       "Extensores dorsales del tronco",

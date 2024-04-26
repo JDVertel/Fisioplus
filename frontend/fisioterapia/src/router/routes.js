@@ -19,6 +19,7 @@ import dashboard from "./../components/dashboard/index.vue";
 import parametros from "./../components/parametros/index.vue";
 import reservas from "./../components/agendas/reservas/rcitas.vue";
 import ventas from "./../components/vitrina/ventas.vue"
+import profesional from "./../components/profesional/index.vue";
 
 const routes = [
   //aplication
@@ -33,12 +34,17 @@ const routes = [
     path: "/vitrina",
     component: HomeVitrina,
     name: "vitrina",
-
   },
   //hc
   { path: "/hc", component: hc, name: "hc" },
   //dashboard
   { path: "/dashboard", component: dashboard, name: "dashboard" },
+//profesionales 
+{
+  path: "/profesional",
+  component: profesional,
+  name: "profesional",
+},
 
   {
     path: "/login",

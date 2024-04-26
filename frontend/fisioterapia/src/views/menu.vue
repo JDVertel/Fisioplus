@@ -18,6 +18,9 @@
                     <hr class="navbar-divider" />
                 </li>
                 <li class="nav-item">
+                    <router-link to="/profesional"><a class="nav-link-menu" aria-current="page">Profesional</a></router-link>
+                </li>
+                <li class="nav-item">
                     <router-link to="/dashboard"><a class="nav-link-menu" aria-current="page">Dashboard</a></router-link>
                 </li>
 

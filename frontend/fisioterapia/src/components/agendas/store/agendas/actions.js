@@ -19,7 +19,7 @@ export const getDatabyParam = async ({ commit }, parametros) => {
             ...data[id],
         });
     }
-    console.log("data consulta por parametros", bd, "por",parametro ,"rta:", datasalida)
+    console.log("data consulta por parametros", bd, "por", parametro, "rta:", datasalida)
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
     } else {
@@ -27,6 +27,8 @@ export const getDatabyParam = async ({ commit }, parametros) => {
     }
     return datasalida
 };
+
+
 
 export const getDataByRangoSuperior = async ({ commit }, parametros) => {
     const [{ bd, parametro, valor, rta }] = parametros;
@@ -38,7 +40,7 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
                 startAt: `"${valor}"`,
             },
         })
- const { data } = response;
+    const { data } = response;
     const datasalida = [];
     for (let id of Object.keys(data)) {
         datasalida.push({
@@ -46,7 +48,7 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
             ...data[id],
         });
     }
-    console.log("datos de consulta de",bd, " rango:",valor ,datasalida);
+    console.log("datos de consulta de", bd, " rango:", valor, datasalida);
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
     } else {
@@ -54,16 +56,14 @@ export const getDataByRangoSuperior = async ({ commit }, parametros) => {
     }
 };
 
+
+
 export const CreateAgendaNueva = async ({ commit }, entradas) => {
-
     const { id_profesional, fecha, id_ips, clase, bd, } = entradas;
-
     const D_Save = {
         id_profesional, fecha, id_ips, clase,
     };
-
     console.log("ok entrada guardar datos", entradas);
-
     const Ruta = `/${bd}.json`;
     /*    console.log(Ruta) */
     //servicio
@@ -99,7 +99,7 @@ export const getDataUsersbyParam = async ({ commit }, parametros) => {
             ...data[id],
         });
     }
-    console.log("busqueda por parametro", parametro ,bd,  datasalida)
+    console.log("busqueda por parametro", parametro, bd, datasalida)
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
     } else {
@@ -117,9 +117,9 @@ export const createEntradaCitaNueva = async ({ commit }, entradas) => {
     const DataToSave = {
         paciente, numdoc, telpaciente, estado, hora, id_agenda, tipo, fecha, idprofesional
     };
-    
+
     const Ruta = `/${bd}.json`;
-    console.log("se guardara:", entradas ,"en bd", bd ,"ruta:", Ruta);
+    console.log("se guardara:", entradas, "en bd", bd, "ruta:", Ruta);
     //servicio
     const { data } = await firebase_api.post(Ruta, DataToSave);
     //agregamos el id al array para subirlo al strore
@@ -162,7 +162,7 @@ export const NewgetDataUsersbyParam = async ({ commit }, parametros) => {
     }
     if (datasalida.length != 0) {
         commit(`${rta}`, datasalida);
-        console.log("data de citas activas paciente",datasalida);
+        console.log("data de citas activas paciente", datasalida);
 
     } else {
         console.log("sin datos en la consulta")

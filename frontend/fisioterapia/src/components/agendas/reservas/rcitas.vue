@@ -16,12 +16,12 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 <div class="container">
 
     <div class="container centrado mt-5">
-        <h6 class="display-5">Reservas</h6>
+        <h6 class="display-6">Reservas</h6>
     </div>
     <hr>
     <div class="card text-left">
         <div class="card-body">
-            <h5 class="card-title">Realizar una reserva </h5>
+            <h5 class="display-6">Realizar una reserva </h5>
             <p class="card-text">Ingrese la identificacion del paciente</p>
             <br>
             <div class="row">
@@ -120,37 +120,37 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 <div class="container" v-if="this.existepaciente == 1">
 
     <div class="card">
-        <div class="card-header">
-            Datos del usuario
+        <div class="card-body">
+            <div class="container">
+                <h6 class="display-6"> Datos del usuario</h6>
+
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombre</th>
+
+                            <th>Opc</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="pac in datapaciente" :key="pac.id">
+                            <td>{{pac.numdoc}}</td>
+                            <td>{{pac.name1}} {{pac.apell1}}</td>
+                            <td> <button class="btn btn-success btn-sm" @click=" BTN_Reservar_BuscarProfesionales">Reservar </button> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <table class="table table-sm">
-            <thead>
-                <tr>
-                    <th>Documento</th>
-                    <th>Nombre</th>
-
-                    <th>Opc</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="pac in datapaciente" :key="pac.id">
-                    <td>{{pac.numdoc}}</td>
-                    <td>{{pac.name1}} {{pac.apell1}}</td>
-                    <td> <button class="btn btn-success btn-sm" @click=" BTN_Reservar_BuscarProfesionales">Reservar </button> </td>
-                </tr>
-            </tbody>
-
-        </table>
-
-        <div class="container" style="background-color:#97BFB4" v-if="this.dataAllCitasPaciente.length >0">
+        <div class="container" style="background-color:#FFA848" v-if="this.dataAllCitasPaciente.length >0">
             <br>
             <div>
                 <h5 class="display-6">Citas Vigentes del Paciente</h5>
             </div>
-            <br>
 
-            <table class="table table-sm">
-                <thead>
+            <table class="table table-sm table-striped ">
+                <thead class="table-danger">
                     <tr>
                         <th scope="col">Fecha</th>
                         <th scope="col">Hora</th>
@@ -160,7 +160,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                     <tr v-for="cita in this.citaspaciente" :key="cita.id">
                         <td>{{cita.fecha}}</td>
                         <td>{{cita.hora}}</td>
@@ -179,7 +179,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
         <div class="row">
             <div class="container">
 
-                <h6 class="display-6">Seleccione tipo , profesional y fecha de consulta </h6>
+                <h6 class="display-6">Selecciona tipo , profesional y fecha de consulta </h6>
                 <div class="row">
                     <div class="col-6 col-md-3"> <select class="form-select form-select-sm textarea" id="inputGroupSelect_treserva" v-model="t_reserva" @change="filtarProf()">
                             <option selected value="">Tipo de Reserva</option>
@@ -214,8 +214,8 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
             <br>
             <div class="container">
                 <h6 class="display-6">Agenda del tipo, profesional y dia seleccionado</h6>
-                <table class="table table-sm">
-                    <thead>
+                <table class="table table-sm table-striped">
+                    <thead class="table-dark">
                         <tr>
                             <th scope="col">Hora</th>
                             <th scope="col">Nombre</th>
@@ -254,7 +254,6 @@ import registroPaciente from '@/components/usuarios/registro.vue'
 
 import {
     mapActions,
-    mapGetters,
     mapState,
 } from 'vuex';
 import moment from 'moment';
@@ -334,7 +333,6 @@ export default {
             }]
             this.getDataUsersbyParam(this.paramsPaciente);
             this.GetCitasVigentesPaciente();
-        
 
         },
 
@@ -404,16 +402,16 @@ export default {
 
         /* =================================================== */
         /* ------------------------------CITAS------------------------------------------------------------------------------------------------------------------------------------- */
- async  GetCitasVigentesPaciente() {
+        async GetCitasVigentesPaciente() {
             this.paramsCitasPaciente = [{
                 bd: "citas",
                 parametro1: "fecha",
                 valor1: this.diaformatedfecha,
                 rta: "setStateCitasPaciente"
             }]
-       await this.NewgetDataUsersbyParam(this.paramsCitasPaciente);
-       this.filtrarcitasPaciente_reservadas() ;
-       this.VerListadoCitasAsignada();
+            await this.NewgetDataUsersbyParam(this.paramsCitasPaciente);
+            this.filtrarcitasPaciente_reservadas();
+            this.VerListadoCitasAsignadas();
         },
 
         filtrarcitasPaciente_reservadas() {
@@ -455,7 +453,7 @@ export default {
                 fecha: this.valorSeleccionadoSelect,
                 idprofesional: this.p_reserva,
                 bd: "citas",
-               
+
             }]
             await this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
             this.GetCitasVigentesPaciente()
@@ -554,7 +552,6 @@ export default {
         /*  */
 
     },
-
 
     /* ------------------------------------------------------------------------ */
 
