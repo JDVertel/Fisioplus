@@ -14,11 +14,10 @@
                     <img src="..." class="img-thumbnail centrado" alt="...">
                 </div>
                 <div class="col-10">
-                  
-               
-                            <p>profesional: Ramon jose vertel </p>
-                     
-                        <div class="row">
+
+                    <p>profesional: Ramon jose vertel </p>
+
+                    <div class="row">
                         <div class="col-6 col-md-3">
                             <p>Servicio: consulta </p>
                         </div>
@@ -41,7 +40,7 @@
         <div class="card-body">
             <h5 class="card-title">Citas</h5>
             <p class="card-text">Pacientes Agendados el dia de hoy </p>
-       
+
             <table class="table table-striped table-sm ">
                 <thead class="table-dark">
                     <tr>
@@ -56,11 +55,7 @@
                         <td>{{cita.hora}}</td>
                         <td>{{cita.paciente}}</td>
                         <td>{{cita.telpaciente}}</td>
-                        <td><select class="form-select form-select-sm" aria-label="Small select example">
-                                <option selected>Asistio?</option>
-                                <option value="1">Si</option>
-                                <option value="2">No</option>
-                            </select></td>
+                        <td><button type="button" class="btn btn-danger btn-sm">X</button><button type="button" class="btn btn-primary btn-sm">OK</button></td>
                     </tr>
 
                 </tbody>
@@ -117,7 +112,9 @@ export default {
         idIPS: "1",
         idProfesional: "",
         idAgenda: "",
+        /* ------------------------------ */
         paramsGetAllcitas: [],
+
     }),
     methods: {
         ...mapActions('Agendas', ['getDatabyParam']),
@@ -137,8 +134,16 @@ export default {
             const ListAgendas = this.diaformatedfecha;
             this.fechaHoy = ListAgendas;
         },
-    },
 
+        Asistencia_OptionCharge(numdoc,idagenda) {
+            if (this.asistencia === "1") {
+                console.log("asistio", numdoc);
+            } else if (this.asistencia === "2") {
+                console.log("no asistio", idagenda)
+            }
+        },
+
+    },
     computed: {
         ...mapState('Agendas', ['dataCitas', ]),
         /*     ...mapState('Auth', []),

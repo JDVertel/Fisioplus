@@ -96,8 +96,8 @@
                     <hr>
                     <h3 class="display-6">Listado de agendas del profesional </h3>
 
-                    <table class="table">
-                        <thead>
+                    <table class="table table-sm table-striped">
+                        <thead class="table-danger">
                             <tr>
                                 <th>Fecha</th>
                                 <th>Tipo</th>
@@ -113,7 +113,7 @@
 
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-                                        <button type="button" class="btn btn-danger" @click="BTN_eliminar_ItemAgenda(fecha.id)">X </button>
+                                        <button type="button" class="btn btn-danger btn-sm" @click="BTN_eliminar_ItemAgenda(fecha.id)">X </button>
                                        <!--  <button type="button" class="btn btn-warning">Edit</button>
                                         <button type="button" class="btn btn-success">Reasig</button> -->
                                     </div>
