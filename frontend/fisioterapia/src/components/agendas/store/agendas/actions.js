@@ -29,7 +29,6 @@ export const getDatabyParam = async ({ commit }, parametros) => {
 };
 
 
-
 export const getDataByRangoSuperior = async ({ commit }, parametros) => {
     const [{ bd, parametro, valor, rta }] = parametros;
     console.log("parametros consulta por rango superior", valor, parametros);
@@ -76,6 +75,36 @@ export const CreateAgendaNueva = async ({ commit }, entradas) => {
 
 }
 
+
+export const GetAgendasSelectAct = async({commit},entradas)=>{
+
+    const [{ bd, parametro, valor}] = parametros;
+    const response = await firebase_api.get(`/${bd}.json`, {
+        params: {
+            orderBy: `"${parametro}"`,
+            equalTo: `"${valor}"`,
+        },
+    });
+    const { data } = response;
+    const datasalida = [];
+    for (let id of Object.keys(data)) {
+        datasalida.push({
+            id,
+            ...data[id],
+        });
+    }
+    console.log("data consulta por parametros", bd, "por", parametro)
+    if (datasalida.length != 0) {
+        /* commit(`${rta}`, datasalida); */
+        
+    } else {
+        console.log("sin datos en la consulta");
+    }
+    return datasalida
+
+
+
+}
 
 
 /* -----------------------CITAS----------------------------------------- */
@@ -206,7 +235,7 @@ export const createEntradaProf = async ({ commit }, entradas) => {
     /*     commit("newDataVitrina", DataToSave); */
 };
 
-
+/* ---------------------------------------------------------------------------------------------- */
 export const DeleteItem = async ({ commit }, entradas) => {
     const { id, bd } = entradas;
     const Ruta = `/${bd}/${id}.json`;
@@ -215,7 +244,7 @@ export const DeleteItem = async ({ commit }, entradas) => {
     const { data } = await firebase_api.delete(Ruta);
     /*   commit("DeleteItemVitrina", entradas); */
 };
-
+/* ---------------------------------------------------------------------------------------------- */
 
 export const clearDataStoreA = async ({ commit }) => {
 
@@ -223,4 +252,19 @@ export const clearDataStoreA = async ({ commit }) => {
 
 }
 
+
+
+
+
+/* ----------------PROFESIONAL-------------------------------------------- */
+
+export const updateReserva = async ({ commit }, entradas) => {
+    console.log("variable entradas ", entradas);
+    const { id, estado, fecha, hora, id_agenda,idprofesional,numdoc,paciente,telpaciente,tipo, bd} = entradas;
+    const dataToSave = { id, estado, fecha, hora, id_agenda,idprofesional,numdoc,paciente,telpaciente,tipo ,bd};
+    const Ruta = `/${bd}/${id}.json`;
+    //servicio 
+    const response = await firebase_api.put(Ruta, dataToSave);
+    /* commit("updateDataVitrina", { ...entradas }); */
+  };
 

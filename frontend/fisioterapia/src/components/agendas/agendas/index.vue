@@ -43,19 +43,19 @@
 
                         <ol class="list-group">
 
-                            <li v-for=" reg in this.ListVerAgenda" :key="reg.id" class="list-group-item d-flex justify-content-center align-items-center">
+                            <li v-for="reg in this.ListVerAgenda" :key="reg.id" class="list-group-item d-flex justify-content-center align-items-center">
 
-                                <div class="col-2"><button type="button" class="btn btn-primary btn-sm">Ver</button></div>
+                                <div class="col-2"><button type="button" class="btn btn-primary btn-sm" @click="this.GetAgendaSelect(reg.id)">Ver</button></div>
                                 <div class="col-10">
 
                                     <div class="ms-2 me-auto">
                                         <div class="fw-bold">Profesional: {{this.nombreProfesional(reg.id_profesional)}}</div>
                                         Agenda de {{ reg.clase }}
                                     </div>
-                                
-                                    <span class="badge bg-primary rounded-pill">Reservadas 18</span>
-                                    <span class="badge bg-success rounded-pill">Asistidas 10</span>
-                                    <span class="badge bg-danger rounded-pill">NO asistidas 6</span>
+
+                                    <span class="badge bg-primary rounded-pill">Reservadas {{reservadas}}</span>
+                                    <span class="badge bg-success rounded-pill">Asistidas {{asistidas}}</span>
+                                    <span class="badge bg-danger rounded-pill">NO asistidas {{noasistidas}}</span>
                                 </div>
 
                             </li>
@@ -101,7 +101,7 @@
                             <tr>
                                 <th>Fecha</th>
                                 <th>Tipo</th>
-                          <!--       <th>Asig</th> -->
+                                <!--       <th>Asig</th> -->
                                 <th>Opciones</th>
                             </tr>
                         </thead>
@@ -114,7 +114,7 @@
                                 <td>
                                     <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
                                         <button type="button" class="btn btn-danger btn-sm" @click="BTN_eliminar_ItemAgenda(fecha.id)">X </button>
-                                       <!--  <button type="button" class="btn btn-warning">Edit</button>
+                                        <!--  <button type="button" class="btn btn-warning">Edit</button>
                                         <button type="button" class="btn btn-success">Reasig</button> -->
                                     </div>
                                 </td>
@@ -153,6 +153,7 @@ import {
     mapState,
 } from "vuex";
 import moment from 'moment';
+import firebase_api from "@/api/firebaseApi";
 export default {
     /* --------------------------------------------------------------------------------------------------- */
     data: () => ({
@@ -170,13 +171,17 @@ export default {
         ListVerAgenda: [],
         CantAgendadDia: "",
         paramsDelAgendas: [],
-        paramsAgenda:[],
+        paramsAgenda: [],
+        // -------------------------------
+        reservadas: "",
+        asistidas: "",
+        noasistidas: "",
     }),
     /* --------------------------------------------------------------------------------------------------- */
 
     methods: {
 
-        ...mapActions('Agendas', ['getDataUsersbyParam', 'getDataByRangoSuperior', 'CreateAgendaNueva', 'getDatabyParam', 'DeleteItem']),
+        ...mapActions('Agendas', ['getDataUsersbyParam', 'getDataByRangoSuperior', 'CreateAgendaNueva', 'getDatabyParam', 'DeleteItem', 'GetAgendasSelectAct']),
 
         async BuscarProfesionales() {
             this.paramsProfesionales = [{
@@ -192,13 +197,13 @@ export default {
 
         },
 
-      async  GetCitasAgendaSeleccionada(id) {
+        async GetCitasAgendaSeleccionada(id) {
             this.paramsAgenda = [{
                 bd: "citas",
                 param: id_agenda,
                 valor: id,
             }]
-         await   this.getDatabyParam(this.paramsAgenda)
+            await this.getDatabyParam(this.paramsAgenda)
         },
 
         async GetListadoAgendas() {
@@ -255,8 +260,7 @@ export default {
 
         nombreProfesional(dataID) {
             const nombreProf = this.dataprofesionales.filter(prof => prof.id == dataID)
-            const resultado = nombreProf[0]
-            return resultado.name1 + " " + resultado.apell1
+            return (nombreProf[0].name1 + " " + nombreProf[0].apell1);
         },
 
         async BTN_eliminar_ItemAgenda(id) {
@@ -267,6 +271,30 @@ export default {
             await this.DeleteItem(this.paramsDelAgendas[0]);
             this.GetListadoAgendas()
         },
+
+        async GetAgendaSelect(value) {
+            const bd = "citas"
+            const parametro = "id_agenda"
+            const datasalida = []
+            const response = await firebase_api.get(`/${bd}.json`, {
+                params: {
+                    orderBy: `"${parametro}"`,
+                    equalTo: `"${value}"`
+                },
+            });
+
+            const {
+                data
+            } = response;
+
+            for (let id of Object.keys(data)) {
+                datasalida.push({
+                    id,
+                    ...data[id],
+                });
+            }
+            this.calculos(datasalida)
+        }
 
     },
 
@@ -293,6 +321,13 @@ export default {
             const cant = this.ListVerAgenda.length;
             return cant
         },
+
+        calculos(datasalida) {
+            this.reservadas = (datasalida.filter(elemento => elemento.estado === "0").length);
+            this.asistidos = (datasalida.filter(elemento => elemento.estado === "SI").length);
+            this.noasistidos = (datasalida.filter(elemento => elemento.estado === "NO").length);
+            return reservadas, no_asistidos, si_asistidos
+        }
 
     },
     /* --------------------------------------------------------------------------------------------------- */

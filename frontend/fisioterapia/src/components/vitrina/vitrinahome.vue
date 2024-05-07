@@ -354,7 +354,6 @@ export default {
                 id_ips: this.s_id_ips,
                 tipo: this.s_tipo,
                 publicado: this.s_publicado,
-                //
                 nombre: this.s_nombre,
                 desc: this.s_detalle,
                 precio: this.s_precio,
