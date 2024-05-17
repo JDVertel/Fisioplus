@@ -1,8 +1,6 @@
 <script>
-
 import Footer from "./views/footer.vue";
-
-import './assets/styles.css'
+import './assets/styles.css';
 
 export default {
     name: "App",
@@ -18,5 +16,3 @@ export default {
     <Footer />
 </div>
 </template>
-
-

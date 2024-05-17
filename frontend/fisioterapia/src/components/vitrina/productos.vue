@@ -1,10 +1,11 @@
 <template>
 <div class="container">
     <div class="row">
-        <div class="col-6  col-sm-4 col-md-2 Cproductos" v-for="(producto, index) in this.dataproductos" :key="index">
+ <!--        <div class="col-6  col-sm-4 col-md-2 Cproductos" v-for="(producto, index) in this.dataproductos" :key="index">
             <div class="card vitrinaCard" data-bs-toggle="modal" data-bs-target="#ModalProductos" @click="detalles(index)">
-
-                <img :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
+                <div class="container centrado">
+                    <img width="80" height="30" :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
+                </div>
 
                 <div class="modal-footer">
                     <div class="col-12">
@@ -12,7 +13,38 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+
+
+
+<!--  -->
+        <div class="col-6 col-sm-4 col-md-4 col-xl-2 cardservicios" v-for="(producto, index) in this.dataproductos" :key="index">
+            <div class="card">
+                <img width="80" height="30" :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
+                <div class="card-body bodyservicios">
+                    <h5 class="card-title titleservice"> {{producto.nombre}}</h5>
+                    <p class="card-text">
+                       {{ producto.descripcion }}
+                    </p>
+                </div>
+                <div class="card-footer_tienda">
+                    <div class="row">
+                        <div class="col-8 text-center centrado">
+                            <strong > Precio: $ {{ producto.precio }}</strong>
+                        </div>
+                        <div class="col-4 centrado">
+                            <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(this.tituloP, this.telefono1)">
+                                <img width="20" height="20" src="https://img.icons8.com/fluency/48/whatsapp.png" alt="whatsapp"/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
+
+
 
     </div>
 </div>
@@ -36,7 +68,7 @@
                 <strong>$ {{ this.precioP }}</strong>
                 <div class="col-2 centrado">
                     <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(this.tituloP, this.telefono1)">
-                      </button>
+                        <img width="15" height="15" src="https://img.icons8.com/fluency/48/whatsapp.png" alt="whatsapp" /> </button>
                 </div>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 
