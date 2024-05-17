@@ -20,7 +20,9 @@
 <!--  -->
         <div class="col-6 col-sm-4 col-md-4 col-xl-2 cardservicios" v-for="(producto, index) in this.dataproductos" :key="index">
             <div class="card">
-                <img width="80" height="30" :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
+<div class="centrado">
+    <img width="80" height="30" :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
+</div>
                 <div class="card-body bodyservicios">
                     <h5 class="card-title titleservice"> {{producto.nombre}}</h5>
                     <p class="card-text">
@@ -49,7 +51,7 @@
     </div>
 </div>
 <!--  -->
-<div class="modal fade" id="ModalProductos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="ModalProductos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-sm">
         <div class="modal-content">
             <div class="modal-header">
@@ -75,7 +77,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 </template>
 
 <script>

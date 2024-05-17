@@ -9,9 +9,9 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-
-            <div class="container">
+        <div class="col-12 col-md-6">
+      
+            <div class="container cmenu">
                 <div class="row">
                     <div class="col-2 centrado">
                         <img width="50" height="50" src="https://img.icons8.com/dotty/80/overtime.png" alt="overtime" /></div>
@@ -32,9 +32,9 @@
 
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-
-            <div class="container">
+        <div class="col-12 col-md-6">
+       
+            <div class="container cmenu">
                 <div class="row">
                     <div class="col-2  centrado">
                         <img width="50" height="50" src="https://img.icons8.com/ios/50/calendar--v1.png" alt="calendar--v1" /></div>
@@ -52,12 +52,12 @@
                     </div>
                 </div>
             </div>
-
+    
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-12 col-md-6">
 
-            <div class="container">
+            <div class="container cmenu">
                 <div class="row">
                     <div class="col-2  centrado">
                         <img width="55" height="55" src="https://img.icons8.com/dotty/80/sell.png" alt="sell" />
@@ -79,9 +79,9 @@
 
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-12 col-md-6">
 
-            <div class="container">
+            <div class="container cmenu">
                 <div class="row">
                     <div class="col-2  centrado">
                         <img width="48" height="48" src="https://img.icons8.com/ios/50/money--v1.png" alt="money--v1" /> </div>
@@ -101,9 +101,9 @@
 
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-12 col-md-6">
 
-            <div class="container">
+            <div class="container cmenu">
                 <div class="row">
                     <div class="col-2  centrado">
                         <img width="48" height="48" src="https://img.icons8.com/wired/64/hospital-room.png" alt="hospital-room" /> </div>
@@ -111,7 +111,7 @@
                         <div>
                             <router-link to="/hc"><a class="nav-link-menu" aria-current="page">
                                     <h3>Historia clinica</h3>
-                                    <p>Registro digital de las actividades realizadas a los pacientes</p>
+                                    <p>Registro digital de las actividades </p>
 
                                 </a></router-link>
                         </div>
@@ -124,9 +124,9 @@
 
         </div>
 
-        <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="col-12 col-md-6">
 
-            <div class="container">
+            <div class="container cmenu">
                 <div class="row">
                     <div class="col-2  centrado">
                         <img width="48" height="48" src="https://img.icons8.com/wired/64/settings.png" alt="settings" /> </div>
@@ -145,9 +145,9 @@
             </div>
 
         </div>
-
     </div>
-</div>
+    </div>
+
 <!-- <div class="container">
     <br>
     <h4>stores</h4> <br>

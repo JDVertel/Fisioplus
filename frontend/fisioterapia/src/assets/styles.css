@@ -1,11 +1,12 @@
 /*apps --------------------------------------------------------------------------------------------------*/
 #App {
   background-image: linear-gradient(to bottom right, #ffffff, rgb(37, 122, 99));
-  min-height: 100vh;
-  width: 100%;
+
+   width: 100%;
+   min-height: 100vh;
   position: absolute;
-  padding-bottom: 3em;
-  font-size: 0.9rem;
+  padding-bottom: 3rem;
+  font-size: 0.8rem;
 
     font-family: "Montserrat", sans-serif;
 
@@ -445,5 +446,19 @@ input[type="radio"] {
   display: flex;
   flex-direction: column;
   align-content: center;
+}
+
+.cmenu{
+
+  margin: 5px;
+  border-radius: 5px;
+  border-style:solid;
+  border-width: 1px;
+  border-color: #000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+.cmenu:hover{
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 

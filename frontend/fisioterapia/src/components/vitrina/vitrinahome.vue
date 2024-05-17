@@ -21,38 +21,31 @@
                 <h6 class="display-6">Clases Consultas y Terapias</h6>
                 <hr />
                 <!-- Boton modal1 -->
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click=" B_nuevo()">
-                    + Agregar nuevo item de servicio
-                </button>
+
                 <!--  -->
                 <div class="col-12">
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click=" B_nuevo()">
+                        + Servicio
+                    </button>
                     <div class="table-responsive">
                         <table class="table table-sm">
                             <thead>
                                 <tr>
                                     <th scope="col">Img</th>
-                                    <th scope="col">Categ</th>
-                                    <th scope="col">Titulo</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col">publicado</th>
-                                    <th scope="col">Opciones</th>
+                                    <th scope="col">Detalle</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-
                                 <tr v-for="articulo in vitrinaservicios" :key="articulo.id">
                                     <td><img src="..." class="img-thumbnail" alt="..."></td>
-                                    <td>{{ articulo.tipo }}</td>
-                                    <td>{{ articulo.nombre }}</td>
-                                    <td>{{ articulo.precio }}</td>
-                                    <td>{{articulo.publicado}} {{articulo.id}}</td>
-                                    <td>
-                                        <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click="M_editarservicios(articulo)"> edit</button>
-
-                                        <button class="btn btn-danger m-1" @click="eliminaritem(articulo.id)">delete</button>
-
-                                        <button class="btn btn-success m-1" @click="cambiarEstadoItem(articulo)">publicar</button>
+                                    <td>Tipo: {{ articulo.tipo }} <br> Nombre:{{ articulo.nombre }} <br>Precio: {{ articulo.precio }}
+                                        <br>Publicado:{{articulo.publicado}} <br>Id:{{articulo.id}} <br>
+                                        <div> <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click="M_editarservicios(articulo)"> edit</button>
+                                            <button class="btn btn-danger m-1" @click="eliminaritem(articulo.id)">delete</button>
+                                            <button class="btn btn-success m-1" @click="cambiarEstadoItem(articulo)">publicar</button></div>
                                     </td>
+
                                 </tr>
                             </tbody>
                         </table>
@@ -134,40 +127,38 @@
                 <h6 class="display-6">Articulos Tienda</h6>
                 <hr />
                 <!-- Button modal 2  articulos -->
-                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" @click=" B_nuevo()">
-                    + Agregar nuevo producto a la tienda
-                </button>
+
                 <!--  -->
                 <div class="container">
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" @click=" B_nuevo()">
+                        + Producto
+                    </button>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">Img</th>
-                                    <th scope="col">Cantidad</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Precio</th>
-                                    <th scope="col">Publicado</th>
-                                    <th scope="col">Opciones</th>
+                                    <th scope="col">Detalle</th>
+
                                 </tr>
                             </thead>
+
                             <tbody>
                                 <tr v-for="item in productosFiltrados" :key="item.id">
                                     <td><img src="..." class="img-thumbnail" alt="..."></td>
-                                    <th scope="row">{{ item.cant }}</th>
-                                    <td>{{item.nombre}}</td>
-                                    <td>{{ item.precio}}</td>
-                                    <td>{{item.publicado}} {{item.id}}</td>
-                                    <td>
+                                    <td scope="row">Cantidad: {{ item.cant }}
+                                        <br> nombre: {{item.nombre}}
+                                        <br>precio: {{ item.precio}}
+                                        <br>publicado: {{item.publicado}}
+                                        <br> Id: {{item.id}}
+                                        <br>
                                         <div>
                                             <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="M_editarproductos(item)"> edit</button>
-
                                             <button class="btn btn-danger m-1" @click=" eliminaritem(item.id)">delete</button>
-
                                             <button class="btn btn-success m-1" @click="cambiarEstadoItem(item)">publicar</button>
                                         </div>
-
                                     </td>
+
                                 </tr>
                             </tbody>
                         </table>
