@@ -1,42 +1,47 @@
 <template>
-<div class="container">
-    <div class="row">
- <!--        <div class="col-6  col-sm-4 col-md-2 Cproductos" v-for="(producto, index) in this.dataproductos" :key="index">
-            <div class="card vitrinaCard" data-bs-toggle="modal" data-bs-target="#ModalProductos" @click="detalles(index)">
-                <div class="container centrado">
-                    <img width="80" height="30" :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
-                </div>
+<div class="row row-cols-2 row-cols-md-3 row-cols-xl-6 g-4">
+    <div class="col" v-for="(producto, index) in this.dataproductos" :key="index">
+        <div class="card h-100">
+            <img :src="'/src/assets/images/productos/' + `${producto.img}`" class="card-img-top imagenservicio" alt="...">
+            <div class="card-body">
+                <h5 class="card-title producttitlecolor">{{producto.nombre}}</h5>
+                <p class="card-text"> {{ producto.descripcion }}</p>
 
-                <div class="modal-footer">
-                    <div class="col-12">
-                        <p class="text-center"> {{ producto.nombre}}</p>
-                    </div>
+                <div class="card-footer">
+                    {{ producto.precio }}
+                    <button type="button" v-on:click="reservaCitasW(producto.nombre, this.telefono1)" class="btnwsp">
+                        <img width="20" height="20" src="https://img.icons8.com/fluency/48/whatsapp.png" alt="whatsapp" />
+                    </button>
                 </div>
             </div>
-        </div> -->
+        </div>
+    </div>
 
+</div>
 
+<!-- <div class="container">
+    <div class="row">
 
-<!--  -->
         <div class="col-6 col-sm-4 col-md-4 col-xl-2 cardservicios" v-for="(producto, index) in this.dataproductos" :key="index">
             <div class="card">
-<div class="centrado">
-    <img width="80" height="30" :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
-</div>
-                <div class="card-body bodyservicios">
+                <div class="centrado">
+                    <img width="80" height="30" :src="'/src/assets/images/productos/' + `${producto.img}`" class="imagenproducto" />
+                </div>
+                <div class="cardbody">
                     <h5 class="card-title titleservice"> {{producto.nombre}}</h5>
                     <p class="card-text">
-                       {{ producto.descripcion }}
+                        {{ producto.descripcion }}
                     </p>
+
                 </div>
                 <div class="card-footer_tienda">
                     <div class="row">
                         <div class="col-8 text-center centrado">
-                            <strong > Precio: $ {{ producto.precio }}</strong>
+                            <strong> Precio: $ {{ producto.precio }}</strong>
                         </div>
                         <div class="col-4 centrado">
-                            <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(this.tituloP, this.telefono1)">
-                                <img width="20" height="20" src="https://img.icons8.com/fluency/48/whatsapp.png" alt="whatsapp"/>
+                            <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(producto.nombre, this.telefono1)">
+                                <img width="20" height="20" src="https://img.icons8.com/fluency/48/whatsapp.png" alt="whatsapp" />
                             </button>
                         </div>
                     </div>
@@ -44,40 +49,9 @@
             </div>
         </div>
 
-
-
-
-
-    </div>
-</div>
-<!--  -->
-<!-- <div class="modal fade" id="ModalProductos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5 display-6" id="staticBackdropLabel"> {{this.tituloP}}</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body ">
-                <div class="container detallesCard">
-
-                    <img :src="'/src/assets/images/productos/' + `${this.imagenP}`" class="imgP" />
-                    <hr>
-                    {{ this.detalleP }}
-                </div>
-            </div>
-            <div class="modal-footer">
-                <strong>$ {{ this.precioP }}</strong>
-                <div class="col-2 centrado">
-                    <button class="btn btn-primary btn-sm btnwsp" v-on:click="reservaCitasW(this.tituloP, this.telefono1)">
-                        <img width="15" height="15" src="https://img.icons8.com/fluency/48/whatsapp.png" alt="whatsapp" /> </button>
-                </div>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
-            </div>
-        </div>
     </div>
 </div> -->
+<!--  -->
 </template>
 
 <script>

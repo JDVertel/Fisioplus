@@ -1,26 +1,30 @@
 <template>
+    <Menu />
 <div class="container mt-5 centrado">
+
     <h6 class="display-5">Menu FisioterapiApp</h6>
 </div>
 <hr>
-<div class="centrado">
-    <router-link to="/">Home</router-link>
-</div>
+
+<!--  -->
+
+
+<!--  -->
 <div class="container">
 
     <div class="row">
         <div class="col-12 col-md-6">
-      
+
             <div class="container cmenu">
                 <div class="row">
                     <div class="col-2 centrado">
                         <img width="50" height="50" src="https://img.icons8.com/dotty/80/overtime.png" alt="overtime" /></div>
 
-                    <div class="col-8">
+                    <div class="col-8" >
                         <div>
                             <router-link :to="{name:'reservas', params:{id_user: this.id_user}}"><a class="nav-link-menu" aria-current="page">
-                                    <h3>Reservas </h3>
-                                    <p>Reserva de citas a pacientes </p>
+                                    <h3 style="color:black">Reservas </h3>
+                                    <p style="color:black">Reserva de citas a pacientes </p>
                                 </a></router-link>
                         </div>
                     </div>
@@ -33,7 +37,7 @@
         </div>
 
         <div class="col-12 col-md-6">
-       
+
             <div class="container cmenu">
                 <div class="row">
                     <div class="col-2  centrado">
@@ -42,8 +46,8 @@
                     <div class="col-8">
                         <div>
                             <router-link to="/agendas"><a class="nav-link-menu" aria-current="page">
-                                    <h3>Agendas </h3>
-                                    <p>Gestión de agendas del sistema </p>
+                                    <h3 style="color:black">Agendas </h3>
+                                    <p style="color:black">Gestión de agendas del sistema </p>
                                 </a></router-link>
                         </div>
                     </div>
@@ -52,7 +56,7 @@
                     </div>
                 </div>
             </div>
-    
+
         </div>
 
         <div class="col-12 col-md-6">
@@ -65,8 +69,8 @@
                     <div class="col-8">
                         <div>
                             <router-link to="/vitrina"><a class="nav-link-menu" aria-current="page">
-                                    <h3>Vitrina</h3>
-                                    <p>Gestión de productos y servicios </p>
+                                    <h3 style="color:black">Vitrina</h3>
+                                    <p style="color:black">Gestión de productos y servicios </p>
                                 </a></router-link>
                         </div>
                     </div>
@@ -88,8 +92,8 @@
                     <div class="col-8">
                         <div>
                             <router-link to="/ventas"><a class="nav-link-menu" aria-current="page">
-                                    <h3>Ventas</h3>
-                                    <p>Registro de ventas de productos</p>
+                                    <h3 style="color:black">Ventas</h3>
+                                    <p style="color:black">Registro de ventas de productos</p>
                                 </a></router-link>
                         </div>
                     </div>
@@ -110,8 +114,8 @@
                     <div class="col-8">
                         <div>
                             <router-link to="/hc"><a class="nav-link-menu" aria-current="page">
-                                    <h3>Historia clinica</h3>
-                                    <p>Registro digital de las actividades </p>
+                                    <h3 style="color:black">Historia clinica</h3>
+                                    <p style="color:black">Registro digital de las actividades </p>
 
                                 </a></router-link>
                         </div>
@@ -133,8 +137,8 @@
                     <div class="col-8">
                         <div>
                             <router-link to="/parametros"><a class="nav-link-menu" aria-current="page">
-                                    <h3>Parametros</h3>
-                                    <p>Gestión de parametros del sistema </p>
+                                    <h3 style="color:black">Parametros</h3>
+                                    <p style="color:black">Gestión de parametros del sistema </p>
                                 </a></router-link>
                         </div>
                     </div>
@@ -146,7 +150,7 @@
 
         </div>
     </div>
-    </div>
+</div>
 
 <!-- <div class="container">
     <br>
@@ -171,13 +175,15 @@ import {
     mapState,
     mapActions
 } from 'vuex';
-/* import {
-    userAuth
-} from "./store/auth/getters"; */
+import menu from '../../views/menu.vue';
+
 
 export default {
+    components: {
+        Menu: menu,
+    },
     data: () => ({
-
+ 
     }),
 
     computed: {

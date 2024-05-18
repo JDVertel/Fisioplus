@@ -1,39 +1,32 @@
 <template>
-<div class="row centrado">
-    <div class="col-6 col-sm-4 col-md-4 col-xl-2 cardservicios" v-for="servicio in this.dataservicios" :key="servicio.nombre">
-        <div class="card">
-            <img :src="'/src/assets/images/servicios/' + `${servicio.url}`" class="card-img-top imagenservicio" />
-            <div class="card-body bodyservicios">
-                <h5 class="card-title titleservice"> {{ servicio.nombre }}</h5>
-                <p class="card-text">
-                    {{ servicio.desc }}
-                </p>
-            </div>
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-8 text-center centrado">
-                        <strong class="white"> Precio: ${{ servicio.precio }} </strong>
-                    </div>
-                    <div class="col-4 centrado">
-                        <button type="button" v-on:click="reservaCitasW(servicio.nombre, telefono1)" class="btn btn-primary btn-sm btnwsp">
-                            <img width="20" height="20" src="https://img.icons8.com/fluency/48/whatsapp.png" alt="whatsapp"/>
-                        </button>
-                    </div>
-                </div>
+<div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4">
+    <div class="col" v-for="servicio in this.dataservicios" :key="servicio.nombre">
+        <div class="card h-100">
+            <img :src="'/src/assets/images/servicios/' + `${servicio.url}`" class="card-img-top imagenservicio" alt="...">
+            <div class="card-body">
+                <h5 class="card-title serviciostitlecolor">{{ servicio.nombre }}</h5>
+                <p class="card-text"> {{ servicio.desc }}.</p>
+
+                <div class="card-footer">
+                    <small class="text-body-secondary">$ {{ servicio.precio }}</small>   <button type="button" v-on:click="reservaCitasW(servicio.nombre, telefono1)" class="btnwsp">
+                        <img width="20" height="20" src="https://img.icons8.com/fluency/48/whatsapp.png" alt="whatsapp" />
+                    </button>
+                  </div>
+               
+             
             </div>
         </div>
     </div>
-</div>
-<br>
-<br>
 
+</div>
+
+<br>
 </template>
 
 <script>
 import {
     servicios
 } from "../../firebase/bd";
-
 
 export default {
     data: () => ({

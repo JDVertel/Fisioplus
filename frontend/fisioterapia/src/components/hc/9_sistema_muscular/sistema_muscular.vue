@@ -1070,7 +1070,7 @@ export default {
         emuscular: "0",
         consultamusc: [],
         evalmusc: [],
-        eval_grado:"0",
+        eval_grado: "0",
 
     }),
     methods: {
@@ -1085,7 +1085,3 @@ export default {
 
 }
 </script>
-
-<style lang="scss" scoped>
-
-</style>

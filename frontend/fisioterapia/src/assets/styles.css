@@ -1,30 +1,132 @@
 /*apps --------------------------------------------------------------------------------------------------*/
 #App {
   background-image: linear-gradient(to bottom right, #ffffff, rgb(37, 122, 99));
-
-   width: 100%;
-   min-height: 100vh;
-  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  /*  position: absolute; */
   padding-bottom: 3rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
 
-    font-family: "Montserrat", sans-serif;
+.imagenservicio {
+  height: 120px !important;
+  width: 100% !important;
+}
 
+.cmenu {
 
+  margin: 5px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+.cmenu:hover {
+
+  margin: 5px;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #2113e8;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ 
 
 }
 
+.btnwsp {
+  border-radius: 35px !important;
+  padding: 4px !important;
+  border-style: none;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1) !important;
+}
 
+a {
+  text-decoration: none!important;
+}
+
+.serviciostitlecolor{
+  color: #198754 !important;
+}
+
+.rurinatitlecolor{
+  color: #42A3FC!important;
+
+}
+
+.producttitlecolor{
+  color: #c6262e!important;
+}
+
+.imagenhc{
+  
+    max-width: 100%;
+    height: auto;
+}
+
+.centrarcontenido{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.card{
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.card:hover{
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.2);
+}
+
+nav.navbar {
+  background-color: transparent !important;
+
+}
+/* HC */
+
+
+button.accordion-button.collapsed {
+  padding: 3px;
+  background-color: rgb(120, 195, 157);
+  font-size: 0.8rem;
+  color: rgb(254, 255, 255);
+  text-shadow: 1px 1px 2px black;
+}
+
+button.accordion-button:not(.collapsed) {
+  padding: 3px;
+  background-color: rgb(240, 204, 105);
+font-size: 0.8rem;
+  color: rgb(245, 245, 245);
+  text-shadow: 1px 1px 2px black;
+}
+
+button,
+textarea,
+select,
+input
+ {
+  font-size: 0.75rem !important;
+}
+
+nav-link.active{
+  background-color: #198754;
+}
+
+
+/* 
 .home {
   position: relative;
-   bottom: 20px;
+  bottom: 20px;
 }
 
-/*imagenes--------------------------------------------------------------------------------------------------*/
 
 .imagenvitrina {
-  border-radius: 50% !important;
-  width:15rem !important;
+
+  width: 15rem !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
@@ -33,26 +135,13 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.imginsp{
-   width: 80%;
-}
-
-.imagenservicio {
-  height: 120px !important;
-  width: 100% !important;
-
-}
 
 
-.imagenrutina {
-  height: 120px !important;
-  padding: 5px !important;
-}
+
+
 
 .imagenproducto {
   height: 95px !important;
-
-
 }
 
 .imagenhc {
@@ -68,18 +157,15 @@
   max-width: 200px;
 }
 
-
-
-
 .Tantecedentes {
   padding: 5px !important;
 }
 
-#imagen_postura{
-  width:19em;
+#imagen_postura {
+  width: 19em;
 }
 
-/* fuentes-------------------------------------------------------------------------------------------------------------*/
+
 
 .jz {
   text-align: justify;
@@ -87,138 +173,28 @@
 }
 
 .Cjz {
-  
+
   text-align: center;
   color: #00913D;
 }
 
-/* cards-------------------------------------------------------------------------------------------------------------*/
 
-.cardservicios {
+
+.cardvitrina {
   font-size: 0.7rem;
   padding: 0.2rem !important;
-  border-style: none !important;
-  border-color: transparent !important;
+
 
 }
+
+
+
 
 .titleservice {
   font-size: 1rem;
-}
-
-.bodyservicios {
-  height: 100px;
-  padding: 7px !important;
-}
-
-/*---------------------------*/
-.cardclases {
-  font-size: 0.7rem;
-  margin: 5px;
-  padding: 1px !important;
-}
-
-.cardproductos {
-  font-size: 0.7rem;
-  font-style: oblique;
 
 }
 
-
-div.card-footer {
-  background-color: #00913d;
-  font-size: 0.7rem;
-  padding: 7px;
-
-}
-
-div.card-footer_rutinas {
-  background-color: #4f71e1;
-  font-size: 0.7rem;
-  padding: 7px;
-
-}
-
-div.card-footer_tienda {
-  background-color: #e9e10c;
-  font-size: 0.7rem;
-  padding: 7px;
-
-}
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 5px;
-  
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.prod_cardbody {
-  padding: 2px !important;
-}
-
-.detallesCard {
-  display: flex !important;
-  flex-direction: column !important;
-  align-content: center !important;
-  justify-content: center !important;
-  align-items: center;
-  font-size: 0.9em !important;
-  padding: 5px !important;
-
-
-}
-
-
-.vitrinaCard {
-  display: flex !important;
-  flex-direction: column !important;
-  align-content: center !important;
-  justify-content: center !important;
-  align-items: center;
-  padding: 5px !important;
-  border: 1px solid #00913d !important;
-  height: 150px !important;
-  margin: 3px !important;
-
-}
-.Cproductos {
-  padding: 1px !important;
-
-}
-
-
-/* contenedores-------------------------------------------------------------------------------------------------------------*/
-.Cont_hc{
-  background-color:#e2efec;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 5px;
-
-}
-.Cont_hc:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-
-
-
-
-
-
-/*  Cards------------------------------------------------------------------------------------------------------------- */
-
-
-/*
-
-
-
-
-/*-------------------------------------------------------------------------------------------------------------------- */
 
 .fechas {
   padding: 1px !important;
@@ -235,35 +211,17 @@ p {
 }
 
 #agendas {
-  font-size:1rem;
+  font-size: 1rem;
   background: fixed;
   margin-top: 50px !important;
 }
 
-.radius {
-  border-radius: 50px !important;
-}
 
 .subtitulos {
   text-shadow: 0px 0px 1px black;
 }
 
-button.accordion-button.collapsed {
-  padding: 2px;
-  background-color: rgb(120, 195, 157);
-  color: aliceblue;
-  font-size: 1rem;
-  text-shadow: 1px 1px 2px black;
-}
 
-button.accordion-button:not(.collapsed) {
-  padding: 2px;
-  background-color: rgb(75, 198, 242);
-  color: rgba(9, 210, 109, 0.68);
-  font-size: 1rem;
-  color: aliceblue;
-  text-shadow: 1px 1px 2px black;
-}
 
 .retrato {
   display: flex;
@@ -287,7 +245,7 @@ button.accordion-button:not(.collapsed) {
 
 .nav-link-menu {
   color: black;
-  /* text-shadow: 1px 1px 2px black !important;*/
+
   text-decoration: none !important;
   display: inline-block !important;
   font-size: 1rem !important;
@@ -295,9 +253,7 @@ button.accordion-button:not(.collapsed) {
 }
 
 
-accordion-button collapsed {
-  padding: 10px!important;
-}
+
 
 
 div.col-4 {
@@ -310,33 +266,14 @@ div.col-4 {
 
 }
 
-.Bredondo{
-  border-radius: 50%!important;
-}
-
-div.accordion-body {
-  padding: 5px !important;
-}
 
 
-.centrado {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-}
 
 
-/* .col-6 {
-  padding: 2px;
-}
 
-div.col-6.col-md-3,
-div.col-12 {
-  padding: 0.2px !important;
-}
- */
+
+
+
 
 .btn-primary {
   background-color: #00913d !important;
@@ -351,7 +288,7 @@ div.col-12 {
 }
 
 .btnwsp {
-  border-radius: 35px !important;
+
   padding: 4px !important;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1) !important;
 }
@@ -367,12 +304,7 @@ div.col-12 {
 }
 
 
-textarea,
-select,
-input,
-button {
-  font-size:0.9rem !important;
-}
+
 
 .display-6 {
   font-size: 1.4rem !important;
@@ -392,7 +324,7 @@ footer {
   position: absolute;
   font-size: 0.7rem;
 }
-
+ */
 /*---------------------------------------------------mañas*/
 .radio-container {
   display: flex;
@@ -409,16 +341,16 @@ footer {
   padding: 2px;
   font-size: 0.6em;
 }
-.texttable{
+
+.texttable {
   font-size: 0.7em;
 }
+
 .degradado {
-  background-image: linear-gradient(
-    to right,
-    rgb(0, 128, 126),
-    yellow,
-    red
-  );
+  background-image: linear-gradient(to right,
+      rgb(0, 128, 126),
+      yellow,
+      red);
 }
 
 input[type="radio"] {
@@ -442,23 +374,3 @@ input[type="radio"] {
   padding: 10px;
   text-align: center;
 }
-.centrado{
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
-
-.cmenu{
-
-  margin: 5px;
-  border-radius: 5px;
-  border-style:solid;
-  border-width: 1px;
-  border-color: #000;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
-}
-.cmenu:hover{
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-

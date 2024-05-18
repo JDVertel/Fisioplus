@@ -1,6 +1,6 @@
 <template>
 <div class="container-fluid">
-
+<Menu />
     <!--  pagina de profesional
     llegan ( idprofesional - id_ips- tipoagenda)
     se cargan de entrada citas del profesional en el dia actual
@@ -118,9 +118,7 @@
 </div>
 <br>
 <br>
-<div class="container home">
-    <router-link to="/dashboard">Home</router-link>
-</div>
+
 </template>
 
 <script>
@@ -129,7 +127,11 @@ import {
     mapState
 } from 'vuex';
 import moment from "moment";
+import menu from '../../views/menu.vue'
 export default {
+    components:{
+     Menu: menu,
+    },
     data: () => ({
         fechaHoy: "",
         idIPS: "1",

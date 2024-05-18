@@ -1,14 +1,13 @@
 <template>
-  <footer>
+<footer>
     <br />
     <p>&copy; Bitdata Managements 2024</p>
     <br>
-  </footer>
+</footer>
 </template>
 
 <script>
 export default {
-  name: "Footer",
+    name: "Footer",
 };
 </script>
-

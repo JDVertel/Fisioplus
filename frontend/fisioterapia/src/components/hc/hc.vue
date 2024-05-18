@@ -1,7 +1,8 @@
 <template>
 <div class="container mt-3">
     <div class="row">
-        <p class="mb-1 display-6 text-center">Buscar Paciente</p>
+        <h3 class="centrarcontenido">Historia Clinica</h3>
+  
     </div>
     <div class="container centrado">
         <input type="text" class="form-control-sm textarea" id="search textarea" placeholder="Numero de Documento" />
@@ -23,43 +24,39 @@
 <!-- **************************************************************************************************** -->
 <div class="container-fluid Cont_hc">
 
-    <div class="row">
-        <h1 class="display-6">Historia Clinica</h1>
-  
-    </div>
+
 
     <div class="row">
-     
-
-            <div class="col-12 col-md-2 retrato">
+            <div class="col-3 col-md-2 centrarcontenido">
                 <img src="./../../assets/images/usuario.jpg" class="imagenhc" alt="..." />
             </div>
-            <div class="col-12 col-md-10">
+        
+            <div class="col-9 col-md-10">
                 <div class="container mt-3" style="padding: 25px;">
-                    <h5>
+                    <h6>
                         <strong>
                           Datos
                             Personales</strong>
-                    </h5>
+                    </h6>
                     <div class="row">
-                        <div class="col-12">Nombres:</div>
-                        <div class="col-12">Apellidos:</div>
-                        <div class="col-6 col-md-3">Sexo:</div>
-                        <div class="col-6 col-md-3">Edad:</div>
-                        <div class="col-6 col-md-3">TipoDoc:</div>
-                        <div class="col-6 col-md-3">Numdoc:</div>
-                        <div class="col-6 col-md-3">Tipo Sangre:</div>
-                        <div class="col-6 col-md-3">E Civil:</div>
-                        <div class="col-6 col-md-3">Escolaridad:</div>
-                        <div class="col-6 col-md-3">Ocupacion:</div>
-                        <div class="col-6 col-md-3">Direccion:</div>
-                        <div class="col-6 col-md-3">Celular:</div>
+                        <div class="col-12 col-md-3"><strong>Nombres:</strong> juan david </div>
+                        <div class="col-12 col-md-3"><strong>Apellidos:</strong> vertel holguin</div>
+                        <div class="col-12 col-md-3"><strong>Sexo:</strong> M</div>
+                        <div class="col-12 col-md-3"><strong>Edad:</strong> 43</div>
+                        <div class="col-12 col-md-3"><strong>TipoDoc:</strong> CC</div>
+                        <div class="col-12 col-md-3"><strong>Numdoc:</strong> 13862306 </div>
+                        <div class="col-12 col-md-3"><strong>Tipo Sangre :</strong> A+</div>
+                        <div class="col-12 col-md-3"><strong>E Civil:</strong> U libre</div>
+                        <div class="col-12 col-md-3"><strong>Escolaridad:</strong> maestria </div>
+                        <div class="col-12 col-md-3"><strong>Ocupacion:</strong> ingeniero de  sistemas</div>
+                        <div class="col-12 col-md-3"><strong>Direccion:</strong> calle 52a # 20-38 torcoroma</div>
+                        <div class="col-12 col-md-3"><strong>Celular:</strong> 3145563439</div>
                     </div>
                 </div>
             </div>
       
     </div>
-
+    <br>
     <C_Hc />
 
     <br>

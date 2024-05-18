@@ -23,14 +23,14 @@
             <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-profileA" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
-                    <div class="container">
+                    <div>
                         <div class="mb-3">
                             <br />
                             <textarea placeholder="Motivo de Consulta" v-model="motivoConsulta" class="form-control textarea" id="text_motivoconsulta" rows="3"></textarea>
                         </div>
 
                         <div class="mb-3">
-                            <textarea placeholder="Enfermedad actual" v-model="diagnostico" class="form-control textarea" id="text_diagnosticomedico" rows="3"></textarea>
+                            <textarea placeholder="Enfermedad actual" v-model="Enfermedad" class="form-control textarea" id="text_diagnosticomedico" rows="3"></textarea>
                         </div>
 
                         <div class="mb-3">
@@ -45,12 +45,12 @@
                 </div>
 
                 <div class="tab-pane fade" id="nav-contactA" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
-                    <div class="container">
+                    <div>
                         <br />
                         <div class="row">
-                            <div class="col-5">
+                            <div class="col-6">
                                 <p>Medidas Fisicas</p>
-                                <div class="container">
+                                <div>
                                     <div class="input-group mb-1">
                                         <input type="number" class="form-control form-control-sm textarea" id="text_peso" v-model="peso" placeholder="Peso (kg)" />
                                     </div>
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-5">
+                            <div class="col-6">
                                 <p>Signos Vitales</p>
                                 <div class="mb-1">
                                     <input type="number" class="form-control form-control-sm textarea" id="text_temp" v-model="temp" placeholder="Temp (C)" />
@@ -90,74 +90,99 @@
 
                     <div class="row">
                         <div class="col-12">
-                            <div class="container">
+                            <!-- ----------------------------------------------------------------------------- -->
+                            <div >
                                 <div class="mb-1">
-                                    <select v-model="tipoAnt" v-on:change=" buscar_enfermedad(this.tipoAnt, this.dataBD,'enfermedades')" class="form-select form-select-sm textarea" aria-label="Default select example">
+                                    <select v-model="tipoAnt" class="form-select form-select-sm textarea" v-on:change="buscar_enfermedad(this.tipoAnt, this.dataBD,'enfermedades')" aria-label="Default select example" id="tipoAnt">
                                         <option value="0">--Seleccione--</option>
-                                        <option v-for="(ant, index) in this.dataBD" :key="index" :value="ant.id">
+                                        <option v-for="(ant) in this.dataBD" :key="ant.id" :value="ant.nombre">
                                             {{ ant.nombre }}
                                         </option>
                                     </select>
-                                </div>
-                                <div class="mb-1" v-if="tipoAnt != 0">
-                                    <select v-model="Enfermedad" class="form-select form-select-sm textarea" aria-label="Default select example">
-                                        <option value="">Seleccione enfermedad</option>
-                                        <option v-for="(item, index) in this.enf" :key="index" value="{{index}}">
-                                            {{ item }}
-                                        </option>
-                                    </select>
+
                                 </div>
 
+                                <select v-model="selectenfermedad" class="form-select form-select-sm textarea" id="selectenfermedad" aria-label="Default select example">
+                                    <option value="0">--Seleccione enfermedad--</option>
+                                    <option v-for="item in this.enf" :key="item.id" :value=item>
+                                        {{ item }}
+                                    </option>
+                                </select>
+
                                 <div class="mb-1">
-                                    <textarea class="form-control form-control-sm textarea" id="exampleFormControlTextarea1" placeholder="Detalle" v-model="DetalleEnfHeredoF" rows="2"></textarea>
+                                    <textarea class="form-control form-control-sm textarea" id="exampleFormControlTextarea1" placeholder="Detalle" v-model="DetalleEnf" rows="2"></textarea>
                                 </div>
-                                <button class="btn btn-primary btn-sm textarea" type="submit">
+                                <button class="btn btn-primary btn-sm textarea" @click="AddAntec(this.tipoAnt, this.selectenfermedad,this.DetalleEnf)">
                                     + Adicionar
                                 </button>
                             </div>
+                            <!-- ----------------------------------------------------------------------------- -->
                         </div>
 
-                        <div class="col-12">
-                            <div class="container">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Antecedentes registrados
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">Tipo</th>
-                                                    <th scope="col">Enfermedad</th>
-                                                    <th scope="col">Detalle</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>@mdo</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>@fat</td>
-                                                </tr>
-                                                <tr>
-                                                    <td colspan="2">Larry the Bird</td>
-                                                    <td>@twitter</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                        <div class="col-12 mt-3">
 
+                            <div  v-if="this.NewAntec">
+                                <div class="card-header">
+                                    Nuevos Antecedentes
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-sm">
+                                        <thead class="table-danger">
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Enfermedad</th>
+                                                <th>Detalle</th>
+                                                <th>Opc</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="item in this.NewAntec" :key="item.id">
+                                                <td>{{item.tipo}}</td>
+                                                <td>{{item.enfermedad}}</td>
+                                                <td>{{item.detalleenf}}</td>
+                                                <td>X</td>
+                                            </tr>
+                                      
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="card-header">
+                                Historial de antecedentes
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-sm">
+                                    <thead class="table-info">
+                                        <tr>
+                                            <th scope="col">Tipo</th>
+                                            <th scope="col">Enfermedad</th>
+                                            <th scope="col">Detalle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">Larry the Bird</td>
+                                            <td>@twitter</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-warning">+ Guardar</button>
+            <button class="btn btn-warning mt-3" @click=" guardarInfo()">+ Guardar</button>
         </div>
     </div>
 </div>
@@ -168,7 +193,7 @@ import {
     Antecedentes
 } from "./../../../firebase/bd.js";
 import {
-    BuscarDetalles
+    BuscarDetalles, BuscarDetallesNombre
 } from "./../../backend/rutinas.js";
 
 export default {
@@ -177,10 +202,13 @@ export default {
         dataBD: Antecedentes,
         datas: "",
         tipoAnt: "0",
-        Enfermedad: "",
+        selectenfermedad: "0",
+
         motivoConsulta: "",
-        diagnostico: "",
+        Enfermedad: "",
         TratPrevios: "",
+        MedPrevios: "",
+        /*  */
         peso: "",
         talla: "",
         estatura: "",
@@ -189,29 +217,71 @@ export default {
         fcardiaca: "",
         frespiratoria: "",
         tarterial: "",
-        ParentescoEnfHeredoF: "",
-        DetalleEnfHeredoF: "",
-        radiografia: "",
-        ecografia: "",
-        resonancia: "",
-        tag: "",
-        otros: "",
-        descripcion: "",
-        enf: "",
+        /*  */
+
+        ArrayDatosConsulta: [],
+        ArraySaveConsulta: [],
+        enf: [],
+        NewAntec: [],
+        regAnt: {},
 
     }),
 
     methods: {
-     buscar_enfermedad(ide, array, resultado) {
-             this.enf  = BuscarDetalles(ide, array, resultado);
-        }
+/*         buscar_enfermedad(ide, array, resultado) {
+            this.enf = BuscarDetalles(ide, array, resultado);
+        }, */
+
+        buscar_enfermedad(ide, array, resultado) {
+            this.enf = BuscarDetallesNombre(ide, array, resultado);
+        },
+
+
+        AddAntec(tipo, enf, detalle) {
+            let item = {
+                tipo: tipo,
+                enfermedad: enf,
+                detalleenf: detalle
+            }
+            this.NewAntec = [...this.NewAntec, item]
+
+        },
+
+        guardarInfo() {
+            this.ArraySaveConsulta = [];
+            this.ArrayDatosConsulta = [{
+                motivoConsulta: this.motivoConsulta,
+                Enfermedad: this.Enfermedad,
+                TratPrevios: this.TratPrevios,
+                MedPrevios: this.MedPrevios,
+                peso: this.peso,
+                talla: this.talla,
+                estatura: this.estatura,
+                imc: this.imc,
+                temp: this.temp,
+                fcardiaca: this.fcardiaca,
+                frespiratoria: this.frespiratoria,
+                tarterial: this.tarterial,
+            }];
+
+            for (let elemento of this.ArrayDatosConsulta) {
+                for (let propiedad in elemento) {
+                    if (elemento[propiedad] !== '') {
+                        let element = {
+                            [propiedad]: elemento[propiedad]
+                        };
+                        this.ArraySaveConsulta = {
+                            ...this.ArraySaveConsulta,
+                            ...element
+                        };
+
+                    }
+                }
+                console.log(this.ArraySaveConsulta)
+
+            }
+        },
 
     }
-
 }
-
 </script>
-
-<style>
-
-</style>

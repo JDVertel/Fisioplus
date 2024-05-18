@@ -24,7 +24,7 @@ export default {
         };
     },
     method: {
-       
+
     }
 }
 </script>
@@ -35,7 +35,7 @@ export default {
 
     <!-- sesion informacion -->
     <div class="container" align="center">
-        <img src="./../assets/images/inicio.jpg" class="imagenvitrina" alt="..." />
+        <!-- <img src="./../assets/images/inicio.jpg" class="imagenvitrina" alt="..." /> -->
     </div>
 
     <br />
@@ -43,16 +43,16 @@ export default {
     <ul class="nav nav-tabs" id="myTab" role="tablist">
 
         <li class="nav-item" role="presentation">
-            <button class="nav-link active titulo" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Servicios</button>
+            <button class="nav-link active titulo" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><img width="25" height="25" src="https://img.icons8.com/ios-filled/50/massage.png" alt="massage"/> Servicios</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Clases</button>
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><img width="25" height="25" src="https://img.icons8.com/ios-filled/50/yoga.png" alt="yoga"/> Clases</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">Tienda</button>
+            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"><img width="25" height="25" src="https://img.icons8.com/external-yogi-aprelliyanto-glyph-yogi-aprelliyanto/32/external-shopping-bag-digital-marketing-yogi-aprelliyanto-glyph-yogi-aprelliyanto.png" alt="external-shopping-bag-digital-marketing-yogi-aprelliyanto-glyph-yogi-aprelliyanto"/> Tienda</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Info</button>
+            <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><img width="25" height="25" src="https://img.icons8.com/ios-filled/50/info.png" alt="info"/> Info</button>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -60,7 +60,7 @@ export default {
             <br>
             <div class="container text-center">
 
-                <div class="display-6">¿Quienes Somos?</div>
+                <h4>¿Quienes Somos?</h4>
                 <p class="jz">
 
                     Bienvenidos a <strong>EVReabilitacion</strong>, este centro ha sido creado con el objetivo de brindar atención integral a personas que requieren tratamiento fisioterapeutico.Nuestro equipo de profesionales altamente capacitado está comprometido en ofrecer un ambiente seguro y acogedor para nuestros pacientes, donde puedan recibir la atención que necesitan para recuperar su bienestar físico y emocional. accede a los servicios que ofrecemos, nuestras instalaciones y nuestro enfoque terapéutico. ¡Gracias por acompañarnos!
@@ -68,14 +68,14 @@ export default {
                 </p>
 
                 <br>
-                <div class="display-6">Mision</div>
+                <h4>Mision</h4>
                 <p class="jz">
                     <strong>EVreabilitacion</strong>
                     tiene como objetivo ofrecer una visión integral para el tratamiento y recuperacion de lesiones traumáticas, brindando atención especializada y personalizada a cada paciente. Nuestra misión es proporcionar un espacio de recuperación que promueva la salud física y emocional, a través de un equipo multidisciplinario comprometido con la excelencia en el cuidado de la salud. Con un enfoque centrado en el bienestar integral, buscamos ser líderes en la rehabilitación traumatológica, contribuyendo al restablecimiento de la calidad de vida de nuestros pacientes.
                 </p>
                 <br>
 
-                <div class="display-6">Vision</div>
+                <h4>Vision</h4>
                 <p class=" jz">
                     La visión de <strong>EVreabilitacion</strong> es convertirnos en un referente reconocido a nivel local y nacional por nuestra excelencia en el tratamiento de lesiones traumáticas. Buscamos ser un centro de vanguardia que integre tecnología de punta, investigación y un enfoque humano para proporcionar soluciones efectivas y personalizadas a cada paciente. Aspiramos a ser un espacio de esperanza y transformación, donde cada persona pueda recuperar su movilidad, funcionalidad y bienestar emocional, permitiéndoles reintegrarse plenamente a sus actividades cotidianas.
                 </p>
@@ -85,7 +85,7 @@ export default {
 
         <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
             <div class="row mt-3">
-                <h1 class="display-6 subtitulos">Nuestros Servicios</h1>
+                <h4>Nuestros Servicios</h4>
 
                 <p class="jz">Nuestro servicio de fisioterapia ofrece una amplia gama de tratamientos personalizados para abordar tus necesidades específicas de rehabilitación y bienestar físico. </p>
                 <div>
@@ -95,12 +95,12 @@ export default {
                     </button>
                 </div>
             </div>
-            <hr>
+          <br>
             <Servicios />
         </div>
         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
             <div class="row mt-3">
-                <h1 class="display-6 subtitulos">Clases y Rutinas</h1>
+                <h4>Clases y Rutinas</h4>
 
             </div>
 
@@ -111,12 +111,14 @@ export default {
                     {{ mostrarclases ? ' Leer menos ' : 'Leer más...' }}
                 </button>
             </div>
-            <hr>
+          <br>
             <Rutinas />
         </div>
         <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
             <div class="row mt-3">
-                <h1 class="display-6 subtitulos">TiendaOnline</h1>
+            <br>
+
+                <h4>TiendaOnline</h4>
 
             </div>
 
@@ -127,13 +129,8 @@ export default {
                     {{ mostrartienda ? ' Leer menos ' : 'Leer más...' }}
                 </button>
             </div>
-            <!--   <h1 class="display-6">Beneficios de nuestra tienda online</h1>
-            <p class="jz">Comodidad: Realiza tus compras desde la comodidad de tu hogar o trabajo, sin necesidad de ir a un centro físico. <br>
-                Selección: Encuentra una amplia variedad de productos de fisioterapia y gimnasia de alta calidad en nuestra tienda online. <br>
-
-                Atención al cliente: Nuestro equipo de profesionales está disponible para atender tus preguntas y ayudarte a encontrar los productos que mejor se adapten a tus necesidades.</p> -->
-            <hr>
-            <p>Productos</p>
+          <br>
+  
             <Productos />
             <br>
 
@@ -146,31 +143,3 @@ export default {
     </div>
 </div>
 </template>
-
-<style>
-.menu-lateral {
-    position: fixed !important;
-    top: 0 !important;
-    left: -200px !important;
-    width: 200px !important;
-    height: 100% !important;
-    background-color: #f1f1f1 !important;
-    transition: left 0.3s ease !important;
-}
-
-.menu-lateral.menu-abierto {
-    left: 0 !important;
-}
-
-.menu-lateral ul {
-    list-style-type: none;
-    padding: 0 !important;
-}
-
-.menu-lateral li a {
-    display: block !important;
-    padding: 10px !important;
-    text-decoration: none !important;
-    color: #333 !important;
-}
-</style>

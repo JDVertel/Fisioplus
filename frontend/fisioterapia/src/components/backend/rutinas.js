@@ -13,6 +13,22 @@ export function BuscarDetalles(ide, array, resultado) {
   return response;
 }
 
+/* RUTINA PARA CONSULTAR DATOS DE UN SEGUNDO COMBO DEPENDENTE DE UN PRIMERO POR NOMBRER  */
+// (nombre  - array de la data - propiedad resultado)
+
+
+
+export function BuscarDetallesNombre(name, array, resultado) {
+  let response = null;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].nombre === name) {
+      let newarray = array[i];
+      response = newarray[resultado];
+      console.log(response);
+    }
+  }
+  return response;
+}
 
 
 
