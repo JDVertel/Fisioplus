@@ -15,16 +15,25 @@ import * as Vue from "vue"; // in Vue 3
 import axios from "axios";
 import VueAxios from "vue-axios";
 
-// iconos
+//firebase
+/* import { initializeApp } from "firebase/app";
+import { getStorage } from 'firebase/storage';
+const firebaseConfig = {
+  apiKey: "AIzaSyB6b6ESvmM7oX6FE-KChGl5fXMJ3kGwly0",
+  authDomain: "fisioapp-f10cc.firebaseapp.com",
+  databaseURL: "https://fisioapp-f10cc-default-rtdb.firebaseio.com",
+  projectId: "fisioapp-f10cc",
+  storageBucket: "fisioapp-f10cc.appspot.com",
+  messagingSenderId: "369970954516",
+  appId: "1:369970954516:web:e98f614af0182737efc201"
+};
 
-/* import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { GiScarecrow ,RiHealthBookLine,FaUserCheck,FaHandHoldingMedical,AiBiorxivSquare,IoConstructSharp, FaHome, HiCheck,BiWhatsapp} from "oh-vue-icons/icons"; 
-
-addIcons(GiScarecrow ,RiHealthBookLine,FaUserCheck,FaHandHoldingMedical,AiBiorxivSquare,IoConstructSharp, FaHome, HiCheck,BiWhatsapp);*/
-
-
+const Storeapp = initializeApp(firebaseConfig);
+export const storage = getStorage(Storeapp);
+ */
 const app = createApp(App)
-/* app.component("v-icon",OhVueIcon); */
 app.use(store);
 app.use(router);
 app.mount('#app')
+
+

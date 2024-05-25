@@ -5,6 +5,14 @@
 {{ dataprofesionales }}
 <hr>
 {{ dataCitas }} -->
+
+<!-- Para ajustar
+dejar vacios los campos tiporeserva y profesional al momento de abrir la pestaña
+actualizar agerndas del dia al seleccionar la pestaña tambien ya que nop carga los valores si no actualizas
+organizar las fechas(reservar cita)  en orden ya que aparecen desordenadas
+-->
+
+
 <div class="container">
     <div class="body">
         <div class="container centrado mt-5">

@@ -56,6 +56,7 @@
                 <!-- inicio modal 1  servicios-->
                 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                     <div class="modal-dialog">
+
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5" id="exampleModalLabel2">Agregar nuevo item de servicio</h1>
@@ -68,7 +69,6 @@
                                     <br>
                                     <div class="row">
                                         <div class="col-8 col-md-9">
-
                                             <div class="col">
                                                 <div>
                                                     <div class="col"> <input type="text" class="form-control" placeholder="Nombre" v-model="s_nombre" />
@@ -94,8 +94,9 @@
                                             <div class="col">
 
                                                 <div class="mb-3">
-                                                    <input class="form-control" type="file" id="formFile" @change="onSelectImage" accept="image/png,  image/jpeg,  image/jpg" />
+                                                    <input class="form-control" type="file" id="formFile" @change="onSelectImage($event)" accept="image/png,  image/jpeg,  image/jpg" />
                                                 </div>
+                                                <button class="btn btn-warning" @click="uploadImage() ">guardar</button>
 
                                             </div>
                                         </div>
@@ -112,10 +113,11 @@
 
                                 <button type="button" v-if="modalOption =='U'" class="btn btn-primary" v-on:click="BM_updateServicios()" data-bs-dismiss="modal">Actualizar</button>
 
-                                <button type="button" v-if="modalOption =='N'" class="btn btn-primary" v-on:click="B_guardarServicios()" data-bs-dismiss="modal">Guardar</button>
+                                <button type="submit" v-if="modalOption =='N'" class="btn btn-primary" v-on:click="B_guardarServicios()" data-bs-dismiss="modal">Guardar</button>
 
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -212,7 +214,6 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click=" limpiarmodal()">Close</button>
-
                                 <button type="button" v-if="modalOption == 'U'" class="btn btn-primary" v-on:click="BM_updateProductos()" data-bs-dismiss="modal">Actualizar</button>
                                 <button type="button" v-if="modalOption == 'N'" class="btn btn-primary" v-on:click="B_guardarProductos()" data-bs-dismiss="modal">Guardar</button>
                             </div>
@@ -231,11 +232,19 @@
 
     <br>
 </div>
-
-<!-- modal crear/edit/ver-->
 </template>
 
 <script>
+import { storage } from "./../../api/fire";
+
+import {
+    getStorage,
+    ref,
+    uploadBytes,
+    deleteObject,
+} from "firebase/storage";
+
+
 import {
     mapActions,
     mapState
@@ -250,6 +259,7 @@ export default {
         p_precio: "",
         p_cant: "",
         p_tipo: "",
+        P_image: null,
         Productos: [],
 
         //servicios
@@ -257,19 +267,21 @@ export default {
         s_categoria: "",
         s_detalle: "",
         s_precio: "",
+        s_image: null,
         Servicios: [],
         s_tipo: "",
         //swiches
         modalOption: "",
         //images
         local_Image: null,
-        file: null
-
+        file: null,
+        /* imagenes */
+        imagenes: [],
+        imagen: null
     }),
 
     methods: {
         ...mapActions('vitrina', ['load_Vitrina', 'updateVitrinaP', 'updateVitrinaS', 'createEntradaVitrina', 'DeleteItemVitrina', 'CambiarEstadoVitrina']),
-        /*    ...mapActions('vitrina', ['updateVitrina']), */
 
         B_nuevo() {
             this.limpiarmodal(),
@@ -443,11 +455,23 @@ export default {
                 fr.onload = () => this.local_Image = fr.result
                 fr.readAsDataURL(file)
                 this.file = file;
+                this.imagen = event.target.files[0];
+                console.log(this.imagen);
+                this.s_image = this.imagen.name;
+                console.log(this.imagen.name);
             }
         },
 
-    },
+        /*  */
+        async uploadImage() {
+             const storage = getStorage();
+             const storageRef = ref(storage, "images/" + this.imagen.name);
+             await uploadBytes(storageRef, this.image);
+             //   // console.log("Image uploaded successfully!");
 
+    
+    },
+    },
     //===================================================================
 
     computed: {
@@ -455,6 +479,7 @@ export default {
             vitrinaservicios: state => state.vitrina.entry.filter(v => v.tipo != 'producto')
 
         }),
+
         ...mapState({
             productosFiltrados: state => state.vitrina.entry.filter(v => v.tipo === 'producto')
         }),

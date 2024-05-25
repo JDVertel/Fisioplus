@@ -3,7 +3,6 @@ import Footer from "./views/footer.vue";
 import './assets/styles.css';
 
 
-
 export default {
     name: "App",
     components: {
