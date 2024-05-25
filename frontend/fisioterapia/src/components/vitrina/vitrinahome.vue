@@ -38,14 +38,13 @@
                             </thead>
                             <tbody>
                                 <tr v-for="articulo in vitrinaservicios" :key="articulo.id">
-                                    <td><img src="..." class="img-thumbnail" alt="..."></td>
-                                    <td>Tipo: {{ articulo.tipo }} <br> Nombre:{{ articulo.nombre }} <br>Precio: {{ articulo.precio }}
-                                        <br>Publicado:{{articulo.publicado}} <br>Id:{{articulo.id}} <br>
+                                    <td> <img :src="`${articulo.img}`" alt=""> </td>
+                                    <td>Tipo: {{ articulo.tipo }} <br> Nombre:{{ articulo.nombre }} <br>Precio: {{ articulo.precio }} <br>
+                                        Publicado:{{articulo.publicado}} <br>Id:{{articulo.id}} <br>
                                         <div> <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click="M_editarservicios(articulo)"> edit</button>
                                             <button class="btn btn-danger m-1" @click="eliminaritem(articulo.id)">delete</button>
                                             <button class="btn btn-success m-1" @click="cambiarEstadoItem(articulo)">publicar</button></div>
                                     </td>
-
                                 </tr>
                             </tbody>
                         </table>
@@ -94,9 +93,8 @@
                                             <div class="col">
 
                                                 <div class="mb-3">
-                                                    <input class="form-control" type="file" id="formFile" @change="onSelectImage($event)" accept="image/png,  image/jpeg,  image/jpg" />
+                                                    <input class="form-control" type="file" id="formFile" @change="onSelectImage_s($event)" accept="image/png,  image/jpeg,  image/jpg" />
                                                 </div>
-                                                <button class="btn btn-warning" @click="uploadImage() ">guardar</button>
 
                                             </div>
                                         </div>
@@ -113,7 +111,7 @@
 
                                 <button type="button" v-if="modalOption =='U'" class="btn btn-primary" v-on:click="BM_updateServicios()" data-bs-dismiss="modal">Actualizar</button>
 
-                                <button type="submit" v-if="modalOption =='N'" class="btn btn-primary" v-on:click="B_guardarServicios()" data-bs-dismiss="modal">Guardar</button>
+                                <button type="submit" v-if="modalOption =='N'" class="btn btn-primary" v-on:click="uploadImage()" data-bs-dismiss="modal">Guardar</button>
 
                             </div>
                         </div>
@@ -147,7 +145,7 @@
 
                             <tbody>
                                 <tr v-for="item in productosFiltrados" :key="item.id">
-                                    <td><img src="..." class="img-thumbnail" alt="..."></td>
+                                    <td> {{item.img}}</td>
                                     <td scope="row">Cantidad: {{ item.cant }}
                                         <br> nombre: {{item.nombre}}
                                         <br>precio: {{ item.precio}}
@@ -242,13 +240,14 @@ import {
     ref,
     uploadBytes,
     deleteObject,
+    getDownloadURL
 } from "firebase/storage";
-
 
 import {
     mapActions,
     mapState
 } from "vuex";
+import { productos } from '../../firebase/bd';
 
 export default {
     data: () => ({
@@ -277,7 +276,8 @@ export default {
         file: null,
         /* imagenes */
         imagenes: [],
-        imagen: null
+        imagen: null,
+        IMG: null,
     }),
 
     methods: {
@@ -321,6 +321,7 @@ export default {
 
         //----------SERVICIOS-----------------------------------------
         B_guardarServicios() {
+
             this.modalOption = 'N'
             this.Servicios.push({
                 id_ips: "1",
@@ -335,6 +336,7 @@ export default {
             // Limpiar los campos después de agregar la persona
             this.createEntradaVitrina(this.Servicios[0]);
             console.log("guardando servicio", this.Servicios[0])
+
             this.limpiarmodal();
         },
 
@@ -445,7 +447,8 @@ export default {
         },
 
         //----- IMAGEN-------------------------------------------
-        onSelectImage(event) {
+        /* mostrar la imagen al momento de cargar en el input */
+        onSelectImage_s(event) {
             const file = event.target.files[0]
             if (!file) {
                 return
@@ -456,25 +459,41 @@ export default {
                 fr.readAsDataURL(file)
                 this.file = file;
                 this.imagen = event.target.files[0];
-                console.log(this.imagen);
-                this.s_image = this.imagen.name;
-                console.log(this.imagen.name);
+                this.IMG = ("servicios/" + this.imagen.name);
+                console.log(this.IMG)
             }
         },
 
-        /*  */
         async uploadImage() {
-             const storage = getStorage();
-             const storageRef = ref(storage, "images/" + this.imagen.name);
-             await uploadBytes(storageRef, this.image);
-             //   // console.log("Image uploaded successfully!");
+            try {
+                const storage = getStorage();
+                const storageRef = ref(storage, this.IMG);
+                await uploadBytes(storageRef, this.imagen);
 
-    
-    },
-    },
-    //===================================================================
+                const snapshot = await getDownloadURL(storageRef);
+                this.s_img = snapshot;
 
+                console.log("Image uploaded successfully!");
+                console.log(this.s_img)
+
+                this.B_guardarServicios()
+
+            } catch (error) {
+                console.error("Error uploading image:", error);
+            }
+        }
+
+        /*  async urlimagen(url) {
+             const urlstorage = getStorage();
+             const imageRef = ref(urlstorage, url);
+             console.log(url)
+             await getDownloadURL(imageRef);
+
+         }, */
+        //===================================================================
+    },
     computed: {
+
         ...mapState({
             vitrinaservicios: state => state.vitrina.entry.filter(v => v.tipo != 'producto')
 
@@ -483,12 +502,15 @@ export default {
         ...mapState({
             productosFiltrados: state => state.vitrina.entry.filter(v => v.tipo === 'producto')
         }),
+
     },
 
     //=====================================================================
     created() {
         this.load_Vitrina()
+
     },
 
 }
 </script>
+<!-- -->
