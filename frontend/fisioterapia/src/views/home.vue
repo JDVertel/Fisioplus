@@ -3,7 +3,7 @@ import menu from './menu.vue';
 import servicios from './../components/vitrina/servicios.vue';
 import rutinas from './../components/vitrina/rutinas.vue';
 import productos from './../components/vitrina/productos.vue';
-
+import {mapActions, mapState} from "vuex";
 export default {
     components: {
         Menu: menu,
@@ -13,7 +13,6 @@ export default {
     },
     data() {
         return {
-
             mostrarservicios: false,
             textoservicios: 'Nuestro equipo altamente calificado proporciona servicios que incluyen fisioterapia deportiva, fisioterapia manual, osteopatía, fisioterapia geriátrica, ortopédica, traumatológica, rehabilitación neurológica, fisioterapia uroginecológica, entre otros. Nos enfocamos en diagnosticar tu condición y lesión para ofrecerte el tratamiento más adecuado, junto con asesoramiento y prescripción de ejercicios personalizados. Nuestro objetivo es ayudarte a recuperarte de lesiones, mejorar tu rendimiento deportivo, prevenir lesiones futuras y mejorar tu calidad de vida. ¡Confía en nosotros para recibir la atención experta y personalizada que necesitas para tu recuperación y bienestar físico!',
             mostrarclases: false,
@@ -24,8 +23,11 @@ export default {
         };
     },
     method: {
+        ...mapActions('vitrina', ['load_Vitrina']),
+    },
 
-    }
+
+
 }
 </script>
 
@@ -43,16 +45,16 @@ export default {
     <ul class="nav nav-tabs" id="myTab" role="tablist">
 
         <li class="nav-item" role="presentation">
-            <button class="nav-link active titulo" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><img width="25" height="25" src="https://img.icons8.com/ios-filled/50/massage.png" alt="massage"/> Servicios</button>
+            <button class="nav-link active titulo" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><img width="25" height="25" src="https://img.icons8.com/ios-filled/50/massage.png" alt="massage" /> Servicios</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><img width="25" height="25" src="https://img.icons8.com/ios-filled/50/yoga.png" alt="yoga"/> Clases</button>
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><img width="25" height="25" src="https://img.icons8.com/ios-filled/50/yoga.png" alt="yoga" /> Clases</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"><img width="25" height="25" src="https://img.icons8.com/external-yogi-aprelliyanto-glyph-yogi-aprelliyanto/32/external-shopping-bag-digital-marketing-yogi-aprelliyanto-glyph-yogi-aprelliyanto.png" alt="external-shopping-bag-digital-marketing-yogi-aprelliyanto-glyph-yogi-aprelliyanto"/> Tienda</button>
+            <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"><img width="25" height="25" src="https://img.icons8.com/external-yogi-aprelliyanto-glyph-yogi-aprelliyanto/32/external-shopping-bag-digital-marketing-yogi-aprelliyanto-glyph-yogi-aprelliyanto.png" alt="external-shopping-bag-digital-marketing-yogi-aprelliyanto-glyph-yogi-aprelliyanto" /> Tienda</button>
         </li>
         <li class="nav-item" role="presentation">
-            <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><img width="25" height="25" src="https://img.icons8.com/ios-filled/50/info.png" alt="info"/> Info</button>
+            <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><img width="25" height="25" src="https://img.icons8.com/ios-filled/50/info.png" alt="info" /> Info</button>
         </li>
     </ul>
     <div class="tab-content" id="myTabContent">
@@ -95,7 +97,7 @@ export default {
                     </button>
                 </div>
             </div>
-          <br>
+            <br>
             <Servicios />
         </div>
         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
@@ -111,12 +113,12 @@ export default {
                     {{ mostrarclases ? ' Leer menos ' : 'Leer más...' }}
                 </button>
             </div>
-          <br>
+            <br>
             <Rutinas />
         </div>
         <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
             <div class="row mt-3">
-            <br>
+                <br>
 
                 <h4>TiendaOnline</h4>
 
@@ -129,8 +131,8 @@ export default {
                     {{ mostrartienda ? ' Leer menos ' : 'Leer más...' }}
                 </button>
             </div>
-          <br>
-  
+            <br>
+
             <Productos />
             <br>
 

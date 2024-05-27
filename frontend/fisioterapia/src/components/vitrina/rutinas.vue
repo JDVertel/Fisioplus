@@ -1,11 +1,11 @@
 <template>
 <div class="row row-cols-2 row-cols-md-3 g-4">
-    <div class="col" v-for="rutina in this.datarutinas" :key="rutina.titulo">
+    <div class="col" v-for="rutina in  clasesFiltradas" :key="rutina.nombre">
         <div class="card h-100">
-            <img :src="'/src/assets/images/clasesyrutinas/'+`${rutina.url}`" class="card-img-top imagenservicio" alt="...">
+            <img :src="`${rutina.img}`" class="card-img-top imagenservicio" alt="...">
             <div class="card-body">
-                <h5 class="card-title rurinatitlecolor">{{rutina.titulo}} </h5>
-                <p class="card-text">{{rutina.texto}}</p>
+                <h5 class="card-title rurinatitlecolor">{{rutina.nombre}} </h5>
+                <p class="card-text">{{rutina.desc}}</p>
                 <div class="card-footer">
                ${{rutina.precio}}
                 <button type="button" v-on:click="reservaCitasW(rutina.titulo, this.telefono1)" class="btnwsp">
@@ -22,23 +22,36 @@
 </template>
 
 <script>
-import {
+/* import {
     rutinas
-} from '../../firebase/bd'
+} from '../../firebase/bd' */
+import {
+    mapActions,
+    mapState
+} from "vuex";
 
 export default {
     data: () => ({
-        datarutinas: rutinas,
+    
         //telefonos para reservas de citas
         telefono1: "3145563439"
 
     }),
     methods: {
+        ...mapActions('vitrina', ['load_Vitrina', 'updateVitrinaP', 'updateVitrinaS', 'createEntradaVitrina', 'DeleteItemVitrina', 'CambiarEstadoVitrina']),
+
+
+
         //link wps
         reservaCitasW(link, celular) {
             const url = `https://wa.me/${celular}?text=>%20Hola%20me%20interesa%20reservar%20una%20clase%20de%20( ${link} )%20desde%20tu%20pagina%20web%20<`;
             window.open(url)
         }
-    }
+    },
+    computed: {
+        ...mapState({
+            clasesFiltradas: state => state.vitrina.entry.filter(v => v.tipo === 'clase')
+        }),
+    },
 }
 </script>

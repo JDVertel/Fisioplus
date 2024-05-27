@@ -38,9 +38,14 @@
                             </thead>
                             <tbody>
                                 <tr v-for="articulo in vitrinaservicios" :key="articulo.id">
-                                    <td> <img :src="`${articulo.img}`" alt=""> </td>
-                                    <td>Tipo: {{ articulo.tipo }} <br> Nombre:{{ articulo.nombre }} <br>Precio: {{ articulo.precio }} <br>
-                                        Publicado:{{articulo.publicado}} <br>Id:{{articulo.id}} <br>
+                                    <td>
+                                        <div class="container centrarcontenido">
+                                            <img :src="`${articulo.img}`" alt="imagen producto" style="height:70px">
+
+                                        </div>
+                                    </td>
+                                    <td>Tipo: {{ articulo.tipo }} <br> Nombre: {{ articulo.nombre }} <br>Precio: {{ articulo.precio }} <br>
+                                        Publicado: {{articulo.publicado}} <br>Id:{{articulo.id}} <br>
                                         <div> <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click="M_editarservicios(articulo)"> edit</button>
                                             <button class="btn btn-danger m-1" @click="eliminaritem(articulo.id)">delete</button>
                                             <button class="btn btn-success m-1" @click="cambiarEstadoItem(articulo)">publicar</button></div>
@@ -58,13 +63,14 @@
 
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel2">Agregar nuevo item de servicio</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel2" v-if="this.modalOption ==='N'">Agregar nuevo item de servicio</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel2" v-if="this.modalOption === 'U'">Editar nuevo item de servicio</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="container">
                                     <br>
-                                    <h6>Ingrese los datos para crear un nuevo item de servicio </h6>
+                                    <h6>Datos del servicio </h6>
                                     <br>
                                     <div class="row">
                                         <div class="col-8 col-md-9">
@@ -90,20 +96,21 @@
 
                                             </div>
 
-                                            <div class="col">
-
-                                                <div class="mb-3">
-                                                    <input class="form-control" type="file" id="formFile" @change="onSelectImage_s($event)" accept="image/png,  image/jpeg,  image/jpg" />
-                                                </div>
-
-                                            </div>
                                         </div>
-                                        <div class="col-4 col-md-3">
+                                        <div class="col-4 col-md-3" v-if="this.modalOption ==='N'">
                                             <img :src="local_Image" class="img-thumbnail" alt="...">
+                                        </div>
+                                        <div class="col-4 col-md-3" v-if="this.modalOption ==='U'">
+                                            <img :src="`${this.s_img}`" alt="imagen producto" style="height:100px" class="img-thumbnail">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+
+                                        <div class="mb-3">
+                                            <input class="form-control" type="file" id="formFile" @change="onSelectImage_s($event)" accept="image/png,  image/jpeg,  image/jpg" v-if="this.modalOption ==='N'" />
                                         </div>
 
                                     </div>
-
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -111,7 +118,7 @@
 
                                 <button type="button" v-if="modalOption =='U'" class="btn btn-primary" v-on:click="BM_updateServicios()" data-bs-dismiss="modal">Actualizar</button>
 
-                                <button type="submit" v-if="modalOption =='N'" class="btn btn-primary" v-on:click="uploadImage()" data-bs-dismiss="modal">Guardar</button>
+                                <button type="submit" v-if="modalOption =='N'" class="btn btn-primary" v-on:click="uploadImage_s()" data-bs-dismiss="modal">Guardar</button>
 
                             </div>
                         </div>
@@ -145,7 +152,12 @@
 
                             <tbody>
                                 <tr v-for="item in productosFiltrados" :key="item.id">
-                                    <td> {{item.img}}</td>
+                                    <td>
+                                        <div class="container centrarcontenido">
+                                            <img :src="`${item.img}`" alt="imagen producto" style="height:70px">
+                                        </div>
+                                    </td>
+
                                     <td scope="row">Cantidad: {{ item.cant }}
                                         <br> nombre: {{item.nombre}}
                                         <br>precio: {{ item.precio}}
@@ -195,17 +207,20 @@
 
                                             </div>
                                             <div class="col">
-                                                <div class="row">
-                                                    <div class="mb-3">
-                                                        <input class="form-control" type="file" id="formFile" @change="onSelectImage" accept="image/png,  image/jpeg,  image/jpg" />
-                                                    </div>
-                                                </div>
+                                       
                                             </div>
                                         </div>
-                                        <div class="col-4 col-md-3">
+                                        <div class="col-4 col-md-3" v-if="this.modalOption ==='N'">
                                             <img :src="local_Image" class="img-thumbnail" alt="...">
                                         </div>
-
+                                        <div class="col-4 col-md-3" v-if="this.modalOption ==='U'">
+                                            <img :src="`${this.p_img}`" alt="imagen producto" style="height:100px" class="img-thumbnail">
+                                        </div>
+                                        <div class="row">
+                                            <div class="mb-3">
+                                                <input class="form-control" type="file" id="formFile" @change="onSelectImage_p" accept="image/png,  image/jpeg,  image/jpg"  v-if="this.modalOption ==='N'"/>
+                                            </div>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -213,7 +228,7 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click=" limpiarmodal()">Close</button>
                                 <button type="button" v-if="modalOption == 'U'" class="btn btn-primary" v-on:click="BM_updateProductos()" data-bs-dismiss="modal">Actualizar</button>
-                                <button type="button" v-if="modalOption == 'N'" class="btn btn-primary" v-on:click="B_guardarProductos()" data-bs-dismiss="modal">Guardar</button>
+                                <button type="button" v-if="modalOption == 'N'" class="btn btn-primary" v-on:click="uploadImage_p()" data-bs-dismiss="modal">Guardar</button>
                             </div>
                         </div>
                     </div>
@@ -350,6 +365,7 @@ export default {
             this.s_nombre = data.nombre;
             this.s_detalle = data.desc;
             this.s_precio = data.precio;
+            this.s_img = data.img;
 
         },
 
@@ -362,6 +378,7 @@ export default {
                 nombre: this.s_nombre,
                 desc: this.s_detalle,
                 precio: this.s_precio,
+                img: this.s_img,
             });
             this.saveVitrinaS();
             this.limpiarmodal();
@@ -373,20 +390,6 @@ export default {
         },
 
         //-----------PRODUCTOS-----------------------------------------
-
-        M_editarproductos(data) {
-            this.modalOption = 'U'
-            this.p_id = data.id
-            this.p_id_ips = data.id_ips
-            this.p_tipo = data.tipo
-            this.p_publicado = data.publicado
-            /*  */
-            this.p_nombre = data.nombre;
-            this.p_detalle = data.desc;
-            this.p_precio = data.precio;
-            this.p_cant = data.cant;
-        },
-        /* ------------------------------------------------------------------ */
 
         B_guardarProductos() {
             this.modalOption = 'N'
@@ -406,7 +409,23 @@ export default {
             console.log("guardando el producto", this.Productos)
             this.limpiarmodal();
         },
+
         /* ---------------------------------------------------------------- */
+
+        M_editarproductos(data) {
+            this.modalOption = 'U'
+            this.p_id = data.id
+            this.p_id_ips = data.id_ips
+            this.p_tipo = data.tipo
+            this.p_publicado = data.publicado
+         
+            this.p_nombre = data.nombre;
+            this.p_detalle = data.desc;
+            this.p_precio = data.precio;
+            this.p_cant = data.cant;
+            this.p_img = data.img;
+        },
+        /* ------------------------------------------------------------------ */
 
         BM_updateProductos() {
             this.Productos.push({
@@ -414,11 +433,12 @@ export default {
                 id_ips: this.p_id_ips,
                 tipo: this.p_tipo,
                 publicado: this.p_publicado,
-                /*  */
+        
                 nombre: this.p_nombre,
                 desc: this.p_detalle,
                 precio: this.p_precio,
-                cant: this.p_cant
+                cant: this.p_cant,
+                img: this.p_img,
 
             });
 
@@ -464,7 +484,23 @@ export default {
             }
         },
 
-        async uploadImage() {
+        onSelectImage_p(event) {
+            const file = event.target.files[0]
+            if (!file) {
+                return
+                this.file = null;
+            } else {
+                const fr = new FileReader()
+                fr.onload = () => this.local_Image = fr.result
+                fr.readAsDataURL(file)
+                this.file = file;
+                this.imagen = event.target.files[0];
+                this.IMG = ("productos/" + this.imagen.name);
+                console.log(this.IMG)
+            }
+        },
+
+        async uploadImage_s() {
             try {
                 const storage = getStorage();
                 const storageRef = ref(storage, this.IMG);
@@ -481,15 +517,28 @@ export default {
             } catch (error) {
                 console.error("Error uploading image:", error);
             }
+        },
+
+        async uploadImage_p() {
+            try {
+                const storage = getStorage();
+                const storageRef = ref(storage, this.IMG);
+                await uploadBytes(storageRef, this.imagen);
+
+                const snapshot = await getDownloadURL(storageRef);
+                this.p_img = snapshot;
+
+                console.log("Image uploaded successfully!");
+                console.log(this.p_img)
+
+                this.B_guardarProductos()
+
+            } catch (error) {
+                console.error("Error uploading image:", error);
+            }
         }
 
-        /*  async urlimagen(url) {
-             const urlstorage = getStorage();
-             const imageRef = ref(urlstorage, url);
-             console.log(url)
-             await getDownloadURL(imageRef);
 
-         }, */
         //===================================================================
     },
     computed: {

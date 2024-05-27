@@ -5,8 +5,6 @@ export const load_Vitrina = async ({ commit }) => {
   const response = await firebase_api.get("/vitrina.json");
   const { data } = response;
   const dataentradas = [];
-
-
   for (let id of Object.keys(data)) {
     dataentradas.push({
       id,
@@ -21,8 +19,8 @@ export const load_Vitrina = async ({ commit }) => {
 
 export const updateVitrinaP = async ({ commit }, entradas) => {
   console.log("variable entradas ", entradas);
-  const { id_ips, tipo, nombre, desc, precio, cant, publicado } = entradas;
-  const dataToSave = { id_ips, tipo, nombre, desc, precio, cant, publicado };
+  const { id_ips, tipo, nombre, desc, precio, cant, publicado,img } = entradas;
+  const dataToSave = { id_ips, tipo, nombre, desc, precio, cant, publicado,img };
   const ruta = `/vitrina/${entradas.id}.json`;
   //servicio
   const response = await firebase_api.put(ruta, dataToSave);
@@ -31,8 +29,8 @@ export const updateVitrinaP = async ({ commit }, entradas) => {
 
 export const updateVitrinaS = async ({ commit }, entradas) => {
   console.log("variable entradas ", entradas);
-  const { id_ips, tipo, nombre, desc, precio, publicado } = entradas;
-  const dataToSave = { id_ips, tipo, nombre, desc, precio, publicado };
+  const { id_ips, tipo, nombre, desc, precio, publicado,img } = entradas;
+  const dataToSave = { id_ips, tipo, nombre, desc, precio, publicado,img  };
   const ruta = `/vitrina/${entradas.id}.json`;
   //servicio
   const response = await firebase_api.put(ruta, dataToSave);
@@ -66,8 +64,8 @@ export const createEntradaVitrina = async ({ commit }, entradas) => {
 /* =========================================== */
 export const CambiarEstadoVitrina = async ({ commit }, entradas) => {
   /*  */
-  const { id_ips, tipo, nombre, desc, precio, cant, publicado } = entradas;
-  const DataStore = { id_ips, tipo, nombre, desc, precio, cant, publicado };
+  const { id_ips, tipo, nombre, desc, precio, cant, publicado, img } = entradas;
+  const DataStore = { id_ips, tipo, nombre, desc, precio, cant, publicado, img };
   DataStore.publicado = !publicado;
   console.log(DataStore);
   const ruta = `/vitrina/${entradas.id}.json`;
@@ -75,6 +73,7 @@ export const CambiarEstadoVitrina = async ({ commit }, entradas) => {
   const response = await firebase_api.put(ruta, DataStore);
   commit("updateDataVitrina", { ...entradas });
 };
+
 
 /* ================================================================= */
 

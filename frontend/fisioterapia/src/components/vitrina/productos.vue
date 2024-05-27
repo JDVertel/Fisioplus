@@ -1,14 +1,12 @@
 <template>
 <div class="row row-cols-2 row-cols-md-3 row-cols-xl-6 g-4">
-    <div class="col" v-for="(producto, index) in this.dataproductos" :key="index">
+    <div class="col" v-for="(producto, index) in productosFiltrados" :key="index">
         <div class="card h-100">
-            <img :src="'/src/assets/images/productos/' + `${producto.img}`" class="card-img-top imagenservicio" alt="...">
+            <img :src="`${producto.img}`" class="card-img-top imagenservicio" alt="...">
             <div class="card-body">
                 <h5 class="card-title producttitlecolor">{{producto.nombre}}</h5>
-                <p class="card-text"> {{ producto.descripcion }}
-
+                <p class="card-text"> {{ producto.desc }}
                 </p>
-
                 <div class="card-footer">
                     {{ producto.precio }}
                     <button type="button" v-on:click="reservaCitasW(producto.nombre, this.telefono1)" class="btnwsp">
@@ -20,18 +18,21 @@
     </div>
 
 </div>
-
 </template>
 
 <script>
-
 import {
+    mapActions,
+    mapState
+} from "vuex";
+
+/* import {
     productos
-} from '../../firebase/bd'
+} from '../../firebase/bd' */
 export default {
 
     data: () => ({
-        dataproductos: productos,
+     /*    dataproductos: productos, */
         telefono1: "3145563439",
         imagenP: "",
         tituloP: "",
@@ -40,6 +41,8 @@ export default {
 
     }),
     methods: {
+        ...mapActions('vitrina', ['load_Vitrina', 'updateVitrinaP', 'updateVitrinaS', 'createEntradaVitrina', 'DeleteItemVitrina', 'CambiarEstadoVitrina']),
+
         reservaCitasW(link, celular) {
             const url = `https://wa.me/${celular}?text=>%20Hola%20me%20interesa%20informacion%20acerca%20del%20producto%20( ${link} )%20desde%20tu%20pagina%20web%20<`;
             window.open(url)
@@ -54,7 +57,12 @@ export default {
 
         }
 
-    }
+    },
+    computed: {
+        ...mapState({
+            productosFiltrados: state => state.vitrina.entry.filter(v => v.tipo === 'producto')
+        }),
+    },
 
 }
 </script>
