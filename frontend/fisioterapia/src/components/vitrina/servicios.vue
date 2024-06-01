@@ -1,5 +1,5 @@
 <template>
-<div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4">
+<div class="row row-cols-2 row-cols-md-4 row-cols-xl-6 g-4">
     <div class="col" v-for="servicio in serviciosFiltrados" :key="servicio.nombre">
         <div class="card h-100">
             <img :src="`${servicio.img}`" class="card-img-top imagenservicio" alt="...">
@@ -43,7 +43,7 @@ export default {
 
         computed: {
             ...mapState({
-                serviciosFiltrados: state => state.vitrina.entry.filter(v => v.tipo == 'terapia'  ||  v.tipo == 'consulta' )
+                serviciosFiltrados: state => state.vitrina.entry.filter(v => (v.tipo == 'terapia'  ||  v.tipo == 'consulta')  &&  v.publicado==true)
             }),
         },
 

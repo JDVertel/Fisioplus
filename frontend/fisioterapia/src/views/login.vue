@@ -14,6 +14,9 @@
 
 
     </div>
+    <div class="container home ">
+        <router-link to="/">Home</router-link>
+    </div>
 </template>
 <script>
 export default {

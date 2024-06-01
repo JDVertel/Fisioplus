@@ -68,7 +68,7 @@
 
 <script>
 import HCdetallada from "./h_clinica.vue";
-import homeB from "./../../views/homebutton.vue";
+
 import Registro from "./registroForm.vue"
 
 export default {
@@ -78,7 +78,7 @@ export default {
 
     components: {
         C_Hc: HCdetallada,
-        Home: homeB
+    
     }
 
 }

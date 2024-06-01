@@ -1,12 +1,12 @@
 <script>
-import menu from './menu.vue';
+
 import servicios from './../components/vitrina/servicios.vue';
 import rutinas from './../components/vitrina/rutinas.vue';
 import productos from './../components/vitrina/productos.vue';
 import {mapActions, mapState} from "vuex";
 export default {
     components: {
-        Menu: menu,
+ 
         Servicios: servicios,
         Rutinas: rutinas,
         Productos: productos,
@@ -19,7 +19,7 @@ export default {
             textoclases: 'Nuestros entrenadores altamente capacitados trabajarán contigo para crear un plan de entrenamiento personalizado que se adapte a tus necesidades y habilidades individuales. Ya sea que estés buscando perder peso, aumentar la fuerza o mejorar tu flexibilidad, nuestras clases de gimnasia personalizadas te ayudarán a alcanzar tus metas de manera efectiva. Además, nuestras clases se llevan a cabo en un ambiente acogedor y motivador, lo que te permitirá disfrutar de tu entrenamiento mientras trabajas en tu cuerpo y mente. ¡Únete a nosotros y comienza tu viaje hacia una vida más saludable y activa hoy mismo!',
             mostrartienda: false,
             textotienda: 'Nuestro objetivo es ofrecer soluciones de alta calidad para ayudarte a mejorar tu salud, fortalecer tu cuerpo y potenciar tu rendimiento en el ejercicio. Estamos comprometidos a brindarte un servicio excepcional y personalizado que te ayudará a alcanzar tus objetivos de manera efectiva.',
-            mostrarMenu: false,
+            /* mostrarMenu: false, */
         };
     },
     method: {
@@ -33,7 +33,7 @@ export default {
 
 <template>
 <div class="container">
-    <Menu />
+
 
     <!-- sesion informacion -->
     <div class="container" align="center">
@@ -119,9 +119,7 @@ export default {
         <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
             <div class="row mt-3">
                 <br>
-
                 <h4>TiendaOnline</h4>
-
             </div>
 
             <p class="jz">Bienvenidos a nuestra tienda online especializada en productos de fisioterapia y gimnasia. </p>
@@ -132,13 +130,10 @@ export default {
                 </button>
             </div>
             <br>
-
             <Productos />
             <br>
 
-            <!-- 
 
-       -->
 
         </div>
 

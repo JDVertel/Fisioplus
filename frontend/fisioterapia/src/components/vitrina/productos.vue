@@ -1,10 +1,11 @@
 <template>
-<div class="row row-cols-2 row-cols-md-3 row-cols-xl-6 g-4">
+    <div class="row row-cols-2 row-cols-md-4 row-cols-xl-6 g-4">
     <div class="col" v-for="(producto, index) in productosFiltrados" :key="index">
         <div class="card h-100">
-            <img :src="`${producto.img}`" class="card-img-top imagenservicio" alt="...">
+          
             <div class="card-body">
                 <h5 class="card-title producttitlecolor">{{producto.nombre}}</h5>
+                <img :src="`${producto.img}`" class="card-img-top imagenservicio" alt="...">
                 <p class="card-text"> {{ producto.desc }}
                 </p>
                 <div class="card-footer">
@@ -60,7 +61,7 @@ export default {
     },
     computed: {
         ...mapState({
-            productosFiltrados: state => state.vitrina.entry.filter(v => v.tipo === 'producto')
+            productosFiltrados: state => state.vitrina.entry.filter(v => v.tipo === 'producto' &&  v.publicado===true)
         }),
     },
 

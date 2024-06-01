@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 //aplicacion
 import Home from "./../views/home.vue";
 import About from "./../views/about.vue";
-import Menu from "./../views/menu.vue";
+import Header from "./../views/header.vue";
 
 // agendas
 import Agendas from "./../components/agendas/agendas/index.vue";
@@ -22,10 +22,11 @@ import ventas from "./../components/vitrina/ventas.vue"
 import profesional from "./../components/profesional/index.vue";
 
 const routes = [
+  
   //aplication
   { path: "/", name: "home", component: Home },
   { path: "/about", component: About, name: "about" },
-  { path: "/menu", component: Menu, name: "menu" },
+  { path: "/header", component: Header, name: "header" },
 
   // agendas
   { path: "/agendas", component: Agendas, name: "agendas" },
@@ -52,10 +53,7 @@ const routes = [
     name: "login",
   },
 
-  //vitrina
-  /*  { path: "/productos", component: productos, name: "productos" },
-  { path: "/servicios", component: servicios, name: "servicios" },
-  { path: "/clases", component: clases, name: "clases" }, */
+
 
   //parametros
   { path: "/parametros", component: parametros, name: "parametros" },

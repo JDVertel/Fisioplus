@@ -45,10 +45,11 @@
                                         </div>
                                     </td>
                                     <td>Tipo: {{ articulo.tipo }} <br> Nombre: {{ articulo.nombre }} <br>Precio: {{ articulo.precio }} <br>
-                                        Publicado: {{articulo.publicado}} <br>Id:{{articulo.id}} <br>
-                                        <div> <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click="M_editarservicios(articulo)"> edit</button>
-                                            <button class="btn btn-danger m-1" @click="eliminaritem(articulo.id)">delete</button>
-                                            <button class="btn btn-success m-1" @click="cambiarEstadoItem(articulo)">publicar</button></div>
+                                        <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal2" @click="M_editarservicios(articulo)"><img width="15" height="15" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></button>
+                                        <button class="btn btn-danger m-1" @click="eliminaritem(articulo.id)"><img width="15" height="15" src="https://img.icons8.com/material-rounded/24/filled-trash.png" alt="filled-trash" /></button>
+                                        <button class="btn btn-success m-1" @click="cambiarEstadoItem(articulo)" v-if="articulo.publicado==false">Mostrar</button>
+                                        <button class="btn btn-primary m-1" @click="cambiarEstadoItem(articulo)" v-if="articulo.publicado==true">Ocultar</button>
+
                                     </td>
                                 </tr>
                             </tbody>
@@ -130,18 +131,16 @@
             <!-- ============================================================================================================================ -->
             <!-- ============================================================================================================================ -->
             <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-
+                <!-- Button modal 2  articulos -->
                 <h6 class="display-6">Articulos Tienda</h6>
                 <hr />
-                <!-- Button modal 2  articulos -->
-
                 <!--  -->
-                <div class="container">
+                <div class="col-12">
                     <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" @click=" B_nuevo()">
                         + Producto
                     </button>
                     <div class="table-responsive">
-                        <table class="table">
+                        <table class="table table-sm">
                             <thead>
                                 <tr>
                                     <th scope="col">Img</th>
@@ -155,20 +154,22 @@
                                     <td>
                                         <div class="container centrarcontenido">
                                             <img :src="`${item.img}`" alt="imagen producto" style="height:70px">
+
                                         </div>
                                     </td>
 
-                                    <td scope="row">Cantidad: {{ item.cant }}
+                                    <td>Cantidad: {{ item.cant }}
                                         <br> nombre: {{item.nombre}}
                                         <br>precio: {{ item.precio}}
-                                        <br>publicado: {{item.publicado}}
-                                        <br> Id: {{item.id}}
+                                        <!--         <br>publicado: {{item.publicado}}
+                                         Id: {{item.id}} -->
                                         <br>
-                                        <div>
-                                            <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="M_editarproductos(item)"> edit</button>
-                                            <button class="btn btn-danger m-1" @click=" eliminaritem(item.id)">delete</button>
-                                            <button class="btn btn-success m-1" @click="cambiarEstadoItem(item)">publicar</button>
-                                        </div>
+                                   
+                                            <button class="btn btn-warning m-1" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="M_editarproductos(item)"><img width="15" height="15" src="https://img.icons8.com/ios/50/create-new.png" alt="create-new" /></button>
+                                            <button class="btn btn-danger m-1" @click=" eliminaritem(item.id)"><img width="15" height="15" src="https://img.icons8.com/material-rounded/24/filled-trash.png" alt="filled-trash" /></button>
+                                            <button class="btn btn-success m-1" @click="cambiarEstadoItem(item)" v-if="item.publicado==false">Mostrar</button>
+                                            <button class="btn btn-primary m-1" @click="cambiarEstadoItem(item)" v-if="item.publicado==true">Ocultar</button>
+                                     
                                     </td>
 
                                 </tr>
@@ -207,7 +208,7 @@
 
                                             </div>
                                             <div class="col">
-                                       
+
                                             </div>
                                         </div>
                                         <div class="col-4 col-md-3" v-if="this.modalOption ==='N'">
@@ -218,7 +219,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="mb-3">
-                                                <input class="form-control" type="file" id="formFile" @change="onSelectImage_p" accept="image/png,  image/jpeg,  image/jpg"  v-if="this.modalOption ==='N'"/>
+                                                <input class="form-control" type="file" id="formFile" @change="onSelectImage_p" accept="image/png,  image/jpeg,  image/jpg" v-if="this.modalOption ==='N'" />
                                             </div>
                                         </div>
                                     </div>
@@ -418,7 +419,7 @@ export default {
             this.p_id_ips = data.id_ips
             this.p_tipo = data.tipo
             this.p_publicado = data.publicado
-         
+
             this.p_nombre = data.nombre;
             this.p_detalle = data.desc;
             this.p_precio = data.precio;
@@ -433,7 +434,7 @@ export default {
                 id_ips: this.p_id_ips,
                 tipo: this.p_tipo,
                 publicado: this.p_publicado,
-        
+
                 nombre: this.p_nombre,
                 desc: this.p_detalle,
                 precio: this.p_precio,
@@ -537,7 +538,6 @@ export default {
                 console.error("Error uploading image:", error);
             }
         }
-
 
         //===================================================================
     },

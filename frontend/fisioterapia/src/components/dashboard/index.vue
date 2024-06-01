@@ -14,7 +14,6 @@
 
     <div class="row">
         <div class="col-12 col-md-6">
-
             <div class="container cmenu">
                 <div class="row">
                     <div class="col-2 centrado">
@@ -175,12 +174,12 @@ import {
     mapState,
     mapActions
 } from 'vuex';
-import menu from '../../views/menu.vue';
+
 
 
 export default {
     components: {
-        Menu: menu,
+ 
     },
     data: () => ({
  
