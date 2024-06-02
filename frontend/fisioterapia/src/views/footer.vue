@@ -19,7 +19,7 @@ footer {
     height: 50px;
     bottom: 0;
     width: 100%;
-    background-color: #34836E;
+    background-color:#34836E;
     color: white;
     text-shadow: 1px 0px 0px color black;
     

@@ -3,7 +3,7 @@
   background-image: linear-gradient(to bottom right, #ffffff, rgb(37, 122, 99));
   width: 100%;
   min-height: 100vh;
-  /*  position: absolute; */
+  position: absolute;
   padding-bottom: 3rem;
   font-size: 0.75rem;
   font-family: "Montserrat", sans-serif;
@@ -25,6 +25,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
 }
+
 .cmenu:hover {
 
   margin: 5px;
@@ -33,7 +34,7 @@
   border-width: 1px;
   border-color: #2113e8;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
- 
+
 
 }
 
@@ -45,45 +46,77 @@
 }
 
 a {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 
-.serviciostitlecolor{
+.serviciostitlecolor {
   color: #198754 !important;
 }
 
-.rurinatitlecolor{
-  color: #42A3FC!important;
+.rurinatitlecolor {
+  color: #42A3FC !important;
 
 }
 
-.producttitlecolor{
-  color: #c6262e!important;
+.producttitlecolor {
+  color: #c6262e !important;
 }
 
-.imagenhc{
-  
-    max-width: 100%;
-    height: auto;
+.imagenhc {
+
+  max-width: 100%;
+  height: auto;
 }
 
-.centrarcontenido{
+.centrarcontenido {
   display: flex;
   justify-content: center;
   align-items: center;
 
 }
 
-.card{
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+.card {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
-.card:hover{
+
+.card:hover {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.2);
 }
 
-nav.navbar {
-  background-color: transparent !important;
 
+
+nav.navbar  a {
+ /*  background-color: transparent !important; */
+color: #ffffff;
+}
+
+nav.navbar a :hover{
+
+ color: #afef00;
+ }
+
+
+
+.navbar-text{
+  color: #ffffff !important;
+}
+
+a img.icono{
+filter: invert(100%);
+
+}
+
+.logobar {
+  border-radius: 50%;
+  width: 40px;
+}
+
+li button{
+color: #060606!important;
+}
+
+.logototal a{
+background-color: #2113e8;
 }
 /* HC */
 
@@ -99,7 +132,7 @@ button.accordion-button.collapsed {
 button.accordion-button:not(.collapsed) {
   padding: 3px;
   background-color: rgb(240, 204, 105);
-font-size: 0.8rem;
+  font-size: 0.8rem;
   color: rgb(245, 245, 245);
   text-shadow: 1px 1px 2px black;
 }
@@ -107,12 +140,11 @@ font-size: 0.8rem;
 button,
 textarea,
 select,
-input
- {
+input {
   font-size: 0.75rem !important;
 }
 
-nav-link.active{
+nav-link.active {
   background-color: #198754;
 }
 
