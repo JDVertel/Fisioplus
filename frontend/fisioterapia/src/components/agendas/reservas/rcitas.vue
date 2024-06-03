@@ -15,15 +15,12 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
 <div class="container">
 
-    <div class="container centrado mt-5">
-        <h6 class="display-6">Reservas</h6>
-    </div>
-    <hr>
-    <div class="card text-left">
+    <br>
+    <div class="card">
         <div class="card-body">
-            <h5 class="display-6">Realizar una reserva </h5>
+            <h5>Realizar una reserva </h5>
             <p class="card-text">Ingrese la identificacion del paciente</p>
-            <br>
+          
             <div class="row">
                 <div class="col-4 col-md-3">
                     <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="B_tipodoc">
@@ -47,21 +44,18 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
         </div>
     </div>
 
-    <h6 class="display-6"></h6>
-
 </div>
 
 <div v-if="this.existepaciente == 2">
     <br>
     <div class="container">
-        <div class="card text-center">
+        <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Registro de nuevo paciente</h5>
                 <p class="card-text">Paciente no encontrado, ingrese los siguientes datos para
                     registarlo y poder realizar una reserva</p>
-                <br>
+          
                 <div class="row">
-
                     <div class="col-6">
                         <div class="input-group mb-1">
                             <input type="text" class="form-control form-control-sm textarea" id="text_1nombre" placeholder="1 Nombre" v-model="name1" />
@@ -354,22 +348,7 @@ export default {
             this.BTN_Buscar_paciente()
         },
 
-        /*   cancelar_cerrarmodalNewPaciente() {
-              this.name1 = "";
-              this.name2 = "";
-              this.apell1 = "";
-              this.apell2 = "";
-              this.celular = "";
-              this.email = "";
-              this.dir = "";
-              this.fnacimiento = "",
-                  this.paramsClosetModalPac = [{
-                      existepaciente: "0",
-                      rta: "ClosetModalP"
-                  }],
-                  this.ClosetModalNewPaciente(this.paramsClosetModalPac[0])
-              console.log("cerrando modal")
-          }, */
+
 
         /* =================================================== */
         /* ----------------PROFESIONALES--------------------------------------------------------------------------------------------------------------------------------------------------- */

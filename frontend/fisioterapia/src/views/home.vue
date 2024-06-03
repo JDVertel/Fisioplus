@@ -44,8 +44,8 @@ export default {
 
     <ul class="nav nav-tabs" id="myTab" role="tablist">
 
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active titulo" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><img class="icono" width="25" height="25" src="https://img.icons8.com/ios-filled/50/massage.png" alt="massage" /> Servicios</button>
+        <li class="nav-item" role="presentation" >
+            <button class="nav-link active titulo" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><img class="icono" width="25" height="25" src="https://img.icons8.com/ios-filled/50/massage.png" alt="massage"  /> Servicios</button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><img class="icono" width="25" height="25" src="https://img.icons8.com/ios-filled/50/yoga.png" alt="yoga" /> Clases</button>
@@ -53,37 +53,10 @@ export default {
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false"><img class="icono" width="25" height="25" src="https://img.icons8.com/external-yogi-aprelliyanto-glyph-yogi-aprelliyanto/32/external-shopping-bag-digital-marketing-yogi-aprelliyanto-glyph-yogi-aprelliyanto.png" alt="external-shopping-bag-digital-marketing-yogi-aprelliyanto-glyph-yogi-aprelliyanto" /> Tienda</button>
         </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link " id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><img class="icono" width="25" height="25" src="https://img.icons8.com/ios-filled/50/info.png" alt="info" /> Info</button>
-        </li>
+
     </ul>
     <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade " id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-            <br>
-            <div class="container text-center">
 
-                <h4>¿Quienes Somos?</h4>
-                <p class="jz">
-
-                    Bienvenidos a <strong>EVReabilitacion</strong>, este centro ha sido creado con el objetivo de brindar atención integral a personas que requieren tratamiento fisioterapeutico.Nuestro equipo de profesionales altamente capacitado está comprometido en ofrecer un ambiente seguro y acogedor para nuestros pacientes, donde puedan recibir la atención que necesitan para recuperar su bienestar físico y emocional. accede a los servicios que ofrecemos, nuestras instalaciones y nuestro enfoque terapéutico. ¡Gracias por acompañarnos!
-
-                </p>
-
-                <br>
-                <h4>Mision</h4>
-                <p class="jz">
-                    <strong>EVreabilitacion</strong>
-                    tiene como objetivo ofrecer una visión integral para el tratamiento y recuperacion de lesiones traumáticas, brindando atención especializada y personalizada a cada paciente. Nuestra misión es proporcionar un espacio de recuperación que promueva la salud física y emocional, a través de un equipo multidisciplinario comprometido con la excelencia en el cuidado de la salud. Con un enfoque centrado en el bienestar integral, buscamos ser líderes en la rehabilitación traumatológica, contribuyendo al restablecimiento de la calidad de vida de nuestros pacientes.
-                </p>
-                <br>
-
-                <h4>Vision</h4>
-                <p class=" jz">
-                    La visión de <strong>EVreabilitacion</strong> es convertirnos en un referente reconocido a nivel local y nacional por nuestra excelencia en el tratamiento de lesiones traumáticas. Buscamos ser un centro de vanguardia que integre tecnología de punta, investigación y un enfoque humano para proporcionar soluciones efectivas y personalizadas a cada paciente. Aspiramos a ser un espacio de esperanza y transformación, donde cada persona pueda recuperar su movilidad, funcionalidad y bienestar emocional, permitiéndoles reintegrarse plenamente a sus actividades cotidianas.
-                </p>
-            </div>
-            <br>
-        </div>
 
         <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
             <div class="row mt-3">

@@ -1,192 +1,261 @@
 <template>
 <div class="container mt-4">
 
-    <h6 class="display-6">Registrar una venta </h6>
-    <h6>Buscar o crear un usuario</h6>
+    <div class="card">
+        <div class="card-body">
+            <h5>Registrar una venta </h5>
+            <p class="card-text">Ingrese la identificacion del cliente</p>
 
-    <div class="row">
-
-        <div class="col-2">
-            <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
-                <option selected>Tipo Documento</option>
-                <option value="cc">CC</option>
-                <option value="ti">TI</option>
-                <option value="ce">CE</option>
-            </select>
-        </div>
-        <div class="col-6">
             <div class="row">
-                <div class="col-6">
-                    <input type="number" class="form-control form-control-sm textarea" id="text_numdoc" placeholder="Numero Documento" />
-
+                <div class="col-4 col-md-3">
+                    <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="B_tipodoc">
+                        <option selected value="">Tipo Doc</option>
+                        <option value="CC">CC</option>
+                        <option value="TI">TI</option>
+                        <option value="CE">CE</option>
+                        <option value="PA">PAS</option>
+                    </select>
                 </div>
-                <div class="col-6">
-                    <button class="btn btn-success btn-sm" style="margin-right:4px">Buscar</button>
+                <div class="col-5 col-md-3">
+                    <input type="number" class="form-control form-control-sm textarea" id="text_numdoc" placeholder="# Documento" v-model="B_numdoc" />
+                </div>
+
+                <div class="col-3 col-md-3 ">
+                    <button class="btn btn-success btn-sm" @click=" BTN_Buscar_paciente()" :disabled="BuscarP_isButtonDisabled">Buscar</button>
                 </div>
 
             </div>
-        </div>
 
-        <div class="col-4 text-center">
-
-            <button class="btn btn-warning btn-sm">+ Registrar Nuevo</button>
         </div>
     </div>
 
-    <!--     <div class="container">
-        <p>
-            Paciente no encontrado, ingrese los siguientes datos para
-            registarlo y poder realizar una reserva
-        </p>
-        <div class="row">
-            <div class="col-6">
-                <div class="input-group mb-1">
-                    <input type="text" class="form-control form-control-sm textarea" id="text_1nombre" placeholder="1 Nombre" />
+</div>
+
+<div v-if="this.existepaciente == 2">
+    <br>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Registro de nuevo cliente</h5>
+                <p class="card-text">Cliente no encontrado, ingrese los siguientes datos para
+                    registarlo y poder realizar una venta</p>
+
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_1nombre" placeholder="1 Nombre" v-model="name1" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_2nombre" placeholder="2 Nombre" v-model="name2" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_1apelli" placeholder="1 Apellido" v-model="apell1" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_2apell" placeholder="2 Apellido" v-model="apell2" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="number" class="form-control form-control-sm textarea" id="text_tel" placeholder="Celular" v-model="celular" />
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Email" v-model="email" />
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Direccion" v-model="dir" />
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">F Nacimiento:</span>
+                            <input type="date" class="form-control  form-control-sm date" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fnacimiento">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-1">
-                    <input type="text" class="form-control form-control-sm textarea" id="text_2nombre" placeholder="2 Nombre" />
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-1">
-                    <input type="text" class="form-control form-control-sm textarea" id="text_1apelli" placeholder="1 Apellido" />
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-1">
-                    <input type="text" class="form-control form-control-sm textarea" id="text_2apell" placeholder="2 Apellido" />
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-1">
-                    <input type="number" class="form-control form-control-sm textarea" id="text_tel" placeholder="Telefono" />
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-1">
-                    <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Direccion" />
-                </div>
+                <button class="btn btn-warning btn-sm" @click=" cancelar_cerrarmodal()">
+                    Cancelar
+                </button>
+                <button class="btn btn-success btn-sm" @click=" BTN_registar_Paciente()" :disabled="Guardar_p_isButtonDisabled">
+                    Registrar cliente
+                </button>
             </div>
         </div>
-        <button class="btn btn-success btn-sm">
-            Registrar cliente
-        </button>
-    </div> -->
-    <div class="container">
+    </div>
+</div>
 
-        <div class="row">
+<div class="container" v-if="this.existepaciente == 1">
+    <div class="card">
+        <div class="card-body">
+            <div>
+                <h5>Factura de venta</h5>
 
-            <h6 class="display-6">Registro de ventas de articulos</h6>
-            <hr>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Documento</th>
+                            <th>Nombre</th>
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="pac in datapaciente" :key="pac.id">
+                            <td>{{pac.numdoc}}</td>
+                            <td>{{pac.name1}} {{pac.name2}}  {{pac.apell1}} {{pac.apell2}}</td>
+                            <td> <button class="btn btn-success btn-sm" @click=" BTN_Reservar_BuscarProfesionales">Facturar</button> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
 
-            <div class="col-sm-6 col-md-4">
+                <div class="row  mt-3" style="background-color:yellowgreen; border-radius:5px; padding:10px">
+                    <div class="col-12">
+                        <p>Seleccione y agrege los articulos que desea facturar </p>
+                        <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
+                            <option selected>Seleccione producto</option>
+                            <option value="cc">Terapia</option>
+                            <option value="ti">Consulta</option>
+                            <option value="ti">Clase</option>
 
-                <div class="row  mt-3">
-                    <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
-                        <option selected>Seleccione producto</option>
-                        <option value="cc">Terapia</option>
-                        <option value="ti">Consulta</option>
-                        <option value="ti">Clase</option>
-
-                    </select>
+                        </select>
+                    </div>
                     <div class="col-4"><input type="number" class="form-control" placeholder="cantidad"> </div>
-                    <div class="col-5">
+                    <div class="col-6">
                         <h6 class="m-2">Subtotal:</h6>
                     </div>
-                    <div class="col-3 mt-1"><button class="btn btn-warning btn-sm">+ Agregar</button></div>
-
-                    <div class="row mt-3">
-
-                        <br>
-                        <h6 class="display-6"> Factura de Venta</h6>
-                        <hr>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Cant</th>
-                                    <th scope="col">Producto</th>
-                                    <th scope="col">Subtotal</th>
-                                    <th scope="col">Opc</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td><button class="btn btn-danger btn-sm Bredondo">-</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td><button class="btn btn-danger btn-sm Bredondo">-</button></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td><button class="btn btn-danger btn-sm Bredondo">-</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button class="btn btn-success btn-sm">Registrar Venta</button>
-                    </div>
-
+                    <div class="col-2 mt-1"><button class="btn btn-warning btn-sm">+ </button></div>
                 </div>
             </div>
-            <div class="col-sm-6 col-md-8">
-                <div class="container">
-                    <h6 class="display-6">Ventas diarias </h6>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">factura</th>
-                                    <th scope="col">Articulo</th>
-                                    <th scope="col">Cantidad</th>
-                                    <th scope="col">Cliente</th>
-                                    <th scope="col">Subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Otto</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>@twitter</td>
-                                    <td>@mdo</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
+            <hr>
+            <p>Carrito de compras</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Cant</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Subtotal</th>
+                        <th scope="col">Opc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td><button class="btn btn-danger btn-sm Bredondo">-</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td><button class="btn btn-danger btn-sm Bredondo">-</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td><button class="btn btn-danger btn-sm Bredondo">-</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    <router-link to="/dashboard">Home</router-link>
 </div>
+
+<!-- ---------------------------------------------------------------------------------------- -->
+<div class="container">
+
+                <button class="btn btn-success btn-sm">Registrar Venta</button>
+            </div>
+
+    
+
+    <div class="col-sm-6 col-md-8">
+        <div class="container">
+            <h6 class="display-6">Ventas diarias </h6>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">factura</th>
+                            <th scope="col">Articulo</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Otto</td>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@twitter</td>
+                            <td>@mdo</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+<router-link to="/dashboard">Home</router-link>
 </template>
 
 <script>
+import {
+    mapActions,
+    mapState,
+} from 'vuex';
+import moment from 'moment';
 export default {
+    data: () => ({
 
+    }),
+    methods: {
+
+        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA', 'createEntradanewPaciente', 'ClosetModalNewPaciente', 'NewgetDataUsersbyParam']),
+        /* ----------------------------------------------------------------------------------------------------------- */
+        BTN_Buscar_paciente() {
+            this.idpaciente = this.B_tipodoc + this.B_numdoc;
+            this.paramsPaciente = [{
+                bd: "pacientes",
+                parametro: "numdoc",
+                valor: this.idpaciente,
+                rta: "setStatePaciente"
+            }]
+            this.getDataUsersbyParam(this.paramsPaciente);
+            this.GetCitasVigentesPaciente();
+        },
+    },
+    computed: {
+        ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas', 'dataAllCitasPaciente']),
+    }
 }
 </script>
 
