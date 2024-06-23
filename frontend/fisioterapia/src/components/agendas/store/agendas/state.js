@@ -17,4 +17,8 @@ export default()=>({
     agendasdisponibles:[],
 
     dataAllCitasPaciente:[],
+    
+    //carrito de compras
+    dataCarrito:[],
+    cant_elementos:"",
 })

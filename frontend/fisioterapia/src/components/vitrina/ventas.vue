@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-3 col-md-3 ">
-                    <button class="btn btn-success btn-sm" @click=" BTN_Buscar_paciente()" :disabled="BuscarP_isButtonDisabled">Buscar</button>
+                    <button class="btn btn-success btn-sm" @click=" BTN_Buscar_paciente()" :disabled="BuscarP_Disabled">Buscar</button>
                 </div>
 
             </div>
@@ -105,13 +105,13 @@
                         <tr>
                             <th>Documento</th>
                             <th>Nombre</th>
-        
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr v-for="pac in datapaciente" :key="pac.id">
                             <td>{{pac.numdoc}}</td>
-                            <td>{{pac.name1}} {{pac.name2}}  {{pac.apell1}} {{pac.apell2}}</td>
+                            <td>{{pac.name1}} {{pac.name2}} {{pac.apell1}} {{pac.apell2}}</td>
                             <td> <button class="btn btn-success btn-sm" @click=" BTN_Reservar_BuscarProfesionales">Facturar</button> </td>
                         </tr>
                     </tbody>
@@ -121,7 +121,7 @@
 
                 <div class="row  mt-3" style="background-color:yellowgreen; border-radius:5px; padding:10px">
                     <div class="col-12">
-                        <p>Seleccione y agrege los articulos que desea facturar </p>
+                        <p> <strong>Seleccione y agrege los articulos y cantidades que desea facturar </strong></p>
                         <select class="form-select form-select-sm textarea" id="inputGroupSelect01">
                             <option selected>Seleccione producto</option>
                             <option value="cc">Terapia</option>
@@ -132,7 +132,7 @@
                     </div>
                     <div class="col-4"><input type="number" class="form-control" placeholder="cantidad"> </div>
                     <div class="col-6">
-                        <h6 class="m-2">Subtotal:</h6>
+                        <p class="m-2">Subtotal: <strong> $10.000</strong> </p>
                     </div>
                     <div class="col-2 mt-1"><button class="btn btn-warning btn-sm">+ </button></div>
                 </div>
@@ -168,61 +168,59 @@
                     </tr>
                 </tbody>
             </table>
+            <button class="btn btn-success btn-sm">Registrar Venta</button>
         </div>
     </div>
 </div>
 
 <!-- ---------------------------------------------------------------------------------------- -->
-<div class="container">
 
-                <button class="btn btn-success btn-sm">Registrar Venta</button>
-            </div>
 
-    
+   
 
-    <div class="col-sm-6 col-md-8">
-        <div class="container">
-            <h6 class="display-6">Ventas diarias </h6>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">factura</th>
-                            <th scope="col">Articulo</th>
-                            <th scope="col">Cantidad</th>
-                            <th scope="col">Cliente</th>
-                            <th scope="col">Subtotal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Otto</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>Jacob</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@twitter</td>
-                            <td>@mdo</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+
+<div class="col-sm-6 col-md-8">
+    <div class="container">
+        <h6 class="display-6">Ventas diarias </h6>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">factura</th>
+                        <th scope="col">Articulo</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Otto</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <td>Jacob</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>@twitter</td>
+                        <td>@mdo</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
     </div>
 
+</div>
 
 <router-link to="/dashboard">Home</router-link>
 </template>
@@ -235,11 +233,15 @@ import {
 import moment from 'moment';
 export default {
     data: () => ({
+        B_tipodoc:"",
+        B_numdoc:"",
+
+
 
     }),
     methods: {
 
-        ...mapActions('Agendas', ['getDatabyParam', 'loadProfesionales', 'getDataByRangoSuperior', 'createEntradaCitaNueva', 'getDatarCitasFecha', 'getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA', 'createEntradanewPaciente', 'ClosetModalNewPaciente', 'NewgetDataUsersbyParam']),
+        ...mapActions('Agendas', ['getDatabyParam','getDataUsersbyParam', 'DeleteItem', 'clearDataStoreA', 'NewgetDataUsersbyParam']),
         /* ----------------------------------------------------------------------------------------------------------- */
         BTN_Buscar_paciente() {
             this.idpaciente = this.B_tipodoc + this.B_numdoc;
@@ -250,12 +252,19 @@ export default {
                 rta: "setStatePaciente"
             }]
             this.getDataUsersbyParam(this.paramsPaciente);
-            this.GetCitasVigentesPaciente();
+
+           
         },
     },
     computed: {
         ...mapState('Agendas', ['datapaciente', 'existepaciente', 'dataprofesionales', 'existeprofesionales', 'dataCitas', 'dataAgendas', 'dataAllCitasPaciente']),
-    }
+
+    BuscarP_Disabled() {
+            return !this.B_tipodoc || !this.B_numdoc;
+        },
+    },
+
+
 }
 </script>
 
