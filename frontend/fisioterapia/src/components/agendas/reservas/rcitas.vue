@@ -12,168 +12,140 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 {{ datapaciente }}
 {{ dataAllCitasPaciente }}
 <hr> -->
+<div>
 
-<div class="container">
-
-    <br>
-    <div class="card">
-        <div class="card-body">
-            <h5>Realizar una reserva </h5>
-            <p class="card-text">Ingrese la identificacion del paciente</p>
-          
-            <div class="row">
-                <div class="col-4 col-md-3">
-                    <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="B_tipodoc">
-                        <option selected value="">Tipo Doc</option>
-                        <option value="CC">CC</option>
-                        <option value="TI">TI</option>
-                        <option value="CE">CE</option>
-                        <option value="PA">PAS</option>
-                    </select>
-                </div>
-                <div class="col-5 col-md-3">
-                    <input type="number" class="form-control form-control-sm textarea" id="text_numdoc" placeholder="# Documento" v-model="B_numdoc" />
-                </div>
-
-                <div class="col-3 col-md-3 ">
-                    <button class="btn btn-success btn-sm" @click=" BTN_Buscar_paciente()" :disabled="BuscarP_isButtonDisabled">Buscar</button>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-</div>
-
-<div v-if="this.existepaciente == 2">
-    <br>
     <div class="container">
+
+        <br>
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Registro de nuevo paciente</h5>
-                <p class="card-text">Paciente no encontrado, ingrese los siguientes datos para
-                    registarlo y poder realizar una reserva</p>
-          
+                <h5>Realizar una reserva </h5>
+                <p class="card-text">Ingrese la identificacion del paciente</p>
+
                 <div class="row">
-                    <div class="col-6">
-                        <div class="input-group mb-1">
-                            <input type="text" class="form-control form-control-sm textarea" id="text_1nombre" placeholder="1 Nombre" v-model="name1" />
-                        </div>
+                    <div class="col-4 col-md-3">
+                        <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="B_tipodoc">
+                            <option selected value="">Tipo Doc</option>
+                            <option value="CC">CC</option>
+                            <option value="TI">TI</option>
+                            <option value="CE">CE</option>
+                            <option value="PA">PAS</option>
+                        </select>
                     </div>
-                    <div class="col-6">
-                        <div class="input-group mb-1">
-                            <input type="text" class="form-control form-control-sm textarea" id="text_2nombre" placeholder="2 Nombre" v-model="name2" />
-                        </div>
+                    <div class="col-5 col-md-3">
+                        <input type="number" class="form-control form-control-sm textarea" id="text_numdoc" placeholder="# Documento" v-model="B_numdoc" />
                     </div>
-                    <div class="col-6">
-                        <div class="input-group mb-1">
-                            <input type="text" class="form-control form-control-sm textarea" id="text_1apelli" placeholder="1 Apellido" v-model="apell1" />
-                        </div>
+
+                    <div class="col-3 col-md-3 ">
+                        <button class="btn btn-success btn-sm" @click=" BTN_Buscar_paciente()" :disabled="BuscarP_isButtonDisabled">Buscar</button>
                     </div>
-                    <div class="col-6">
-                        <div class="input-group mb-1">
-                            <input type="text" class="form-control form-control-sm textarea" id="text_2apell" placeholder="2 Apellido" v-model="apell2" />
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="input-group mb-1">
-                            <input type="number" class="form-control form-control-sm textarea" id="text_tel" placeholder="Celular" v-model="celular" />
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="input-group mb-1">
-                            <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Email" v-model="email" />
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="input-group mb-1">
-                            <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Direccion" v-model="dir" />
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="input-group input-group-sm mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">F Nacimiento:</span>
-                            <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fnacimiento">
-                        </div>
-                    </div>
+
                 </div>
-                <button class="btn btn-warning btn-sm" @click=" cancelar_cerrarmodal()">
-                    Cancelar
-                </button>
-                <button class="btn btn-success btn-sm" @click=" BTN_registar_Paciente()" :disabled="Guardar_p_isButtonDisabled">
-                    Registrar cliente
-                </button>
+
             </div>
         </div>
+
     </div>
-</div>
 
-<br>
+    <div v-if="this.existepaciente == 2">
+        <br>
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Registro de nuevo paciente</h5>
+                    <p class="card-text">Paciente no encontrado, ingrese los siguientes datos para
+                        registarlo y poder realizar una reserva</p>
 
-<div class="container" v-if="this.existepaciente == 1">
-
-    <div class="card">
-        <div class="card-body">
-            <div class="container">
-                <h6 class="display-6"> Datos del usuario</h6>
-
-                <table class="table table-sm">
-                    <thead>
-                        <tr>
-                            <th>Documento</th>
-                            <th>Nombre</th>
-
-                            <th>Opc</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="pac in datapaciente" :key="pac.id">
-                            <td>{{pac.numdoc}}</td>
-                            <td>{{pac.name1}} {{pac.apell1}}</td>
-                            <td> <button class="btn btn-success btn-sm" @click=" BTN_Reservar_BuscarProfesionales">Reservar </button> </td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="input-group mb-1">
+                                <input type="text" class="form-control form-control-sm textarea" id="text_1nombre" placeholder="1 Nombre" v-model="name1" />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group mb-1">
+                                <input type="text" class="form-control form-control-sm textarea" id="text_2nombre" placeholder="2 Nombre" v-model="name2" />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group mb-1">
+                                <input type="text" class="form-control form-control-sm textarea" id="text_1apelli" placeholder="1 Apellido" v-model="apell1" />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group mb-1">
+                                <input type="text" class="form-control form-control-sm textarea" id="text_2apell" placeholder="2 Apellido" v-model="apell2" />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group mb-1">
+                                <input type="number" class="form-control form-control-sm textarea" id="text_tel" placeholder="Celular" v-model="celular" />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group mb-1">
+                                <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Email" v-model="email" />
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group mb-1">
+                                <input type="text" class="form-control form-control-sm textarea" id="text_direccion" placeholder="Direccion" v-model="dir" />
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group input-group-sm mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">F Nacimiento:</span>
+                                <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="fnacimiento">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-warning btn-sm" @click=" cancelar_cerrarmodal()">
+                        Cancelar
+                    </button>
+                    <button class="btn btn-success btn-sm" @click=" BTN_registar_Paciente()" :disabled="Guardar_p_isButtonDisabled">
+                        Registrar cliente
+                    </button>
+                </div>
             </div>
-        </div>
-        <div class="container" style="background-color:#FFA848" v-if="this.dataAllCitasPaciente.length >0">
-            <br>
-            <div>
-                <h5 class="display-6">Citas Vigentes del Paciente</h5>
-            </div>
-
-            <table class="table table-sm table-striped ">
-                <thead class="table-danger">
-                    <tr>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">Hora</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Profesional</th>
-                        <th>Opc</th>
-
-                    </tr>
-                </thead>
-                <tbody class="table-group-divider">
-                    <tr v-for="cita in this.citaspaciente" :key="cita.id">
-                        <td>{{cita.fecha}}</td>
-                        <td>{{cita.hora}}</td>
-                        <td>{{cita.tipo}}</td>
-                        <td>{{this.nombreProfesional(cita.idprofesional)}}</td>
-                        <td><button class="btn btn-danger btn-sm" @click=" BTN_eliminar_ItemCita(cita.id)">x</button></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
     </div>
 
     <br>
 
+    <div class="container" v-if="this.existepaciente == 1">
+
+        <div class="card">
+            <div class="card-body">
+                <div class="container">
+                    <h5> Datos del usuario</h5>
+
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Documento</th>
+                                <th>Nombre</th>
+
+                                <th>Opc</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="pac in datapaciente" :key="pac.id">
+                                <td>{{pac.numdoc}}</td>
+                                <td>{{pac.name1}} {{pac.apell1}}</td>
+                                <td> <button class="btn btn-success btn-sm" @click=" BTN_Reservar_BuscarProfesionales">Reservar </button> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+<!--  -->
+
+<div class="container" style="background-color:#3453" >
     <div class="container" v-if="btnagendar">
         <div class="row">
             <div class="container">
-
-                <h6 class="display-6">Selecciona tipo , profesional y fecha de consulta </h6>
+<br>
+                <h5>Selecciona tipo, profesional,  fecha y hora de la reserva</h5>
                 <div class="row">
                     <div class="col-6 col-md-3"> <select class="form-select form-select-sm textarea" id="inputGroupSelect_treserva" v-model="t_reserva" @change="filtarProf()">
                             <option selected value="">Tipo de Reserva</option>
@@ -207,7 +179,7 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
             </div>
             <br>
             <div class="container">
-                <h6 class="display-6">Agenda del tipo, profesional y dia seleccionado</h6>
+                <h5>Agenda del tipo, profesional y dia seleccionado</h5>
                 <table class="table table-sm table-striped">
                     <thead class="table-dark">
                         <tr>
@@ -233,11 +205,47 @@ id_ips :{{ id_ips }} - id_user: {{ id_user }}- rol: {{ rol }}- info:{{ info }}
 
             </div>
         </div>
+ 
     </div>
-
 </div>
-<div class="container home ">
-    <router-link to="/dashboard">Home</router-link>
+        <!--  -->
+            <div class="container" style="background-color:#007ACC" v-if="this.dataAllCitasPaciente.length >0">
+                <br>
+                <div>
+                    <h5>Citas Vigentes del Paciente</h5>
+                </div>
+
+                <table class="table table-sm table-striped ">
+                    <thead class="table-danger">
+                        <tr>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Hora</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Profesional</th>
+                            <th>Opc</th>
+
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr v-for="cita in this.citaspaciente" :key="cita.id">
+                            <td>{{cita.fecha}}</td>
+                            <td>{{cita.hora}}</td>
+                            <td>{{cita.tipo}}</td>
+                            <td>{{this.nombreProfesional(cita.idprofesional)}}</td>
+                            <td><button class="btn btn-danger btn-sm" @click=" BTN_eliminar_ItemCita(cita.id)">x</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <br>
+
+
+    </div>
+    <div class="container home">
+        <router-link to="/dashboard">Home</router-link>
+    </div>
 </div>
 </template>
 
@@ -348,8 +356,6 @@ export default {
             this.BTN_Buscar_paciente()
         },
 
-
-
         /* =================================================== */
         /* ----------------PROFESIONALES--------------------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -421,6 +427,7 @@ export default {
 
         async BTN_Guardar_cita() {
             this.capturalabeldeselect();
+            this.btnagendar = false;
             this.params_GuardarFechaCita = [{
                 paciente: this.datapaciente[0].name1 + " " + this.datapaciente[0].apell1,
                 numdoc: this.datapaciente[0].numdoc,
@@ -432,6 +439,7 @@ export default {
                 fecha: this.valorSeleccionadoSelect,
                 idprofesional: this.p_reserva,
                 bd: "citas",
+           
 
             }]
             await this.createEntradaCitaNueva(this.params_GuardarFechaCita[0]);
@@ -514,6 +522,7 @@ export default {
         },
 
         GuardarR_isButtonDisabled() {
+           
             return !this.t_reserva || !this.p_reserva || !this.listahora || !this.f_reserva;
         },
 

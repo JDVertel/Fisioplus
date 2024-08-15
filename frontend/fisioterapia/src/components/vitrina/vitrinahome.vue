@@ -1,7 +1,7 @@
 <template>
-<br />
+
 <div class="container config">
-    <h3 class="display-6 text-center">--Gestion de la vitrina--</h3>
+
 
     <div class="container">
         <br />

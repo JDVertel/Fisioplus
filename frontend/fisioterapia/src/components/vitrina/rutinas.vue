@@ -8,7 +8,7 @@
                 <p class="card-text">{{rutina.desc}}</p>
                 <div class="card-footer">
                ${{rutina.precio}}
-                <button type="button" v-on:click="reservaCitasW(rutina.titulo, this.telefono1)" class="btnwsp">
+                <button type="button" v-on:click="reservaCitasW(rutina.nombre, this.telefono1)" class="btnwsp">
                     <img width="20" height="20" src="https://img.icons8.com/fluency/48/whatsapp.png" alt="whatsapp" /> </button>
             </div>
         </div>
@@ -18,7 +18,6 @@
 </div>
 
 
-<br>
 </template>
 
 <script>
