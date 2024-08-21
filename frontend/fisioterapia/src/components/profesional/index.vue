@@ -54,14 +54,17 @@
                         <tr v-for="cita in this.CitasAgendadas" :key="cita.id">
                             <td>{{ cita.hora }}</td>
                             <td>{{ cita.paciente }}</td>
-                            <td>{{ cita.telpaciente }}</td>
+                            <td>{{ cita.telpaciente }} </td>
                             <td><button type="button" class="btn btn-danger btn-sm"
                                     @click="ActualizaEstadoCita('NO', cita)">X</button>
                                 <router-link :to="{ name: 'hc', params: { idpaciente: cita.numdoc } }">
                                     <button type="button" class="btn btn-primary btn-sm"
                                         @click="ActualizaEstadoCita('SI', cita)">OK</button>
                                 </router-link>
+                                <!-- 
 
+      @click="$router.push({ name: 'somewhere', state: { myData } })"
+ -->
 
                             </td>
                         </tr>

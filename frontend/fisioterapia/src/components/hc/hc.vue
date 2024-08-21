@@ -5,9 +5,9 @@
     <p>ID recibido: {{ iduser }}</p>
 
     <div class="row">
-      <h3 class="centrarcontenido">Historia Clinica</h3>
+      <h3 class="centrarcontenido">Historia Clinica </h3>
     </div>
-    <div class="container centrado">
+    <div class="container centrado" v-if="this.iduser == ''">
       <input type="text" class="form-control-sm textarea" id="search textarea" placeholder="Numero de Documento" />
       <button class="btn btn-primary btn-sm" type="submit">Buscar</button>
     </div>
@@ -80,6 +80,7 @@ import Registro from "./registroForm.vue";
 export default {
   data: () => ({
     registrado: 1,
+    iduser: "",
   }),
 
   components: {

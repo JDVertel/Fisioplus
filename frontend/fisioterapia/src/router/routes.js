@@ -18,11 +18,10 @@ import dashboard from "./../components/dashboard/index.vue";
 
 import parametros from "./../components/parametros/index.vue";
 import reservas from "./../components/agendas/reservas/rcitas.vue";
-import ventas from "./../components/vitrina/ventas.vue"
+import ventas from "./../components/vitrina/ventas.vue";
 import profesional from "./../components/profesional/index.vue";
 
 const routes = [
-  
   //aplication
   { path: "/", name: "home", component: Home },
   { path: "/about", component: About, name: "about" },
@@ -37,23 +36,21 @@ const routes = [
     name: "vitrina",
   },
   //hc
-  { path: "/hc", component: hc, name: "hc" },
+  { path: "/hc/:idpaciente", component: hc, name: "hc" },
   //dashboard
   { path: "/dashboard", component: dashboard, name: "dashboard" },
-//profesionales 
-{
-  path: "/profesional",
-  component: profesional,
-  name: "profesional",
-},
+  //profesionales
+  {
+    path: "/profesional",
+    component: profesional,
+    name: "profesional",
+  },
 
   {
     path: "/login",
     component: login,
     name: "login",
   },
-
-
 
   //parametros
   { path: "/parametros", component: parametros, name: "parametros" },
