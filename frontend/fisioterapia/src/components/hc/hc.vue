@@ -1,16 +1,42 @@
 <template>
   <div class="container mt-3" id="panelbusqueda" v-if="registrado == 1">
 
-    <h1>paciente</h1>
     <p>ID recibido: {{ iduser }}</p>
 
     <div class="row">
       <h3 class="centrarcontenido">Historia Clinica </h3>
     </div>
-    <div class="container centrado" v-if="this.iduser == ''">
-      <input type="text" class="form-control-sm textarea" id="search textarea" placeholder="Numero de Documento" />
-      <button class="btn btn-primary btn-sm" type="submit">Buscar</button>
+    <div class="container centrarcontenido" v-if="this.iduser == ''">
+      <div class="row">
+        <div class="col-2">
+          <p>logo buscar</p>
+        </div>
+        <div class="col-10">
+          <div class="container">
+            <h5>Ingrese la identificacion del paciente a consultar</h5>
+            <div class="row">
+              <div class="col-5">
+                <select class="form-select form-select-sm textarea" id="inputGroupSelect01" v-model="B_tipodoc">
+                  <option selected value="">Tipo Doc</option>
+                  <option value="CC">CC</option>
+                  <option value="TI">TI</option>
+                  <option value="CE">CE</option>
+                  <option value="PA">PAS</option>
+                </select>
+              </div>
+              <div class="col-5">
+                <input type="number" class="form-control form-control-sm textarea" id="text_numdoc"
+                  placeholder="# Documento" v-model="B_numdoc" />
+              </div>
+            </div>
+            <br>
+            <button class="btn btn-success btn-sm" @click=" BTN_Buscar_paciente()"
+              :disabled="BuscarP_isButtonDisabled">Buscar</button>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 
   <hr />
@@ -23,7 +49,7 @@
   </div>
 
   <!-- **************************************************************************************************** -->
-  <div class="container-fluid Cont_hc">
+  <div class="container-fluid Cont_hc" v-if="this.iduser !== ''">
     <div class="row">
       <div class="col-3 col-md-2 centrarcontenido">
         <img src="./../../assets/images/usuario.jpg" class="imagenhc" alt="..." />
@@ -80,7 +106,8 @@ import Registro from "./registroForm.vue";
 export default {
   data: () => ({
     registrado: 1,
-    iduser: "",
+
+
   }),
 
   components: {
@@ -88,7 +115,7 @@ export default {
   },
   created() {
     // Recuperar el parámetro 'id' de la ruta
-    this.iduser = this.$route.params.idpaciente;
+    this.iduser = this.$route.params.idpaciente || '';
   }
 };
 </script>

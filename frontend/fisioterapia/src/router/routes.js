@@ -36,7 +36,7 @@ const routes = [
     name: "vitrina",
   },
   //hc
-  { path: "/hc/:idpaciente", component: hc, name: "hc" },
+  { path: "/hc/:idpaciente?", component: hc, name: "hc" },
   //dashboard
   { path: "/dashboard", component: dashboard, name: "dashboard" },
   //profesionales
